@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "memorymap.h": "c",
+        "dial.h": "c",
+        "shoot.h": "c",
+        "frictionwheel.h": "c",
+        "dt7.h": "c",
+        "m3508_motor.h": "c",
+        "cloud_control.h": "c",
+        "task_robotcontrol.h": "c",
+        "bsp_boardcommunication.h": "c"
+    }
+}
