@@ -6,13 +6,13 @@
 /***************用户数据定义***************/
 //void Chassis_open_init(void);
 //void CHASSIS_InitArgument(void);
-void Omni_calc(void);
 //void Omni_angle_calc(float* out_angle) ;
+//float Find_Y_AnglePNY(void);
+//float Find_min_Angle(int16_t angle1, fp32 angle2);
+void Omni_calc(void);
 void Omni_Set_Motor_Speed(M3508s_t* Motor);
 void Omni_Absolute_Cal(fp32 angle)	;
 void Omni_Chassis_Out(void);
-//float Find_Y_AnglePNY(void);
-//float Find_min_Angle(int16_t angle1, fp32 angle2);
 void RemoteControlChassis(int16_t *speed);
 void Omni_GetAngle(fp32 angle);
 

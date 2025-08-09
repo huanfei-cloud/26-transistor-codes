@@ -597,21 +597,6 @@
           <GroupName>Devices</GroupName>
           <Files>
             <File>
-              <FileName>M2006_Motor.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Devices\Devices.c\M2006_Motor.c</FilePath>
-            </File>
-            <File>
-              <FileName>M3508_Motor.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Devices\Devices.c\M3508_Motor.c</FilePath>
-            </File>
-            <File>
-              <FileName>M6020_Motor.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Devices\Devices.c\M6020_Motor.c</FilePath>
-            </File>
-            <File>
               <FileName>Saber_C3.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Devices\Devices.c\Saber_C3.c</FilePath>
@@ -635,6 +620,26 @@
               <FileName>MA600_base.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Devices\Devices.c\MA600_base.c</FilePath>
+            </File>
+            <File>
+              <FileName>M3508_Motor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Devices\Devices.c\M3508_Motor.c</FilePath>
+            </File>
+            <File>
+              <FileName>M6020_Motor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Devices\Devices.c\M6020_Motor.c</FilePath>
+            </File>
+            <File>
+              <FileName>M2006_Motor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Devices\Devices.c\M2006_Motor.c</FilePath>
+            </File>
+            <File>
+              <FileName>J4310_Motor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Devices\Devices.c\J4310_Motor.c</FilePath>
             </File>
           </Files>
         </Group>

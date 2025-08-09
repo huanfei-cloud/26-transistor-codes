@@ -26,7 +26,6 @@
     {                                \
 		&FeedForward_Fric,           \
 		&FeedForward_Chassis,        \
-		&FeedForward_Pitch,      	 \
 		&FeedForward_Yaw,     		 \
 		&Compensator_Yaw,     		 \
     }
@@ -36,7 +35,7 @@ typedef struct
 {
     void (*FeedForward_Fric)(void);
 	void (*FeedForward_Chassis)(void);
-	void (*FeedForward_Pitch)(void);
+//	void (*FeedForward_Pitch)(void);
 	void (*FeedForward_Yaw)(void);
 	void (*Compensator_Yaw)(void);
 } FeedForward_FUN_t;

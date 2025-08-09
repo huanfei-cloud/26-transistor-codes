@@ -12,9 +12,11 @@
 
 //直接声明对应的电机的结构体而不用数组，直观便于后期调试观察数据使用。
 M6020s_t M6020s_Yaw;                                    //ID为1
-M6020s_t M6020s_Pitch;                                  //2
-M6020s_t *M6020_Array[2] = {&M6020s_Yaw, &M6020s_Pitch}; //对应电机的ID必须为：索引+1
-#define M6020_Amount 2
+M6020s_t *M6020_Array[1] = {&M6020s_Yaw}; //对应电机的ID必须为：索引+1
+
+#define M6020_Amount 1
+
+/********函数声明********/
 void M6020_setVoltage(int16_t uq1, int16_t uq2, int16_t uq3, int16_t uq4, uint8_t *data);
 void M6020_getInfo(Can_Export_Data_t RxMessage);
 void M6020_setTargetAngle(M6020s_t *M6020, int32_t angle);
@@ -85,22 +87,23 @@ void M6020_getInfo(Can_Export_Data_t RxMessage)
 
 }
 
-/*
-*@brief  设定M6020电机的目标角度
-* @param  motorName 	电机名字 @ref M6623Name_e
-*			angle		电流值，范围 0~8191 由于设置0和8191会导致电机振荡，要做个限幅
-* @retval None
-* */
+/**
+  * @brief  设定M6020电机的目标角度
+  * @param  M6020 	电机数据结构体地址 
+  * @param  angle		机械角度值，范围 0~8191 由于设置0和8191会导致电机振荡，要做个限幅
+  * @retval None
+  */
 void M6020_setTargetAngle(M6020s_t *M6020, int32_t angle)
 {
     M6020->targetAngle = angle;
 }
 
-/*************************************
-* Method:    M6020_OverflowReset
-* Returns:   void
-* 说明：调运此函数以解决totalAngle 等溢出的问题。
-************************************/
+/**
+  * @brief  M6020_Reset
+  * @param  电机数据结构体地址
+  * @retval None
+  * 说明：调运此函数以解决totalAngle 等溢出的问题。
+  */
 void M6020_Reset(M6020s_t *m6020)
 {
     //解包数据，数据格式详见C620电调说明书P33

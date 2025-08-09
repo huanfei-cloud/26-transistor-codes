@@ -33,7 +33,7 @@ One_Kalman_t Cloud_YawCurrent_Kalman_manul;
 /****************卡拉曼滤波结构体创建 End*****************/
 
 Cloud_t Cloud;
-extern M6020s_t* M6020_Array[2]; //对应电机的ID必须为：索引+1
+extern M6020s_t* M6020_Array[1]; //对应电机的ID必须为：索引+1
 extern Saber_Angle_t Saber_Angle;
 float Control_Self_Yaw;
 

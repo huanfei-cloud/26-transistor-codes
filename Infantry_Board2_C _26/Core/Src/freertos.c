@@ -243,22 +243,22 @@ void ALL_Init(void const * argument)
 //        {
 //            Incremental_PIDInit(&M3508_Array_Pid[i], 20.0f, 0.22f, 0, 16384, 6000);
 //        }
-        /**Yaw��Ƕ����⻷**/
+		    /**Yaw轴电机PID初始化**/
         Position_PIDInit(&M6020s_YawIPID, 1550.0f, 0.1f, 1200.0, 0, 30000, 10000 , 6000);
         Position_PIDInit(&M6020s_YawOPID, 0.083f, 0.00001f, 0.0, 0, 30000, 10000 , 10000);
-        /**AimYaw��Ƕ����⻷**/
+		    /**AimYaw电机PID初始化*/
         Position_PIDInit(&AutoAim_M6020s_YawIPID, 1700.0f, 60.f, 800.f, 500, 30000, 10000 , 10000);
         Position_PIDInit(&AutoAim_M6020s_YawOPID, 0.032f, 0.00001f, 0.05, 0, 30000, 10000 , 10000);
 		/*�豸��ʼ��*/
-        Cloud_Init();						  //��̨��ʼ��	
+        Cloud_Init();						  //云台初始化
 		
 		/* ��������ϵͳ */
 		JudgeSystem_USART_Receive_DMA(&huart6);
-		Saber_Init();							//Saber IMU��ʼ��	
+		Saber_Init();							//Saber IMU初始化
 									
 		UI_FUN.UI_init();
-		vTaskDelete(StartTaskHandle);         //ɾ����ǰ����
-    taskEXIT_CRITICAL();                  //�˳��ٽ���		
+		vTaskDelete(StartTaskHandle);         //删除启动任务
+    taskEXIT_CRITICAL();                  //退出临界区	
 	}
   /* USER CODE END ALL_Init */
 }

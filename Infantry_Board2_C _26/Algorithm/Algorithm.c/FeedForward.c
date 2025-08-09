@@ -20,7 +20,7 @@
 /**************用户数据定义****************/
 void FeedForward_Fric(void);
 void FeedForward_Chassis(void);
-void FeedForward_Pitch(void);
+//void FeedForward_Pitch(void);
 void FeedForward_Yaw(void);
 void Compensator_Yaw(void);
 
@@ -68,46 +68,48 @@ void FeedForward_Chassis()
 	
 }
 
-/**
-  * @brief   给pitch轴电机发送前馈
-  * @param   云台和云台电机的外部接口
-  * @retval  void
-  */
-void FeedForward_Pitch()
-{
-	/* 临时变量 */
-	float exp1,exp2, exp3, exp4;
-	
-	/* 平衡Pitch重力 */
-	/* 从大转角到小转角 y = 0.074 * x ^ 2 -20.9418 * x + 1291.57 */
-	exp1 = M6020s_Pitch.realAngle;
-	if(Cloud.Target_Pitch > M6020s_Pitch.realAngle + Pitch_Margin)
-	{
-		arm_mult_f32(&exp1, &exp1, &exp3, 1);
-		exp2 = 0.074f;
-		arm_mult_f32(&exp3, &exp2, &exp3, 1);
-		exp2 = 20.9418f;
-		arm_mult_f32(&exp2, &exp1, &exp4, 1);
-		arm_sub_f32(&exp3, &exp4, &exp3, 1);
-		exp2 = 1291.57f;
-		arm_add_f32(&exp3, &exp2, &exp4, 1);
-		M6020s_Pitch.outCurrent += 1.125f * exp4;
-	}
-	/* 从小转角到大转角 y = 0.0065 * x ^ 2 -19.0685 * x + 1225.57 */
-	else if(Cloud.Target_Pitch < M6020s_Pitch.realAngle - Pitch_Margin)
-	{
-		arm_mult_f32(&exp1, &exp1, &exp3, 1);
-		exp2 = 0.0065f;
-		arm_mult_f32(&exp3, &exp2, &exp3, 1);
-		exp2 = 19.0685f;
-		arm_mult_f32(&exp2, &exp1, &exp4, 1);
-		arm_sub_f32(&exp3, &exp4, &exp3, 1);
-		exp2 = 1225.57f;
-		arm_add_f32(&exp3, &exp2, &exp4, 1);
-		M6020s_Pitch.outCurrent += exp4;
-	}
-	else M6020s_Pitch.outCurrent += 1.125f * exp4;
-}
+/***说明：步兵pitch使用J4310电机内置PID,用不到外置前馈控制***/
+
+///**
+//  * @brief   给pitch轴电机发送前馈
+//  * @param   云台和云台电机的外部接口
+//  * @retval  void
+//  */
+//void FeedForward_Pitch()
+//{
+//	/* 临时变量 */
+//	float exp1,exp2, exp3, exp4;
+//	
+//	/* 平衡Pitch重力 */
+//	/* 从大转角到小转角 y = 0.074 * x ^ 2 -20.9418 * x + 1291.57 */
+//	exp1 = M6020s_Pitch.realAngle;
+//	if(Cloud.Target_Pitch > M6020s_Pitch.realAngle + Pitch_Margin)
+//	{
+//		arm_mult_f32(&exp1, &exp1, &exp3, 1);
+//		exp2 = 0.074f;
+//		arm_mult_f32(&exp3, &exp2, &exp3, 1);
+//		exp2 = 20.9418f;
+//		arm_mult_f32(&exp2, &exp1, &exp4, 1);
+//		arm_sub_f32(&exp3, &exp4, &exp3, 1);
+//		exp2 = 1291.57f;
+//		arm_add_f32(&exp3, &exp2, &exp4, 1);
+//		M6020s_Pitch.outCurrent += 1.125f * exp4;
+//	}
+//	/* 从小转角到大转角 y = 0.0065 * x ^ 2 -19.0685 * x + 1225.57 */
+//	else if(Cloud.Target_Pitch < M6020s_Pitch.realAngle - Pitch_Margin)
+//	{
+//		arm_mult_f32(&exp1, &exp1, &exp3, 1);
+//		exp2 = 0.0065f;
+//		arm_mult_f32(&exp3, &exp2, &exp3, 1);
+//		exp2 = 19.0685f;
+//		arm_mult_f32(&exp2, &exp1, &exp4, 1);
+//		arm_sub_f32(&exp3, &exp4, &exp3, 1);
+//		exp2 = 1225.57f;
+//		arm_add_f32(&exp3, &exp2, &exp4, 1);
+//		M6020s_Pitch.outCurrent += exp4;
+//	}
+//	else M6020s_Pitch.outCurrent += 1.125f * exp4;
+//}
 
 /**
   * @brief   给Yaw轴电机发送前馈

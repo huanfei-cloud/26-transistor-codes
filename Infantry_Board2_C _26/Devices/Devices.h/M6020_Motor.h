@@ -63,8 +63,7 @@ typedef enum
 {
     //需要注意与报文接受函数处对应。即
     //M6020_PITCH_Right = 0,
-    M6020_PITCH = 0,
-    M6020_YAW,
+    M6020_YAW = 0 ,
 } M6020Name_e;
 
 typedef struct
@@ -77,7 +76,6 @@ typedef struct
 } M6020_Fun_t;
 
 extern M6020s_t M6020s_Yaw;   //ID为1
-extern M6020s_t M6020s_Pitch; //2
 extern M6020_Fun_t M6020_Fun;
 
 #endif /* __M3508_MOTOR_H */

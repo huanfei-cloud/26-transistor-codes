@@ -80,9 +80,9 @@ void CAN_IT_Init(CAN_HandleTypeDef *hcanx, uint8_t Can_type)
 /**
   * @brief  CAN发送数据
   * @param  CANx	    CAN编号
-  * 		id_type 	id类型 CAN_ID_STD， CAN_ID_EXT
-  *			id			id号
-  * 		data[8]		8个数据
+  * 		    id_type 	id类型 CAN_ID_STD， CAN_ID_EXT
+  *			    id			id号
+  * 		    data[8]		8个数据
   * @retval None
   */
 void CAN_SendData(QueueHandle_t	CANx_Handle, CAN_HandleTypeDef *CANx, uint8_t id_type, uint32_t id, uint8_t data[8])
