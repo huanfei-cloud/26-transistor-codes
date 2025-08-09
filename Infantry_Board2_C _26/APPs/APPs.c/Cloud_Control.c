@@ -9,14 +9,6 @@
  *
  */
 #include "Cloud_Control.h"
-#include "FeedForward.h"
-#include "Omni_Chassis.h"
-#include "BSP_Can.h"
-#include "Extern_Handles.h"
-#include "BSP_BoardCommunication.h"
-#include "Saber_C3.h"
-#include "Gimbal_Chassis_Pitch_Angle.h"
-
 
 /************µç»úPID***********/
 positionpid_t M6020s_YawIPID;

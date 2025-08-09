@@ -24,7 +24,7 @@ static void abs_limit(float *a, float ABS_MAX)
 //模糊pid的Yaw
 float Position_PID_Yaw(positionpid_t *pid_t, FUZZYPID_Data_t *fuzzy_t, float target, float measured)
 {
-	FuzzyComputation(fuzzy_t, pid_t->err, pid_t->err_last);
+	  FuzzyComputation(fuzzy_t, pid_t->err, pid_t->err_last);
     pid_t->Target = (float)target;
     pid_t->Measured = (float)measured;
     pid_t->err = pid_t->Target - pid_t->Measured;
@@ -37,7 +37,7 @@ float Position_PID_Yaw(positionpid_t *pid_t, FUZZYPID_Data_t *fuzzy_t, float tar
 	  pid_t->f_out = pid_t->Kf * pid_t->error_target;
     if (pid_t->err >= pid_t->Integral_Separation)
 		pid_t->i_out = 0;
-	else
+	  else
 		//积分限幅
 		abs_limit(&pid_t->i_out, pid_t->IntegralLimit); //取消积分输出的限幅。
 

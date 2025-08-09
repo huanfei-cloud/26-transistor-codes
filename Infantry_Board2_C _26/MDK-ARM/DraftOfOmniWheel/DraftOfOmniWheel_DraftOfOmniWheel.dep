@@ -155,7 +155,8 @@ I (..\Tasks\Tasks.h\Task_CanReceive.h)(0x6896A808)
 I (..\Tasks\Tasks.h\Extern_Handles.h)(0x6896A808)
 I (..\Devices\Devices.h\M6020_Motor.h)(0x6896B7E2)
 I (../Core/Inc/usart.h)(0x6896A808)
-I (../APPs/APPs.h/Cloud_Control.h)(0x6896A808)
+I (../APPs/APPs.h/Cloud_Control.h)(0x68970948)
+I (../Algorithm/Algorithm.h/FeedForward.h)(0x6896F1DF)
 I (../APPs/APPs.h/Omni_Chassis.h)(0x6896A808)
 I (..\Devices\Devices.h\M3508_Motor.h)(0x6896A808)
 I (../APPs/APPs.h/steer_chassis.h)(0x6896A808)
@@ -164,9 +165,10 @@ I (..\Devices\Devices.h\MA600_use.h)(0x6896A808)
 I (..\Devices\Devices.h\MA600_base.h)(0x6896A808)
 I (../Core/Inc/spi.h)(0x6896A808)
 I (..\Devices\Devices.h\DT7.h)(0x6896A808)
-I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x6896A808)
-I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
+I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x68970B55)
 I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x6896A808)
+I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
+I (../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h)(0x6896A808)
 I (..\Tasks\Tasks.h\Task_LED.h)(0x6896A808)
 I (../BSP/BSP.h/BSP_Test.h)(0x6896A808)
 I (..\Devices\Devices.h\N100.h)(0x6896A808)
@@ -695,10 +697,13 @@ I (..\Devices\Devices.h\MA600_use.h)(0x6896A808)
 I (..\Devices\Devices.h\MA600_base.h)(0x6896A808)
 I (../Core/Inc/spi.h)(0x6896A808)
 I (..\Devices\Devices.h\DT7.h)(0x6896A808)
-I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x6896A808)
-I (../APPs/APPs.h/Cloud_Control.h)(0x6896A808)
-I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
+I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x68970B55)
+I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x6896A808)
+I (../APPs/APPs.h/Omni_Chassis.h)(0x6896A808)
+I (../APPs/APPs.h/Cloud_Control.h)(0x68970948)
 I (../Algorithm/Algorithm.h/FeedForward.h)(0x6896F1DF)
+I (../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h)(0x6896A808)
+I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 F (..\Algorithm\Algorithm.c\kalman_filter.c)(0x6896A808)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ../APPs/APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\kalman_filter.o --omf_browse draftofomniwheel\kalman_filter.crf --depend draftofomniwheel\kalman_filter.d)
 I (../Algorithm/Algorithm.h/kalman_filter.h)(0x6896A808)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdio.h)(0x60252374)
@@ -743,7 +748,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h)(0x6896A808)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h)(0x6896A808)
 I (../Algorithm/Algorithm.h/arm_math.h)(0x6896A808)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\math.h)(0x60252378)
-F (..\Algorithm\Algorithm.c\pid.c)(0x6896A808)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ../APPs/APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\pid.o --omf_browse draftofomniwheel\pid.crf --depend draftofomniwheel\pid.d)
+F (..\Algorithm\Algorithm.c\pid.c)(0x68970948)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ../APPs/APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\pid.o --omf_browse draftofomniwheel\pid.crf --depend draftofomniwheel\pid.d)
 I (../Algorithm/Algorithm.h/PID.h)(0x6896A808)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdint.h)(0x6025237E)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdio.h)(0x60252374)
@@ -803,7 +808,7 @@ I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\string.h)(0x6025237E)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\math.h)(0x60252378)
 F (..\Algorithm\Algorithm.c\FuzzyPID.c)(0x6896A808)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ../APPs/APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\fuzzypid.o --omf_browse draftofomniwheel\fuzzypid.crf --depend draftofomniwheel\fuzzypid.d)
 I (../Algorithm/Algorithm.h/FuzzyPID.h)(0x6896A808)
-F (..\Algorithm\Algorithm.c\Gimbal_Chassis_Pitch_Angle.c)(0x6896A808)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ../APPs/APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\gimbal_chassis_pitch_angle.o --omf_browse draftofomniwheel\gimbal_chassis_pitch_angle.crf --depend draftofomniwheel\gimbal_chassis_pitch_angle.d)
+F (..\Algorithm\Algorithm.c\Gimbal_Chassis_Pitch_Angle.c)(0x68970B55)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ../APPs/APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\gimbal_chassis_pitch_angle.o --omf_browse draftofomniwheel\gimbal_chassis_pitch_angle.crf --depend draftofomniwheel\gimbal_chassis_pitch_angle.d)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\math.h)(0x60252378)
 I (..\Devices\Devices.h\Saber_C3.h)(0x6896A808)
 I (../Core/Inc/main.h)(0x6896A808)
@@ -853,7 +858,7 @@ I (..\Devices\Devices.h\M6020_Motor.h)(0x6896B7E2)
 I (../Core/Inc/can.h)(0x6896A808)
 I (../BSP/BSP.h/typedef.h)(0x6896A808)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdbool.h)(0x6025237C)
-I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x6896A808)
+I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x68970B55)
 I (../BSP/BSP.h/BSP_Can.h)(0x6896A808)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x6896A808)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x6896A808)
@@ -870,9 +875,27 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x6896A808)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x6896A808)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x6896A808)
 I (..\Tasks\Tasks.h\Extern_Handles.h)(0x6896A808)
+I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x6896A808)
+I (../APPs/APPs.h/Omni_Chassis.h)(0x6896A808)
+I (..\Devices\Devices.h\M3508_Motor.h)(0x6896A808)
+I (../Algorithm/Algorithm.h/PID.h)(0x6896A808)
+I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdlib.h)(0x60252374)
+I (../Algorithm/Algorithm.h/kalman_filter.h)(0x6896A808)
+I (../Algorithm/Algorithm.h/FuzzyPID.h)(0x6896A808)
+I (../APPs/APPs.h/steer_chassis.h)(0x6896A808)
+I (../BSP/BSP.h/BSP_Usart.h)(0x6896A808)
+I (..\Devices\Devices.h\M2006_Motor.h)(0x6896A808)
+I (..\Tasks\Tasks.h\Task_CanReceive.h)(0x6896A808)
+I (..\Devices\Devices.h\MA600_use.h)(0x6896A808)
+I (..\Devices\Devices.h\MA600_base.h)(0x6896A808)
+I (../Core/Inc/spi.h)(0x6896A808)
+I (..\Devices\Devices.h\DT7.h)(0x6896A808)
+I (../APPs/APPs.h/Cloud_Control.h)(0x68970948)
+I (../Algorithm/Algorithm.h/FeedForward.h)(0x6896F1DF)
 I (../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h)(0x6896A808)
-F (..\Protocol\Protocol.c\BSP_BoardCommunication.c)(0x6896A808)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ../APPs/APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\bsp_boardcommunication.o --omf_browse draftofomniwheel\bsp_boardcommunication.crf --depend draftofomniwheel\bsp_boardcommunication.d)
-I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x6896A808)
+I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
+F (..\Protocol\Protocol.c\BSP_BoardCommunication.c)(0x6897326D)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ../APPs/APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\bsp_boardcommunication.o --omf_browse draftofomniwheel\bsp_boardcommunication.crf --depend draftofomniwheel\bsp_boardcommunication.d)
+I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x68970B55)
 I (../Core/Inc/main.h)(0x6896A808)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6896A808)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6896A808)
@@ -953,7 +976,9 @@ I (..\Devices\Devices.h\MA600_use.h)(0x6896A808)
 I (..\Devices\Devices.h\MA600_base.h)(0x6896A808)
 I (../Core/Inc/spi.h)(0x6896A808)
 I (..\Devices\Devices.h\DT7.h)(0x6896A808)
-I (../APPs/APPs.h/Cloud_Control.h)(0x6896A808)
+I (../APPs/APPs.h/Cloud_Control.h)(0x68970948)
+I (../Algorithm/Algorithm.h/FeedForward.h)(0x6896F1DF)
+I (../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h)(0x6896A808)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 F (..\Protocol\Protocol.c\Protocol_Judgement.c)(0x6896A808)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ../APPs/APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\protocol_judgement.o --omf_browse draftofomniwheel\protocol_judgement.crf --depend draftofomniwheel\protocol_judgement.d)
 I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x6896A808)
@@ -1027,8 +1052,20 @@ I (../Algorithm/Algorithm.h/kalman_filter.h)(0x6896A808)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdbool.h)(0x6025237C)
 I (../Algorithm/Algorithm.h/FuzzyPID.h)(0x6896A808)
 I (..\Devices\Devices.h\M6020_Motor.h)(0x6896B7E2)
-I (../Protocol/Protocol.h/BSP_Boardcommunication.h)(0x6896A808)
+I (../Protocol/Protocol.h/BSP_Boardcommunication.h)(0x68970B55)
 I (../BSP/BSP.h/BSP_Can.h)(0x6896A808)
+I (../APPs/APPs.h/Omni_Chassis.h)(0x6896A808)
+I (..\Devices\Devices.h\M3508_Motor.h)(0x6896A808)
+I (../APPs/APPs.h/steer_chassis.h)(0x6896A808)
+I (..\Devices\Devices.h\Saber_C3.h)(0x6896A808)
+I (..\Devices\Devices.h\MA600_use.h)(0x6896A808)
+I (..\Devices\Devices.h\MA600_base.h)(0x6896A808)
+I (../Core/Inc/spi.h)(0x6896A808)
+I (..\Devices\Devices.h\DT7.h)(0x6896A808)
+I (../APPs/APPs.h/Cloud_Control.h)(0x68970948)
+I (../Algorithm/Algorithm.h/FeedForward.h)(0x6896F1DF)
+I (../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h)(0x6896A808)
+I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 I (../APPs/APPs.h/PowerControl.h)(0x6896A808)
 F (..\Protocol\Protocol.c\UI.c)(0x6896A808)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ../APPs/APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\ui.o --omf_browse draftofomniwheel\ui.crf --depend draftofomniwheel\ui.d)
 I (../Protocol/Protocol.h/UI.h)(0x6896A808)
@@ -1319,8 +1356,11 @@ I (..\Devices\Devices.h\MA600_use.h)(0x6896A808)
 I (..\Devices\Devices.h\MA600_base.h)(0x6896A808)
 I (../Core/Inc/spi.h)(0x6896A808)
 I (..\Devices\Devices.h\DT7.h)(0x6896A808)
-I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x6896A808)
-I (../APPs/APPs.h/Cloud_Control.h)(0x6896A808)
+I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x68970B55)
+I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x6896A808)
+I (../APPs/APPs.h/Cloud_Control.h)(0x68970948)
+I (../Algorithm/Algorithm.h/FeedForward.h)(0x6896F1DF)
+I (../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h)(0x6896A808)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 F (..\BSP\BSP.c\BSP_Usart.c)(0x6896A808)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ../APPs/APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\bsp_usart.o --omf_browse draftofomniwheel\bsp_usart.crf --depend draftofomniwheel\bsp_usart.d)
 I (../BSP/BSP.h/BSP_Usart.h)(0x6896A808)
@@ -1402,12 +1442,14 @@ I (..\Devices\Devices.h\MA600_use.h)(0x6896A808)
 I (..\Devices\Devices.h\MA600_base.h)(0x6896A808)
 I (../Core/Inc/spi.h)(0x6896A808)
 I (..\Devices\Devices.h\DT7.h)(0x6896A808)
-I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x6896A808)
-I (../APPs/APPs.h/Cloud_Control.h)(0x6896A808)
+I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x68970B55)
+I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x6896A808)
+I (../APPs/APPs.h/Cloud_Control.h)(0x68970948)
+I (../Algorithm/Algorithm.h/FeedForward.h)(0x6896F1DF)
+I (../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h)(0x6896A808)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 I (../BSP/BSP.h/BSP_Test.h)(0x6896A808)
 I (..\Devices\Devices.h\N100.h)(0x6896A808)
-I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x6896A808)
 F (..\Devices\Devices.c\Saber_C3.c)(0x6896A808)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ../APPs/APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\saber_c3.o --omf_browse draftofomniwheel\saber_c3.crf --depend draftofomniwheel\saber_c3.d)
 I (..\Devices\Devices.h\Saber_C3.h)(0x6896A808)
 I (../Core/Inc/main.h)(0x6896A808)
@@ -1584,8 +1626,12 @@ I (..\Devices\Devices.h\MA600_base.h)(0x6896A808)
 I (../Core/Inc/spi.h)(0x6896A808)
 I (..\Devices\Devices.h\M3508_Motor.h)(0x6896A808)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
-I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x6896A808)
-I (../APPs/APPs.h/Cloud_Control.h)(0x6896A808)
+I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x68970B55)
+I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x6896A808)
+I (../APPs/APPs.h/Omni_Chassis.h)(0x6896A808)
+I (../APPs/APPs.h/Cloud_Control.h)(0x68970948)
+I (../Algorithm/Algorithm.h/FeedForward.h)(0x6896F1DF)
+I (../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h)(0x6896A808)
 F (..\Devices\Devices.c\MA600_use.c)(0x6896A808)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ../APPs/APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\ma600_use.o --omf_browse draftofomniwheel\ma600_use.crf --depend draftofomniwheel\ma600_use.d)
 I (..\Devices\Devices.h\MA600_use.h)(0x6896A808)
 I (..\Devices\Devices.h\MA600_base.h)(0x6896A808)
@@ -1758,8 +1804,12 @@ I (..\Devices\Devices.h\MA600_use.h)(0x6896A808)
 I (..\Devices\Devices.h\MA600_base.h)(0x6896A808)
 I (../Core/Inc/spi.h)(0x6896A808)
 I (..\Devices\Devices.h\DT7.h)(0x6896A808)
-I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x6896A808)
-I (../APPs/APPs.h/Cloud_Control.h)(0x6896A808)
+I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x68970B55)
+I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x6896A808)
+I (../APPs/APPs.h/Omni_Chassis.h)(0x6896A808)
+I (../APPs/APPs.h/Cloud_Control.h)(0x68970948)
+I (../Algorithm/Algorithm.h/FeedForward.h)(0x6896F1DF)
+I (../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h)(0x6896A808)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 F (..\Devices\Devices.c\M6020_Motor.c)(0x6896B7E2)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ../APPs/APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\m6020_motor.o --omf_browse draftofomniwheel\m6020_motor.crf --depend draftofomniwheel\m6020_motor.d)
 I (..\Devices\Devices.h\M6020_Motor.h)(0x6896B7E2)
@@ -1946,8 +1996,8 @@ I (../Algorithm/Algorithm.h/kalman_filter.h)(0x6896A808)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdbool.h)(0x6025237C)
 I (../Algorithm/Algorithm.h/FuzzyPID.h)(0x6896A808)
 I (../BSP/BSP.h/BSP_Can.h)(0x6896A808)
-F (..\APPs\APPs.c\Cloud_Control.c)(0x6896F14A)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ../APPs/APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\cloud_control.o --omf_browse draftofomniwheel\cloud_control.crf --depend draftofomniwheel\cloud_control.d)
-I (../APPs/APPs.h/Cloud_Control.h)(0x6896A808)
+F (..\APPs\APPs.c\Cloud_Control.c)(0x68970948)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ../APPs/APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\cloud_control.o --omf_browse draftofomniwheel\cloud_control.crf --depend draftofomniwheel\cloud_control.d)
+I (../APPs/APPs.h/Cloud_Control.h)(0x68970948)
 I (../Algorithm/Algorithm.h/PID.h)(0x6896A808)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdint.h)(0x6025237E)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdio.h)(0x60252374)
@@ -2028,7 +2078,8 @@ I (..\Devices\Devices.h\MA600_use.h)(0x6896A808)
 I (..\Devices\Devices.h\MA600_base.h)(0x6896A808)
 I (../Core/Inc/spi.h)(0x6896A808)
 I (..\Devices\Devices.h\DT7.h)(0x6896A808)
-I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x6896A808)
+I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x68970B55)
+I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x6896A808)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 I (../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h)(0x6896A808)
 F (..\APPs\APPs.c\Omni_Chassis.c)(0x68970116)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ../APPs/APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\omni_chassis.o --omf_browse draftofomniwheel\omni_chassis.crf --depend draftofomniwheel\omni_chassis.d)
@@ -2111,11 +2162,13 @@ I (..\Devices\Devices.h\MA600_use.h)(0x6896A808)
 I (..\Devices\Devices.h\MA600_base.h)(0x6896A808)
 I (../Core/Inc/spi.h)(0x6896A808)
 I (..\Devices\Devices.h\DT7.h)(0x6896A808)
-I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x6896A808)
-I (../APPs/APPs.h/Cloud_Control.h)(0x6896A808)
+I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x68970B55)
+I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x6896A808)
+I (../APPs/APPs.h/Cloud_Control.h)(0x68970948)
+I (../Algorithm/Algorithm.h/FeedForward.h)(0x6896F1DF)
+I (../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h)(0x6896A808)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 I (../APPs/APPs.h/PowerControl.h)(0x6896A808)
-I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x6896A808)
 F (..\APPs\APPs.c\Time_Stamp.c)(0x6896A808)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ../APPs/APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\time_stamp.o --omf_browse draftofomniwheel\time_stamp.crf --depend draftofomniwheel\time_stamp.d)
 I (../APPs/APPs.h/Time_Stamp.h)(0x6896A808)
 I (../Core/Inc/rtc.h)(0x6896A808)
@@ -2305,9 +2358,13 @@ I (..\Devices\Devices.h\MA600_use.h)(0x6896A808)
 I (..\Devices\Devices.h\MA600_base.h)(0x6896A808)
 I (../Core/Inc/spi.h)(0x6896A808)
 I (..\Devices\Devices.h\DT7.h)(0x6896A808)
-I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x6896A808)
-I (../APPs/APPs.h/Cloud_Control.h)(0x6896A808)
+I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x68970B55)
+I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x6896A808)
+I (../APPs/APPs.h/Omni_Chassis.h)(0x6896A808)
 I (..\Devices\Devices.h\M3508_Motor.h)(0x6896A808)
+I (../APPs/APPs.h/Cloud_Control.h)(0x68970948)
+I (../Algorithm/Algorithm.h/FeedForward.h)(0x6896F1DF)
+I (../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h)(0x6896A808)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 F (..\Tasks\Tasks.c\Task_CanReceive.c)(0x6896A808)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ../APPs/APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\task_canreceive.o --omf_browse draftofomniwheel\task_canreceive.crf --depend draftofomniwheel\task_canreceive.d)
 I (..\Tasks\Tasks.h\Task_CanReceive.h)(0x6896A808)
@@ -2390,10 +2447,12 @@ I (..\Devices\Devices.h\MA600_use.h)(0x6896A808)
 I (..\Devices\Devices.h\MA600_base.h)(0x6896A808)
 I (../Core/Inc/spi.h)(0x6896A808)
 I (..\Devices\Devices.h\DT7.h)(0x6896A808)
-I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x6896A808)
-I (../APPs/APPs.h/Cloud_Control.h)(0x6896A808)
-I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
+I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x68970B55)
 I (../APPs/APPs.h/Omni_Chassis.h)(0x6896A808)
+I (../APPs/APPs.h/Cloud_Control.h)(0x68970948)
+I (../Algorithm/Algorithm.h/FeedForward.h)(0x6896F1DF)
+I (../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h)(0x6896A808)
+I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 F (..\Tasks\Tasks.c\Task_CanSend.c)(0x6896A808)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ../APPs/APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\task_cansend.o --omf_browse draftofomniwheel\task_cansend.crf --depend draftofomniwheel\task_cansend.d)
 I (..\Tasks\Tasks.h\Task_CanSend.h)(0x6896A808)
 I (../BSP/BSP.h/typedef.h)(0x6896A808)
@@ -2623,8 +2682,10 @@ I (..\Devices\Devices.h\MA600_use.h)(0x6896A808)
 I (..\Devices\Devices.h\MA600_base.h)(0x6896A808)
 I (../Core/Inc/spi.h)(0x6896A808)
 I (..\Devices\Devices.h\DT7.h)(0x6896A808)
-I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x6896A808)
-I (../APPs/APPs.h/Cloud_Control.h)(0x6896A808)
+I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x68970B55)
+I (../APPs/APPs.h/Cloud_Control.h)(0x68970948)
+I (../Algorithm/Algorithm.h/FeedForward.h)(0x6896F1DF)
+I (../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h)(0x6896A808)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 F (..\Tasks\Tasks.c\Task_UsartSend.c)(0x6896A808)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ../APPs/APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\task_usartsend.o --omf_browse draftofomniwheel\task_usartsend.crf --depend draftofomniwheel\task_usartsend.d)
 I (..\Tasks\Tasks.h\Task_UsartSend.h)(0x6896A808)
@@ -2708,8 +2769,11 @@ I (..\Devices\Devices.h\MA600_use.h)(0x6896A808)
 I (..\Devices\Devices.h\MA600_base.h)(0x6896A808)
 I (../Core/Inc/spi.h)(0x6896A808)
 I (..\Devices\Devices.h\DT7.h)(0x6896A808)
-I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x6896A808)
-I (../APPs/APPs.h/Cloud_Control.h)(0x6896A808)
+I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x68970B55)
+I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x6896A808)
+I (../APPs/APPs.h/Cloud_Control.h)(0x68970948)
+I (../Algorithm/Algorithm.h/FeedForward.h)(0x6896F1DF)
+I (../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h)(0x6896A808)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 F (..\Tasks\Tasks.c\Task_RobotUI.c)(0x6896A808)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ../APPs/APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\task_robotui.o --omf_browse draftofomniwheel\task_robotui.crf --depend draftofomniwheel\task_robotui.d)
 I (..\Tasks\Tasks.h\Task_RobotUI.h)(0x6896A808)
@@ -2775,22 +2839,34 @@ I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x6896A808)
 I (../Core/Inc/usart.h)(0x6896A808)
 I (../BSP/BSP.h/typedef.h)(0x6896A808)
 I (../Core/Inc/can.h)(0x6896A808)
-I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x6896A808)
+I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x68970B55)
 I (../BSP/BSP.h/BSP_Can.h)(0x6896A808)
 I (..\Tasks\Tasks.h\Extern_Handles.h)(0x6896A808)
-I (..\Devices\Devices.h\M6020_Motor.h)(0x6896B7E2)
-I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdbool.h)(0x6025237C)
-I (..\Devices\Devices.h\M2006_Motor.h)(0x6896A808)
-I (..\Tasks\Tasks.h\Task_CanReceive.h)(0x6896A808)
+I (../APPs/APPs.h/Omni_Chassis.h)(0x6896A808)
+I (..\Devices\Devices.h\M3508_Motor.h)(0x6896A808)
 I (../Algorithm/Algorithm.h/PID.h)(0x6896A808)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (../Algorithm/Algorithm.h/kalman_filter.h)(0x6896A808)
+I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdbool.h)(0x6025237C)
 I (../Algorithm/Algorithm.h/FuzzyPID.h)(0x6896A808)
+I (../APPs/APPs.h/steer_chassis.h)(0x6896A808)
+I (../BSP/BSP.h/BSP_Usart.h)(0x6896A808)
+I (..\Devices\Devices.h\M2006_Motor.h)(0x6896A808)
+I (..\Tasks\Tasks.h\Task_CanReceive.h)(0x6896A808)
+I (..\Devices\Devices.h\M6020_Motor.h)(0x6896B7E2)
 I (..\Devices\Devices.h\Saber_C3.h)(0x6896A808)
+I (..\Devices\Devices.h\MA600_use.h)(0x6896A808)
+I (..\Devices\Devices.h\MA600_base.h)(0x6896A808)
+I (../Core/Inc/spi.h)(0x6896A808)
+I (..\Devices\Devices.h\DT7.h)(0x6896A808)
+I (../APPs/APPs.h/Cloud_Control.h)(0x68970948)
+I (../Algorithm/Algorithm.h/FeedForward.h)(0x6896F1DF)
+I (../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h)(0x6896A808)
+I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 I (../APPs/APPs.h/PowerControl.h)(0x6896A808)
 F (..\Tasks\Tasks.c\Task_OffLineCheck.c)(0x6896A808)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ../APPs/APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\task_offlinecheck.o --omf_browse draftofomniwheel\task_offlinecheck.crf --depend draftofomniwheel\task_offlinecheck.d)
 I (..\Tasks\Tasks.h\Task_OffLineCheck.h)(0x6896A808)
-I (../APPs/APPs.h/Cloud_Control.h)(0x6896A808)
+I (../APPs/APPs.h/Cloud_Control.h)(0x68970948)
 I (../Algorithm/Algorithm.h/PID.h)(0x6896A808)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdint.h)(0x6025237E)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdio.h)(0x60252374)
@@ -2842,7 +2918,11 @@ I (../Core/Inc/can.h)(0x6896A808)
 I (../Core/Inc/main.h)(0x6896A808)
 I (../APPs/APPs.h/struct_typedef.h)(0x6896A808)
 I (../BSP/BSP.h/typedef.h)(0x6896A808)
-I (..\Tasks\Tasks.h\Extern_Handles.h)(0x6896A808)
+I (../Algorithm/Algorithm.h/FeedForward.h)(0x6896F1DF)
+I (../APPs/APPs.h/Omni_Chassis.h)(0x6896A808)
+I (..\Devices\Devices.h\M3508_Motor.h)(0x6896A808)
+I (../APPs/APPs.h/steer_chassis.h)(0x6896A808)
+I (../BSP/BSP.h/BSP_Can.h)(0x6896A808)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x6896A808)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x6896A808)
 I (../Core/Inc/FreeRTOSConfig.h)(0x6896A808)
@@ -2857,6 +2937,20 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x6896A808)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x6896A808)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x6896A808)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x6896A808)
+I (../BSP/BSP.h/BSP_Usart.h)(0x6896A808)
+I (..\Devices\Devices.h\M2006_Motor.h)(0x6896A808)
+I (..\Tasks\Tasks.h\Task_CanReceive.h)(0x6896A808)
+I (..\Tasks\Tasks.h\Extern_Handles.h)(0x6896A808)
+I (../Core/Inc/usart.h)(0x6896A808)
+I (..\Devices\Devices.h\Saber_C3.h)(0x6896A808)
+I (..\Devices\Devices.h\MA600_use.h)(0x6896A808)
+I (..\Devices\Devices.h\MA600_base.h)(0x6896A808)
+I (../Core/Inc/spi.h)(0x6896A808)
+I (..\Devices\Devices.h\DT7.h)(0x6896A808)
+I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x68970B55)
+I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x6896A808)
+I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
+I (../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h)(0x6896A808)
 F (..\Tasks\Tasks.c\Task_SPI2Receive.c)(0x6896A808)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ../APPs/APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\task_spi2receive.o --omf_browse draftofomniwheel\task_spi2receive.crf --depend draftofomniwheel\task_spi2receive.d)
 I (..\Tasks\Tasks.h\Task_SPI2Receive.h)(0x6896A808)
 I (..\Devices\Devices.h\MA600_use.h)(0x6896A808)
@@ -2987,8 +3081,12 @@ I (..\Devices\Devices.h\MA600_use.h)(0x6896A808)
 I (..\Devices\Devices.h\MA600_base.h)(0x6896A808)
 I (../Core/Inc/spi.h)(0x6896A808)
 I (..\Devices\Devices.h\DT7.h)(0x6896A808)
-I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x6896A808)
-I (../APPs/APPs.h/Cloud_Control.h)(0x6896A808)
+I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x68970B55)
+I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x6896A808)
+I (../APPs/APPs.h/Omni_Chassis.h)(0x6896A808)
+I (../APPs/APPs.h/Cloud_Control.h)(0x68970948)
+I (../Algorithm/Algorithm.h/FeedForward.h)(0x6896F1DF)
+I (../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h)(0x6896A808)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 F (../USB_DEVICE/App/usb_device.c)(0x6896A808)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 -Otime --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ../APPs/APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\usb_device.o --omf_browse draftofomniwheel\usb_device.crf --depend draftofomniwheel\usb_device.d)
 I (../USB_DEVICE/App/usb_device.h)(0x6896A808)

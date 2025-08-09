@@ -9,12 +9,6 @@
  *
  */
 #include "BSP_BoardCommunication.h"
-#include "queue.h"
-#include "Protocol_Judgement.h"
-#include "Omni_Chassis.h"
-#include "Cloud_Control.h"
-#include "Saber_C3.h"
-#include "M2006_Motor.h"
 
 ControlMessge ControlMes;
 void Board2_To_1(void);
@@ -47,21 +41,25 @@ void Board2_To_1(void)
 	//图传键鼠映射，分别是鼠标x轴、y轴、z轴（z轴是滚轮）、左键、右键，此时只传了鼠标的信息
 	//云台只需要鼠标操控，因此在上板接收时需要扩展IT_keycommand[8]至IT_keycommand[12]（后四位直接赋0），
 	//这样才能与遥控器键鼠映射的格式一致
-//	IT_keycommand[0] = ext_robot_keycommand.data.mouse_x >> 8;
-//	IT_keycommand[1] = ext_robot_keycommand.data.mouse_x;
-//	IT_keycommand[2] = ext_robot_keycommand.data.mouse_y >> 8;
-//	IT_keycommand[3] = ext_robot_keycommand.data.mouse_y;
-//	IT_keycommand[4] = ext_robot_keycommand.data.mouse_z >> 8;
-//	IT_keycommand[5] = ext_robot_keycommand.data.mouse_z;
-//	IT_keycommand[6] = ext_robot_keycommand.data.left_button_down;
-//	IT_keycommand[7] = ext_robot_keycommand.data.right_button_down;
+	//	IT_keycommand[0] = ext_robot_keycommand.data.mouse_x >> 8;
+	//	IT_keycommand[1] = ext_robot_keycommand.data.mouse_x;
+	//	IT_keycommand[2] = ext_robot_keycommand.data.mouse_y >> 8;
+	//	IT_keycommand[3] = ext_robot_keycommand.data.mouse_y;
+	//	IT_keycommand[4] = ext_robot_keycommand.data.mouse_z >> 8;
+	//	IT_keycommand[5] = ext_robot_keycommand.data.mouse_z;
+	//	IT_keycommand[6] = ext_robot_keycommand.data.left_button_down;
+	//	IT_keycommand[7] = ext_robot_keycommand.data.right_button_down;
 	
   //数据发送
   Can_Fun.CAN_SendData(CAN_SendHandle, &hcan2, CAN_ID_STD, CAN_ID_GIMBAL, data);
   //Can_Fun.CAN_SendData(CAN_SendHandle, &hcan2, CAN_ID_STD, CAN_ID_KEYCOMMAND, IT_keycommand);
 }
 
-//此函数用来解析CAN数据，同时将结果直接赋值给底盘
+/**
+  * @brief 解析CAN数据，同时将结果直接赋值给底盘
+  * @param RxMessage 接收到的数据
+  * @retval None
+  */
 void Board2_getChassisInfo(Can_Export_Data_t RxMessage)
 {
     float vx = (int16_t)(RxMessage.CANx_Export_RxMessage[0] << 8 | RxMessage.CANx_Export_RxMessage[1]);

@@ -85,6 +85,10 @@ draftofomniwheel\bsp_boardcommunication.o: ..\Devices\Devices.h\MA600_base.h
 draftofomniwheel\bsp_boardcommunication.o: ../Core/Inc/spi.h
 draftofomniwheel\bsp_boardcommunication.o: ..\Devices\Devices.h\DT7.h
 draftofomniwheel\bsp_boardcommunication.o: ../APPs/APPs.h/steer_chassis.h
+draftofomniwheel\bsp_boardcommunication.o: ../Protocol/Protocol.h/BSP_BoardCommunication.h
 draftofomniwheel\bsp_boardcommunication.o: ../APPs/APPs.h/Cloud_Control.h
+draftofomniwheel\bsp_boardcommunication.o: ../Algorithm/Algorithm.h/FeedForward.h
+draftofomniwheel\bsp_boardcommunication.o: ../APPs/APPs.h/Omni_Chassis.h
+draftofomniwheel\bsp_boardcommunication.o: ../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h
 draftofomniwheel\bsp_boardcommunication.o: ..\Devices\Devices.h\M3508_Motor.h
 draftofomniwheel\bsp_boardcommunication.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdarg.h

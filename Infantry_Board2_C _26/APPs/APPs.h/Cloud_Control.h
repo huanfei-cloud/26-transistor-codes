@@ -10,16 +10,23 @@
  */
 #ifndef __CLOUD_CONTROL_H
 #define __CLOUD_CONTROL_H
+
 #include "PID.h"
 #include "kalman_filter.h"
 #include "M6020_Motor.h"
 #include "typedef.h"
-//#include <AddMath.h>
 #include <math.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
 #include "FuzzyPID.h"
+#include "FeedForward.h"
+#include "Omni_Chassis.h"
+#include "BSP_Can.h"
+#include "Extern_Handles.h"
+#include "BSP_BoardCommunication.h"
+#include "Saber_C3.h"
+#include "Gimbal_Chassis_Pitch_Angle.h"
 
 //重新安装电机或移用代码时需要重新测量这些值（toalAngle）后再允许运动。
 

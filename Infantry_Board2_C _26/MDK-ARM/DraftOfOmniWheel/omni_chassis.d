@@ -84,8 +84,12 @@ draftofomniwheel\omni_chassis.o: ../Core/Inc/spi.h
 draftofomniwheel\omni_chassis.o: ..\Devices\Devices.h\DT7.h
 draftofomniwheel\omni_chassis.o: ../APPs/APPs.h/steer_chassis.h
 draftofomniwheel\omni_chassis.o: ../Protocol/Protocol.h/BSP_BoardCommunication.h
+draftofomniwheel\omni_chassis.o: ../Protocol/Protocol.h/Protocol_Judgement.h
+draftofomniwheel\omni_chassis.o: ../APPs/APPs.h/Omni_Chassis.h
 draftofomniwheel\omni_chassis.o: ../APPs/APPs.h/Cloud_Control.h
+draftofomniwheel\omni_chassis.o: ../Algorithm/Algorithm.h/FeedForward.h
+draftofomniwheel\omni_chassis.o: ../Protocol/Protocol.h/BSP_BoardCommunication.h
+draftofomniwheel\omni_chassis.o: ../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h
 draftofomniwheel\omni_chassis.o: ..\Devices\Devices.h\M3508_Motor.h
 draftofomniwheel\omni_chassis.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdarg.h
 draftofomniwheel\omni_chassis.o: ../APPs/APPs.h/PowerControl.h
-draftofomniwheel\omni_chassis.o: ../Protocol/Protocol.h/Protocol_Judgement.h

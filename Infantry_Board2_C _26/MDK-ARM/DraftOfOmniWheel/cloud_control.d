@@ -86,6 +86,9 @@ draftofomniwheel\cloud_control.o: ../Core/Inc/spi.h
 draftofomniwheel\cloud_control.o: ..\Devices\Devices.h\DT7.h
 draftofomniwheel\cloud_control.o: ../APPs/APPs.h/steer_chassis.h
 draftofomniwheel\cloud_control.o: ../Protocol/Protocol.h/BSP_BoardCommunication.h
+draftofomniwheel\cloud_control.o: ../Protocol/Protocol.h/Protocol_Judgement.h
+draftofomniwheel\cloud_control.o: ../APPs/APPs.h/Omni_Chassis.h
+draftofomniwheel\cloud_control.o: ../APPs/APPs.h/Cloud_Control.h
 draftofomniwheel\cloud_control.o: ..\Devices\Devices.h\M3508_Motor.h
 draftofomniwheel\cloud_control.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdarg.h
 draftofomniwheel\cloud_control.o: ../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h

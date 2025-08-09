@@ -15,10 +15,9 @@
 #include "Gimbal_Chassis_Pitch_Angle.h"
   
 // 定义PI常量  
-#ifndef M_PI  
 #define M_PI 3.1415926536f 
-#endif  
-  
+
+
 // 将角度从度转换为弧度  
 float degreesToRadians(float degrees) 
 {  

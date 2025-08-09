@@ -76,6 +76,7 @@ draftofomniwheel\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RT
 draftofomniwheel\freertos.o: ..\Devices\Devices.h\M6020_Motor.h
 draftofomniwheel\freertos.o: ../Core/Inc/usart.h
 draftofomniwheel\freertos.o: ../APPs/APPs.h/Cloud_Control.h
+draftofomniwheel\freertos.o: ../Algorithm/Algorithm.h/FeedForward.h
 draftofomniwheel\freertos.o: ../APPs/APPs.h/Omni_Chassis.h
 draftofomniwheel\freertos.o: ..\Devices\Devices.h\M3508_Motor.h
 draftofomniwheel\freertos.o: ../APPs/APPs.h/steer_chassis.h
@@ -86,9 +87,12 @@ draftofomniwheel\freertos.o: ../Core/Inc/spi.h
 draftofomniwheel\freertos.o: ..\Devices\Devices.h\DT7.h
 draftofomniwheel\freertos.o: ../APPs/APPs.h/steer_chassis.h
 draftofomniwheel\freertos.o: ../Protocol/Protocol.h/BSP_BoardCommunication.h
+draftofomniwheel\freertos.o: ../Protocol/Protocol.h/Protocol_Judgement.h
+draftofomniwheel\freertos.o: ../APPs/APPs.h/Omni_Chassis.h
+draftofomniwheel\freertos.o: ../APPs/APPs.h/Cloud_Control.h
 draftofomniwheel\freertos.o: ..\Devices\Devices.h\M3508_Motor.h
 draftofomniwheel\freertos.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdarg.h
-draftofomniwheel\freertos.o: ../Protocol/Protocol.h/Protocol_Judgement.h
+draftofomniwheel\freertos.o: ../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h
 draftofomniwheel\freertos.o: ..\Tasks\Tasks.h\Task_LED.h
 draftofomniwheel\freertos.o: ../BSP/BSP.h/BSP_Test.h
 draftofomniwheel\freertos.o: ..\Devices\Devices.h\N100.h

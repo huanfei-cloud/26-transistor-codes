@@ -85,7 +85,10 @@ draftofomniwheel\task_canreceive.o: ../Core/Inc/spi.h
 draftofomniwheel\task_canreceive.o: ..\Devices\Devices.h\DT7.h
 draftofomniwheel\task_canreceive.o: ../APPs/APPs.h/steer_chassis.h
 draftofomniwheel\task_canreceive.o: ../Protocol/Protocol.h/BSP_BoardCommunication.h
-draftofomniwheel\task_canreceive.o: ../APPs/APPs.h/Cloud_Control.h
-draftofomniwheel\task_canreceive.o: ..\Devices\Devices.h\M3508_Motor.h
-draftofomniwheel\task_canreceive.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdarg.h
 draftofomniwheel\task_canreceive.o: ../APPs/APPs.h/Omni_Chassis.h
+draftofomniwheel\task_canreceive.o: ..\Devices\Devices.h\M3508_Motor.h
+draftofomniwheel\task_canreceive.o: ../APPs/APPs.h/Cloud_Control.h
+draftofomniwheel\task_canreceive.o: ../Algorithm/Algorithm.h/FeedForward.h
+draftofomniwheel\task_canreceive.o: ../Protocol/Protocol.h/BSP_BoardCommunication.h
+draftofomniwheel\task_canreceive.o: ../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h
+draftofomniwheel\task_canreceive.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdarg.h
