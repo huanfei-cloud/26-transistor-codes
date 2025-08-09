@@ -1,0 +1,11 @@
+infantry_board1\user_lib.o: ..\Algorithm\Algorithm.c\user_lib.c
+infantry_board1\user_lib.o: ../Algorithm/Algorithm.h/user_lib.h
+infantry_board1\user_lib.o: ../APPs/APPs.h/struct_typedef.h
+infantry_board1\user_lib.o: ../Middlewares/ST/ARM/DSP/Inc/arm_math.h
+infantry_board1\user_lib.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+infantry_board1\user_lib.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdint.h
+infantry_board1\user_lib.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+infantry_board1\user_lib.o: D:\mdk\ARM\ARMCC\Bin\..\include\string.h
+infantry_board1\user_lib.o: D:\mdk\ARM\ARMCC\Bin\..\include\math.h
+infantry_board1\user_lib.o: D:\mdk\ARM\ARMCC\Bin\..\include\float.h
+infantry_board1\user_lib.o: D:\mdk\ARM\ARMCC\Bin\..\include\limits.h
