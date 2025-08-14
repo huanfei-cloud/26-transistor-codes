@@ -1,0 +1,33 @@
+/**
+ * @file FrictionWheel.c
+ * @author Why
+ * @brief 处理摩擦轮的控制问题
+ * @version 0.1
+ * @date 2023-08-14
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+#include "FrictionWheel.h"
+
+/**************用户数据定义****************/
+void Fric_Processing(void);
+
+/****************接口定义******************/
+Fric_Fun_t Fric_Fun = Fric_FunGroundInit;
+#undef Fric_FunGroundInit
+Fric_Data_t Fric_Data = Fric_DataGroundInit;
+#undef Fric_DataGroundInit
+
+/**
+  * @brief  摩擦轮控制总处理函数
+  * @param  void
+  * @retval void
+  * @attention
+  */
+void Fric_Processing()
+{
+	uint8_t data[8];
+
+	M3508M3508_FricL_Pid
+}

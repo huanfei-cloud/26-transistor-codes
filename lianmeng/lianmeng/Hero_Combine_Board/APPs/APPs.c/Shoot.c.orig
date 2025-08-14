@@ -1,0 +1,36 @@
+/**
+ * @file Shoot.c
+ * @author Why
+ * @brief 综合摩擦轮和拨盘电机的处理，并处理热量、射速、卡弹等问题
+ * @version 0.1
+ * @date 2023-08-14
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+#include "Shoot.h"
+#include "BSP_Can.h"
+#include "FrictionWheel.h"
+#include "Dial.h"
+
+/**************用户数据定义****************/
+void Shoot_Processing(void);
+
+/****************接口定义******************/
+Shoot_Fun_t Shoot_Fun = Shoot_FunGroundInit;
+#undef Shoot_FunGroundInit
+Shoot_Data_t Shoot_Data = Shoot_DataGroundInit;
+#undef Shoot_DataGroundInit
+
+/**
+  * @brief  射击总处理函数
+  * @param  void
+  * @retval void
+  * @attention
+  */
+void Shoot_Processing()
+{
+	Fric_Fun.Fric_Processing();            //处理摩擦轮
+	Dial_Fun.Dial_Processing();            //处理拨盘电机
+}
+
