@@ -75,16 +75,16 @@ void DT7_Handle(void)
 		//3508麦克纳姆轮底盘速度获取
 		if(RC_CtrlData.rc.s1 == RC_SW_DOWN)
 		{
-			chassis_control.Speed_ToCloud.vx = RC_CtrlData.rc.ch3; //左手上下
-			chassis_control.Speed_ToCloud.vy = RC_CtrlData.rc.ch2; //左手左右
-			chassis_control.Speed_ToCloud.wz = -1*RC_CtrlData.wheel/100; //滑轮
+			Omni_Data.Speed_ToCloud.vx = RC_CtrlData.rc.ch3; //左手上下
+			Omni_Data.Speed_ToCloud.vy = RC_CtrlData.rc.ch2; //左手左右
+			Omni_Data.Speed_ToCloud.vw = -1*RC_CtrlData.wheel/100; //滑轮
 			Cloud.Target_Yaw+=RC_CtrlData.wheel * 0.0005 * 25;
 		}
 		else
 		{
-			chassis_control.Speed_ToCloud.vx = 0; //左手上下
-			chassis_control.Speed_ToCloud.vy = 0; //
-			chassis_control.Speed_ToCloud.wz = 0; //
+			Omni_Data.Speed_ToCloud.vx = 0; //左手上下
+			Omni_Data.Speed_ToCloud.vy = 0; //
+			Omni_Data.Speed_ToCloud.vw = 0; //
 		}
 		
 		HAL_UARTEx_ReceiveToIdle_DMA(&huart3,DT7_Rx_Data,sizeof(DT7_Rx_Data));

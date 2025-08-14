@@ -10,7 +10,7 @@ draftofomniwheel\powercontrol.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_h
 draftofomniwheel\powercontrol.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 draftofomniwheel\powercontrol.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
 draftofomniwheel\powercontrol.o: ../Drivers/CMSIS/Include/core_cm4.h
-draftofomniwheel\powercontrol.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stdint.h
+draftofomniwheel\powercontrol.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdint.h
 draftofomniwheel\powercontrol.o: ../Drivers/CMSIS/Include/cmsis_version.h
 draftofomniwheel\powercontrol.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 draftofomniwheel\powercontrol.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -18,7 +18,7 @@ draftofomniwheel\powercontrol.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 draftofomniwheel\powercontrol.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 draftofomniwheel\powercontrol.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 draftofomniwheel\powercontrol.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-draftofomniwheel\powercontrol.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stddef.h
+draftofomniwheel\powercontrol.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stddef.h
 draftofomniwheel\powercontrol.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 draftofomniwheel\powercontrol.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 draftofomniwheel\powercontrol.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -41,9 +41,9 @@ draftofomniwheel\powercontrol.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_h
 draftofomniwheel\powercontrol.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h
 draftofomniwheel\powercontrol.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 draftofomniwheel\powercontrol.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
-draftofomniwheel\powercontrol.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\string.h
-draftofomniwheel\powercontrol.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stdio.h
-draftofomniwheel\powercontrol.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\math.h
+draftofomniwheel\powercontrol.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\string.h
+draftofomniwheel\powercontrol.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdio.h
+draftofomniwheel\powercontrol.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\math.h
 draftofomniwheel\powercontrol.o: ../APPs/APPs.h/struct_typedef.h
 draftofomniwheel\powercontrol.o: ../Algorithm/Algorithm.h/arm_math.h
 draftofomniwheel\powercontrol.o: ../Drivers/CMSIS/Include/core_cm4.h

@@ -1,8 +1,8 @@
 draftofomniwheel\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c
-draftofomniwheel\event_groups.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stdlib.h
+draftofomniwheel\event_groups.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdlib.h
 draftofomniwheel\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-draftofomniwheel\event_groups.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stddef.h
-draftofomniwheel\event_groups.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stdint.h
+draftofomniwheel\event_groups.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stddef.h
+draftofomniwheel\event_groups.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdint.h
 draftofomniwheel\event_groups.o: ../Core/Inc/FreeRTOSConfig.h
 draftofomniwheel\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 draftofomniwheel\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

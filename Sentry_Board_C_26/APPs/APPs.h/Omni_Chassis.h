@@ -45,7 +45,7 @@ typedef struct
     } Speed_ToChassis;          //�����ڵ��̳�������ϵ�µ��ٶȱ�����Vx,Vy,Vw��
 		
 		fp32 Angle_ChassisToCloud;
-		int16_t M2006_Setspeed[4];	 //�ĸ�2006����Ŀ��ת��
+		int16_t M3508_Setspeed[4];	 //�ĸ�2006����Ŀ��ת��
 } Omni_Data_t;
 
 typedef struct

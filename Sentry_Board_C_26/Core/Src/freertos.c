@@ -69,7 +69,6 @@ QueueHandle_t CAN_SendHandle;
 osThreadId Task_Can1MsgRecHandle;
 osThreadId Task_Can2MsgRecHandle;
 osThreadId Task_CanSendHandle;
-osThreadId Task_SPI2MsgRecHandle;
 osThreadId Move_DataHandle;
 osThreadId led_RGB_flow_handle;
 osThreadId Robot_Control_Handle;
@@ -85,7 +84,6 @@ osThreadId StartTaskHandle;
 extern void Can1Receives(void const *argument);
 extern void Can2Receives(void const *argument);
 extern void AllCanSend(void const *argument);
-extern void SPI2Receives(void const *argument);
 extern void Robot_Control(void const *argument);
 extern void Show_Data(void const *argument);
 extern void Robot_UI(void const *argument);
@@ -201,10 +199,6 @@ void MX_FREERTOS_Init(void) {
     osThreadDef(Task_OffLineCheck_Handle, Off_Line_Check, osPriorityHigh, 0, 128);
     Task_OffLineCheck_Handle = osThreadCreate(osThread(Task_OffLineCheck_Handle), NULL);
 		
-	/* definitiom and creation of SPI2_Receive_Task */
-	  osThreadDef(SPI2_ReceiveTask, SPI2Receives, osPriorityRealtime, 0, 256);
-    Task_SPI2MsgRecHandle = osThreadCreate(osThread(SPI2_ReceiveTask), NULL);
-		
 	/* definition and creation of vofa_Task */
 	  osThreadDef(VofaAssistTask, Vofa_Assist, osPriorityRealtime, 0, 128);
     Task_VofaAssistHandle = osThreadCreate(osThread(VofaAssistTask), NULL);
@@ -232,17 +226,18 @@ void ALL_Init(void const * argument)
 	    /* CAN�жϳ�ʼ�� */
         Can_Fun.CAN_IT_Init(&hcan1, Can1_Type);
         Can_Fun.CAN_IT_Init(&hcan2, Can2_Type);
-		  /*编码器初始化*/
-		  MA600sInit();
 		  /*���̳�ʼ��*/
-		   chassis_init();
+		   M3508_Init(&M3508_Array[0],0x201);
+		   M3508_Init(&M3508_Array[1],0x202);
+		   M3508_Init(&M3508_Array[2],0x203);
+		   M3508_Init(&M3508_Array[3],0x204);
 		  /*ң������ʼ��*/
 		   DT7_Init();
 	    /* PID��ʼ�� */
-//	    for(int i = 0; i <= 3; i++)
-//        {
-//            Incremental_PIDInit(&M3508_Array_Pid[i], 20.0f, 0.22f, 0, 16384, 6000);
-//        }
+	    for(int i = 0; i <= 3; i++)
+        {
+            Incremental_PIDInit(&M3508_Array_Pid[i], 20.0f, 0.22f, 0, 16384, 6000);
+        }
 		    /**Yaw轴电机PID初始化**/
         Position_PIDInit(&M6020s_YawIPID, 1550.0f, 0.1f, 1200.0, 0, 30000, 10000 , 6000);
         Position_PIDInit(&M6020s_YawOPID, 0.083f, 0.00001f, 0.0, 0, 30000, 10000 , 10000);

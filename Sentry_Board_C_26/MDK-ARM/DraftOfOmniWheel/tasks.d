@@ -1,9 +1,9 @@
 draftofomniwheel\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/tasks.c
-draftofomniwheel\tasks.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stdlib.h
-draftofomniwheel\tasks.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\string.h
+draftofomniwheel\tasks.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdlib.h
+draftofomniwheel\tasks.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\string.h
 draftofomniwheel\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-draftofomniwheel\tasks.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stddef.h
-draftofomniwheel\tasks.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stdint.h
+draftofomniwheel\tasks.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stddef.h
+draftofomniwheel\tasks.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdint.h
 draftofomniwheel\tasks.o: ../Core/Inc/FreeRTOSConfig.h
 draftofomniwheel\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 draftofomniwheel\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

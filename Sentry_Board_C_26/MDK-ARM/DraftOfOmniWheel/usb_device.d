@@ -3,7 +3,7 @@ draftofomniwheel\usb_device.o: ../USB_DEVICE/App/usb_device.h
 draftofomniwheel\usb_device.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 draftofomniwheel\usb_device.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
 draftofomniwheel\usb_device.o: ../Drivers/CMSIS/Include/core_cm4.h
-draftofomniwheel\usb_device.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stdint.h
+draftofomniwheel\usb_device.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdint.h
 draftofomniwheel\usb_device.o: ../Drivers/CMSIS/Include/cmsis_version.h
 draftofomniwheel\usb_device.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 draftofomniwheel\usb_device.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -15,7 +15,7 @@ draftofomniwheel\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal
 draftofomniwheel\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
 draftofomniwheel\usb_device.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 draftofomniwheel\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-draftofomniwheel\usb_device.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stddef.h
+draftofomniwheel\usb_device.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stddef.h
 draftofomniwheel\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 draftofomniwheel\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 draftofomniwheel\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -40,11 +40,11 @@ draftofomniwheel\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_
 draftofomniwheel\usb_device.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
 draftofomniwheel\usb_device.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h
 draftofomniwheel\usb_device.o: ../USB_DEVICE/Target/usbd_conf.h
-draftofomniwheel\usb_device.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stdio.h
-draftofomniwheel\usb_device.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stdlib.h
-draftofomniwheel\usb_device.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\string.h
+draftofomniwheel\usb_device.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdio.h
+draftofomniwheel\usb_device.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdlib.h
+draftofomniwheel\usb_device.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\string.h
 draftofomniwheel\usb_device.o: ../Core/Inc/main.h
-draftofomniwheel\usb_device.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\math.h
+draftofomniwheel\usb_device.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\math.h
 draftofomniwheel\usb_device.o: ../APPs/APPs.h/struct_typedef.h
 draftofomniwheel\usb_device.o: ../Algorithm/Algorithm.h/arm_math.h
 draftofomniwheel\usb_device.o: ../Drivers/CMSIS/Include/core_cm4.h

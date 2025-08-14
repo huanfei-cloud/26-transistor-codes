@@ -1,4 +1,4 @@
-// 包含必要的头文件
+
 #include "Omni_Chassis.h"   // 全向底盘控制相关定义
 #include "BSP_Can.h"        // CAN总线驱动
 #include "Extern_Handles.h" // 外设句柄
@@ -111,7 +111,7 @@ void Omni_calc()
                     (Omni_Data.Speed_ToChassis.vy+Omni_Data.Speed_ToChassis.vw*Length_steer_x)*sin(rf_steer_angle/180*pi)) * wheel_rpm_ratio; 
 
     // 将计算结果复制到底盘数据结构的M2006_Setspeed数组
-    memcpy(Omni_Data.M2006_Setspeed, wheel_rpm, sizeof(wheel_rpm)); 
+    memcpy(Omni_Data.M3508_Setspeed, wheel_rpm, sizeof(wheel_rpm)); 
 }
 
 /**
@@ -123,10 +123,10 @@ void Omni_calc()
 void Omni_Set_Motor_Speed(M3508s_t *Motor )
 {
     // 设置每个电机的目标转速（应用灵敏度系数）
-    Motor[0].targetSpeed = Omni_Data.M2006_Setspeed[0]*SEN_SPEED;
-    Motor[1].targetSpeed = Omni_Data.M2006_Setspeed[1]*SEN_SPEED;
-    Motor[2].targetSpeed = Omni_Data.M2006_Setspeed[2]*SEN_SPEED;
-    Motor[3].targetSpeed = Omni_Data.M2006_Setspeed[3]*SEN_SPEED;
+    Motor[0].targetSpeed = Omni_Data.M3508_Setspeed[0]*SEN_SPEED;
+    Motor[1].targetSpeed = Omni_Data.M3508_Setspeed[1]*SEN_SPEED;
+    Motor[2].targetSpeed = Omni_Data.M3508_Setspeed[2]*SEN_SPEED;
+    Motor[3].targetSpeed = Omni_Data.M3508_Setspeed[3]*SEN_SPEED;
 }
 
 /**

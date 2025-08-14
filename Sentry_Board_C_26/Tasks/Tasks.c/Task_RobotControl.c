@@ -10,12 +10,6 @@
  */
 
 #include "Task_RobotControl.h"
-#include "PowerControl.h"
-#include "Omni_Chassis.h"
-#include "steer_chassis.h"
-#include "Cloud_Control.h"
-#include "Saber_C3.h"
-#include "DT7.h"
 
 void Robot_Control(void const *argument)
 {
@@ -37,7 +31,7 @@ void Robot_Control(void const *argument)
 				Board2_FUN.Board2_To_1();
         DT7_Handle();
 				PowerControl_Fun.PowerControl_MsgSend();
-				steer_chassis_out();
+				Omni_Fun.Omni_Chassis_Out();
         vTaskDelayUntil(&xLastWakeTime, TimeIncrement);
     }
 }

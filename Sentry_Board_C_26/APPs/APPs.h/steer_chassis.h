@@ -25,7 +25,6 @@
 
 #define r_chassis 0.23
 #define s_chassis 0.06
-#define pi 3.14159f
 
 //底盘运动模式
 typedef enum

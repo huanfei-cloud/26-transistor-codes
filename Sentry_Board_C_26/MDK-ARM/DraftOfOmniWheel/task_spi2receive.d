@@ -2,7 +2,7 @@ draftofomniwheel\task_spi2receive.o: ..\Tasks\Tasks.c\Task_SPI2Receive.c
 draftofomniwheel\task_spi2receive.o: ..\Tasks\Tasks.h\Task_SPI2Receive.h
 draftofomniwheel\task_spi2receive.o: ..\Devices\Devices.h\MA600_use.h
 draftofomniwheel\task_spi2receive.o: ..\Devices\Devices.h\MA600_base.h
-draftofomniwheel\task_spi2receive.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stdint.h
+draftofomniwheel\task_spi2receive.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdint.h
 draftofomniwheel\task_spi2receive.o: ../Core/Inc/spi.h
 draftofomniwheel\task_spi2receive.o: ../Core/Inc/main.h
 draftofomniwheel\task_spi2receive.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
@@ -19,7 +19,7 @@ draftofomniwheel\task_spi2receive.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 draftofomniwheel\task_spi2receive.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 draftofomniwheel\task_spi2receive.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 draftofomniwheel\task_spi2receive.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-draftofomniwheel\task_spi2receive.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stddef.h
+draftofomniwheel\task_spi2receive.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stddef.h
 draftofomniwheel\task_spi2receive.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 draftofomniwheel\task_spi2receive.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 draftofomniwheel\task_spi2receive.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -42,9 +42,9 @@ draftofomniwheel\task_spi2receive.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4
 draftofomniwheel\task_spi2receive.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h
 draftofomniwheel\task_spi2receive.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 draftofomniwheel\task_spi2receive.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
-draftofomniwheel\task_spi2receive.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\string.h
-draftofomniwheel\task_spi2receive.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stdio.h
-draftofomniwheel\task_spi2receive.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\math.h
+draftofomniwheel\task_spi2receive.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\string.h
+draftofomniwheel\task_spi2receive.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdio.h
+draftofomniwheel\task_spi2receive.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\math.h
 draftofomniwheel\task_spi2receive.o: ../APPs/APPs.h/struct_typedef.h
 draftofomniwheel\task_spi2receive.o: ../Algorithm/Algorithm.h/arm_math.h
 draftofomniwheel\task_spi2receive.o: ../Drivers/CMSIS/Include/core_cm4.h
