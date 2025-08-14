@@ -106,6 +106,7 @@ int main(void)
   MX_USART6_UART_Init();
   MX_RTC_Init();
   MX_SPI2_Init();
+  MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
   delay_init();
 	HAL_Delay(500);

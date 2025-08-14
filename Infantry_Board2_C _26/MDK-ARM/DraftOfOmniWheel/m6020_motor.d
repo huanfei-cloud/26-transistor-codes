@@ -1,5 +1,5 @@
 draftofomniwheel\m6020_motor.o: ..\Devices\Devices.c\M6020_Motor.c
-draftofomniwheel\m6020_motor.o: ..\Devices\Devices.h\M6020_Motor.h
+draftofomniwheel\m6020_motor.o: ../Devices/Devices.h/M6020_Motor.h
 draftofomniwheel\m6020_motor.o: ../Core/Inc/can.h
 draftofomniwheel\m6020_motor.o: ../Core/Inc/main.h
 draftofomniwheel\m6020_motor.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h

@@ -9,6 +9,9 @@
 #ifndef TASK_VOFA_H
 #define TASK_VOFA_H
 
+#include "Extern_Handles.h"
+#include "vofa.h"
+#include "M6020_Motor.h"
 
 void Vofa_Assist(void const *argument);
 

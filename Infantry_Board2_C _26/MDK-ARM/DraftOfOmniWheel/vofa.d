@@ -1,6 +1,6 @@
-draftofomniwheel\vofa.o: ..\Debug Assist\vofa.c
-draftofomniwheel\vofa.o: ..\Debug Assist\vofa.h
-draftofomniwheel\vofa.o: ..\Debug Assist\sys.h
+draftofomniwheel\vofa.o: ..\Debug Assist\Debug Assist.c\vofa.c
+draftofomniwheel\vofa.o: ..\Debug Assist\Debug Assist.h\vofa.h
+draftofomniwheel\vofa.o: ..\Debug Assist\Debug Assist.h\sys.h
 draftofomniwheel\vofa.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 draftofomniwheel\vofa.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
 draftofomniwheel\vofa.o: ../Drivers/CMSIS/Include/core_cm4.h

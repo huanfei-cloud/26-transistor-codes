@@ -1,6 +1,6 @@
 draftofomniwheel\ma600_use.o: ..\Devices\Devices.c\MA600_use.c
-draftofomniwheel\ma600_use.o: ..\Devices\Devices.h\MA600_use.h
-draftofomniwheel\ma600_use.o: ..\Devices\Devices.h\MA600_base.h
+draftofomniwheel\ma600_use.o: ../Devices/Devices.h/MA600_use.h
+draftofomniwheel\ma600_use.o: ../Devices/Devices.h/MA600_base.h
 draftofomniwheel\ma600_use.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdint.h
 draftofomniwheel\ma600_use.o: ../Core/Inc/spi.h
 draftofomniwheel\ma600_use.o: ../Core/Inc/main.h
@@ -47,3 +47,17 @@ draftofomniwheel\ma600_use.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\m
 draftofomniwheel\ma600_use.o: ../APPs/APPs.h/struct_typedef.h
 draftofomniwheel\ma600_use.o: ../Algorithm/Algorithm.h/arm_math.h
 draftofomniwheel\ma600_use.o: ../Drivers/CMSIS/Include/core_cm4.h
+draftofomniwheel\ma600_use.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+draftofomniwheel\ma600_use.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+draftofomniwheel\ma600_use.o: ../Core/Inc/FreeRTOSConfig.h
+draftofomniwheel\ma600_use.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+draftofomniwheel\ma600_use.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+draftofomniwheel\ma600_use.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+draftofomniwheel\ma600_use.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+draftofomniwheel\ma600_use.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+draftofomniwheel\ma600_use.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+draftofomniwheel\ma600_use.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+draftofomniwheel\ma600_use.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+draftofomniwheel\ma600_use.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+draftofomniwheel\ma600_use.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
+draftofomniwheel\ma600_use.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h

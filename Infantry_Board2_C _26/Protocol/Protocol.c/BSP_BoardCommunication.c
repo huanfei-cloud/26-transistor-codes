@@ -10,17 +10,27 @@
  */
 #include "BSP_BoardCommunication.h"
 
+/********变量声明********/
 ControlMessge ControlMes;
+float yaw_velocity = 0;
+
+/********全局变量声明********/
+extern Saber_Angle_t Saber_Angle;
+/********函数声明********/
 void Board2_To_1(void);
 void Board2_getChassisInfo(Can_Export_Data_t RxMessage);
 void Board2_getGimbalInfo(Can_Export_Data_t RxMessage);
 
-float yaw_velocity = 0;
+
 Board2_FUN_t Board2_FUN = Board2_FunGroundInit;
 
-extern Saber_Angle_t Saber_Angle;
 
-//此函数用来按照报文规则生成数据并发送。
+
+/**
+  * @brief 按照报文规则生成数据并发送
+  * @param None
+  * @retval None
+  */
 void Board2_To_1(void)
 {
 	int16_t bullet_speed;

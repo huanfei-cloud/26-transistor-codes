@@ -15,6 +15,7 @@ History:
 
 #include "stdint.h"
 #include "spi.h"
+#include "cmsis_os.h"
 
 /* =========== ∫Í∂®“Â ================ */
 

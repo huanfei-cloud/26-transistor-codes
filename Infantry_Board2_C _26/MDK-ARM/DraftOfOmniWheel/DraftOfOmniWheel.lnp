@@ -1,8 +1,8 @@
 --cpu=Cortex-M4.fp.sp
 "draftofomniwheel\startup_stm32f407xx.o"
 "draftofomniwheel\main.o"
-"draftofomniwheel\freertos.o"
 "draftofomniwheel\gpio.o"
+"draftofomniwheel\freertos.o"
 "draftofomniwheel\can.o"
 "draftofomniwheel\dma.o"
 "draftofomniwheel\rtc.o"

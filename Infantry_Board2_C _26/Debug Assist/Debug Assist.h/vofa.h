@@ -15,7 +15,7 @@ typedef union
 
 
 
-extern void JustFloat_Send(float * fdata,uint16_t fdata_num,USART_TypeDef *Usart_choose);
+void JustFloat_Send(float * fdata,uint16_t fdata_num,USART_TypeDef *Usart_choose);
 
 
 #endif

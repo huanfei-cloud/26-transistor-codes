@@ -137,7 +137,7 @@ uint16_t MA600_Get_Angle(hMA600_TypeDef *hMA600)
 {
     if(NULL == hMA600)
     {
-        return 1;
+        return 5;
     }
     
     uint16_t TxData = 0, RxData;
@@ -166,7 +166,7 @@ uint8_t MA600_Read_Reg(hMA600_TypeDef *hMA600, uint8_t RegAddr)
 {
     if(NULL == hMA600)
     {
-        return 1;
+        return 5;
     }
     
     // 片选使能
@@ -214,7 +214,7 @@ uint8_t MA600_Write_Reg(hMA600_TypeDef *hMA600, uint8_t RegAddr, uint8_t Value)
 {
     if(NULL == hMA600)
     {
-        return 1;
+        return 5;
     }
     
     // 片选使能
@@ -231,7 +231,7 @@ uint8_t MA600_Write_Reg(hMA600_TypeDef *hMA600, uint8_t RegAddr, uint8_t Value)
     
     // 两次传输之间需要间隔t_IdleCommand
     MA600_Delay_ns(MA600_t_IdleCommand);
-    
+		
     // 片选使能
     hMA600->spi_CS_GPIOx->ODR &= ~hMA600->spi_CS_Pin;
     
@@ -269,12 +269,12 @@ uint16_t MA600_Store_Single(hMA600_TypeDef *hMA600, uint8_t BlockIndex)
 {
     if(NULL == hMA600)
     {
-        return 1;
+        return 5;
     }
     
     if(0 != BlockIndex && 1 != BlockIndex)
     {
-        return 1;
+        return 5;
     }
     
     uint16_t TxData = 0xEA55, RxData = 0;
@@ -287,7 +287,7 @@ uint16_t MA600_Store_Single(hMA600_TypeDef *hMA600, uint8_t BlockIndex)
     
     // 片选失能
     hMA600->spi_CS_GPIOx->ODR |= hMA600->spi_CS_Pin;
-    
+//    
     // 两次传输之间需要间隔t_IdleCommand
     MA600_Delay_ns(MA600_t_IdleCommand);
     
@@ -300,8 +300,11 @@ uint16_t MA600_Store_Single(hMA600_TypeDef *hMA600, uint8_t BlockIndex)
      // 片选失能
     hMA600->spi_CS_GPIOx->ODR |= hMA600->spi_CS_Pin;
     
-    // 两次传输之间需要间隔t_StoreRegBlock
-    MA600_Delay_ms(MA600_t_StoreRegBlock);
+//    // 两次传输之间需要间隔t_StoreRegBlock
+//    MA600_Delay_ms(MA600_t_StoreRegBlock);
+
+    //放在任务里要用这个毫秒级延时函数不会造成阻塞
+    osDelay(MA600_t_StoreRegBlock);
     
     // 片选使能
     hMA600->spi_CS_GPIOx->ODR &= ~hMA600->spi_CS_Pin;
@@ -326,7 +329,7 @@ uint16_t MA600_Restore_All(hMA600_TypeDef *hMA600)
 {
     if(NULL == hMA600)
     {
-        return 1;
+        return 5;
     }
     
     uint16_t TxData = 0, RxData = 0;
@@ -341,8 +344,11 @@ uint16_t MA600_Restore_All(hMA600_TypeDef *hMA600)
     // 片选失能
     hMA600->spi_CS_GPIOx->ODR |= hMA600->spi_CS_Pin;
     
-    // 两次传输之间需要间隔t_RestoreAllRegBlocks
-    MA600_Delay_us(MA600_t_RestoreAllRegBlocks);
+//    // 两次传输之间需要间隔t_RestoreAllRegBlocks
+//    MA600_Delay_us(MA600_t_RestoreAllRegBlocks);
+		//在freetos的任务里用下面的延时函数不会阻塞
+		osDelay(1);
+		
     
     // 片选使能
     hMA600->spi_CS_GPIOx->ODR &= ~hMA600->spi_CS_Pin;
@@ -367,7 +373,7 @@ uint16_t MA600_Clear_ErrFlags(hMA600_TypeDef *hMA600)
 {
     if(NULL == hMA600)
     {
-        return 1;
+        return 5;
     }
     
     uint16_t TxData = 0, RxData = 0;
@@ -410,7 +416,7 @@ uint16_t MA600_SetMask(hMA600_TypeDef *hMA600, uint16_t Mask)
 {
     if(NULL == hMA600)
     {
-        return 1;
+        return 5;
     }
     
     hMA600->Mask = Mask;
@@ -432,7 +438,7 @@ uint16_t MA600_SetValueBits(hMA600_TypeDef *hMA600, uint16_t bits)
 {
     if(NULL == hMA600)
     {
-        return 1;
+        return 5;
     }
     
     hMA600->Mask = 0xFFFF << (16 - bits);
@@ -455,7 +461,7 @@ uint16_t MA600_Read_PPT(hMA600_TypeDef *hMA600)
 {
     if(NULL == hMA600)
     {
-        return 1;
+        return 5;
     }
     uint8_t RegValue[2] = {0};
     uint16_t PPTValue = 0;
@@ -481,7 +487,7 @@ uint16_t MA600_Set_PPT(hMA600_TypeDef *hMA600, uint16_t NewPPTValue)
 {
     if(NULL == hMA600)
     {
-        return 1;
+        return 5;
     }
     uint8_t RegValue[2] = {0};
     uint8_t TxData[2];
@@ -510,7 +516,7 @@ uint16_t MA600_Set_PPT(hMA600_TypeDef *hMA600, uint16_t NewPPTValue)
     }
     else
     {
-        return 1;
+        return 5;
     }
 }/* MA600_Set_PPT() */
 
@@ -525,7 +531,7 @@ uint8_t MA600_Read_IOMatrix(hMA600_TypeDef *hMA600)
 {
     if(NULL == hMA600)
     {
-        return 1;
+        return 5;
     }
     uint8_t RegValue = 0;
     uint8_t INFT_SEL_Value = 0;
@@ -549,7 +555,7 @@ uint8_t MA600_Set_IOMatrix(hMA600_TypeDef *hMA600, uint8_t Type)
 {
     if(NULL == hMA600)
     {
-        return 1;
+        return 5;
     }
     uint8_t RegValue = 0;
     uint8_t TxData = 0;
@@ -578,7 +584,7 @@ uint8_t MA600_Set_MTSP(hMA600_TypeDef *hMA600, uint8_t Type)
 {
     if(NULL == hMA600)
     {
-        return 1;
+        return 5;
     }
     uint8_t RegValue = 0;
     uint8_t TxData = 0;
@@ -608,7 +614,7 @@ float MA600_Get_Speed_rpm(hMA600_TypeDef *hMA600)
 {
     if(NULL == hMA600)
     {
-        return 1;
+        return 5;
     }
     
     uint16_t TxData[2] = {0};
@@ -645,7 +651,7 @@ int16_t MA600_Get_MultiTurn(hMA600_TypeDef *hMA600)
 {
     if(NULL == hMA600)
     {
-        return 0;
+        return 5;
     }
     
     uint16_t TxData[2] = {0};
@@ -678,7 +684,7 @@ uint8_t MA600_Read_BCT(hMA600_TypeDef *hMA600)
 {
     if(NULL == hMA600)
     {
-        return 1;
+        return 5;
     }
     uint8_t RegValue = 0;
     uint8_t BCT_Value = 0;
@@ -702,7 +708,7 @@ uint8_t MA600_Set_BCT(hMA600_TypeDef *hMA600, uint8_t BCTValue)
 {
     if(NULL == hMA600)
     {
-        return 1;
+        return 5;
     }
     uint8_t RegValue = 0;
     uint8_t TxData = 0;
@@ -728,7 +734,7 @@ uint8_t MA600_Read_ETYETX(hMA600_TypeDef *hMA600)
 {
     if(NULL == hMA600)
     {
-        return 1;
+        return 5;
     }
     uint8_t RegValue = 0;
     uint8_t ETYETX_Value = 0;
@@ -753,7 +759,7 @@ uint8_t MA600_Set_ETYETX(hMA600_TypeDef *hMA600, uint8_t ETY, uint8_t ETX)
 {
     if(NULL == hMA600)
     {
-        return 1;
+        return 5;
     }
     uint8_t RegValue = 0;
     uint8_t TxData = 0;
@@ -781,7 +787,7 @@ uint8_t MA600_Read_FW(hMA600_TypeDef *hMA600)
 {
     if(NULL == hMA600)
     {
-        return 1;
+        return 5;
     }
     uint8_t RegValue = 0;
     uint8_t FW_Value = 0;
@@ -805,7 +811,7 @@ uint8_t MA600_Set_FW(hMA600_TypeDef *hMA600, uint8_t FWValue)
 {
     if(NULL == hMA600)
     {
-        return 1;
+        return 5;
     }
     uint8_t RegValue = 0;
     uint8_t TxData = 0;
@@ -833,7 +839,7 @@ uint8_t MA600_Read_RotationDirection(hMA600_TypeDef *hMA600)
 {
     if(NULL == hMA600)
     {
-        return 1;
+        return 5;
     }
     uint8_t RegValue = 0;
     uint8_t RD_Value = 0;
@@ -857,7 +863,7 @@ uint8_t MA600_Set_RotationDirection(hMA600_TypeDef *hMA600, uint8_t RD)
 {
     if(NULL == hMA600)
     {
-        return 1;
+        return 5;
     }
     uint8_t RegValue = 0;
     uint8_t TxData = 0;
@@ -886,7 +892,7 @@ uint16_t MA600_Read_Zero(hMA600_TypeDef *hMA600)
 {
     if(NULL == hMA600)
     {
-        return 1;
+        return 5;
     }
     uint8_t  RegValue = 0;
     uint16_t ZeroValue = 0;
@@ -912,7 +918,7 @@ uint16_t MA600_Set_Zero(hMA600_TypeDef *hMA600, uint16_t Zero)
 {
     if(NULL == hMA600)
     {
-        return 1;
+        return 5;
     }
     uint8_t RegValue = 0;
     uint8_t TxData = 0;

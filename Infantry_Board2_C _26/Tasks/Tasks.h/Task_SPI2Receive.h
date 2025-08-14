@@ -9,6 +9,9 @@
 #ifndef TASK_SPI2_H
 #define TASK_SPI2_H
 
+#include "Extern_Handles.h"
+#include "M6020_Motor.h"
+#include "pid.h"
 
 void SPI2Receives(void const *argument);
 
