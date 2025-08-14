@@ -1,0 +1,15 @@
+draftofomniwheel\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/timers.c
+draftofomniwheel\timers.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stdlib.h
+draftofomniwheel\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+draftofomniwheel\timers.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stddef.h
+draftofomniwheel\timers.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stdint.h
+draftofomniwheel\timers.o: ../Core/Inc/FreeRTOSConfig.h
+draftofomniwheel\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+draftofomniwheel\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+draftofomniwheel\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+draftofomniwheel\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+draftofomniwheel\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+draftofomniwheel\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+draftofomniwheel\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+draftofomniwheel\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+draftofomniwheel\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
