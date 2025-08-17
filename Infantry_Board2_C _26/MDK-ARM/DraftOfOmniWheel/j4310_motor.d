@@ -1,5 +1,5 @@
 draftofomniwheel\j4310_motor.o: ..\Devices\Devices.c\J4310_Motor.c
-draftofomniwheel\j4310_motor.o: ..\Devices\Devices.h\J4310_Motor.h
+draftofomniwheel\j4310_motor.o: ../Devices/Devices.h/J4310_Motor.h
 draftofomniwheel\j4310_motor.o: ../Core/Inc/can.h
 draftofomniwheel\j4310_motor.o: ../Core/Inc/main.h
 draftofomniwheel\j4310_motor.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
@@ -47,7 +47,7 @@ draftofomniwheel\j4310_motor.o: ../APPs/APPs.h/struct_typedef.h
 draftofomniwheel\j4310_motor.o: ../Algorithm/Algorithm.h/arm_math.h
 draftofomniwheel\j4310_motor.o: ../Drivers/CMSIS/Include/core_cm4.h
 draftofomniwheel\j4310_motor.o: ../BSP/BSP.h/typedef.h
-draftofomniwheel\j4310_motor.o: ..\Tasks\Tasks.h\Task_CanReceive.h
+draftofomniwheel\j4310_motor.o: ../Tasks/Tasks.h/Task_CanReceive.h
 draftofomniwheel\j4310_motor.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 draftofomniwheel\j4310_motor.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 draftofomniwheel\j4310_motor.o: ../Core/Inc/FreeRTOSConfig.h
@@ -62,7 +62,7 @@ draftofomniwheel\j4310_motor.o: ../Middlewares/Third_Party/FreeRTOS/Source/inclu
 draftofomniwheel\j4310_motor.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 draftofomniwheel\j4310_motor.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 draftofomniwheel\j4310_motor.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
-draftofomniwheel\j4310_motor.o: ..\Tasks\Tasks.h\Extern_Handles.h
+draftofomniwheel\j4310_motor.o: ../Tasks/Tasks.h/Extern_Handles.h
 draftofomniwheel\j4310_motor.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 draftofomniwheel\j4310_motor.o: ../Algorithm/Algorithm.h/PID.h
 draftofomniwheel\j4310_motor.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdlib.h

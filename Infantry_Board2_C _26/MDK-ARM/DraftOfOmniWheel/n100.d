@@ -1,5 +1,5 @@
 draftofomniwheel\n100.o: ..\Devices\Devices.c\N100.c
-draftofomniwheel\n100.o: ..\Devices\Devices.h\N100.h
+draftofomniwheel\n100.o: ../Devices/Devices.h/N100.h
 draftofomniwheel\n100.o: ../Core/Inc/main.h
 draftofomniwheel\n100.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 draftofomniwheel\n100.o: ../Core/Inc/stm32f4xx_hal_conf.h

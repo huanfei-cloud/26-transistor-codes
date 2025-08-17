@@ -10,12 +10,7 @@
  */
 
 #include "Task_RobotControl.h"
-#include "PowerControl.h"
-#include "Omni_Chassis.h"
-#include "steer_chassis.h"
-#include "Cloud_Control.h"
-#include "Saber_C3.h"
-#include "DT7.h"
+
 
 void Robot_Control(void const *argument)
 {
@@ -34,10 +29,35 @@ void Robot_Control(void const *argument)
 //        HAL_UART_Transmit(&huart6,"Task_RobotControl",sizeof("Task_RobotControl "),0xff);
         Saber_Read();
         Cloud_FUN.Cloud_Sport_Out();
+			
+			/********解决yaw轴两个区域抖动问题********/
+		  if( M6020s_Yaw.realAngle < 1900)
+			{
+				M6020s_YawIPID.Kp = yaw_I_p - 150.0f;
+				M6020s_YawIPID.Kd = yaw_I_d - 150.0f;
+			}
+			else if( M6020s_Yaw.realAngle > 3700 && M6020s_Yaw.realAngle < 5700)
+			{
+				M6020s_YawIPID.Kp = yaw_I_p - 150.0f;
+				M6020s_YawIPID.Kd = yaw_I_d - 150.0f;
+			}
+			else if( M6020s_Yaw.realAngle > 7900)
+			{
+				M6020s_YawIPID.Kp = yaw_I_p - 150.0f;
+				M6020s_YawIPID.Kd = yaw_I_d - 150.0f;
+			}
+			else
+			{
+				M6020s_YawIPID.Kp = yaw_I_p;
+				M6020s_YawIPID.Kd = yaw_I_d;
+			}
+			/******************End******************/
+			
 				Board2_FUN.Board2_To_1();
         DT7_Handle();
 				PowerControl_Fun.PowerControl_MsgSend();
 				steer_chassis_out();
+			
         vTaskDelayUntil(&xLastWakeTime, TimeIncrement);
     }
 }

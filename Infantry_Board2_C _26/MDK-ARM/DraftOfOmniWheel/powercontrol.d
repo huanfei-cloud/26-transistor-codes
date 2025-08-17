@@ -64,5 +64,5 @@ draftofomniwheel\powercontrol.o: ../Middlewares/Third_Party/FreeRTOS/Source/incl
 draftofomniwheel\powercontrol.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 draftofomniwheel\powercontrol.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 draftofomniwheel\powercontrol.o: ../BSP/BSP.h/typedef.h
-draftofomniwheel\powercontrol.o: ..\Tasks\Tasks.h\Extern_Handles.h
+draftofomniwheel\powercontrol.o: ../Tasks/Tasks.h/Extern_Handles.h
 draftofomniwheel\powercontrol.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

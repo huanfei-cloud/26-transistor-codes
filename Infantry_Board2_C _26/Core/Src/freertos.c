@@ -232,8 +232,10 @@ void ALL_Init(void const * argument)
 	    /* CAN�жϳ�ʼ�� */
         Can_Fun.CAN_IT_Init(&hcan1, Can1_Type);
         Can_Fun.CAN_IT_Init(&hcan2, Can2_Type);
-		  /*编码器初始化*/
-		  MA600sInit();
+//		  /*编码器初始化*/
+//		  MA600sInit();
+//		  /*编码器设置菊花链模式*/
+//		  setChrysanthemumChains();
 		  /*���̳�ʼ��*/
 		   chassis_init();
 		  /*ң������ʼ��*/
@@ -244,8 +246,8 @@ void ALL_Init(void const * argument)
 //            Incremental_PIDInit(&M3508_Array_Pid[i], 20.0f, 0.22f, 0, 16384, 6000);
 //        }
 		    /**Yaw轴电机PID初始化**/
-        Position_PIDInit(&M6020s_YawIPID, 1550.0f, 0.1f, 1200.0, 0, 30000, 10000 , 6000);
-        Position_PIDInit(&M6020s_YawOPID, 0.083f, 0.00001f, 0.0, 0, 30000, 10000 , 10000);
+        Position_PIDInit(&M6020s_YawIPID, yaw_I_p, yaw_I_i, yaw_I_d, 0, 30000, 10000 , 6000);
+        Position_PIDInit(&M6020s_YawOPID, yaw_O_p, yaw_O_i, yaw_O_d, 0, 30000, 10000 , 10000);
 		    /**AimYaw电机PID初始化*/
         Position_PIDInit(&AutoAim_M6020s_YawIPID, 1700.0f, 60.f, 800.f, 500, 30000, 10000 , 10000);
         Position_PIDInit(&AutoAim_M6020s_YawOPID, 0.032f, 0.00001f, 0.05, 0, 30000, 10000 , 10000);

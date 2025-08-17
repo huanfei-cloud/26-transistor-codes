@@ -11,15 +11,34 @@
 
 #ifndef ___PID_H
 #define ___PID_H
+
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include "kalman_filter.h"
-//#include "typedef.h"
-//#include <AddMath.h>
 #include "math.h"
 #include "FuzzyPID.h"
+//#include "typedef.h"
+//#include <AddMath.h>
+
+/********pid的参数值********/
+//正常位置环
+//#define yaw_O_p 0.083f
+//#define yaw_O_i 0.00001f
+//#define yaw_O_d 0.0f
+//正常速度环
+//#define yaw_I_p 1050.0f
+//#define yaw_I_i 0.12f
+//#define yaw_I_d 1000.0f
+//正常位置环
+#define yaw_O_p 0.001f
+#define yaw_O_i 0.00001f
+#define yaw_O_d 0.0f
+//正常速度环
+#define yaw_I_p 2.0f
+#define yaw_I_i 0.02f
+#define yaw_I_d 1.0f
 
 /**********PID对外数据接口************/
 

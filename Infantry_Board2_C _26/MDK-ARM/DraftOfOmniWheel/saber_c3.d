@@ -1,5 +1,5 @@
 draftofomniwheel\saber_c3.o: ..\Devices\Devices.c\Saber_C3.c
-draftofomniwheel\saber_c3.o: ..\Devices\Devices.h\Saber_C3.h
+draftofomniwheel\saber_c3.o: ../Devices/Devices.h/Saber_C3.h
 draftofomniwheel\saber_c3.o: ../Core/Inc/main.h
 draftofomniwheel\saber_c3.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 draftofomniwheel\saber_c3.o: ../Core/Inc/stm32f4xx_hal_conf.h
@@ -46,7 +46,7 @@ draftofomniwheel\saber_c3.o: ../APPs/APPs.h/struct_typedef.h
 draftofomniwheel\saber_c3.o: ../Algorithm/Algorithm.h/arm_math.h
 draftofomniwheel\saber_c3.o: ../Drivers/CMSIS/Include/core_cm4.h
 draftofomniwheel\saber_c3.o: ../Core/Inc/usart.h
-draftofomniwheel\saber_c3.o: ..\Devices\Devices.h\M6020_Motor.h
+draftofomniwheel\saber_c3.o: ../Devices/Devices.h/M6020_Motor.h
 draftofomniwheel\saber_c3.o: ../Core/Inc/can.h
 draftofomniwheel\saber_c3.o: ../BSP/BSP.h/typedef.h
 draftofomniwheel\saber_c3.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdbool.h

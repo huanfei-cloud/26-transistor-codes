@@ -1,5 +1,5 @@
 draftofomniwheel\ma600_base.o: ..\Devices\Devices.c\MA600_base.c
-draftofomniwheel\ma600_base.o: ..\Devices\Devices.h\MA600_base.h
+draftofomniwheel\ma600_base.o: ../Devices/Devices.h/MA600_base.h
 draftofomniwheel\ma600_base.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdint.h
 draftofomniwheel\ma600_base.o: ../Core/Inc/spi.h
 draftofomniwheel\ma600_base.o: ../Core/Inc/main.h
@@ -46,3 +46,17 @@ draftofomniwheel\ma600_base.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\
 draftofomniwheel\ma600_base.o: ../APPs/APPs.h/struct_typedef.h
 draftofomniwheel\ma600_base.o: ../Algorithm/Algorithm.h/arm_math.h
 draftofomniwheel\ma600_base.o: ../Drivers/CMSIS/Include/core_cm4.h
+draftofomniwheel\ma600_base.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+draftofomniwheel\ma600_base.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+draftofomniwheel\ma600_base.o: ../Core/Inc/FreeRTOSConfig.h
+draftofomniwheel\ma600_base.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+draftofomniwheel\ma600_base.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+draftofomniwheel\ma600_base.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+draftofomniwheel\ma600_base.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+draftofomniwheel\ma600_base.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+draftofomniwheel\ma600_base.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+draftofomniwheel\ma600_base.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+draftofomniwheel\ma600_base.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+draftofomniwheel\ma600_base.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+draftofomniwheel\ma600_base.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
+draftofomniwheel\ma600_base.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h

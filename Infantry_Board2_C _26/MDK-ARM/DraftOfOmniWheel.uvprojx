@@ -82,7 +82,7 @@
           </BeforeMake>
           <AfterMake>
             <RunUserProg1>0</RunUserProg1>
-            <RunUserProg2>0</RunUserProg2>
+            <RunUserProg2>1</RunUserProg2>
             <UserProg1Name></UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
@@ -341,7 +341,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx,ARM_MATH_CM4,__TARGET_FPU_VFP,__CC_ARM,ARM_MATH_CM4,__FPU_PRESENT=1U</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../Algorithm/Algorithm.h;../APPs/APPs.h;../BSP/BSP.h;..\Devices\Devices.h;../Protocol/Protocol.h;..\Tasks\Tasks.h;../Debug/TraceRecorder/include;../Debug/TraceRecorder/config;../USB_DEVICE/App;../USB_DEVICE/Target;../Middlewares/ST/STM32_USB_Device_Library/Core/Inc;../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc;..\Debug Assist</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../Algorithm/Algorithm.h;../APPs/APPs.h;../BSP/BSP.h;../Devices/Devices.h;../Protocol/Protocol.h;../Tasks/Tasks.h;../Debug/TraceRecorder/include;../Debug/TraceRecorder/config;../USB_DEVICE/App;../USB_DEVICE/Target;../Middlewares/ST/STM32_USB_Device_Library/Core/Inc;../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc;..\Debug Assist\Debug Assist.h</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -401,14 +401,14 @@
               <FilePath>../Core/Src/main.c</FilePath>
             </File>
             <File>
-              <FileName>freertos.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Core/Src/freertos.c</FilePath>
-            </File>
-            <File>
               <FileName>gpio.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/Src/gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>freertos.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/freertos.c</FilePath>
             </File>
             <File>
               <FileName>can.c</FileName>
@@ -541,6 +541,36 @@
               <FileType>1</FileType>
               <FilePath>..\Algorithm\Algorithm.c\Gimbal_Chassis_Pitch_Angle.c</FilePath>
             </File>
+            <File>
+              <FileName>FeedForward.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Algorithm\Algorithm.h\FeedForward.h</FilePath>
+            </File>
+            <File>
+              <FileName>kalman_filter.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Algorithm\Algorithm.h\kalman_filter.h</FilePath>
+            </File>
+            <File>
+              <FileName>pid.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Algorithm\Algorithm.h\pid.h</FilePath>
+            </File>
+            <File>
+              <FileName>user_lib.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Algorithm\Algorithm.h\user_lib.h</FilePath>
+            </File>
+            <File>
+              <FileName>FuzzyPID.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Algorithm\Algorithm.h\FuzzyPID.h</FilePath>
+            </File>
+            <File>
+              <FileName>Gimbal_Chassis_Pitch_Angle.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Algorithm\Algorithm.h\Gimbal_Chassis_Pitch_Angle.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -560,6 +590,21 @@
               <FileName>UI.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Protocol\Protocol.c\UI.c</FilePath>
+            </File>
+            <File>
+              <FileName>BSP_BoardCommunication.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Protocol\Protocol.h\BSP_BoardCommunication.h</FilePath>
+            </File>
+            <File>
+              <FileName>Protocol_Judgement.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Protocol\Protocol.h\Protocol_Judgement.h</FilePath>
+            </File>
+            <File>
+              <FileName>UI.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Protocol\Protocol.h\UI.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -590,6 +635,36 @@
               <FileName>BSP_Usart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\BSP\BSP.c\BSP_Usart.c</FilePath>
+            </File>
+            <File>
+              <FileName>BSP_Can.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\BSP\BSP.h\BSP_Can.h</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_delay.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\BSP\BSP.h\bsp_delay.h</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_led.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\BSP\BSP.h\bsp_led.h</FilePath>
+            </File>
+            <File>
+              <FileName>BSP_Test.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\BSP\BSP.h\BSP_Test.h</FilePath>
+            </File>
+            <File>
+              <FileName>BSP_Usart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\BSP\BSP.h\BSP_Usart.h</FilePath>
+            </File>
+            <File>
+              <FileName>typedef.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\BSP\BSP.h\typedef.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -641,6 +716,46 @@
               <FileType>1</FileType>
               <FilePath>..\Devices\Devices.c\J4310_Motor.c</FilePath>
             </File>
+            <File>
+              <FileName>Saber_C3.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Devices\Devices.h\Saber_C3.h</FilePath>
+            </File>
+            <File>
+              <FileName>N100.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Devices\Devices.h\N100.h</FilePath>
+            </File>
+            <File>
+              <FileName>DT7.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Devices\Devices.h\DT7.h</FilePath>
+            </File>
+            <File>
+              <FileName>MA600_base.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Devices\Devices.h\MA600_base.h</FilePath>
+            </File>
+            <File>
+              <FileName>MA600_use.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Devices\Devices.h\MA600_use.h</FilePath>
+            </File>
+            <File>
+              <FileName>M3508_Motor.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Devices\Devices.h\M3508_Motor.h</FilePath>
+            </File>
+            <File>
+              <FileName>M6020_Motor.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Devices\Devices.h\M6020_Motor.h</FilePath>
+            </File>
+            <File>
+              <FileName>M2006_Motor.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Devices\Devices.h\M2006_Motor.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -670,6 +785,31 @@
               <FileName>steer_chassis.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\APPs\APPs.c\steer_chassis.c</FilePath>
+            </File>
+            <File>
+              <FileName>Cloud_Control.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\APPs\APPs.h\Cloud_Control.h</FilePath>
+            </File>
+            <File>
+              <FileName>Omni_Chassis.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\APPs\APPs.h\Omni_Chassis.h</FilePath>
+            </File>
+            <File>
+              <FileName>Time_Stamp.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\APPs\APPs.h\Time_Stamp.h</FilePath>
+            </File>
+            <File>
+              <FileName>PowerControl.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\APPs\APPs.h\PowerControl.h</FilePath>
+            </File>
+            <File>
+              <FileName>steer_chassis.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\APPs\APPs.h\steer_chassis.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -720,6 +860,51 @@
               <FileName>Task_Vofa.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Tasks\Tasks.c\Task_Vofa.c</FilePath>
+            </File>
+            <File>
+              <FileName>Task_CanReceive.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Tasks\Tasks.h\Task_CanReceive.h</FilePath>
+            </File>
+            <File>
+              <FileName>Task_CanSend.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Tasks\Tasks.h\Task_CanSend.h</FilePath>
+            </File>
+            <File>
+              <FileName>Task_LED.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Tasks\Tasks.h\Task_LED.h</FilePath>
+            </File>
+            <File>
+              <FileName>Task_RobotControl.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Tasks\Tasks.h\Task_RobotControl.h</FilePath>
+            </File>
+            <File>
+              <FileName>Task_UsartSend.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Tasks\Tasks.h\Task_UsartSend.h</FilePath>
+            </File>
+            <File>
+              <FileName>Task_RobotUI.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Tasks\Tasks.h\Task_RobotUI.h</FilePath>
+            </File>
+            <File>
+              <FileName>Task_OffLineCheck.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Tasks\Tasks.h\Task_OffLineCheck.h</FilePath>
+            </File>
+            <File>
+              <FileName>Task_SPI2Receive.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Tasks\Tasks.h\Task_SPI2Receive.h</FilePath>
+            </File>
+            <File>
+              <FileName>Task_Vofa.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Tasks\Tasks.h\Task_Vofa.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -1886,22 +2071,22 @@
             <File>
               <FileName>sys.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Debug Assist\sys.c</FilePath>
-            </File>
-            <File>
-              <FileName>sys.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Debug Assist\sys.h</FilePath>
+              <FilePath>..\Debug Assist\Debug Assist.c\sys.c</FilePath>
             </File>
             <File>
               <FileName>vofa.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Debug Assist\vofa.c</FilePath>
+              <FilePath>..\Debug Assist\Debug Assist.c\vofa.c</FilePath>
+            </File>
+            <File>
+              <FileName>sys.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Debug Assist\Debug Assist.h\sys.h</FilePath>
             </File>
             <File>
               <FileName>vofa.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\Debug Assist\vofa.h</FilePath>
+              <FilePath>..\Debug Assist\Debug Assist.h\vofa.h</FilePath>
             </File>
           </Files>
         </Group>

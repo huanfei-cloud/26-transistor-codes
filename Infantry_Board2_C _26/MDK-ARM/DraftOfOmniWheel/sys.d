@@ -1,5 +1,5 @@
-draftofomniwheel\sys.o: ..\Debug Assist\sys.c
-draftofomniwheel\sys.o: ..\Debug Assist\sys.h
+draftofomniwheel\sys.o: ..\Debug Assist\Debug Assist.c\sys.c
+draftofomniwheel\sys.o: ..\Debug Assist\Debug Assist.h\sys.h
 draftofomniwheel\sys.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 draftofomniwheel\sys.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
 draftofomniwheel\sys.o: ../Drivers/CMSIS/Include/core_cm4.h

@@ -38,12 +38,12 @@
 /* 云台电机角度结构体 */
 typedef struct
 {
-    float Yaw_Raw; 			//yaw轴原始数据
-    float Pitch_Raw;   		//pitch轴原始数据
-    float Target_Yaw; 		//云台目标yaw轴
-    float Target_Pitch;   	//云台目标pitch轴
-	float Vision_Yaw_Delta;		//视觉Yaw轴数据(差值)
-	float Vision_Pitch_Delta;		//视觉Pitch轴数据(差值)
+    float Yaw_Raw; 			      //yaw轴原始数据
+    float Pitch_Raw;   		    //pitch轴原始数据
+    float Target_Yaw; 		    //云台目标yaw轴
+    float Target_Pitch;     	//云台目标pitch轴
+	  float Vision_Yaw_Delta;		//视觉Yaw轴数据(差值)
+	  float Vision_Pitch_Delta;	//视觉Pitch轴数据(差值)
 } Cloud_t;
 
 

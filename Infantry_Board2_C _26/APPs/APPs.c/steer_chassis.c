@@ -131,10 +131,10 @@ void direction_motor_angle_set(void)
 		   finall_angle[2] = atan_angle[2] + DIRMOTOR_RF_ANGLE;
 		   finall_angle[3] = atan_angle[3] + DIRMOTOR_RB_ANGLE;
 		
-        error_angle[0] =Angle_Limit((finall_angle[0] - MA600s[0]->Angle),180.0f);
-		    error_angle[1] =Angle_Limit((finall_angle[1] - MA600s[1]->Angle),180.0f);
-		    error_angle[2] =Angle_Limit((finall_angle[2] - MA600s[2]->Angle),180.0f);
-		    error_angle[3] =Angle_Limit((finall_angle[3] - MA600s[3]->Angle),180.0f);
+        error_angle[0] =Angle_Limit((finall_angle[0] - MA600s[0].Angle),180.0f);
+		    error_angle[1] =Angle_Limit((finall_angle[1] - MA600s[1].Angle),180.0f);
+		    error_angle[2] =Angle_Limit((finall_angle[2] - MA600s[2].Angle),180.0f);
+		    error_angle[3] =Angle_Limit((finall_angle[3] - MA600s[3].Angle),180.0f);
 		 	
 		if(error_angle[0]>90.0f || error_angle[0]<-90.0f)
     {
@@ -253,10 +253,10 @@ void steer_chassis_out(void)
 {
     chassis_target_calc();
 	
-	  motor_location_change(&M3508_Helm[4],pid_control_normal,M3508_Helm[4].targetLocation,MA600s[0]->Circle);
-	  motor_location_change(&M3508_Helm[5],pid_control_normal,M3508_Helm[5].targetLocation,MA600s[1]->Circle);
-	  motor_location_change(&M3508_Helm[6],pid_control_normal,M3508_Helm[6].targetLocation,MA600s[2]->Circle);
-	  motor_location_change(&M3508_Helm[7],pid_control_normal,M3508_Helm[7].targetLocation,MA600s[3]->Circle);
+	  motor_location_change(&M3508_Helm[4],pid_control_normal,M3508_Helm[4].targetLocation,MA600s[0].Circle);
+	  motor_location_change(&M3508_Helm[5],pid_control_normal,M3508_Helm[5].targetLocation,MA600s[1].Circle);
+	  motor_location_change(&M3508_Helm[6],pid_control_normal,M3508_Helm[6].targetLocation,MA600s[2].Circle);
+	  motor_location_change(&M3508_Helm[7],pid_control_normal,M3508_Helm[7].targetLocation,MA600s[3].Circle);
 
     motor_velocity_change(&M3508_Helm[0],pid_control_normal,&hcan1,M3508_Helm[0].targetSpeed);
 	  motor_velocity_change(&M3508_Helm[1],pid_control_normal,&hcan1,M3508_Helm[1].targetSpeed);

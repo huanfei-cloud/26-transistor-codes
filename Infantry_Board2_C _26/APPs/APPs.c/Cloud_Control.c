@@ -24,16 +24,19 @@ One_Kalman_t Cloud_YawCurrent_Kalman;
 One_Kalman_t Cloud_YawCurrent_Kalman_manul;
 /****************卡拉曼滤波结构体创建 End*****************/
 
+/********变量声明********/
 Cloud_t Cloud;
-extern M6020s_t* M6020_Array[1]; //对应电机的ID必须为：索引+1
-extern Saber_Angle_t Saber_Angle;
 float Control_Self_Yaw;
-
 float shit;
-uint8_t kk =8;
+/********数据声明********/
 float Linear=2.75f;
 float Setup_Angleoffset = -3000;
+uint8_t kk =8;
+/********全局变量声明********/
+extern M6020s_t* M6020_Array[1]; //对应电机的ID必须为：索引+1
+extern Saber_Angle_t Saber_Angle;
 
+/********函数声明********/
 void Cloud_Init(void);
 void Cloud_Yaw_Angle_Set(void);
 void Cloud_Sport_Out(void);

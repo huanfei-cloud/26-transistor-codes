@@ -15,7 +15,8 @@
 #define MA600_CS_Pin  GPIO_PIN_12
 
 /********全局变量声明*********/
-extern hMA600_TypeDef *MA600s[4];
+extern hMA600_TypeDef MA600s[4];
+extern uint8_t MA600_flag[2];
 /********函数声明*********/
 void MA600sInit(void);
 void setChrysanthemumChains(void);
