@@ -64,7 +64,7 @@ void v_cloud_convertto_chassis(fp32 angle);
 void direction_motor_angle_set(void);
 void move_motor_speed_set(void);
 void chassis_target_calc(void);
-void steer_omni_chassis_out(void);
+void Steer_Omni_Chassis_Out(void);
 void Steer_Omni_GetAngle(fp32 angle);
 
 #endif
