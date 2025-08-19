@@ -45,7 +45,7 @@ draftofomniwheel\task_vofa.o: ../Core/Inc/main.h
 draftofomniwheel\task_vofa.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\string.h
 draftofomniwheel\task_vofa.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdio.h
 draftofomniwheel\task_vofa.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\math.h
-draftofomniwheel\task_vofa.o: ../APPs/APPs.h/struct_typedef.h
+draftofomniwheel\task_vofa.o: ..\APPs\APPs.h\struct_typedef.h
 draftofomniwheel\task_vofa.o: ../Algorithm/Algorithm.h/arm_math.h
 draftofomniwheel\task_vofa.o: ../Drivers/CMSIS/Include/core_cm4.h
 draftofomniwheel\task_vofa.o: ..\Devices\Devices.h\M3508_Motor.h
@@ -55,7 +55,8 @@ draftofomniwheel\task_vofa.o: ../Algorithm/Algorithm.h/kalman_filter.h
 draftofomniwheel\task_vofa.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdbool.h
 draftofomniwheel\task_vofa.o: ../Algorithm/Algorithm.h/FuzzyPID.h
 draftofomniwheel\task_vofa.o: ../Core/Inc/can.h
-draftofomniwheel\task_vofa.o: ../APPs/APPs.h/steer_chassis.h
+draftofomniwheel\task_vofa.o: ..\APPs\APPs.h\steer_chassis.h
+draftofomniwheel\task_vofa.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdarg.h
 draftofomniwheel\task_vofa.o: ../BSP/BSP.h/BSP_Can.h
 draftofomniwheel\task_vofa.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 draftofomniwheel\task_vofa.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
@@ -84,13 +85,13 @@ draftofomniwheel\task_vofa.o: ..\Devices\Devices.h\MA600_use.h
 draftofomniwheel\task_vofa.o: ..\Devices\Devices.h\MA600_base.h
 draftofomniwheel\task_vofa.o: ../Core/Inc/spi.h
 draftofomniwheel\task_vofa.o: ..\Devices\Devices.h\DT7.h
-draftofomniwheel\task_vofa.o: ../APPs/APPs.h/steer_chassis.h
+draftofomniwheel\task_vofa.o: ..\APPs\APPs.h\steer_chassis.h
 draftofomniwheel\task_vofa.o: ../Protocol/Protocol.h/BSP_BoardCommunication.h
 draftofomniwheel\task_vofa.o: ../Protocol/Protocol.h/Protocol_Judgement.h
-draftofomniwheel\task_vofa.o: ../APPs/APPs.h/Omni_Chassis.h
+draftofomniwheel\task_vofa.o: ..\APPs\APPs.h\Steer_Omni_Chassis.h
+draftofomniwheel\task_vofa.o: ..\APPs\APPs.h\PowerControl.h
 draftofomniwheel\task_vofa.o: ..\Devices\Devices.h\M3508_Motor.h
-draftofomniwheel\task_vofa.o: ../APPs/APPs.h/Cloud_Control.h
+draftofomniwheel\task_vofa.o: ..\APPs\APPs.h\Cloud_Control.h
 draftofomniwheel\task_vofa.o: ../Algorithm/Algorithm.h/FeedForward.h
 draftofomniwheel\task_vofa.o: ../Protocol/Protocol.h/BSP_BoardCommunication.h
 draftofomniwheel\task_vofa.o: ../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h
-draftofomniwheel\task_vofa.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdarg.h

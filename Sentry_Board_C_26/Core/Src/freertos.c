@@ -30,7 +30,7 @@
 #include "BSP_Usart.h"
 
 #include "Cloud_Control.h"
-#include "Omni_Chassis.h"
+#include "Steer_Omni_Chassis.h"
 #include "Protocol_Judgement.h"
 
 #include "DT7.h"
@@ -234,10 +234,6 @@ void ALL_Init(void const * argument)
 		  /*ң������ʼ��*/
 		   DT7_Init();
 	    /* PID��ʼ�� */
-	    for(int i = 0; i <= 3; i++)
-        {
-            Incremental_PIDInit(&M3508_Array_Pid[i], 20.0f, 0.22f, 0, 16384, 6000);
-        }
 		    /**Yaw轴电机PID初始化**/
         Position_PIDInit(&M6020s_YawIPID, 1550.0f, 0.1f, 1200.0, 0, 30000, 10000 , 6000);
         Position_PIDInit(&M6020s_YawOPID, 0.083f, 0.00001f, 0.0, 0, 30000, 10000 , 10000);

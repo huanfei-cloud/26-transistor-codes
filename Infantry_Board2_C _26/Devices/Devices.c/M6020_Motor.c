@@ -10,6 +10,7 @@
  */
 #include "M6020_Motor.h"
 
+
 //直接声明对应的电机的结构体而不用数组，直观便于后期调试观察数据使用。
 M6020s_t M6020s_Yaw;                                    //ID为1
 M6020s_t *M6020_Array[1] = {&M6020s_Yaw}; //对应电机的ID必须为：索引+1
@@ -24,6 +25,7 @@ void M6020_Reset(M6020s_t *m6020);
 
 M6020_Fun_t M6020_Fun = M6020_FunGroundInit;
 #undef M6020_FunGroundInit
+
 
 /**
   * @brief  设置M6020电机电压（id号为1~4）

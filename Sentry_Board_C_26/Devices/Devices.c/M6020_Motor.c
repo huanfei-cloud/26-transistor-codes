@@ -12,18 +12,36 @@
 
 //直接声明对应的电机的结构体而不用数组，直观便于后期调试观察数据使用。
 M6020s_t M6020s_Yaw;                                    //ID为1
-M6020s_t *M6020_Array[1] = {&M6020s_Yaw}; //对应电机的ID必须为：索引+1
+M6020s_t M6020_Chassis[2];
+M6020s_t *M6020_Array[Totalnum] = {&M6020s_Yaw,&M6020_Chassis[0],&M6020_Chassis[1]}; //对应电机的ID必须为：索引+1
 
 #define M6020_Amount 1
 
-/********函数声明********/
-void M6020_setVoltage(int16_t uq1, int16_t uq2, int16_t uq3, int16_t uq4, uint8_t *data);
-void M6020_getInfo(Can_Export_Data_t RxMessage);
-void M6020_setTargetAngle(M6020s_t *M6020, int32_t angle);
-void M6020_Reset(M6020s_t *m6020);
 
 M6020_Fun_t M6020_Fun = M6020_FunGroundInit;
 #undef M6020_FunGroundInit
+
+/**
+ * @brief motor﹍て
+ * @param  motor结构体地址  
+ * @param  设置的ID
+ */
+void M6020_Init(M6020s_t *motor, uint16_t _motor_id)
+{
+	motor->motor_id = _motor_id;
+	motor->realSpeed = 0;
+	motor->temperture = 0;
+	motor->realAngle = 0;
+	motor->realCurrent = 0;
+
+	motor->lastAngle = 0;
+	motor->totalAngle = 0;
+	motor->turnCount = 0;
+
+  motor->outCurrent = 0;
+
+	motor->InfoUpdateFlag = 0;
+}
 
 /**
   * @brief  设置M6020电机电压（id号为1~4）
@@ -112,3 +130,131 @@ void M6020_Reset(M6020s_t *m6020)
     m6020->turnCount = 0;
 }
 
+
+/**
+ * @brief 电机速度目标值（输出电流值）更新
+ * @param *motor 需要改变速度的电机地址
+ * @param model 电机pid控制模式
+ * @param target 速度目标值
+ */
+void M6020_velocity_change(M6020s_t *motor,pid_control model,CAN_HandleTypeDef *hcan,float target)
+{
+	if(hcan == &hcan1)
+	{
+    switch (motor->motor_id)
+	{
+	case (0x205):
+	{
+//		if (model == pid_control_increase)
+//		{
+//			motor->outCurrent = (int16_t)(CAN1_0x200_Tx_Data[0] << 8 | CAN1_0x200_Tx_Data[1]);
+//			motor->outCurrent += (int16_t)Incremental_PID(&motor->v_pid_object,target, (float)motor->realSpeed);
+//		}
+		if (model == pid_control_normal)
+		{
+			motor->outCurrent = (int16_t)Position_PID(&motor->v_pid_object,target, (float)motor->realSpeed);
+		}
+//		if (model == pid_control_frontfeed)
+//		{
+//			motor->outCurrent = (int16_t)PID_Model3_Update(&motor->v_pid_object, (float)motor->omega, target);
+//		}
+		CAN1_0x200_Tx_Data[0] = ((uint16_t)motor->outCurrent) >> 8;
+		CAN1_0x200_Tx_Data[1] = ((uint16_t)motor->outCurrent) & 0xff;
+	}
+	break;
+	case (0x206):
+	{
+//		if (model == pid_control_increase)
+//		{
+//			motor->outCurrent = (int16_t)(CAN1_0x200_Tx_Data[0] << 8 | CAN1_0x200_Tx_Data[1]);
+//			motor->outCurrent += (int16_t)Incremental_PID(&motor->v_pid_object,target, (float)motor->realSpeed);
+//		}
+		if (model == pid_control_normal)
+		{
+			motor->outCurrent = (int16_t)Position_PID(&motor->v_pid_object,target, (float)motor->realSpeed);
+		}
+//		if (model == pid_control_frontfeed)
+//		{
+//			motor->outCurrent = (int16_t)PID_Model3_Update(&motor->v_pid_object, (float)motor->omega, target);
+//		}
+		CAN2_0x2ff_Tx_Data[0] = ((uint16_t)motor->outCurrent) >> 8;
+		CAN2_0x2ff_Tx_Data[1] = ((uint16_t)motor->outCurrent) & 0xff;
+	}
+	break;
+	case (0x207):
+	{
+//		if (model == pid_control_increase)
+//		{
+//			motor->outCurrent = (int16_t)(CAN1_0x200_Tx_Data[0] << 8 | CAN1_0x200_Tx_Data[1]);
+//			motor->outCurrent += (int16_t)Incremental_PID(&motor->v_pid_object,target, (float)motor->realSpeed);
+//		}
+		if (model == pid_control_normal)
+		{
+			motor->outCurrent = (int16_t)Position_PID(&motor->v_pid_object,target, (float)motor->realSpeed);
+		}
+//		if (model == pid_control_frontfeed)
+//		{
+//			motor->outCurrent = (int16_t)PID_Model3_Update(&motor->v_pid_object, (float)motor->omega, target);
+//		}
+		CAN2_0x2ff_Tx_Data[0] = ((uint16_t)motor->outCurrent) >> 8;
+		CAN2_0x2ff_Tx_Data[1] = ((uint16_t)motor->outCurrent) & 0xff;
+	}
+	break;
+}
+}
+}
+	
+/**
+ * @brief 电机位置目标值（设定速度值值）更新
+ * @param *motor 需要改变位置的电机地址
+ * @param model 电机pid控制模式
+ * @param target 位置目标值
+ */
+void M6020_location_change(M6020s_t *motor,pid_control model,int16_t target,int16_t real)
+{
+    switch (motor->motor_id)
+	{
+	  case (0x201):
+    case (0x202):
+    case (0x203):
+    case (0x204):
+	{
+//		if (model == pid_control_increase)
+//		{
+//			motor->targetSpeed += (int16_t)Incremental_PID(&motor->l_pid_object,circle_to_encoder(target),motor->totalAngle);
+//		}
+		if (model == pid_control_normal)
+		{
+			motor->targetSpeed = (int16_t)Position_PID(&motor->l_pid_object,target,real);
+		}
+//		if (model == pid_control_frontfeed)
+//		{
+//			motor->targetSpeed = (int16_t)PID_Model3_Update(&motor->l_pid_object, motor->total_encoder, quanshu_to_encoder(target));
+//		}
+	}
+	break;
+	  case (0x205):
+    case (0x206):
+    case (0x207):
+    case (0x208):
+    {
+//        if (model == pid_control_increase)
+//		{
+//			motor->targetSpeed += (int16_t)Incremental_PID(&motor->l_pid_object,circle_to_encoder(target),motor->totalAngle);
+//		}
+		if (model == pid_control_normal)
+		{
+			motor->targetSpeed = (int16_t)Position_PID(&motor->l_pid_object,target,real);
+		}
+//		if (model == pid_control_frontfeed)
+//		{
+//			motor->targetSpeed = (int16_t)PID_Model3_Update(&motor->l_pid_object, motor->total_encoder, quanshu_to_encoder(target));
+//		}
+//		if (model == pid_control_frontfuzzy)
+//		{
+//			motor->targetSpeed = (int16_t)PID_Model4_Update(&motor->l_pid_object, &fuzzy_pid_yaw_l, motor->total_encoder, quanshu_to_encoder(target));
+//		}
+    }
+    break;
+	}
+}

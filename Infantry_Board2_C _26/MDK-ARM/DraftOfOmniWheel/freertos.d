@@ -77,8 +77,6 @@ draftofomniwheel\freertos.o: ../Devices/Devices.h/M6020_Motor.h
 draftofomniwheel\freertos.o: ../Core/Inc/usart.h
 draftofomniwheel\freertos.o: ../APPs/APPs.h/Cloud_Control.h
 draftofomniwheel\freertos.o: ../Algorithm/Algorithm.h/FeedForward.h
-draftofomniwheel\freertos.o: ../APPs/APPs.h/Omni_Chassis.h
-draftofomniwheel\freertos.o: ../Devices/Devices.h/M3508_Motor.h
 draftofomniwheel\freertos.o: ../APPs/APPs.h/steer_chassis.h
 draftofomniwheel\freertos.o: ../Devices/Devices.h/Saber_C3.h
 draftofomniwheel\freertos.o: ../Devices/Devices.h/MA600_use.h
@@ -89,7 +87,6 @@ draftofomniwheel\freertos.o: ../Devices/Devices.h/DT7.h
 draftofomniwheel\freertos.o: ../APPs/APPs.h/steer_chassis.h
 draftofomniwheel\freertos.o: ../Protocol/Protocol.h/BSP_BoardCommunication.h
 draftofomniwheel\freertos.o: ../Protocol/Protocol.h/Protocol_Judgement.h
-draftofomniwheel\freertos.o: ../APPs/APPs.h/Omni_Chassis.h
 draftofomniwheel\freertos.o: ../APPs/APPs.h/Cloud_Control.h
 draftofomniwheel\freertos.o: ../Devices/Devices.h/M3508_Motor.h
 draftofomniwheel\freertos.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdarg.h

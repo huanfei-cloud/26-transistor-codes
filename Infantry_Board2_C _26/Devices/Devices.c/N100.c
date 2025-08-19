@@ -10,11 +10,10 @@
  */
  #include "N100.h"
  
- uint8_t N100_Rxbuffer[56];
- N100_AHRSData_Packet_t N100_Angle;
- /*************
-实现16进制的can数据转换成浮点型数据
-****************/
+uint8_t N100_Rxbuffer[56];
+N100_AHRSData_Packet_t N100_Angle;
+ 
+/*************实现16进制的can数据转换成浮点型数据****************/
 float DATA_Trans(uint8_t Data_1,uint8_t Data_2,uint8_t Data_3,uint8_t Data_4)
 {
   uint32_t transition_32;

@@ -10,7 +10,7 @@
 #define rf_steer_angle 45.0f // 右前轮相对于x轴的角度 (单位：度)
 #define lb_steer_angle 225.0f // 左后轮相对于x轴的角度 (单位：度)
 #define rb_steer_angle 315.0f // 右后轮相对于x轴的角度 (单位：度)
-#define pi 3.14159265358f
+#define pi 3.1415926f
 //#define CHASSIS_DECELE_RATIO 36//2006�綯��ת�ٱȣ��ٷ��ֲ�Ϊ36
 
 #define Omni_DataGroundInit         \

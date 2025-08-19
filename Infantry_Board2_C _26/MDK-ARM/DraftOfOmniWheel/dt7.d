@@ -87,7 +87,6 @@ draftofomniwheel\dt7.o: ../APPs/APPs.h/steer_chassis.h
 draftofomniwheel\dt7.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdarg.h
 draftofomniwheel\dt7.o: ../Protocol/Protocol.h/BSP_BoardCommunication.h
 draftofomniwheel\dt7.o: ../Protocol/Protocol.h/Protocol_Judgement.h
-draftofomniwheel\dt7.o: ../APPs/APPs.h/Omni_Chassis.h
 draftofomniwheel\dt7.o: ../APPs/APPs.h/Cloud_Control.h
 draftofomniwheel\dt7.o: ../Algorithm/Algorithm.h/FeedForward.h
 draftofomniwheel\dt7.o: ../Protocol/Protocol.h/BSP_BoardCommunication.h

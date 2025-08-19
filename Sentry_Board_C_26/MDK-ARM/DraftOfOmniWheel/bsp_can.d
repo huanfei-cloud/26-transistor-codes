@@ -43,7 +43,7 @@ draftofomniwheel\bsp_can.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pc
 draftofomniwheel\bsp_can.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\string.h
 draftofomniwheel\bsp_can.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdio.h
 draftofomniwheel\bsp_can.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\math.h
-draftofomniwheel\bsp_can.o: ../APPs/APPs.h/struct_typedef.h
+draftofomniwheel\bsp_can.o: ..\APPs\APPs.h\struct_typedef.h
 draftofomniwheel\bsp_can.o: ../Algorithm/Algorithm.h/arm_math.h
 draftofomniwheel\bsp_can.o: ../Drivers/CMSIS/Include/core_cm4.h
 draftofomniwheel\bsp_can.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

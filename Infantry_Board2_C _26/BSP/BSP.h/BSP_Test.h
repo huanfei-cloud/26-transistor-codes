@@ -4,7 +4,7 @@
 #include "struct_typedef.h"
 #include "main.h"
 #include "BSP_Usart.h"
-#include "Omni_Chassis.h"
+#include "Steer_Chassis.h"
 #include "M2006_Motor.h"
 #include "M6020_Motor.h"
 
@@ -43,7 +43,7 @@ typedef __packed struct
 	extern uint8_t Fire_Rx_Finish;//野火串口一包数据接收完成标志 
 		
 	void DebugData_Motor_Speed(M2006s_t *M2006_Array);
-	void DebugData_Chassis_Angle(Omni_Data_t Omni_Data);
+	void DebugData_Chassis_Angle(Struct_CHASSIS_Manage_Object chassis_control);
 	void DebugData_Watch(M2006s_t *M2006_Array);
 	
 	void Fire_Debug_Init(void);//野火串口调试初始化。

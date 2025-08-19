@@ -1,5 +1,5 @@
 
-#include "Omni_Chassis.h"   // 全向底盘控制相关定义
+#include "Steer_Omni_Chassis.h"   // 全向底盘控制相关定义
 #include "BSP_Can.h"        // CAN总线驱动
 #include "Extern_Handles.h" // 外设句柄
 #include "PowerControl.h"   // 电源控制
@@ -104,10 +104,10 @@ void Omni_calc()
     wheel_rpm[1] = ((Omni_Data.Speed_ToChassis.vx-Omni_Data.Speed_ToChassis.vw*Length_steer_y)*cos(lb_steer_angle/180*pi)+
                     (Omni_Data.Speed_ToChassis.vy+Omni_Data.Speed_ToChassis.vw*Length_steer_x)*sin(lb_steer_angle/180*pi)) * wheel_rpm_ratio; 
     // 右后侧轮计算：
-    wheel_rpm[3] = ((Omni_Data.Speed_ToChassis.vx-Omni_Data.Speed_ToChassis.vw*Length_steer_y)*cos(rb_steer_angle/180*pi)+
+    wheel_rpm[2] = ((Omni_Data.Speed_ToChassis.vx-Omni_Data.Speed_ToChassis.vw*Length_steer_y)*cos(rb_steer_angle/180*pi)+
                     (Omni_Data.Speed_ToChassis.vy+Omni_Data.Speed_ToChassis.vw*Length_steer_x)*sin(rb_steer_angle/180*pi)) * wheel_rpm_ratio; 
     // 右前侧轮计算：
-    wheel_rpm[2] =((Omni_Data.Speed_ToChassis.vx-Omni_Data.Speed_ToChassis.vw*Length_steer_y)*cos(rf_steer_angle/180*pi)+
+    wheel_rpm[3] =((Omni_Data.Speed_ToChassis.vx-Omni_Data.Speed_ToChassis.vw*Length_steer_y)*cos(rf_steer_angle/180*pi)+
                     (Omni_Data.Speed_ToChassis.vy+Omni_Data.Speed_ToChassis.vw*Length_steer_x)*sin(rf_steer_angle/180*pi)) * wheel_rpm_ratio; 
 
     // 将计算结果复制到底盘数据结构的M2006_Setspeed数组

@@ -31,7 +31,7 @@ void Robot_Control(void const *argument)
 				Board2_FUN.Board2_To_1();
         DT7_Handle();
 				PowerControl_Fun.PowerControl_MsgSend();
-				Omni_Fun.Omni_Chassis_Out();
+				Steer_Omni_Chassis_Out();
         vTaskDelayUntil(&xLastWakeTime, TimeIncrement);
     }
 }

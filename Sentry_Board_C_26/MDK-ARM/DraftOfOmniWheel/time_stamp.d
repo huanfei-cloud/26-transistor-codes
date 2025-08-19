@@ -1,5 +1,5 @@
 draftofomniwheel\time_stamp.o: ..\APPs\APPs.c\Time_Stamp.c
-draftofomniwheel\time_stamp.o: ../APPs/APPs.h/Time_Stamp.h
+draftofomniwheel\time_stamp.o: ..\APPs\APPs.h\Time_Stamp.h
 draftofomniwheel\time_stamp.o: ../Core/Inc/rtc.h
 draftofomniwheel\time_stamp.o: ../Core/Inc/main.h
 draftofomniwheel\time_stamp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
@@ -43,6 +43,6 @@ draftofomniwheel\time_stamp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal
 draftofomniwheel\time_stamp.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\string.h
 draftofomniwheel\time_stamp.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdio.h
 draftofomniwheel\time_stamp.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\math.h
-draftofomniwheel\time_stamp.o: ../APPs/APPs.h/struct_typedef.h
+draftofomniwheel\time_stamp.o: ..\APPs\APPs.h\struct_typedef.h
 draftofomniwheel\time_stamp.o: ../Algorithm/Algorithm.h/arm_math.h
 draftofomniwheel\time_stamp.o: ../Drivers/CMSIS/Include/core_cm4.h

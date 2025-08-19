@@ -30,7 +30,7 @@
 #include "BSP_Usart.h"
 
 #include "Cloud_Control.h"
-#include "Omni_Chassis.h"
+#include "Steer_Chassis.h"
 #include "Protocol_Judgement.h"
 
 #include "DT7.h"
@@ -232,8 +232,8 @@ void ALL_Init(void const * argument)
 	    /* CAN�жϳ�ʼ�� */
         Can_Fun.CAN_IT_Init(&hcan1, Can1_Type);
         Can_Fun.CAN_IT_Init(&hcan2, Can2_Type);
-//		  /*编码器初始化*/
-//		  MA600sInit();
+		  /*编码器初始化*/
+		  MA600sInit();
 //		  /*编码器设置菊花链模式*/
 //		  setChrysanthemumChains();
 		  /*���̳�ʼ��*/
@@ -249,8 +249,8 @@ void ALL_Init(void const * argument)
         Position_PIDInit(&M6020s_YawIPID, yaw_I_p, yaw_I_i, yaw_I_d, 0, 30000, 10000 , 6000);
         Position_PIDInit(&M6020s_YawOPID, yaw_O_p, yaw_O_i, yaw_O_d, 0, 30000, 10000 , 10000);
 		    /**AimYaw电机PID初始化*/
-        Position_PIDInit(&AutoAim_M6020s_YawIPID, 1700.0f, 60.f, 800.f, 500, 30000, 10000 , 10000);
-        Position_PIDInit(&AutoAim_M6020s_YawOPID, 0.032f, 0.00001f, 0.05, 0, 30000, 10000 , 10000);
+        Position_PIDInit(&AutoAim_M6020s_YawIPID, yaw_I_Aim_p, yaw_I_Aim_i, yaw_I_Aim_d, yaw_I_Aim_f, 30000, 10000 , 10000);
+        Position_PIDInit(&AutoAim_M6020s_YawOPID, yaw_O_Aim_p, yaw_O_Aim_i, yaw_O_Aim_d, yaw_O_Aim_f, 30000, 10000 , 10000);
 		/*�豸��ʼ��*/
         Cloud_Init();						  //云台初始化
 		

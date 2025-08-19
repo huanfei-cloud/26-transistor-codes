@@ -16,6 +16,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
+#include "pid.h"
 
 #define M6020_READID_START 0x205 //当ID为1时的报文ID
 #define M6020_READID_END 0x206
@@ -57,6 +58,7 @@ typedef struct
     uint8_t InfoUpdateFlag;   //信息读取更新标志
     uint16_t InfoUpdateFrame; //帧率
     uint8_t OffLineFlag;      //设备离线标志
+
 } M6020s_t;
 
 typedef enum
@@ -64,17 +66,18 @@ typedef enum
     //需要注意与报文接受函数处对应。即
     //M6020_PITCH_Right = 0,
     M6020_YAW = 0 ,
-} M6020Name_e;
+}M6020Name_e;
 
 typedef struct
 {
-	void (*M6020_setVoltage)(int16_t uq1, int16_t uq2, int16_t uq3, int16_t uq4, uint8_t *data);
+	  void (*M6020_setVoltage)(int16_t uq1, int16_t uq2, int16_t uq3, int16_t uq4, uint8_t *data);
     void (*M6020_getInfo)(Can_Export_Data_t RxMessage);
     void (*M6020_setTargetAngle)(M6020s_t *M6020, int32_t angle);
     void (*M6020_Reset)(M6020s_t *m6020);
 	
 } M6020_Fun_t;
 
+/********全局变量声明********/
 extern M6020s_t M6020s_Yaw;   //ID为1
 extern M6020_Fun_t M6020_Fun;
 

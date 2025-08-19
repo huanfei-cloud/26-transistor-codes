@@ -43,7 +43,7 @@ draftofomniwheel\m2006_motor.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ha
 draftofomniwheel\m2006_motor.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\string.h
 draftofomniwheel\m2006_motor.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdio.h
 draftofomniwheel\m2006_motor.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\math.h
-draftofomniwheel\m2006_motor.o: ../APPs/APPs.h/struct_typedef.h
+draftofomniwheel\m2006_motor.o: ..\APPs\APPs.h\struct_typedef.h
 draftofomniwheel\m2006_motor.o: ../Algorithm/Algorithm.h/arm_math.h
 draftofomniwheel\m2006_motor.o: ../Drivers/CMSIS/Include/core_cm4.h
 draftofomniwheel\m2006_motor.o: ../BSP/BSP.h/typedef.h

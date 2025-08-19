@@ -10,6 +10,11 @@
 #ifndef CHASSIS_H
 #define CHASSIS_H
 
+#include <stdio.h>
+#include <stdarg.h>
+#include "string.h"
+#include "arm_math.h"
+
 #include "BSP_Can.h"
 #include "BSP_Usart.h"
 #include "Saber_C3.h"
@@ -18,10 +23,6 @@
 #include "DT7.h"
 #include "M3508_Motor.h"
 
-#include <stdio.h>
-#include <stdarg.h>
-#include "string.h"
-#include "arm_math.h"
 
 #define r_chassis 0.23
 #define s_chassis 0.06

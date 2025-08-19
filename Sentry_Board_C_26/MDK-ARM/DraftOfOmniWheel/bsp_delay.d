@@ -1,6 +1,6 @@
 draftofomniwheel\bsp_delay.o: ..\BSP\BSP.c\bsp_delay.c
 draftofomniwheel\bsp_delay.o: ../BSP/BSP.h/bsp_delay.h
-draftofomniwheel\bsp_delay.o: ../APPs/APPs.h/struct_typedef.h
+draftofomniwheel\bsp_delay.o: ..\APPs\APPs.h\struct_typedef.h
 draftofomniwheel\bsp_delay.o: ../Core/Inc/main.h
 draftofomniwheel\bsp_delay.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 draftofomniwheel\bsp_delay.o: ../Core/Inc/stm32f4xx_hal_conf.h

@@ -271,3 +271,9 @@ void steer_chassis_out(void)
     Can_Fun.CAN_SendData(CAN_SendHandle,&hcan1,CAN_ID_STD,0x200,CAN1_0x200_Tx_Data);
     Can_Fun.CAN_SendData(CAN_SendHandle,&hcan2,CAN_ID_STD,0x1ff,CAN2_0x1ff_Tx_Data);
 }
+
+
+void steer_getangle(fp32 angle)
+{
+    chassis_control.Angle_ChassisToCloud = angle  ;
+}

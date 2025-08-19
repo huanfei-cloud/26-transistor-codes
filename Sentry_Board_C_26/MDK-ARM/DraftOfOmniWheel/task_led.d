@@ -1,6 +1,6 @@
 draftofomniwheel\task_led.o: ..\Tasks\Tasks.c\Task_LED.c
 draftofomniwheel\task_led.o: ..\Tasks\Tasks.h\Task_LED.h
-draftofomniwheel\task_led.o: ../APPs/APPs.h/struct_typedef.h
+draftofomniwheel\task_led.o: ..\APPs\APPs.h\struct_typedef.h
 draftofomniwheel\task_led.o: ../BSP/BSP.h/bsp_led.h
 draftofomniwheel\task_led.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 draftofomniwheel\task_led.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
@@ -74,4 +74,6 @@ draftofomniwheel\task_led.o: ../Algorithm/Algorithm.h/kalman_filter.h
 draftofomniwheel\task_led.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdbool.h
 draftofomniwheel\task_led.o: ../Algorithm/Algorithm.h/FuzzyPID.h
 draftofomniwheel\task_led.o: ..\Devices\Devices.h\M6020_Motor.h
+draftofomniwheel\task_led.o: ../BSP/BSP.h/BSP_Can.h
+draftofomniwheel\task_led.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 draftofomniwheel\task_led.o: ../Core/Inc/usart.h

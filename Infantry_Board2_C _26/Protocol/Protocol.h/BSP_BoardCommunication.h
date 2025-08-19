@@ -17,7 +17,7 @@
 #include "Extern_Handles.h"
 #include "queue.h"
 #include "Protocol_Judgement.h"
-#include "Omni_Chassis.h"
+#include "Steer_Chassis.h"
 #include "Cloud_Control.h"
 #include "Saber_C3.h"
 #include "M2006_Motor.h"
@@ -46,20 +46,20 @@ typedef struct {
     int16_t x_velocity;
     int16_t y_velocity;
     int16_t z_rotation_velocity;
-	int16_t pitch_velocity;
-	int16_t yaw_velocity;
-	uint8_t shoot_state;
-	int16_t yaw_realAngle;
-	uint8_t modelFlag;
-	uint8_t shoot_Speed;
-	uint8_t AutoAimFlag;         // 自瞄开关
-	uint8_t change_Flag;				//变速
-	uint8_t fric_Flag;					//摩擦轮
-	uint8_t tnndcolor;
-	int16_t Gimbal_Chassis_Pitch_Angle;
-	int8_t feipo_Flag;            //飞坡开关
-	uint16_t Blood_Volume;         //???????
-	uint8_t game_start;
+	  int16_t pitch_velocity;
+		float   yaw_velocity;
+		uint8_t shoot_state;
+		int16_t yaw_realAngle;      //世界坐标系下云台yaw轴的机械角度
+		uint8_t modelFlag;
+		uint8_t shoot_Speed;
+		uint8_t AutoAimFlag;         // 自瞄开关
+		uint8_t change_Flag;				//变速
+		uint8_t fric_Flag;					//摩擦轮
+		uint8_t tnndcolor;
+		int16_t Gimbal_Chassis_Pitch_Angle;
+		int8_t feipo_Flag;            //飞坡开关
+		uint16_t Blood_Volume;         //???????
+		uint8_t game_start;
 } ControlMessge;
 
 extern ControlMessge ControlMes;
@@ -72,6 +72,13 @@ typedef struct
 	void (*Board2_To_1)(void);
 }Board2_FUN_t;
 
+/********全局变量声明********/
 extern Board2_FUN_t Board2_FUN;
+extern ControlMessge ControlMes;
+
+/********函数声明********/
+void Board2_To_1(void);
+void Board2_getChassisInfo(Can_Export_Data_t RxMessage);
+void Board2_getGimbalInfo(Can_Export_Data_t RxMessage);
 
 #endif

@@ -756,6 +756,11 @@
               <FileType>5</FileType>
               <FilePath>..\Devices\Devices.h\M2006_Motor.h</FilePath>
             </File>
+            <File>
+              <FileName>J4310_Motor.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Devices\Devices.h\J4310_Motor.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -765,11 +770,6 @@
               <FileName>Cloud_Control.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\APPs\APPs.c\Cloud_Control.c</FilePath>
-            </File>
-            <File>
-              <FileName>Omni_Chassis.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\APPs\APPs.c\Omni_Chassis.c</FilePath>
             </File>
             <File>
               <FileName>Time_Stamp.c</FileName>
@@ -790,11 +790,6 @@
               <FileName>Cloud_Control.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\APPs\APPs.h\Cloud_Control.h</FilePath>
-            </File>
-            <File>
-              <FileName>Omni_Chassis.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\APPs\APPs.h\Omni_Chassis.h</FilePath>
             </File>
             <File>
               <FileName>Time_Stamp.h</FileName>

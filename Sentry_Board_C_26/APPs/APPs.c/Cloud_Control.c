@@ -184,7 +184,7 @@ void Cloud_Sport_Out(void)
 		{
 			Angle_Cloud -= 8192;
 		}
-	Omni_Fun.Omni_GetAngle(-1*Angle_Cloud/8192.0f*360);
+	Steer_Omni_GetAngle(-1*Angle_Cloud/8192.0f*360);
 
 	/***************************将电流参数发送给电机*******************************/
 	M6020_Fun.M6020_setVoltage(M6020s_Yaw.outCurrent, 0, 0, 0, data);

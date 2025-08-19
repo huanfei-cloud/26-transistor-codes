@@ -19,10 +19,10 @@ uint8_t MA600_flag[2] = {0};
  */
 void MA600sInit(void)
 {
-	MA600_HandleInit(&MA600s[0],&hspi2, MA600_CS_Port, MA600_CS_Pin);
-	MA600_HandleInit(&MA600s[1],&hspi2, MA600_CS_Port, MA600_CS_Pin);
-	MA600_HandleInit(&MA600s[2],&hspi2, MA600_CS_Port, MA600_CS_Pin);
-	MA600_HandleInit(&MA600s[3],&hspi2, MA600_CS_Port, MA600_CS_Pin);
+	MA600_HandleInit(&MA600s[0],&hspi2, MA600_CS1_Port, MA600_CS1_Pin);
+	MA600_HandleInit(&MA600s[1],&hspi2, MA600_CS2_Port, MA600_CS2_Pin);
+	MA600_HandleInit(&MA600s[2],&hspi2, MA600_CS3_Port, MA600_CS3_Pin);
+	MA600_HandleInit(&MA600s[3],&hspi2, MA600_CS4_Port, MA600_CS4_Pin);
 }
 
 /**
@@ -39,7 +39,7 @@ void setChrysanthemumChains(void)
 	MA600_flag[0] = MA600_Read_Reg(&MA600s[0],MA600_Reg_UR10);
 	
 	//将DAISY设置为1
-	MA600_Write_Reg(&MA600s[0],MA600_Reg_DAISY_RWM , 0x00);
+	MA600_Write_Reg(&MA600s[0],MA600_Reg_DAISY_RWM , 0x01);
 	MA600_flag[1] = MA600_Read_Reg(&MA600s[0],MA600_Reg_DAISY_RWM);
 	
 	//将块0存储到NVM里
@@ -51,7 +51,7 @@ void setChrysanthemumChains(void)
 }
 
 /**
- * @brief 菊花链中读取四个编码器的角度值
+ * @brief 读取菊花链四个编码器的角度值
  * @param None
  * @retval None
  */
@@ -86,7 +86,18 @@ void MA600s_Read_DaisyChain(void)
 
 }
 
-
+/**
+ * @brief 读取底盘四个编码器的角度值
+ * @param None
+ * @retval None
+ */
+void MA600s_Read_Chassis(void)
+{
+		MA600_Get_Angle(&MA600s[0]);
+		MA600_Get_Angle(&MA600s[1]);
+		MA600_Get_Angle(&MA600s[2]);
+		MA600_Get_Angle(&MA600s[3]);
+}
 
 
 

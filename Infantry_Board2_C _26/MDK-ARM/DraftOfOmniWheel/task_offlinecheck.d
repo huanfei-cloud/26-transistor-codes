@@ -55,8 +55,6 @@ draftofomniwheel\task_offlinecheck.o: ../Core/Inc/main.h
 draftofomniwheel\task_offlinecheck.o: ../APPs/APPs.h/struct_typedef.h
 draftofomniwheel\task_offlinecheck.o: ../BSP/BSP.h/typedef.h
 draftofomniwheel\task_offlinecheck.o: ../Algorithm/Algorithm.h/FeedForward.h
-draftofomniwheel\task_offlinecheck.o: ../APPs/APPs.h/Omni_Chassis.h
-draftofomniwheel\task_offlinecheck.o: ../Devices/Devices.h/M3508_Motor.h
 draftofomniwheel\task_offlinecheck.o: ../APPs/APPs.h/steer_chassis.h
 draftofomniwheel\task_offlinecheck.o: ../BSP/BSP.h/BSP_Can.h
 draftofomniwheel\task_offlinecheck.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
@@ -89,7 +87,6 @@ draftofomniwheel\task_offlinecheck.o: ../Devices/Devices.h/DT7.h
 draftofomniwheel\task_offlinecheck.o: ../APPs/APPs.h/steer_chassis.h
 draftofomniwheel\task_offlinecheck.o: ../Protocol/Protocol.h/BSP_BoardCommunication.h
 draftofomniwheel\task_offlinecheck.o: ../Protocol/Protocol.h/Protocol_Judgement.h
-draftofomniwheel\task_offlinecheck.o: ../APPs/APPs.h/Omni_Chassis.h
 draftofomniwheel\task_offlinecheck.o: ../APPs/APPs.h/Cloud_Control.h
 draftofomniwheel\task_offlinecheck.o: ../Devices/Devices.h/M3508_Motor.h
 draftofomniwheel\task_offlinecheck.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdarg.h

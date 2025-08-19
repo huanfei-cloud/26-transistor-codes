@@ -42,6 +42,6 @@ draftofomniwheel\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_e
 draftofomniwheel\gpio.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\string.h
 draftofomniwheel\gpio.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdio.h
 draftofomniwheel\gpio.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\math.h
-draftofomniwheel\gpio.o: ../APPs/APPs.h/struct_typedef.h
+draftofomniwheel\gpio.o: ..\APPs\APPs.h\struct_typedef.h
 draftofomniwheel\gpio.o: ../Algorithm/Algorithm.h/arm_math.h
 draftofomniwheel\gpio.o: ../Drivers/CMSIS/Include/core_cm4.h

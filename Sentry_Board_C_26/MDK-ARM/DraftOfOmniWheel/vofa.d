@@ -44,6 +44,6 @@ draftofomniwheel\vofa.o: ../Core/Inc/main.h
 draftofomniwheel\vofa.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\string.h
 draftofomniwheel\vofa.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdio.h
 draftofomniwheel\vofa.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\math.h
-draftofomniwheel\vofa.o: ../APPs/APPs.h/struct_typedef.h
+draftofomniwheel\vofa.o: ..\APPs\APPs.h\struct_typedef.h
 draftofomniwheel\vofa.o: ../Algorithm/Algorithm.h/arm_math.h
 draftofomniwheel\vofa.o: ../Drivers/CMSIS/Include/core_cm4.h
