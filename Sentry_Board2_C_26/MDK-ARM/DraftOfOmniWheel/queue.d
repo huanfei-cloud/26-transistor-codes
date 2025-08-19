@@ -1,0 +1,15 @@
+draftofomniwheel\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/queue.c
+draftofomniwheel\queue.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdlib.h
+draftofomniwheel\queue.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\string.h
+draftofomniwheel\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+draftofomniwheel\queue.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stddef.h
+draftofomniwheel\queue.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdint.h
+draftofomniwheel\queue.o: ../Core/Inc/FreeRTOSConfig.h
+draftofomniwheel\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+draftofomniwheel\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+draftofomniwheel\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+draftofomniwheel\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+draftofomniwheel\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+draftofomniwheel\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+draftofomniwheel\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+draftofomniwheel\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
