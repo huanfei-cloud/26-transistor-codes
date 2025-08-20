@@ -12,7 +12,8 @@
 /********变量定义********/
 Steer_Omni_Data_t Steer_Omni_Data;
 int8_t dirt[2] = {-1,1};
-
+positionpid_t chassis_follow;
+int flag =0;
 /**
  * @brief 角度范围的限制
  * @param 计算出的角度值
@@ -57,7 +58,7 @@ void Chassis_Init(void)
     //转向电机位置环初始化
 		Position_PIDInit(&(M6020s_Chassis1.l_pid_object),2.032f, 0.00001f, 0.05, 0, 30000, 10000 ,10000);
 		Position_PIDInit(&(M6020s_Chassis2.l_pid_object),2.032f, 0.00001f, 0.05, 0, 30000, 10000 ,10000);
-
+    Position_PIDInit(&(chassis_follow), 0.5f, 0.0f, 0.0f, 0.0f, 10000.0f, 10000.0f, 10000.0f);
     M3508_Array[0].targetSpeed = 0.0f;
     M3508_Array[1].targetSpeed = 0.0f;
     M3508_Array[2].targetSpeed = 0.0f;
@@ -82,7 +83,24 @@ void v_cloud_convertto_chassis(fp32 angle)
     Steer_Omni_Data.Speed_ToChassis.wz =Steer_Omni_Data.Speed_ToCloud.wz;
 
 }
-
+/**
+ * @brief 底盘跟随模式
+ * @param angle 云台相对于底盘的角度
+ * @param 启用为1
+ * @param kp
+ * @retval ????????????????
+ */
+void chassis_follow_mode(float angle, uint8_t start_flag)
+{
+    if(start_flag)
+    {
+        if(abs(angle)<10)
+        {
+            return ;
+        }
+        Steer_Omni_Data.Speed_ToChassis.wz +=Position_PID(&chassis_follow,angle, 0);
+    }
+}
 /**
  * @brief 转向电机角度设置
  * @param None
@@ -96,8 +114,8 @@ void direction_motor_angle_set(void)
 
     if(!((Steer_Omni_Data.Speed_ToCloud).vx == 0 && (Steer_Omni_Data.Speed_ToCloud).vy == 0 && (Steer_Omni_Data.Speed_ToCloud).wz == 0))
     {
-        atan_angle[0] = atan2(((Steer_Omni_Data.Speed_ToChassis).vx - (Steer_Omni_Data.Speed_ToChassis).wz * Radius * 0.707107f),((Steer_Omni_Data.Speed_ToChassis).vy - (Steer_Omni_Data.Speed_ToChassis).wz * Radius * 0.707107f)) * 180.0f / pi + 180.0f;
-        atan_angle[1] = atan2(((Steer_Omni_Data.Speed_ToChassis).vx + (Steer_Omni_Data.Speed_ToChassis).wz * Radius * 0.707107f),((Steer_Omni_Data.Speed_ToChassis).vy + (Steer_Omni_Data.Speed_ToChassis).wz * Radius * 0.707107f)) * 180.0f / pi + 180.0f;        
+        atan_angle[0] = atan2(((Steer_Omni_Data.Speed_ToChassis).vx - (Steer_Omni_Data.Speed_ToChassis).wz * Radius * 0.707107f),((Steer_Omni_Data.Speed_ToChassis).vy - (Steer_Omni_Data.Speed_ToChassis).wz * Radius * 0.707107f)) * 180.0f / pi ;
+        atan_angle[1] = atan2(((Steer_Omni_Data.Speed_ToChassis).vx + (Steer_Omni_Data.Speed_ToChassis).wz * Radius * 0.707107f),((Steer_Omni_Data.Speed_ToChassis).vy + (Steer_Omni_Data.Speed_ToChassis).wz * Radius * 0.707107f)) * 180.0f / pi ;        
     }
     else
     {
@@ -184,6 +202,7 @@ void move_motor_speed_set(void)
 void chassis_target_calc(void)
 {
     v_cloud_convertto_chassis(Steer_Omni_Data.Angle_ChassisToCloud);
+    chassis_follow_mode(Steer_Omni_Data.Angle_ChassisToCloud,flag);
     direction_motor_angle_set();
     move_motor_speed_set();
     //转向电机目标位置设置
