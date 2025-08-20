@@ -87,7 +87,8 @@ typedef struct
 
 /********全局变量声明********/
 extern M6020s_t M6020s_Yaw;   //ID为1
-extern M6020s_t M6020_Chassis[2];
+extern M6020s_t M6020s_Chassis1;
+extern M6020s_t M6020s_Chassis2;
 extern M6020_Fun_t M6020_Fun;
 
 /********函数声明********/

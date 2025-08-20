@@ -12,8 +12,9 @@
 
 //直接声明对应的电机的结构体而不用数组，直观便于后期调试观察数据使用。
 M6020s_t M6020s_Yaw;                                    //ID为1
-M6020s_t M6020_Chassis[2];
-M6020s_t *M6020_Array[Totalnum] = {&M6020s_Yaw,&M6020_Chassis[0],&M6020_Chassis[1]}; //对应电机的ID必须为：索引+1
+M6020s_t M6020s_Chassis1;
+M6020s_t M6020s_Chassis2;
+M6020s_t *M6020_Array[Totalnum] = {&M6020s_Yaw,&M6020s_Chassis1,&M6020s_Chassis2}; //对应电机的ID必须为：索引+1
 
 #define M6020_Amount 1
 
@@ -139,7 +140,7 @@ void M6020_Reset(M6020s_t *m6020)
  */
 void M6020_velocity_change(M6020s_t *motor,pid_control model,CAN_HandleTypeDef *hcan,float target)
 {
-	if(hcan == &hcan1)
+	if(hcan == &hcan2)
 	{
     switch (motor->motor_id)
 	{
@@ -158,8 +159,8 @@ void M6020_velocity_change(M6020s_t *motor,pid_control model,CAN_HandleTypeDef *
 //		{
 //			motor->outCurrent = (int16_t)PID_Model3_Update(&motor->v_pid_object, (float)motor->omega, target);
 //		}
-		CAN1_0x200_Tx_Data[0] = ((uint16_t)motor->outCurrent) >> 8;
-		CAN1_0x200_Tx_Data[1] = ((uint16_t)motor->outCurrent) & 0xff;
+		CAN2_0x1ff_Tx_Data[0] = ((uint16_t)motor->outCurrent) >> 8;
+		CAN2_0x1ff_Tx_Data[1] = ((uint16_t)motor->outCurrent) & 0xff;
 	}
 	break;
 	case (0x206):
@@ -177,8 +178,8 @@ void M6020_velocity_change(M6020s_t *motor,pid_control model,CAN_HandleTypeDef *
 //		{
 //			motor->outCurrent = (int16_t)PID_Model3_Update(&motor->v_pid_object, (float)motor->omega, target);
 //		}
-		CAN2_0x2ff_Tx_Data[0] = ((uint16_t)motor->outCurrent) >> 8;
-		CAN2_0x2ff_Tx_Data[1] = ((uint16_t)motor->outCurrent) & 0xff;
+		CAN2_0x1ff_Tx_Data[2] = ((uint16_t)motor->outCurrent) >> 8;
+		CAN2_0x1ff_Tx_Data[3] = ((uint16_t)motor->outCurrent) & 0xff;
 	}
 	break;
 	case (0x207):
@@ -196,10 +197,29 @@ void M6020_velocity_change(M6020s_t *motor,pid_control model,CAN_HandleTypeDef *
 //		{
 //			motor->outCurrent = (int16_t)PID_Model3_Update(&motor->v_pid_object, (float)motor->omega, target);
 //		}
-		CAN2_0x2ff_Tx_Data[0] = ((uint16_t)motor->outCurrent) >> 8;
-		CAN2_0x2ff_Tx_Data[1] = ((uint16_t)motor->outCurrent) & 0xff;
+		CAN2_0x1ff_Tx_Data[4] = ((uint16_t)motor->outCurrent) >> 8;
+		CAN2_0x1ff_Tx_Data[5] = ((uint16_t)motor->outCurrent) & 0xff;
 	}
 	break;
+	case (0x208):
+	{
+//		if (model == pid_control_increase)
+//		{
+//			motor->outCurrent = (int16_t)(CAN1_0x200_Tx_Data[0] << 8 | CAN1_0x200_Tx_Data[1]);
+//			motor->outCurrent += (int16_t)Incremental_PID(&motor->v_pid_object,target, (float)motor->realSpeed);
+//		}
+		if (model == pid_control_normal)
+		{
+			motor->outCurrent = (int16_t)Position_PID(&motor->v_pid_object,target, (float)motor->realSpeed);
+		}
+//		if (model == pid_control_frontfeed)
+//		{
+//			motor->outCurrent = (int16_t)PID_Model3_Update(&motor->v_pid_object, (float)motor->omega, target);
+//		}
+		CAN2_0x1ff_Tx_Data[6] = ((uint16_t)motor->outCurrent) >> 8;
+		CAN2_0x1ff_Tx_Data[7] = ((uint16_t)motor->outCurrent) & 0xff;
+	  }
+	  break;
 }
 }
 }

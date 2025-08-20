@@ -83,7 +83,7 @@ I (../Debug/TraceRecorder/include/trcKernelPort.h)(0x689DE30E)
 I (../Debug/TraceRecorder/include/trcInterval.h)(0x689DE30E)
 I (../Debug/TraceRecorder/include/trcStateMachine.h)(0x689DE30E)
 I (../Debug/TraceRecorder/include/trcCounter.h)(0x689DE30E)
-F (../Core/Src/freertos.c)(0x68A439FE)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ..\APPs\APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\freertos.o --omf_browse draftofomniwheel\freertos.crf --depend draftofomniwheel\freertos.d)
+F (../Core/Src/freertos.c)(0x68A52A8A)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ..\APPs\APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\freertos.o --omf_browse draftofomniwheel\freertos.crf --depend draftofomniwheel\freertos.d)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x689DE30F)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stddef.h)(0x6025237E)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdint.h)(0x6025237E)
@@ -153,14 +153,14 @@ I (../BSP/BSP.h/BSP_Usart.h)(0x689DE30E)
 I (..\Devices\Devices.h\M2006_Motor.h)(0x689DE30E)
 I (..\Tasks\Tasks.h\Task_CanReceive.h)(0x689DE30F)
 I (..\Tasks\Tasks.h\Extern_Handles.h)(0x689DE30F)
-I (..\Devices\Devices.h\M6020_Motor.h)(0x68A332C4)
+I (..\Devices\Devices.h\M6020_Motor.h)(0x68A530AB)
 I (../Core/Inc/usart.h)(0x689DE30E)
 I (..\APPs\APPs.h\Cloud_Control.h)(0x68A32C2C)
 I (../Algorithm/Algorithm.h/FeedForward.h)(0x689DE30E)
-I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A4621B)
+I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A52A8A)
 I (..\APPs\APPs.h\PowerControl.h)(0x689DE727)
 I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x689DE30F)
-I (..\Devices\Devices.h\M3508_Motor.h)(0x689DE30E)
+I (..\Devices\Devices.h\M3508_Motor.h)(0x68A56814)
 I (..\APPs\APPs.h\steer_chassis.h)(0x689FFA82)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 I (..\Devices\Devices.h\Saber_C3.h)(0x689DE30E)
@@ -619,7 +619,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h)(0x689DE30F)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h)(0x689DE30F)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h)(0x689DE30F)
 F (..\Algorithm\Algorithm.c\FeedForward.c)(0x689DE30E)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ..\APPs\APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\feedforward.o --omf_browse draftofomniwheel\feedforward.crf --depend draftofomniwheel\feedforward.d)
-I (..\Devices\Devices.h\M3508_Motor.h)(0x689DE30E)
+I (..\Devices\Devices.h\M3508_Motor.h)(0x68A56814)
 I (../Algorithm/Algorithm.h/PID.h)(0x689DE30E)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdint.h)(0x6025237E)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdio.h)(0x60252374)
@@ -691,7 +691,7 @@ I (../BSP/BSP.h/BSP_Usart.h)(0x689DE30E)
 I (..\Devices\Devices.h\M2006_Motor.h)(0x689DE30E)
 I (..\Tasks\Tasks.h\Task_CanReceive.h)(0x689DE30F)
 I (..\Tasks\Tasks.h\Extern_Handles.h)(0x689DE30F)
-I (..\Devices\Devices.h\M6020_Motor.h)(0x68A332C4)
+I (..\Devices\Devices.h\M6020_Motor.h)(0x68A530AB)
 I (../Core/Inc/usart.h)(0x689DE30E)
 I (..\Devices\Devices.h\Saber_C3.h)(0x689DE30E)
 I (..\Devices\Devices.h\MA600_use.h)(0x689DE30E)
@@ -700,7 +700,7 @@ I (../Core/Inc/spi.h)(0x689DE30E)
 I (..\Devices\Devices.h\DT7.h)(0x689DE30E)
 I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x68A32C2C)
 I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x689DE30F)
-I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A4621B)
+I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A52A8A)
 I (..\APPs\APPs.h\PowerControl.h)(0x689DE727)
 I (..\APPs\APPs.h\Cloud_Control.h)(0x68A32C2C)
 I (../Algorithm/Algorithm.h/FeedForward.h)(0x689DE30E)
@@ -855,7 +855,7 @@ I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (..\APPs\APPs.h\struct_typedef.h)(0x689DE30E)
 I (../Algorithm/Algorithm.h/arm_math.h)(0x689DE30E)
 I (../Core/Inc/usart.h)(0x689DE30E)
-I (..\Devices\Devices.h\M6020_Motor.h)(0x68A332C4)
+I (..\Devices\Devices.h\M6020_Motor.h)(0x68A530AB)
 I (../Core/Inc/can.h)(0x689DE30E)
 I (../BSP/BSP.h/typedef.h)(0x689DE30E)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdbool.h)(0x6025237C)
@@ -881,9 +881,9 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x689DE30F
 I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x68A32C2C)
 I (..\Tasks\Tasks.h\Extern_Handles.h)(0x689DE30F)
 I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x689DE30F)
-I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A4621B)
+I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A52A8A)
 I (..\APPs\APPs.h\PowerControl.h)(0x689DE727)
-I (..\Devices\Devices.h\M3508_Motor.h)(0x689DE30E)
+I (..\Devices\Devices.h\M3508_Motor.h)(0x68A56814)
 I (..\APPs\APPs.h\steer_chassis.h)(0x689FFA82)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 I (../BSP/BSP.h/BSP_Usart.h)(0x689DE30E)
@@ -961,9 +961,9 @@ I (../BSP/BSP.h/typedef.h)(0x689DE30E)
 I (..\Tasks\Tasks.h\Extern_Handles.h)(0x689DE30F)
 I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x689DE30F)
 I (../Core/Inc/usart.h)(0x689DE30E)
-I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A4621B)
+I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A52A8A)
 I (..\APPs\APPs.h\PowerControl.h)(0x689DE727)
-I (..\Devices\Devices.h\M3508_Motor.h)(0x689DE30E)
+I (..\Devices\Devices.h\M3508_Motor.h)(0x68A56814)
 I (../Algorithm/Algorithm.h/PID.h)(0x689DE30E)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (../Algorithm/Algorithm.h/kalman_filter.h)(0x689DE30E)
@@ -974,7 +974,7 @@ I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 I (../BSP/BSP.h/BSP_Usart.h)(0x689DE30E)
 I (..\Devices\Devices.h\M2006_Motor.h)(0x689DE30E)
 I (..\Tasks\Tasks.h\Task_CanReceive.h)(0x689DE30F)
-I (..\Devices\Devices.h\M6020_Motor.h)(0x68A332C4)
+I (..\Devices\Devices.h\M6020_Motor.h)(0x68A530AB)
 I (..\Devices\Devices.h\Saber_C3.h)(0x689DE30E)
 I (..\Devices\Devices.h\MA600_use.h)(0x689DE30E)
 I (..\Devices\Devices.h\MA600_base.h)(0x689DE30E)
@@ -1054,12 +1054,12 @@ I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (../Algorithm/Algorithm.h/kalman_filter.h)(0x689DE30E)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdbool.h)(0x6025237C)
 I (../Algorithm/Algorithm.h/FuzzyPID.h)(0x689DE30E)
-I (..\Devices\Devices.h\M6020_Motor.h)(0x68A332C4)
+I (..\Devices\Devices.h\M6020_Motor.h)(0x68A530AB)
 I (../BSP/BSP.h/BSP_Can.h)(0x689DE30E)
 I (../Protocol/Protocol.h/BSP_Boardcommunication.h)(0x68A32C2C)
-I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A4621B)
+I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A52A8A)
 I (..\APPs\APPs.h\PowerControl.h)(0x689DE727)
-I (..\Devices\Devices.h\M3508_Motor.h)(0x689DE30E)
+I (..\Devices\Devices.h\M3508_Motor.h)(0x68A56814)
 I (..\APPs\APPs.h\steer_chassis.h)(0x689FFA82)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 I (..\Devices\Devices.h\Saber_C3.h)(0x689DE30E)
@@ -1348,13 +1348,13 @@ I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (../Algorithm/Algorithm.h/kalman_filter.h)(0x689DE30E)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdbool.h)(0x6025237C)
 I (../Algorithm/Algorithm.h/FuzzyPID.h)(0x689DE30E)
-I (..\Devices\Devices.h\M6020_Motor.h)(0x68A332C4)
+I (..\Devices\Devices.h\M6020_Motor.h)(0x68A530AB)
 I (../BSP/BSP.h/BSP_Can.h)(0x689DE30E)
 I (../Core/Inc/usart.h)(0x689DE30E)
-I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A4621B)
+I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A52A8A)
 I (..\APPs\APPs.h\PowerControl.h)(0x689DE727)
 I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x689DE30F)
-I (..\Devices\Devices.h\M3508_Motor.h)(0x689DE30E)
+I (..\Devices\Devices.h\M3508_Motor.h)(0x68A56814)
 I (..\APPs\APPs.h\steer_chassis.h)(0x689FFA82)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 I (..\Devices\Devices.h\Saber_C3.h)(0x689DE30E)
@@ -1435,13 +1435,13 @@ I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (../Algorithm/Algorithm.h/kalman_filter.h)(0x689DE30E)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdbool.h)(0x6025237C)
 I (../Algorithm/Algorithm.h/FuzzyPID.h)(0x689DE30E)
-I (..\Devices\Devices.h\M6020_Motor.h)(0x68A332C4)
+I (..\Devices\Devices.h\M6020_Motor.h)(0x68A530AB)
 I (../BSP/BSP.h/BSP_Can.h)(0x689DE30E)
 I (../Core/Inc/usart.h)(0x689DE30E)
-I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A4621B)
+I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A52A8A)
 I (..\APPs\APPs.h\PowerControl.h)(0x689DE727)
 I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x689DE30F)
-I (..\Devices\Devices.h\M3508_Motor.h)(0x689DE30E)
+I (..\Devices\Devices.h\M3508_Motor.h)(0x68A56814)
 I (..\APPs\APPs.h\steer_chassis.h)(0x689FFA82)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 I (..\Devices\Devices.h\Saber_C3.h)(0x689DE30E)
@@ -1501,7 +1501,7 @@ I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\math.h)(0x60252378)
 I (..\APPs\APPs.h\struct_typedef.h)(0x689DE30E)
 I (../Algorithm/Algorithm.h/arm_math.h)(0x689DE30E)
 I (../Core/Inc/usart.h)(0x689DE30E)
-I (..\Devices\Devices.h\M6020_Motor.h)(0x68A332C4)
+I (..\Devices\Devices.h\M6020_Motor.h)(0x68A530AB)
 I (../Core/Inc/can.h)(0x689DE30E)
 I (../BSP/BSP.h/typedef.h)(0x689DE30E)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdbool.h)(0x6025237C)
@@ -1570,7 +1570,7 @@ I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\math.h)(0x60252378)
 I (../APPs/APPs.h/struct_typedef.h)(0x689DE30E)
 I (../Algorithm/Algorithm.h/arm_math.h)(0x689DE30E)
 I (../Core/Inc/usart.h)(0x689DE30E)
-F (..\Devices\Devices.c\DT7.c)(0x68A439FE)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ..\APPs\APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\dt7.o --omf_browse draftofomniwheel\dt7.crf --depend draftofomniwheel\dt7.d)
+F (..\Devices\Devices.c\DT7.c)(0x68A528EA)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ..\APPs\APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\dt7.o --omf_browse draftofomniwheel\dt7.crf --depend draftofomniwheel\dt7.d)
 I (..\Devices\Devices.h\DT7.h)(0x689DE30E)
 I (../Core/Inc/main.h)(0x689DE30E)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x689DE30F)
@@ -1644,15 +1644,15 @@ I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (../Algorithm/Algorithm.h/kalman_filter.h)(0x689DE30E)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdbool.h)(0x6025237C)
 I (../Algorithm/Algorithm.h/FuzzyPID.h)(0x689DE30E)
-I (..\Devices\Devices.h\M6020_Motor.h)(0x68A332C4)
+I (..\Devices\Devices.h\M6020_Motor.h)(0x68A530AB)
 I (..\Devices\Devices.h\Saber_C3.h)(0x689DE30E)
 I (..\Devices\Devices.h\MA600_use.h)(0x689DE30E)
 I (..\Devices\Devices.h\MA600_base.h)(0x689DE30E)
 I (../Core/Inc/spi.h)(0x689DE30E)
-I (..\Devices\Devices.h\M3508_Motor.h)(0x689DE30E)
+I (..\Devices\Devices.h\M3508_Motor.h)(0x68A56814)
 I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x68A32C2C)
 I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x689DE30F)
-I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A4621B)
+I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A52A8A)
 I (..\APPs\APPs.h\PowerControl.h)(0x689DE727)
 I (..\APPs\APPs.h\Cloud_Control.h)(0x68A32C2C)
 I (../Algorithm/Algorithm.h/FeedForward.h)(0x689DE30E)
@@ -1751,7 +1751,7 @@ I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\math.h)(0x60252378)
 I (../APPs/APPs.h/struct_typedef.h)(0x689DE30E)
 I (../Algorithm/Algorithm.h/arm_math.h)(0x689DE30E)
 F (..\Devices\Devices.c\M3508_Motor.c)(0x689DE30E)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ..\APPs\APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\m3508_motor.o --omf_browse draftofomniwheel\m3508_motor.crf --depend draftofomniwheel\m3508_motor.d)
-I (..\Devices\Devices.h\M3508_Motor.h)(0x689DE30E)
+I (..\Devices\Devices.h\M3508_Motor.h)(0x68A56814)
 I (../Algorithm/Algorithm.h/PID.h)(0x689DE30E)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdint.h)(0x6025237E)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdio.h)(0x60252374)
@@ -1823,7 +1823,7 @@ I (../BSP/BSP.h/BSP_Usart.h)(0x689DE30E)
 I (..\Devices\Devices.h\M2006_Motor.h)(0x689DE30E)
 I (..\Tasks\Tasks.h\Task_CanReceive.h)(0x689DE30F)
 I (..\Tasks\Tasks.h\Extern_Handles.h)(0x689DE30F)
-I (..\Devices\Devices.h\M6020_Motor.h)(0x68A332C4)
+I (..\Devices\Devices.h\M6020_Motor.h)(0x68A530AB)
 I (../Core/Inc/usart.h)(0x689DE30E)
 I (..\Devices\Devices.h\Saber_C3.h)(0x689DE30E)
 I (..\Devices\Devices.h\MA600_use.h)(0x689DE30E)
@@ -1832,13 +1832,13 @@ I (../Core/Inc/spi.h)(0x689DE30E)
 I (..\Devices\Devices.h\DT7.h)(0x689DE30E)
 I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x68A32C2C)
 I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x689DE30F)
-I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A4621B)
+I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A52A8A)
 I (..\APPs\APPs.h\PowerControl.h)(0x689DE727)
 I (..\APPs\APPs.h\Cloud_Control.h)(0x68A32C2C)
 I (../Algorithm/Algorithm.h/FeedForward.h)(0x689DE30E)
 I (../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h)(0x689DE30E)
-F (..\Devices\Devices.c\M6020_Motor.c)(0x68A439FE)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ..\APPs\APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\m6020_motor.o --omf_browse draftofomniwheel\m6020_motor.crf --depend draftofomniwheel\m6020_motor.d)
-I (..\Devices\Devices.h\M6020_Motor.h)(0x68A332C4)
+F (..\Devices\Devices.c\M6020_Motor.c)(0x68A5752E)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ..\APPs\APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\m6020_motor.o --omf_browse draftofomniwheel\m6020_motor.crf --depend draftofomniwheel\m6020_motor.d)
+I (..\Devices\Devices.h\M6020_Motor.h)(0x68A530AB)
 I (../Core/Inc/can.h)(0x689DE30E)
 I (../Core/Inc/main.h)(0x689DE30E)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x689DE30F)
@@ -2092,7 +2092,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h)(0x689DE30F)
 I (../Algorithm/Algorithm.h/arm_math.h)(0x689DE30E)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\math.h)(0x60252378)
 I (../Algorithm/Algorithm.h/FuzzyPID.h)(0x689DE30E)
-I (..\Devices\Devices.h\M6020_Motor.h)(0x68A332C4)
+I (..\Devices\Devices.h\M6020_Motor.h)(0x68A530AB)
 I (../Core/Inc/can.h)(0x689DE30E)
 I (../Core/Inc/main.h)(0x689DE30E)
 I (..\APPs\APPs.h\struct_typedef.h)(0x689DE30E)
@@ -2113,12 +2113,12 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x689DE30F)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x689DE30F)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x689DE30F)
 I (../Algorithm/Algorithm.h/FeedForward.h)(0x689DE30E)
-I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A4621B)
+I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A52A8A)
 I (..\APPs\APPs.h\PowerControl.h)(0x689DE727)
 I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x689DE30F)
 I (../Core/Inc/usart.h)(0x689DE30E)
 I (..\Tasks\Tasks.h\Extern_Handles.h)(0x689DE30F)
-I (..\Devices\Devices.h\M3508_Motor.h)(0x689DE30E)
+I (..\Devices\Devices.h\M3508_Motor.h)(0x68A56814)
 I (..\APPs\APPs.h\steer_chassis.h)(0x689FFA82)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 I (../BSP/BSP.h/BSP_Usart.h)(0x689DE30E)
@@ -2242,8 +2242,8 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x689DE30F)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x689DE30F)
 I (../BSP/BSP.h/typedef.h)(0x689DE30E)
 I (..\Tasks\Tasks.h\Extern_Handles.h)(0x689DE30F)
-F (..\APPs\APPs.c\Steer_Omni_Chassis.c)(0x68A46266)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ..\APPs\APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\steer_omni_chassis.o --omf_browse draftofomniwheel\steer_omni_chassis.crf --depend draftofomniwheel\steer_omni_chassis.d)
-I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A4621B)
+F (..\APPs\APPs.c\Steer_Omni_Chassis.c)(0x68A5765E)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ..\APPs\APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\steer_omni_chassis.o --omf_browse draftofomniwheel\steer_omni_chassis.crf --depend draftofomniwheel\steer_omni_chassis.d)
+I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A52A8A)
 I (../Core/Inc/main.h)(0x689DE30E)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x689DE30F)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x689DE30E)
@@ -2308,7 +2308,7 @@ I (..\APPs\APPs.h\PowerControl.h)(0x689DE727)
 I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x689DE30F)
 I (../Core/Inc/usart.h)(0x689DE30E)
 I (..\Tasks\Tasks.h\Extern_Handles.h)(0x689DE30F)
-I (..\Devices\Devices.h\M3508_Motor.h)(0x689DE30E)
+I (..\Devices\Devices.h\M3508_Motor.h)(0x68A56814)
 I (../Algorithm/Algorithm.h/PID.h)(0x689DE30E)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (../Algorithm/Algorithm.h/kalman_filter.h)(0x689DE30E)
@@ -2319,7 +2319,7 @@ I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 I (../BSP/BSP.h/BSP_Usart.h)(0x689DE30E)
 I (..\Devices\Devices.h\M2006_Motor.h)(0x689DE30E)
 I (..\Tasks\Tasks.h\Task_CanReceive.h)(0x689DE30F)
-I (..\Devices\Devices.h\M6020_Motor.h)(0x68A332C4)
+I (..\Devices\Devices.h\M6020_Motor.h)(0x68A530AB)
 I (..\Devices\Devices.h\Saber_C3.h)(0x689DE30E)
 I (..\Devices\Devices.h\MA600_use.h)(0x689DE30E)
 I (..\Devices\Devices.h\MA600_base.h)(0x689DE30E)
@@ -2329,7 +2329,7 @@ I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x68A32C2C)
 I (..\APPs\APPs.h\Cloud_Control.h)(0x68A32C2C)
 I (../Algorithm/Algorithm.h/FeedForward.h)(0x689DE30E)
 I (../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h)(0x689DE30E)
-F (..\Tasks\Tasks.c\Task_CanReceive.c)(0x68A32C2C)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ..\APPs\APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\task_canreceive.o --omf_browse draftofomniwheel\task_canreceive.crf --depend draftofomniwheel\task_canreceive.d)
+F (..\Tasks\Tasks.c\Task_CanReceive.c)(0x68A56814)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ..\APPs\APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\task_canreceive.o --omf_browse draftofomniwheel\task_canreceive.crf --depend draftofomniwheel\task_canreceive.d)
 I (..\Tasks\Tasks.h\Task_CanReceive.h)(0x689DE30F)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x689DE30F)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x689DE30F)
@@ -2395,7 +2395,7 @@ I (../BSP/BSP.h/typedef.h)(0x689DE30E)
 I (..\APPs\APPs.h\PowerControl.h)(0x689DE727)
 I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x689DE30F)
 I (../Core/Inc/usart.h)(0x689DE30E)
-I (..\Devices\Devices.h\M3508_Motor.h)(0x689DE30E)
+I (..\Devices\Devices.h\M3508_Motor.h)(0x68A56814)
 I (../Algorithm/Algorithm.h/PID.h)(0x689DE30E)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (../Algorithm/Algorithm.h/kalman_filter.h)(0x689DE30E)
@@ -2405,14 +2405,14 @@ I (..\APPs\APPs.h\steer_chassis.h)(0x689FFA82)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 I (../BSP/BSP.h/BSP_Usart.h)(0x689DE30E)
 I (..\Devices\Devices.h\M2006_Motor.h)(0x689DE30E)
-I (..\Devices\Devices.h\M6020_Motor.h)(0x68A332C4)
+I (..\Devices\Devices.h\M6020_Motor.h)(0x68A530AB)
 I (..\Devices\Devices.h\Saber_C3.h)(0x689DE30E)
 I (..\Devices\Devices.h\MA600_use.h)(0x689DE30E)
 I (..\Devices\Devices.h\MA600_base.h)(0x689DE30E)
 I (../Core/Inc/spi.h)(0x689DE30E)
 I (..\Devices\Devices.h\DT7.h)(0x689DE30E)
 I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x68A32C2C)
-I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A4621B)
+I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A52A8A)
 I (..\APPs\APPs.h\Cloud_Control.h)(0x68A32C2C)
 I (../Algorithm/Algorithm.h/FeedForward.h)(0x689DE30E)
 I (../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h)(0x689DE30E)
@@ -2487,7 +2487,7 @@ I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (../Algorithm/Algorithm.h/kalman_filter.h)(0x689DE30E)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdbool.h)(0x6025237C)
 I (../Algorithm/Algorithm.h/FuzzyPID.h)(0x689DE30E)
-I (..\Devices\Devices.h\M6020_Motor.h)(0x68A332C4)
+I (..\Devices\Devices.h\M6020_Motor.h)(0x68A530AB)
 I (../Core/Inc/usart.h)(0x689DE30E)
 F (..\Tasks\Tasks.c\Task_LED.c)(0x689DE30F)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ..\APPs\APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\task_led.o --omf_browse draftofomniwheel\task_led.crf --depend draftofomniwheel\task_led.d)
 I (..\Tasks\Tasks.h\Task_LED.h)(0x689DE30F)
@@ -2560,7 +2560,7 @@ I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (../Algorithm/Algorithm.h/kalman_filter.h)(0x689DE30E)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdbool.h)(0x6025237C)
 I (../Algorithm/Algorithm.h/FuzzyPID.h)(0x689DE30E)
-I (..\Devices\Devices.h\M6020_Motor.h)(0x68A332C4)
+I (..\Devices\Devices.h\M6020_Motor.h)(0x68A530AB)
 I (../BSP/BSP.h/BSP_Can.h)(0x689DE30E)
 I (../Core/Inc/usart.h)(0x689DE30E)
 F (..\Tasks\Tasks.c\Task_RobotControl.c)(0x68A43B5F)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ..\APPs\APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\task_robotcontrol.o --omf_browse draftofomniwheel\task_robotcontrol.crf --depend draftofomniwheel\task_robotcontrol.d)
@@ -2629,8 +2629,8 @@ I (../BSP/BSP.h/BSP_can.h)(0x689DE30E)
 I (../Core/Inc/can.h)(0x689DE30E)
 I (../BSP/BSP.h/typedef.h)(0x689DE30E)
 I (..\Tasks\Tasks.h\Extern_Handles.h)(0x689DE30F)
-I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A4621B)
-I (..\Devices\Devices.h\M3508_Motor.h)(0x689DE30E)
+I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A52A8A)
+I (..\Devices\Devices.h\M3508_Motor.h)(0x68A56814)
 I (../Algorithm/Algorithm.h/PID.h)(0x689DE30E)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (../Algorithm/Algorithm.h/kalman_filter.h)(0x689DE30E)
@@ -2641,7 +2641,7 @@ I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 I (../BSP/BSP.h/BSP_Usart.h)(0x689DE30E)
 I (..\Devices\Devices.h\M2006_Motor.h)(0x689DE30E)
 I (..\Tasks\Tasks.h\Task_CanReceive.h)(0x689DE30F)
-I (..\Devices\Devices.h\M6020_Motor.h)(0x68A332C4)
+I (..\Devices\Devices.h\M6020_Motor.h)(0x68A530AB)
 I (..\Devices\Devices.h\Saber_C3.h)(0x689DE30E)
 I (..\Devices\Devices.h\MA600_use.h)(0x689DE30E)
 I (..\Devices\Devices.h\MA600_base.h)(0x689DE30E)
@@ -2721,14 +2721,14 @@ I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (../Algorithm/Algorithm.h/kalman_filter.h)(0x689DE30E)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdbool.h)(0x6025237C)
 I (../Algorithm/Algorithm.h/FuzzyPID.h)(0x689DE30E)
-I (..\Devices\Devices.h\M6020_Motor.h)(0x68A332C4)
+I (..\Devices\Devices.h\M6020_Motor.h)(0x68A530AB)
 I (../BSP/BSP.h/BSP_Can.h)(0x689DE30E)
 I (../Core/Inc/usart.h)(0x689DE30E)
 I (../BSP/BSP.h/BSP_Test.h)(0x68A3308C)
-I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A4621B)
+I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A52A8A)
 I (..\APPs\APPs.h\PowerControl.h)(0x689DE727)
 I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x689DE30F)
-I (..\Devices\Devices.h\M3508_Motor.h)(0x689DE30E)
+I (..\Devices\Devices.h\M3508_Motor.h)(0x68A56814)
 I (..\APPs\APPs.h\steer_chassis.h)(0x689FFA82)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 I (..\Devices\Devices.h\Saber_C3.h)(0x689DE30E)
@@ -2807,9 +2807,9 @@ I (../Core/Inc/can.h)(0x689DE30E)
 I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x68A32C2C)
 I (../BSP/BSP.h/BSP_Can.h)(0x689DE30E)
 I (..\Tasks\Tasks.h\Extern_Handles.h)(0x689DE30F)
-I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A4621B)
+I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A52A8A)
 I (..\APPs\APPs.h\PowerControl.h)(0x689DE727)
-I (..\Devices\Devices.h\M3508_Motor.h)(0x689DE30E)
+I (..\Devices\Devices.h\M3508_Motor.h)(0x68A56814)
 I (../Algorithm/Algorithm.h/PID.h)(0x689DE30E)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (../Algorithm/Algorithm.h/kalman_filter.h)(0x689DE30E)
@@ -2820,7 +2820,7 @@ I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 I (../BSP/BSP.h/BSP_Usart.h)(0x689DE30E)
 I (..\Devices\Devices.h\M2006_Motor.h)(0x689DE30E)
 I (..\Tasks\Tasks.h\Task_CanReceive.h)(0x689DE30F)
-I (..\Devices\Devices.h\M6020_Motor.h)(0x68A332C4)
+I (..\Devices\Devices.h\M6020_Motor.h)(0x68A530AB)
 I (..\Devices\Devices.h\Saber_C3.h)(0x689DE30E)
 I (..\Devices\Devices.h\MA600_use.h)(0x689DE30E)
 I (..\Devices\Devices.h\MA600_base.h)(0x689DE30E)
@@ -2878,7 +2878,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h)(0x689DE30F)
 I (../Algorithm/Algorithm.h/arm_math.h)(0x689DE30E)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\math.h)(0x60252378)
 I (../Algorithm/Algorithm.h/FuzzyPID.h)(0x689DE30E)
-I (..\Devices\Devices.h\M6020_Motor.h)(0x68A332C4)
+I (..\Devices\Devices.h\M6020_Motor.h)(0x68A530AB)
 I (../Core/Inc/can.h)(0x689DE30E)
 I (../Core/Inc/main.h)(0x689DE30E)
 I (..\APPs\APPs.h\struct_typedef.h)(0x689DE30E)
@@ -2899,12 +2899,12 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x689DE30F)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x689DE30F)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x689DE30F)
 I (../Algorithm/Algorithm.h/FeedForward.h)(0x689DE30E)
-I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A4621B)
+I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A52A8A)
 I (..\APPs\APPs.h\PowerControl.h)(0x689DE727)
 I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x689DE30F)
 I (../Core/Inc/usart.h)(0x689DE30E)
 I (..\Tasks\Tasks.h\Extern_Handles.h)(0x689DE30F)
-I (..\Devices\Devices.h\M3508_Motor.h)(0x689DE30E)
+I (..\Devices\Devices.h\M3508_Motor.h)(0x68A56814)
 I (..\APPs\APPs.h\steer_chassis.h)(0x689FFA82)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdarg.h)(0x60252376)
 I (../BSP/BSP.h/BSP_Usart.h)(0x689DE30E)
@@ -2917,7 +2917,7 @@ I (../Core/Inc/spi.h)(0x689DE30E)
 I (..\Devices\Devices.h\DT7.h)(0x689DE30E)
 I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x68A32C2C)
 I (../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h)(0x689DE30E)
-F (..\Tasks\Tasks.c\Task_Vofa.c)(0x68A331F2)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ..\APPs\APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\task_vofa.o --omf_browse draftofomniwheel\task_vofa.crf --depend draftofomniwheel\task_vofa.d)
+F (..\Tasks\Tasks.c\Task_Vofa.c)(0x68A5440F)(--c99 -c --cpu Cortex-M4.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Algorithm/Algorithm.h -I ..\APPs\APPs.h -I ../BSP/BSP.h -I ..\Devices\Devices.h -I ../Protocol/Protocol.h -I ..\Tasks\Tasks.h -I ../Debug/TraceRecorder/include -I ../Debug/TraceRecorder/config -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I "..\Debug Assist"-I.\RTE\_DraftOfOmniWheel-ID:\ProgramFile\MDK\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__TARGET_FPU_VFP -D__CC_ARM -DARM_MATH_CM4 -D__FPU_PRESENT="1U"-o draftofomniwheel\task_vofa.o --omf_browse draftofomniwheel\task_vofa.crf --depend draftofomniwheel\task_vofa.d)
 I (..\Tasks\Tasks.h\Task_Vofa.h)(0x689DE30F)
 I (..\Debug Assist\vofa.h)(0x689DE30E)
 I (..\Debug Assist\sys.h)(0x689DE30E)
@@ -2965,7 +2965,7 @@ I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\math.h)(0x60252378)
 I (..\APPs\APPs.h\struct_typedef.h)(0x689DE30E)
 I (../Algorithm/Algorithm.h/arm_math.h)(0x689DE30E)
-I (..\Devices\Devices.h\M3508_Motor.h)(0x689DE30E)
+I (..\Devices\Devices.h\M3508_Motor.h)(0x68A56814)
 I (../Algorithm/Algorithm.h/PID.h)(0x689DE30E)
 I (D:\ProgramFile\MDK\Core\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (../Algorithm/Algorithm.h/kalman_filter.h)(0x689DE30E)
@@ -2994,7 +2994,7 @@ I (../BSP/BSP.h/BSP_Usart.h)(0x689DE30E)
 I (..\Devices\Devices.h\M2006_Motor.h)(0x689DE30E)
 I (..\Tasks\Tasks.h\Task_CanReceive.h)(0x689DE30F)
 I (..\Tasks\Tasks.h\Extern_Handles.h)(0x689DE30F)
-I (..\Devices\Devices.h\M6020_Motor.h)(0x68A332C4)
+I (..\Devices\Devices.h\M6020_Motor.h)(0x68A530AB)
 I (..\Devices\Devices.h\Saber_C3.h)(0x689DE30E)
 I (..\Devices\Devices.h\MA600_use.h)(0x689DE30E)
 I (..\Devices\Devices.h\MA600_base.h)(0x689DE30E)
@@ -3002,7 +3002,7 @@ I (../Core/Inc/spi.h)(0x689DE30E)
 I (..\Devices\Devices.h\DT7.h)(0x689DE30E)
 I (../Protocol/Protocol.h/BSP_BoardCommunication.h)(0x68A32C2C)
 I (../Protocol/Protocol.h/Protocol_Judgement.h)(0x689DE30F)
-I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A4621B)
+I (..\APPs\APPs.h\Steer_Omni_Chassis.h)(0x68A52A8A)
 I (..\APPs\APPs.h\PowerControl.h)(0x689DE727)
 I (..\APPs\APPs.h\Cloud_Control.h)(0x68A32C2C)
 I (../Algorithm/Algorithm.h/FeedForward.h)(0x689DE30E)

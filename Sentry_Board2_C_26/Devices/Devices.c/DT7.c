@@ -73,7 +73,7 @@ void DT7_Handle(void)
 	
 		//control code 	
 		//两全两舵底盘速度获取
-		if(RC_CtrlData.rc.s1 == RC_SW_DOWN)
+		if(RC_CtrlData.rc.s1 == RC_SW_MID)
 		{
 			Steer_Omni_Data.Speed_ToCloud.vx = RC_CtrlData.rc.ch3; //左手上下
 			Steer_Omni_Data.Speed_ToCloud.vy = RC_CtrlData.rc.ch2; //左手左右

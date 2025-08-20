@@ -82,9 +82,10 @@ void Can2Receives(void const *argument)
     {
         xQueueReceive(CAN2_ReceiveHandle, &Can_Export_Data, portMAX_DELAY);
         ID = Can_Export_Data.CAN_RxHeader.StdId;
-			   if (ID >= M3508D_READID_START && ID <= M3508D_READID_END)
+
+        if (ID >= M6020_READID_START && ID <= M6020_READID_END)
         {
-            M3508_FUN.M3508_getInfo(Can_Export_Data);
+            M6020_Fun.M6020_getInfo(Can_Export_Data);
         }
         //Board2接受Board1数据
         else if (ID == CAN_ID_CHASSIS)

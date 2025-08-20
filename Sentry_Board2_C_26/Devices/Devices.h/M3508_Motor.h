@@ -22,8 +22,6 @@
 */
 #define M3508M_READID_START 0x201
 #define M3508M_READID_END 0x204
-#define M3508D_READID_START 0x205
-#define M3508D_READID_END 0x208
 #define M3508_SENDID_Chassis 0x200   //控制底盘电机
 #define M3508_SENDID_Fric_Dial 0x1FF //控制摩擦轮和拨盘电机
 #define M3508_MaxOutput 16384        //发送给电机的最大控制值

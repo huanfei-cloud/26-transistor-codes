@@ -59,7 +59,7 @@ extern Steer_Omni_Data_t Steer_Omni_Data;
 
 /********º¯ÊýÉùÃ÷********/
 fp64 Angle_Limit(fp64 angle,fp64 max);
-void chassis_out(void);
+void Chassis_Init(void);
 void v_cloud_convertto_chassis(fp32 angle);
 void direction_motor_angle_set(void);
 void move_motor_speed_set(void);

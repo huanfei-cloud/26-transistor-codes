@@ -227,10 +227,7 @@ void ALL_Init(void const * argument)
         Can_Fun.CAN_IT_Init(&hcan1, Can1_Type);
         Can_Fun.CAN_IT_Init(&hcan2, Can2_Type);
 		  /*���̳�ʼ��*/
-		   M3508_Init(&M3508_Array[0],0x201);
-		   M3508_Init(&M3508_Array[1],0x202);
-		   M3508_Init(&M3508_Array[2],0x203);
-		   M3508_Init(&M3508_Array[3],0x204);
+		   Chassis_Init();
 		  /*ң������ʼ��*/
 		   DT7_Init();
 	    /* PID��ʼ�� */

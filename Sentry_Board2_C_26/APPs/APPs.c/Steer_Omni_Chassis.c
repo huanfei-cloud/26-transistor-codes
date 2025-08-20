@@ -37,34 +37,34 @@ fp64 Angle_Limit(fp64 angle,fp64 max)
  * @param 结构体地址
  * @retval None
  */
-void chassis_out(void)
+void Chassis_Init(void)
 {
     M3508_Init(&M3508_Array[0],0x201);
 	  M3508_Init(&M3508_Array[1],0x202);
     M3508_Init(&M3508_Array[2],0x203);
 	  M3508_Init(&M3508_Array[3],0x204);
-    M6020_Init(&M6020_Chassis[0],0x206);
-    M6020_Init(&M6020_Chassis[1],0x207);
+    M6020_Init(&M6020s_Chassis1,0x206);
+    M6020_Init(&M6020s_Chassis2,0x207);
 
     //驱动电机速度环初始化
-    Position_PIDInit(&(M3508_Array[0].v_pid_object),10.0f, 0.22f, 0,0, 16384,30000,6000);
-		Position_PIDInit(&(M3508_Array[1].v_pid_object),10.0f, 0.22f, 0,0, 16384,30000,6000);
-		Position_PIDInit(&(M3508_Array[2].v_pid_object),10.0f, 0.22f, 0,0, 16384,30000,6000);
-		Position_PIDInit(&(M3508_Array[3].v_pid_object),10.0f, 0.22f, 0,0, 16384,30000,6000);
+    Position_PIDInit(&(M3508_Array[0].v_pid_object),10.0f, 0.22f, 0,0,800,30000,6000);
+		Position_PIDInit(&(M3508_Array[1].v_pid_object),10.0f, 0.22f, 0,0,800,30000,6000);
+		Position_PIDInit(&(M3508_Array[2].v_pid_object),10.0f, 0.22f, 0,0,800,30000,6000);
+		Position_PIDInit(&(M3508_Array[3].v_pid_object),10.0f, 0.22f, 0,0,800,30000,6000);
     //转向电机速度环初始化
-  	Position_PIDInit(&(M6020_Chassis[0].v_pid_object),1,0.1,1,0,700,30000,6000);
-    Position_PIDInit(&(M6020_Chassis[1].v_pid_object),1,0.1,1,0,700,30000,6000);
+  	Position_PIDInit(&(M6020s_Chassis1.v_pid_object),1,0.1,1,0,7000,30000,6000);
+    Position_PIDInit(&(M6020s_Chassis2.v_pid_object),1,0.1,1,0,7000,30000,6000);
     //转向电机位置环初始化
-		Position_PIDInit(&(M6020_Chassis[0].l_pid_object),0.032f, 0.00001f, 0.05, 0, 30000, 10000 ,10000);
-		Position_PIDInit(&(M6020_Chassis[1].l_pid_object),0.032f, 0.00001f, 0.05, 0, 30000, 10000 ,10000);
+		Position_PIDInit(&(M6020s_Chassis1.l_pid_object),0.032f, 0.00001f, 0.05, 0, 30000, 10000 ,10000);
+		Position_PIDInit(&(M6020s_Chassis2.l_pid_object),0.032f, 0.00001f, 0.05, 0, 30000, 10000 ,10000);
 
     M3508_Array[0].targetSpeed = 0.0f;
     M3508_Array[1].targetSpeed = 0.0f;
     M3508_Array[2].targetSpeed = 0.0f;
     M3508_Array[3].targetSpeed = 0.0f;
 
-    M6020_Chassis[0].targetAngle = DIRMOTOR_LB_ANGLE;
-    M6020_Chassis[1].targetAngle = DIRMOTOR_RB_ANGLE;
+    M6020s_Chassis1.targetAngle = DIRMOTOR_LB_ANGLE;
+    M6020s_Chassis2.targetAngle = DIRMOTOR_RB_ANGLE;
 
 }
 
@@ -105,11 +105,13 @@ void direction_motor_angle_set(void)
         atan_angle[1] = 0.0f;
     }
 
-    finall_angle[0] = atan_angle[0] + DIRMOTOR_LB_ANGLE;
-	  finall_angle[1] = atan_angle[1] + DIRMOTOR_RB_ANGLE;
+    finall_angle[0] = atan_angle[0] + DIRMOTOR_LB_ANGLE / 8192 * 360.0f;
+	  finall_angle[1] = atan_angle[1] + DIRMOTOR_RB_ANGLE / 8192 * 360.0f;
+		
+		
 
-    error_angle[0] =Angle_Limit((finall_angle[0] - (M6020_Chassis[0].realAngle /8192 * 360.0f)),180.0f);
-	  error_angle[1] =Angle_Limit((finall_angle[1] - (M6020_Chassis[1].realAngle /8192 * 360.0f)),180.0f);
+    error_angle[0] =Angle_Limit((finall_angle[0] - (M6020s_Chassis1.realAngle /8192 * 360.0f)),180.0f);
+	  error_angle[1] =Angle_Limit((finall_angle[1] - (M6020s_Chassis2.realAngle /8192 * 360.0f)),180.0f);
 
     if(error_angle[0]>90.0f || error_angle[0]<-90.0f)
     {
@@ -185,8 +187,24 @@ void chassis_target_calc(void)
     direction_motor_angle_set();
     move_motor_speed_set();
     //转向电机目标位置设置
-    M6020_Chassis[0].targetAngle = Steer_Omni_Data.M6020_Setposition[0];
-    M6020_Chassis[1].targetAngle = Steer_Omni_Data.M6020_Setposition[1];
+    M6020s_Chassis1.targetAngle = Steer_Omni_Data.M6020_Setposition[0];
+    M6020s_Chassis2.targetAngle = Steer_Omni_Data.M6020_Setposition[1];
+	  if( M6020s_Chassis1.targetAngle < 0 )
+		{
+			M6020s_Chassis1.targetAngle += 8192 ; 
+		}
+		else if ( M6020s_Chassis1.targetAngle > 8192 )
+		{
+			M6020s_Chassis1.targetAngle -= 8192 ;
+		}
+		if( M6020s_Chassis2.targetAngle < 0 )
+		{
+			M6020s_Chassis2.targetAngle += 8192 ; 
+		}
+		else if ( M6020s_Chassis2.targetAngle > 8192 )
+		{
+			M6020s_Chassis2.targetAngle -= 8192 ;
+		}
     //驱动电机目标速度设置
     M3508_Array[0].targetSpeed = Steer_Omni_Data.M3508_Setspeed[0];
     M3508_Array[1].targetSpeed = Steer_Omni_Data.M3508_Setspeed[1];
@@ -204,19 +222,19 @@ void Steer_Omni_Chassis_Out(void)
 {
     chassis_target_calc();
     
-    M6020_location_change(&M6020_Chassis[0],pid_control_normal,M6020_Chassis[0].targetAngle,M6020_Chassis[0].realAngle);
-    M6020_location_change(&M6020_Chassis[1],pid_control_normal,M6020_Chassis[1].targetAngle,M6020_Chassis[1].realAngle);
+    M6020_location_change(&M6020s_Chassis1,pid_control_normal,M6020s_Chassis1.targetAngle,M6020s_Chassis1.totalAngle);
+    M6020_location_change(&M6020s_Chassis2,pid_control_normal,M6020s_Chassis2.targetAngle,M6020s_Chassis2.totalAngle);
 
-    M6020_velocity_change(&M6020_Chassis[0],pid_control_normal,&hcan2,M6020_Chassis[0].targetSpeed);
-    M6020_velocity_change(&M6020_Chassis[1],pid_control_normal,&hcan2,M6020_Chassis[1].targetSpeed);
+    M6020_velocity_change(&M6020s_Chassis1,pid_control_normal,&hcan2,M6020s_Chassis1.targetSpeed);
+    M6020_velocity_change(&M6020s_Chassis2,pid_control_normal,&hcan2,M6020s_Chassis2.targetSpeed);
 
     motor_velocity_change(&M3508_Array[0],pid_control_normal,&hcan1,M3508_Array[0].targetSpeed);
-    motor_velocity_change(&M3508_Array[0],pid_control_normal,&hcan1,M3508_Array[0].targetSpeed);
-    motor_velocity_change(&M3508_Array[0],pid_control_normal,&hcan1,M3508_Array[0].targetSpeed);
-    motor_velocity_change(&M3508_Array[0],pid_control_normal,&hcan1,M3508_Array[0].targetSpeed);
+    motor_velocity_change(&M3508_Array[1],pid_control_normal,&hcan1,M3508_Array[1].targetSpeed);
+    motor_velocity_change(&M3508_Array[2],pid_control_normal,&hcan1,M3508_Array[2].targetSpeed);
+    motor_velocity_change(&M3508_Array[3],pid_control_normal,&hcan1,M3508_Array[3].targetSpeed);
 
     Can_Fun.CAN_SendData(CAN_SendHandle,&hcan1,CAN_ID_STD,0x200,CAN1_0x200_Tx_Data);
-    Can_Fun.CAN_SendData(CAN_SendHandle,&hcan2,CAN_ID_STD,0x2ff,CAN2_0x2ff_Tx_Data);
+    Can_Fun.CAN_SendData(CAN_SendHandle,&hcan2,CAN_ID_STD,0x1ff,CAN2_0x1ff_Tx_Data);
 
 }
 
