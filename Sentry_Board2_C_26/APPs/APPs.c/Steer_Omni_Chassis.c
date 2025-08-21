@@ -13,7 +13,6 @@
 Steer_Omni_Data_t Steer_Omni_Data;
 int8_t dirt[2] = {-1,1};
 positionpid_t chassis_follow;
-int flag =0;
 /**
  * @brief 角度范围的限制
  * @param 计算出的角度值
@@ -90,7 +89,7 @@ void v_cloud_convertto_chassis(fp32 angle)
  * @param kp
  * @retval ????????????????
  */
-/*void chassis_follow_mode(float angle, uint8_t start_flag)
+void chassis_follow_mode(float angle, uint8_t start_flag)
 {
     if(start_flag)
     {
@@ -100,7 +99,7 @@ void v_cloud_convertto_chassis(fp32 angle)
         }
         Steer_Omni_Data.Speed_ToChassis.wz +=Position_PID(&chassis_follow,angle, 0);
     }
-}*/
+}
 /**
  * @brief 转向电机角度设置
  * @param None
@@ -216,7 +215,7 @@ void move_motor_speed_set(void)
 void chassis_target_calc(void)
 {
     v_cloud_convertto_chassis(Steer_Omni_Data.Angle_ChassisToCloud);
-    //chassis_follow_mode(Steer_Omni_Data.Angle_ChassisToCloud,flag);
+    chassis_follow_mode(Steer_Omni_Data.Angle_ChassisToCloud,follow_flag);
     direction_motor_angle_set();
     move_motor_speed_set();
     //转向电机目标位置设置

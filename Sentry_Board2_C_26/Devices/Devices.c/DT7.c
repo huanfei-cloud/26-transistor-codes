@@ -4,9 +4,9 @@
 RC_Ctl_t RC_CtrlData;
 static uint8_t DT7_Rx_Data[RC_FRAME_LENGTH];
 uint8_t DT7_RX_Finish;
-
+int follow_flag;
 /**
-  * @brief  DT7³õÊ¼»¯£¬¿ªÆô½ÓÊÕ¿ÕÏÐÖÐ¶Ï
+  * @brief  DT7ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¿ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½
   * @param  void
   * @retval void
   */
@@ -16,7 +16,7 @@ void DT7_Init(void)
 }
 
 /**
-  * @brief  DT7Êý¾Ý½âÎö
+  * @brief  DT7ï¿½ï¿½ï¿½Ý½ï¿½ï¿½ï¿½
   * @param 	void
   * @retval void
   */
@@ -72,17 +72,25 @@ void DT7_Handle(void)
 		}
 	
 		//control code 	
-		//Á½È«Á½¶æµ×ÅÌËÙ¶È»ñÈ¡
+		//ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶È»ï¿½È¡
 		if(RC_CtrlData.rc.s1 == RC_SW_MID)
 		{
-			Steer_Omni_Data.Speed_ToCloud.vx = RC_CtrlData.rc.ch3; //×óÊÖÉÏÏÂ
-			Steer_Omni_Data.Speed_ToCloud.vy = RC_CtrlData.rc.ch2; //×óÊÖ×óÓÒ
-			Steer_Omni_Data.Speed_ToCloud.wz = -1*RC_CtrlData.wheel/100; //»¬ÂÖ
+			Steer_Omni_Data.Speed_ToCloud.vx = RC_CtrlData.rc.ch3; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			Steer_Omni_Data.Speed_ToCloud.vy = RC_CtrlData.rc.ch2; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			Steer_Omni_Data.Speed_ToCloud.wz = -1*RC_CtrlData.wheel/100; //ï¿½ï¿½ï¿½ï¿½
 			Cloud.Target_Yaw+=RC_CtrlData.wheel * 0.0005 * 25;
+			if(RC_CtrlData.rc.s2 == RC_SW_DOWN)
+			{
+				follow_flag = 1; 
+			}
+			else
+			{
+				follow_flag = 0; 
+			}
 		}
 		else
 		{
-			Steer_Omni_Data.Speed_ToCloud.vx = 0; //×óÊÖÉÏÏÂ
+			Steer_Omni_Data.Speed_ToCloud.vx = 0; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			Steer_Omni_Data.Speed_ToCloud.vy = 0; //
 			Steer_Omni_Data.Speed_ToCloud.wz = 0; //
 		}

@@ -17,19 +17,19 @@
 #include "M3508_Motor.h"
 #include "M6020_Motor.h"
 
-/********³£ÖµÊý¾Ý¶¨Òå********/
+/********ï¿½ï¿½Öµï¿½ï¿½ï¿½Ý¶ï¿½ï¿½ï¿½********/
 #define M3508_RATIO 19
 #define DIR_GEAR_RATIO 7.47f
 #define Radius 60
-//ºóÃæ¶æÂÖµÄÇý¶¯µç»ú³¯ÏòÇ°·½Ê±×ªÏòµç»ú³õÊ¼±àÂëÖµ
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½Ê±×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Öµ
 #define DIRMOTOR_LB_ANGLE 4035
 #define DIRMOTOR_RB_ANGLE 4035
 
-#define Length_wheel_y 196.43f  //ÂÖ×Óµ½µ×ÅÌ¼¸ºÎÖÐÐÄµÄyÖá¾àÀë (µ¥Î»£ºmm)
-#define Length_wheel_x 155.49f  //ÂÖ×Óµ½µ×ÅÌ¼¸ºÎÖÐÐÄµÄxÖá¾àÀë (µ¥Î»£ºmm)
-#define WHEEL_PERIMETER 140.0f  //ÂÖ×ÓµÄÖÜ³¤
-#define lf_omni_angle 135.0f    //×óÇ°ÂÖÏà¶ÔÓÚXÖáµÄ½Ç¶È
-#define rf_omni_angle 45.0f     //ÓÒÇ°ÂÖÏà¶ÔÓÚXÖáµÄ½Ç¶È
+#define Length_wheel_y 196.43f  //ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½Ì¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½yï¿½ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½Î»ï¿½ï¿½mm)
+#define Length_wheel_x 155.49f  //ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½Ì¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½xï¿½ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½Î»ï¿½ï¿½mm)
+#define WHEEL_PERIMETER 140.0f  //ï¿½ï¿½ï¿½Óµï¿½ï¿½Ü³ï¿½
+#define lf_omni_angle 135.0f    //ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½ï¿½Ä½Ç¶ï¿½
+#define rf_omni_angle 45.0f     //ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½ï¿½Ä½Ç¶ï¿½
 
 #define pi 3.1415926f
 
@@ -40,24 +40,24 @@ typedef struct
         float vx;
         float vy;
         float wz;
-    } Speed_ToCloud;            //ÔÆÌ¨×ø±êÏµµÄËÙ¶Èvx,vy,wz
+    } Speed_ToCloud;            //ï¿½ï¿½Ì¨ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½Ù¶ï¿½vx,vy,wz
 		
 	struct
     {
         float vx;
         float vy;
         float wz;
-    } Speed_ToChassis;          //µ×ÅÌ×ø±êÏµµÄËÙ¶Èvx,vy,wz
+    } Speed_ToChassis;          //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½Ù¶ï¿½vx,vy,wz
 		
 		fp32 Angle_ChassisToCloud;
-    int32_t M6020_Setposition[2]; //Á½¸ö¶æÏòµç»úµÄÉèÖÃÎ»ÖÃ
-    int16_t M3508_Setspeed[4];	  //ËÄ¸öÇý¶¯µç»úµÄÉèÖÃËÙ¶È
+    int32_t M6020_Setposition[2]; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
+    int16_t M3508_Setspeed[4];	  //ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½
 } Steer_Omni_Data_t;
 
-/********È«¾Ö±äÁ¿ÉùÃ÷********/
+/********È«ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½********/
 extern Steer_Omni_Data_t Steer_Omni_Data;
-
-/********º¯ÊýÉùÃ÷********/
+extern follow_flag;
+/********ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½********/
 fp64 Angle_Limit(fp64 angle,fp64 max);
 void Chassis_Init(void);
 void v_cloud_convertto_chassis(fp32 angle);
