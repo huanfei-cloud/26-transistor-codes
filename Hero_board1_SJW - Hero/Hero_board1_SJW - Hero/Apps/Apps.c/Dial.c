@@ -144,37 +144,6 @@ void Dial_Processing_2(void)
     }
   }
 
-  /*******************************应被注释的内容**************************************/
-  // static bool is_dial_rotating = false;
-  // static float target_rotate_angle = 0.0f;
-
-  // if (Dial_Data.Shoot_Mode == Single_Shoot && Dial_Data.Dial_Switch == Dial_Single && !is_dial_rotating)
-  // {
-  //   // 开始转动：设置目标角度为当前角度+60度，标记为正在转动
-  //   target_rotate_angle = M3508_Array[Dial_Wheel].totalAngle + 60.0f;
-  //   is_dial_rotating = true;
-  // }
-  // // 正在转动过程中，进行角度闭环控制
-  // if (is_dial_rotating)
-  // {
-  //   // 通过PID计算目标速度（根据角度差控制）
-  //   M3508_Array[Dial_Wheel].targetSpeed = PID_Model4_Update(&M3508_DialV_Pid, &fuzzy_pid_bullet_v, target_rotate_angle, M3508_Array[Dial_Wheel].totalAngle);
-
-  //   // 计算输出电流控制电机
-  //   M3508_Array[Dial_Wheel].outCurrent = Incremental_PID(&M3508_DialI_Pid, M3508_Array[Dial_Wheel].targetSpeed, M3508_Array[Dial_Wheel].realSpeed);
-
-  //   // 检查是否已转动到目标角度（允许±2度误差）
-  //   if (fabs(M3508_Array[Dial_Wheel].totalAngle - target_rotate_angle) <= 2.0f)
-  //   {
-  //     // 转动完成：停止电机，关闭拨盘开关，重置状态
-  //     M3508_Array[Dial_Wheel].outCurrent = 0;
-  //     Dial_Data.Dial_Switch = Dial_Off; // 关闭拨盘开关
-  //     is_dial_rotating = false;
-  //     target_rotate_angle = 0.0f;
-  //   }
-  // }
-  // 拨弹盘状态标志和目标角度（静态变量，保持状态）
-
   /**********************************************************************************/
   static bool dial_rotation_finish = false;    // 转动是否完成
   static float target_rotate_angle = 0.0f; // 目标转动角度（当前角度+60度）
