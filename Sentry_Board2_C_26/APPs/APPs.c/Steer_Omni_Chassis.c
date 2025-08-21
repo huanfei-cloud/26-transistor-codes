@@ -48,10 +48,10 @@ void Chassis_Init(void)
     M6020_Init(&M6020s_Chassis2,0x207);
 
     //驱动电机速度环初始化
-    Position_PIDInit(&(M3508_Array[0].v_pid_object),10.0f, 0.22f, 0,0,800,30000,6000);
-		Position_PIDInit(&(M3508_Array[1].v_pid_object),10.0f, 0.22f, 0,0,800,30000,6000);
-		Position_PIDInit(&(M3508_Array[2].v_pid_object),10.0f, 0.22f, 0,0,800,30000,6000);
-		Position_PIDInit(&(M3508_Array[3].v_pid_object),10.0f, 0.22f, 0,0,800,30000,6000);
+    Position_PIDInit(&(M3508_Array[0].v_pid_object),8.0f, 0.22f, 0,0,800,30000,6000);
+		Position_PIDInit(&(M3508_Array[1].v_pid_object),8.0f, 0.22f, 0,0,800,30000,6000);
+		Position_PIDInit(&(M3508_Array[2].v_pid_object),8.0f, 0.22f, 0,0,800,30000,6000);
+		Position_PIDInit(&(M3508_Array[3].v_pid_object),8.0f, 0.22f, 0,0,800,30000,6000);
     //转向电机速度环初始化
   	Position_PIDInit(&(M6020s_Chassis1.v_pid_object),250,0.1,150,0,7000,30000,6000);
     Position_PIDInit(&(M6020s_Chassis2.v_pid_object),250,0.1,150,0,7000,30000,6000);
@@ -125,8 +125,22 @@ void direction_motor_angle_set(void)
 
     finall_angle[0] = atan_angle[0]/360*8192 + DIRMOTOR_LB_ANGLE ;
 	  finall_angle[1] = atan_angle[1]/360*8192 + DIRMOTOR_RB_ANGLE ;
-		
-		
+	if(finall_angle[0]>8192.0f)
+    {
+        finall_angle[0] -= 8192.0f;
+    }
+    else if(finall_angle[0]<0.0f)
+    {
+        finall_angle[0] += 8192.0f;
+    }
+	if(finall_angle[1]>8192.0f)
+    {
+        finall_angle[1] -= 8192.0f;
+    }
+    else if(finall_angle[1]<0.0f)
+    {
+        finall_angle[1] += 8192.0f;
+    }	
 
     error_angle[0] =Angle_Limit((finall_angle[0] - (M6020s_Chassis1.realAngle )),4096.0f);
 	  error_angle[1] =Angle_Limit((finall_angle[1] - (M6020s_Chassis2.realAngle )),4096.0f);
