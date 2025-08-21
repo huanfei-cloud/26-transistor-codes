@@ -172,4 +172,39 @@ void Clear_PositionPIDData(positionpid_t *pid_t)
     pid_t->d_out = 0;
     pid_t->pwm = 0;
 }
+float Angle_PID(positionpid_t *pid_t, float target, float measured)
+{
 
+    pid_t->Target = (float)target;
+    pid_t->Measured = (float)measured;
+    pid_t->err = pid_t->Target - pid_t->Measured;
+    if(abs(pid_t->err)>8192/2)
+    {
+        if(pid_t->err>0)
+        {
+            pid_t->err = pid_t->err - 8192;
+        }
+        else
+        {
+            pid_t->err = pid_t->err + 8192;
+        }
+    }
+    pid_t->err_change = pid_t->Measured - pid_t->err_last;
+    pid_t->error_target = pid_t->Target - pid_t->last_set_point;
+	
+    pid_t->p_out = pid_t->Kp * pid_t->err;
+    pid_t->i_out += pid_t->Ki * pid_t->err;
+    pid_t->d_out = pid_t->Kd * (pid_t->Measured - pid_t->err_last);
+	  pid_t->f_out = pid_t->Kf * pid_t->error_target;
+    //积分限幅
+    abs_limit(&pid_t->i_out, pid_t->IntegralLimit); //取消积分输出的限幅。
+
+    pid_t->pwm = (pid_t->p_out + pid_t->i_out + pid_t->d_out + pid_t->f_out);
+
+    //输出限幅
+    abs_limit(&pid_t->pwm, pid_t->MaxOutput);
+
+    pid_t->err_last = pid_t->err;
+	  pid_t->last_set_point = pid_t->Target;
+    return pid_t->pwm;
+}

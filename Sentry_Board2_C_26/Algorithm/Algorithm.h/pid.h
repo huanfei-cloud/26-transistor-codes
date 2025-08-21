@@ -85,6 +85,7 @@ extern positionpid_t AutoAim_M6020s_YawOPID;   //Yaw����PID
 extern float Incremental_PID(incrementalpid_t *pid_t, float target, float measured);
 extern float Position_PID(positionpid_t *pid_t, float target, float measured);
 extern float ClassisTwister_PID(positionpid_t *pid_t, float target, float measured);
+extern float Angle_PID(positionpid_t *pid_t, float target, float measured);
 extern void chassis_follow_mode(float angle, uint8_t start_flag);
 extern void Incremental_PIDInit(incrementalpid_t *pid_t, float Kp, float Kd, float Ki, uint32_t MaxOutput, uint32_t IntegralLimit);
 extern void Position_PIDInit(positionpid_t *pid_t, float Kp, float Kd, float Ki, float Kf, float MaxOutput, float IntegralLimit, float Integral_Separation);
