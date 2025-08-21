@@ -7,7 +7,7 @@ draftofomniwheel\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
 draftofomniwheel\main.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 draftofomniwheel\main.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
 draftofomniwheel\main.o: ../Drivers/CMSIS/Include/core_cm4.h
-draftofomniwheel\main.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdint.h
+draftofomniwheel\main.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stdint.h
 draftofomniwheel\main.o: ../Drivers/CMSIS/Include/cmsis_version.h
 draftofomniwheel\main.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 draftofomniwheel\main.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -15,7 +15,7 @@ draftofomniwheel\main.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 draftofomniwheel\main.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 draftofomniwheel\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 draftofomniwheel\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-draftofomniwheel\main.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stddef.h
+draftofomniwheel\main.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stddef.h
 draftofomniwheel\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 draftofomniwheel\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 draftofomniwheel\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -38,9 +38,9 @@ draftofomniwheel\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.
 draftofomniwheel\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h
 draftofomniwheel\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 draftofomniwheel\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
-draftofomniwheel\main.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\string.h
-draftofomniwheel\main.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdio.h
-draftofomniwheel\main.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\math.h
+draftofomniwheel\main.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\string.h
+draftofomniwheel\main.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stdio.h
+draftofomniwheel\main.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\math.h
 draftofomniwheel\main.o: ../APPs/APPs.h/struct_typedef.h
 draftofomniwheel\main.o: ../Algorithm/Algorithm.h/arm_math.h
 draftofomniwheel\main.o: ../Drivers/CMSIS/Include/core_cm4.h
@@ -67,7 +67,7 @@ draftofomniwheel\main.o: ../Core/Inc/usart.h
 draftofomniwheel\main.o: ../USB_DEVICE/App/usb_device.h
 draftofomniwheel\main.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h
 draftofomniwheel\main.o: ../USB_DEVICE/Target/usbd_conf.h
-draftofomniwheel\main.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdlib.h
+draftofomniwheel\main.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stdlib.h
 draftofomniwheel\main.o: ../Core/Inc/gpio.h
 draftofomniwheel\main.o: ../BSP/BSP.h/bsp_delay.h
 draftofomniwheel\main.o: ../Debug/TraceRecorder/config/trcConfig.h

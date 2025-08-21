@@ -271,7 +271,7 @@ float Angle_PID(positionpid_t *pid_t, float target, float measured,float ecd_max
     pid_t->err = pid_t->Target - pid_t->Measured;
     
     // 处理角度环绕问题（8192对应360度）
-    if(abs(pid_t->err) > (ecd_max+1)/2) {
+    if(abs(pid_t->err) > ecd_max/2) {
         if(pid_t->err > 0) {
             pid_t->err = pid_t->err - (ecd_max+1);
         } else {

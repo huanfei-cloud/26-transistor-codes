@@ -22,29 +22,29 @@
 //#include "typedef.h"
 //#include <AddMath.h>
 
-/********pidµÄ²ÎÊýÖµ********/
-//Õý³£yawÖáÎ»ÖÃ»·
+/********pidï¿½Ä²ï¿½ï¿½ï¿½Öµ********/
+//ï¿½ï¿½ï¿½ï¿½yawï¿½ï¿½Î»ï¿½Ã»ï¿½
 #define yaw_O_p 0.083f
 #define yaw_O_i 0.00001f
 #define yaw_O_d 0.0f
-//Õý³£yawÖáËÙ¶È»·
+//ï¿½ï¿½ï¿½ï¿½yawï¿½ï¿½ï¿½Ù¶È»ï¿½
 #define yaw_I_p 1050.0f
 #define yaw_I_i 0.12f
 #define yaw_I_d 1000.0f
-//×ÔÃéyawÖáÎ»ÖÃ»·
+//ï¿½ï¿½ï¿½ï¿½yawï¿½ï¿½Î»ï¿½Ã»ï¿½
 #define yaw_O_Aim_p 2.082f
 #define yaw_O_Aim_i 0.00001f
 #define yaw_O_Aim_d 1.0f
 #define yaw_O_Aim_f 0.0f
-//Õý³£yawÖáËÙ¶È»·
+//ï¿½ï¿½ï¿½ï¿½yawï¿½ï¿½ï¿½Ù¶È»ï¿½
 #define yaw_I_Aim_p 1100.0f
 #define yaw_I_Aim_i 60.0f
 #define yaw_I_Aim_d 950.0f
 #define yaw_I_Aim_f 100.0f
 
-/**********PID¶ÔÍâÊý¾Ý½Ó¿Ú************/
+/**********PIDï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý½Ó¿ï¿½************/
 
-// pid¿ØÖÆ·½Ê½Ñ¡Ôñ
+// pidï¿½ï¿½ï¿½Æ·ï¿½Ê½Ñ¡ï¿½ï¿½
 typedef enum
 {
 	pid_control_increase,
@@ -56,56 +56,57 @@ typedef enum
 
 typedef struct incrementalpid_t
 {
-    float Target;         //Éè¶¨Ä¿±êÖµ
-    float Measured;       //²âÁ¿Öµ
-    float err;            //±¾´ÎÆ«²îÖµ
-    float err_last;       //ÉÏÒ»´ÎÆ«²î
-    float err_beforeLast; //ÉÏÉÏ´ÎÆ«²î
+    float Target;         //ï¿½è¶¨Ä¿ï¿½ï¿½Öµ
+    float Measured;       //ï¿½ï¿½ï¿½ï¿½Öµ
+    float err;            //ï¿½ï¿½ï¿½ï¿½Æ«ï¿½ï¿½Öµ
+    float err_last;       //ï¿½ï¿½Ò»ï¿½ï¿½Æ«ï¿½ï¿½
+    float err_beforeLast; //ï¿½ï¿½ï¿½Ï´ï¿½Æ«ï¿½ï¿½
     float Kp;
     float Ki;
-    float Kd; //Kp, Ki, Kd¿ØÖÆÏµÊý
+    float Kd; //Kp, Ki, Kdï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½
     float p_out;
     float i_out;
-    float d_out;            //¸÷²¿·ÖÊä³öÖµ
-    float pwm;              //pwmÊä³ö
-    uint32_t MaxOutput;     //Êä³öÏÞ·ù
-    uint32_t IntegralLimit; //»ý·ÖÏÞ·ù
+    float d_out;            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
+    float pwm;              //pwmï¿½ï¿½ï¿½
+    uint32_t MaxOutput;     //ï¿½ï¿½ï¿½ï¿½Þ·ï¿½
+    uint32_t IntegralLimit; //ï¿½ï¿½ï¿½ï¿½ï¿½Þ·ï¿½
     float (*Incremental_PID)(struct incrementalpid_t *pid_t, float target, float measured);
 } incrementalpid_t;
 
 typedef struct positionpid_t
 {
-    float Target;     //Éè¶¨Ä¿±êÖµ
-    float Measured;   //²âÁ¿Öµ
-    float err;        //±¾´ÎÆ«²îÖµ
-    float err_last;   //ÉÏÒ»´ÎÆ«²î
-    float err_change; //Îó²î±ä»¯ÂÊ
-	  float error_target;   // Ç°À¡¿ØÖÆ
-		float last_set_point; //ÉÏÒ»´ÎÄ¿±êÖµ
+    float Target;     //ï¿½è¶¨Ä¿ï¿½ï¿½Öµ
+    float Measured;   //ï¿½ï¿½ï¿½ï¿½Öµ
+    float err;        //ï¿½ï¿½ï¿½ï¿½Æ«ï¿½ï¿½Öµ
+    float err_last;   //ï¿½ï¿½Ò»ï¿½ï¿½Æ«ï¿½ï¿½
+    float err_change; //ï¿½ï¿½ï¿½ä»¯ï¿½ï¿½
+	  float error_target;   // Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		float last_set_point; //ï¿½ï¿½Ò»ï¿½ï¿½Ä¿ï¿½ï¿½Öµ
     float Kp;
     float Ki;
     float Kd; 
-	  float Kf;         //Kp, Ki, Kd, Kf¿ØÖÆÏµÊý
+	  float Kf;         //Kp, Ki, Kd, Kfï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½
     float p_out;
     float i_out;
     float d_out;               
-	  float f_out;               //¸÷²¿·ÖÊä³öÖµ
-    float pwm;                 //pwmÊä³ö
-    float MaxOutput;           //Êä³öÏÞ·ù
-    float Integral_Separation; //»ý·Ö·ÖÀëãÐÖµ
-    float IntegralLimit;       //»ý·ÖÏÞ·ù
+	  float f_out;               //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
+    float pwm;                 //pwmï¿½ï¿½ï¿½
+    float MaxOutput;           //ï¿½ï¿½ï¿½ï¿½Þ·ï¿½
+    float Integral_Separation; //ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
+    float IntegralLimit;       //ï¿½ï¿½ï¿½ï¿½ï¿½Þ·ï¿½
     float (*Position_PID)(struct positionpid_t *pid_t, float target, float measured);
 } positionpid_t;
 
 extern positionpid_t M6020s_YawIPID;		//Yaw	
-extern positionpid_t M6020s_Yaw_SpeedPID;	//YawËÙ¶ÈPID
+extern positionpid_t M6020s_Yaw_SpeedPID;	//Yawï¿½Ù¶ï¿½PID
 extern positionpid_t M6020s_YawOPID;		//Yaw
 extern positionpid_t AutoAim_M6020s_YawIPID;
-extern positionpid_t AutoAim_M6020s_YawOPID;   //Yaw×ÔÃéPID
+extern positionpid_t AutoAim_M6020s_YawOPID;   //Yawï¿½ï¿½ï¿½ï¿½PID
 
 extern float Incremental_PID(incrementalpid_t *pid_t, float target, float measured);
 extern float Position_PID(positionpid_t *pid_t, float target, float measured);
 extern float ClassisTwister_PID(positionpid_t *pid_t, float target, float measured);
+float Angle_PID(positionpid_t *pid_t, float target, float measured,float ecd_max);
 extern void Incremental_PIDInit(incrementalpid_t *pid_t, float Kp, float Kd, float Ki, uint32_t MaxOutput, uint32_t IntegralLimit);
 extern void Position_PIDInit(positionpid_t *pid_t, float Kp, float Kd, float Ki, float Kf, float MaxOutput, float IntegralLimit, float Integral_Separation);
 
