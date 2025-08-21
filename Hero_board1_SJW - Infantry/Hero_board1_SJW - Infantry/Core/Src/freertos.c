@@ -31,11 +31,8 @@
 #include "BSP_Usart.h"
 #include "Cloud_Control.h"
 #include "Shoot.h"
-#include "Task_LED.h"
 #include "SBUS.h"
 #include "DT7.h"
-#include "BSP_Test.h"
-#include "Saber_C3.h"
 #include "Protocol_UpperComputer.h"
 #include "Task_vofa.h"
 #include "Task_J4310_onlineCheck.h"
@@ -72,7 +69,6 @@ osThreadId Move_DataHandle;
 osThreadId Robot_Control_Handle;          // 机器人控制任务句柄
 osThreadId Task_CommunicateFromPC_Handle; // 从PC通信任务句柄
 osThreadId Task_CommunicateToPC_Handle;   // 向PC通信任务句柄
-osThreadId Task_OffLineCheck_Handle;      // 离线检查任务句柄;
 osThreadId Task_DT7_Handle;               // 遥控器任务句柄;
 osThreadId Task_VOFA_Handle;							
 osThreadId Task_J4310_onlineCheck_Handle;
@@ -89,7 +85,6 @@ extern void AllCanSend(void const *argument);
 extern void Robot_Control(void const *argument);
 extern void USBCommunicateTask_Receive(void const *argument);
 extern void USBCommunicateTask_Send(void const *argument);
-extern void Off_Line_Check(void const *argument);
 extern void DT7_Control(void const *argument);
 extern void VOFA_Handle(void const *argument);
 extern void J4310_onlineCheck(void const *argument);
@@ -165,8 +160,6 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
-  osThreadDef(OfflineCheckTask, Off_Line_Check, osPriorityAboveNormal, 0, 128);
-  Task_OffLineCheck_Handle = osThreadCreate(osThread(OfflineCheckTask), NULL);
   /* definition and creation of Can1ReceiveTask */
   osThreadDef(Can1_ReceiveTask, Can1Receives, osPriorityAboveNormal, 0, 128);
   Task_Can1MsgRecHandle = osThreadCreate(osThread(Can1_ReceiveTask), NULL);

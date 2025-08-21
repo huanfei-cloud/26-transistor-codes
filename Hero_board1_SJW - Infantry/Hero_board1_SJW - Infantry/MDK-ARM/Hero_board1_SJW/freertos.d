@@ -66,11 +66,10 @@
 .\hero_board1_sjw\freertos.o: ../Tasks/Tasks.h/Extern_Handles.h
 .\hero_board1_sjw\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 .\hero_board1_sjw\freertos.o: ../BSP/BSP.h/BSP_Usart.h
-.\hero_board1_sjw\freertos.o: ../Devices/Devices.h/M2006_Motor.h
-.\hero_board1_sjw\freertos.o: ../Devices/Devices.h/M6020_Motor.h
 .\hero_board1_sjw\freertos.o: ../Core/Inc/usart.h
 .\hero_board1_sjw\freertos.o: ../Devices/Devices.h/SBUS.h
 .\hero_board1_sjw\freertos.o: ../BSP/BSP.h/BSP_BoardCommunication.h
+.\hero_board1_sjw\freertos.o: ../Devices/Devices.h/M2006_Motor.h
 .\hero_board1_sjw\freertos.o: ../Devices/Devices.h/DT7.h
 .\hero_board1_sjw\freertos.o: ../Apps/Apps.h/Cloud_Control.h
 .\hero_board1_sjw\freertos.o: ../Apps/Apps.h/shoot.h
@@ -85,7 +84,6 @@
 .\hero_board1_sjw\freertos.o: ../Devices/Devices.h/J4310_Motor.h
 .\hero_board1_sjw\freertos.o: ../Tasks/Tasks.h/Task_CanReceive.h
 .\hero_board1_sjw\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
-.\hero_board1_sjw\freertos.o: ../Apps/Apps.h/PowerControl.h
 .\hero_board1_sjw\freertos.o: ../BSP/BSP.h/BSP_Usart.h
 .\hero_board1_sjw\freertos.o: ../Devices/Devices.h/J4310_Motor.h
 .\hero_board1_sjw\freertos.o: ../Devices/Devices.h/Saber_C3.h
@@ -101,9 +99,6 @@
 .\hero_board1_sjw\freertos.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
 .\hero_board1_sjw\freertos.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h
 .\hero_board1_sjw\freertos.o: ../Alg/Alg.h/SpeedRamp.h
-.\hero_board1_sjw\freertos.o: ../Tasks/Tasks.h/Task_LED.h
-.\hero_board1_sjw\freertos.o: ../Tasks/Tasks.h/struct_typedef.h
-.\hero_board1_sjw\freertos.o: ../BSP/BSP.h/BSP_Test.h
 .\hero_board1_sjw\freertos.o: ../Devices/Devices.h/Task_vofa.h
 .\hero_board1_sjw\freertos.o: ../Devices/Devices.h/vofa.h
 .\hero_board1_sjw\freertos.o: ../Devices/Devices.h/sys.h

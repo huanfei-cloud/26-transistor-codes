@@ -10,7 +10,6 @@
  */
 #include "Task_CanReceive.h"
 
-uint16_t pitch_online_flag = 0;
 int16_t J4310_RxID;
 /**
  * @Data   2021-03-28

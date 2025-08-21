@@ -15,15 +15,12 @@
 #include "queue.h"
 #include "Extern_Handles.h"
 #include "BSP_CAN.h"
-#include "PowerControl.h"
 #include "M3508_Motor.h"
-#include "M6020_Motor.h"
 #include "Cloud_Control.h"
 #include "BSP_BoardCommunication.h"
 #include "BSP_Usart.h"
 #include "J4310_Motor.h"
 
-extern uint16_t pitch_online_flag;
 
 enum
 {

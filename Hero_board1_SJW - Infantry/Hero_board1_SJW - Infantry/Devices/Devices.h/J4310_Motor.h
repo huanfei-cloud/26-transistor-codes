@@ -28,7 +28,7 @@
 #define J4310_FIRSTANGLE 3800
 
 #define J4310_mAngleRatio 22.7527f /
-#define Pi 3.14159265
+#define Pi 3.14159265f
 
 #define J4310_getRoundAngle(rAngle) rAngle / J4310_mAngleRatio
 

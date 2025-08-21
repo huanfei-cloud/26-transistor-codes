@@ -59,6 +59,9 @@
 .\hero_board1_sjw\task_cansend.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdio.h
 .\hero_board1_sjw\task_cansend.o: D:\mdk\ARM\ARMCC\Bin\..\include\string.h
 .\hero_board1_sjw\task_cansend.o: ../BSP/BSP.h/BSP_Usart.h
+.\hero_board1_sjw\task_cansend.o: ../Core/Inc/usart.h
+.\hero_board1_sjw\task_cansend.o: ../Devices/Devices.h/SBUS.h
+.\hero_board1_sjw\task_cansend.o: ../BSP/BSP.h/BSP_BoardCommunication.h
 .\hero_board1_sjw\task_cansend.o: ../Devices/Devices.h/M2006_Motor.h
 .\hero_board1_sjw\task_cansend.o: ../Alg/Alg.h/PID.h
 .\hero_board1_sjw\task_cansend.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdlib.h
@@ -68,10 +71,6 @@
 .\hero_board1_sjw\task_cansend.o: ../Drivers/CMSIS/Include/core_cm4.h
 .\hero_board1_sjw\task_cansend.o: D:\mdk\ARM\ARMCC\Bin\..\include\math.h
 .\hero_board1_sjw\task_cansend.o: ../Alg/Alg.h/FuzzyPID.h
-.\hero_board1_sjw\task_cansend.o: ../Devices/Devices.h/M6020_Motor.h
-.\hero_board1_sjw\task_cansend.o: ../Core/Inc/usart.h
-.\hero_board1_sjw\task_cansend.o: ../Devices/Devices.h/SBUS.h
-.\hero_board1_sjw\task_cansend.o: ../BSP/BSP.h/BSP_BoardCommunication.h
 .\hero_board1_sjw\task_cansend.o: ../Devices/Devices.h/DT7.h
 .\hero_board1_sjw\task_cansend.o: ../Apps/Apps.h/Cloud_Control.h
 .\hero_board1_sjw\task_cansend.o: ../Apps/Apps.h/shoot.h
@@ -86,7 +85,6 @@
 .\hero_board1_sjw\task_cansend.o: ../Devices/Devices.h/J4310_Motor.h
 .\hero_board1_sjw\task_cansend.o: ../Tasks/Tasks.h/Task_CanReceive.h
 .\hero_board1_sjw\task_cansend.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
-.\hero_board1_sjw\task_cansend.o: ../Apps/Apps.h/PowerControl.h
 .\hero_board1_sjw\task_cansend.o: ../BSP/BSP.h/BSP_Usart.h
 .\hero_board1_sjw\task_cansend.o: ../Devices/Devices.h/J4310_Motor.h
 .\hero_board1_sjw\task_cansend.o: ../Devices/Devices.h/Saber_C3.h

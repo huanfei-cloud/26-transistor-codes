@@ -735,11 +735,6 @@
               <FilePath>..\Devices\Devices.c\M3508_Motor.c</FilePath>
             </File>
             <File>
-              <FileName>M6020_Motor.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Devices\Devices.c\M6020_Motor.c</FilePath>
-            </File>
-            <File>
               <FileName>SBUS.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Devices\Devices.c\SBUS.c</FilePath>
@@ -798,11 +793,6 @@
               <FileName>Task_DT7.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Tasks\Tasks.c\Task_DT7.c</FilePath>
-            </File>
-            <File>
-              <FileName>Task_OfflineCheck.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Tasks\Tasks.c\Task_OfflineCheck.c</FilePath>
             </File>
             <File>
               <FileName>Task_RobotControl.c</FileName>

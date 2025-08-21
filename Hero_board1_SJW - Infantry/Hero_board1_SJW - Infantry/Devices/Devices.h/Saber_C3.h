@@ -13,7 +13,6 @@
  
  #include "main.h"
  #include "usart.h"
- #include "M6020_Motor.h"
  #include "struct_typedef.h"
  typedef struct Saber_Angle_t
  {

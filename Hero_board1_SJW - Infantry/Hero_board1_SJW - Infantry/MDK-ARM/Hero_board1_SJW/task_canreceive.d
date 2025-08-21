@@ -58,7 +58,6 @@
 .\hero_board1_sjw\task_canreceive.o: ../BSP/BSP.h/typedef.h
 .\hero_board1_sjw\task_canreceive.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdio.h
 .\hero_board1_sjw\task_canreceive.o: D:\mdk\ARM\ARMCC\Bin\..\include\string.h
-.\hero_board1_sjw\task_canreceive.o: ../Apps/Apps.h/PowerControl.h
 .\hero_board1_sjw\task_canreceive.o: ../Devices/Devices.h/M3508_Motor.h
 .\hero_board1_sjw\task_canreceive.o: ../Alg/Alg.h/PID.h
 .\hero_board1_sjw\task_canreceive.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdlib.h
@@ -68,7 +67,6 @@
 .\hero_board1_sjw\task_canreceive.o: ../Drivers/CMSIS/Include/core_cm4.h
 .\hero_board1_sjw\task_canreceive.o: D:\mdk\ARM\ARMCC\Bin\..\include\math.h
 .\hero_board1_sjw\task_canreceive.o: ../Alg/Alg.h/FuzzyPID.h
-.\hero_board1_sjw\task_canreceive.o: ../Devices/Devices.h/M6020_Motor.h
 .\hero_board1_sjw\task_canreceive.o: ../Apps/Apps.h/Cloud_Control.h
 .\hero_board1_sjw\task_canreceive.o: ../Apps/Apps.h/shoot.h
 .\hero_board1_sjw\task_canreceive.o: ../Devices/Devices.h/M2006_Motor.h

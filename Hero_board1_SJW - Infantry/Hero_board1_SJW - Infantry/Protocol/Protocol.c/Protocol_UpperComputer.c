@@ -95,7 +95,7 @@ void UpperCom_Receive_From_Up(uint8_t Rec[])
 	{
 	case 0xFF:
 	case 0x00:
-		//			Auto_Aim_Pitch = M6020s_Pitch.realAngle;
+		Auto_Aim_Pitch = J4310s_Pitch.realAngle;
 		Auto_Aim_Yaw = ControlMes.yaw_realAngle;
 		break;
 	case 0xCD:

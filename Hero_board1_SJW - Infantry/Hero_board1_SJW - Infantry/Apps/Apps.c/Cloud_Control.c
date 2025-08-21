@@ -16,9 +16,11 @@ Cloud_t Cloud;
 // 重新安装电机或移用代码时需要重新测量这些值（toalAngle）后再允许运动。
 
 /****************Pithch限位*****************/
-const float Cloud_Pitch_Min = -7.5;
-const float Cloud_Pitch_Max = 13;
-const float Pitch_Angle_Init = -7.5;
+const float Delta_Pitch_Min = -11;
+const float Delta_Pitch_Max = 11;
+const float Cloud_Pitch_Min = -11;
+const float Cloud_Pitch_Max = 11;
+const float Pitch_Angle_Init = 0;
 const float Cloud_Pitch_Center = 0;
 const float Cloud_Pitch_Derta = Cloud_Pitch_Center - Cloud_Pitch_Min;
 /****************Pitch限位End*****************/
@@ -27,12 +29,11 @@ const float Cloud_Pitch_Derta = Cloud_Pitch_Center - Cloud_Pitch_Min;
 
 float Cloud_Target_Aim_Flag;
 float Cloud_Init_Angle;
-extern M6020s_t *M6020_Array[2]; // 对应电机的ID必须为：索引+1
 extern Saber_Angle_t Saber_Angle;
 float Pitch_Torque = 3.f; // 云台所需扭矩
-float Pitch_v = 2;
-float Pitch_Kp = 40;
-float Pitch_Kd = 1.1;
+float Pitch_v = 15;
+float Pitch_Kp = 25;
+float Pitch_Kd = 1.5;
 float Pitch_RC_Sen = 0.00035;
 int16_t Cloud_Aim_Pitch_Flag;
 int16_t Cloud_Manual_Pitch_Flag;
@@ -59,10 +60,9 @@ Cloud_FUN_t Cloud_FUN = Cloud_FUNGroundInit;
 void Cloud_Init(void)
 {
 	// 保存启动时刻的机械角度
-	//	Cloud_Manual_Pitch_Flag = Cloud.Target_Pitch;
 	Cloud.Target_Pitch = J4310s_Pitch.outPosition;
 	Cloud.Pitch_Raw = J4310s_Pitch.outPosition;
-	//	Cloud_Init_Angle = Cloud_Pitch_Init;
+	Cloud_Init_Angle = Pitch_Angle_Init;
 	Cloud.AutoAim_Pitch = 0;
 
 	One_Kalman_Create(&Cloud_PitchMotorAngle_Error_Kalman, 1.5, 40);
@@ -99,6 +99,18 @@ void Cloud_Pitch_Angle_Set(void)
 	if (ControlMes.AutoAimFlag == 1)
 	{
 		Delta_Pitch += (float)ControlMes.pitch_velocity * Pitch_RC_Sen;
+
+		/**********Delta_Pitch限位**********/
+		if (Delta_Pitch > Delta_Pitch_Max)
+		{
+			Delta_Pitch = Delta_Pitch_Max;
+		}
+		else if (Delta_Pitch < Delta_Pitch_Min)
+		{
+			Delta_Pitch = Delta_Pitch_Min;
+		}
+		/**********Delta_Pitch限位end**********/
+
 		Cloud.Target_Pitch = Pitch_Angle_Init + Cloud.AutoAim_Pitch + Delta_Pitch;
 		Aim_Flag = 1;
 	}
@@ -106,6 +118,18 @@ void Cloud_Pitch_Angle_Set(void)
 	else
 	{
 		Delta_Pitch += (float)ControlMes.pitch_velocity * Pitch_RC_Sen;
+
+		/**********Delta_Pitch限位**********/
+		if (Delta_Pitch > Delta_Pitch_Max)
+		{
+			Delta_Pitch = Delta_Pitch_Max;
+		}
+		else if (Delta_Pitch < Delta_Pitch_Min)
+		{
+			Delta_Pitch = Delta_Pitch_Min;
+		}
+		/**********Delta_Pitch限位end**********/
+
 		if (Aim_Flag == 0)
 		{
 			Cloud.Target_Pitch = Delta_Pitch + Pitch_Angle_Init;
