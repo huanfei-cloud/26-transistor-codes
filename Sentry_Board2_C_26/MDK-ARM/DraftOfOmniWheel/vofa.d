@@ -4,7 +4,7 @@ draftofomniwheel\vofa.o: ..\Debug Assist\sys.h
 draftofomniwheel\vofa.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 draftofomniwheel\vofa.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
 draftofomniwheel\vofa.o: ../Drivers/CMSIS/Include/core_cm4.h
-draftofomniwheel\vofa.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stdint.h
+draftofomniwheel\vofa.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdint.h
 draftofomniwheel\vofa.o: ../Drivers/CMSIS/Include/cmsis_version.h
 draftofomniwheel\vofa.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 draftofomniwheel\vofa.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -16,7 +16,7 @@ draftofomniwheel\vofa.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h
 draftofomniwheel\vofa.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
 draftofomniwheel\vofa.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 draftofomniwheel\vofa.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-draftofomniwheel\vofa.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stddef.h
+draftofomniwheel\vofa.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stddef.h
 draftofomniwheel\vofa.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 draftofomniwheel\vofa.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 draftofomniwheel\vofa.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -41,9 +41,9 @@ draftofomniwheel\vofa.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 draftofomniwheel\vofa.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
 draftofomniwheel\vofa.o: ../Core/Inc/usart.h
 draftofomniwheel\vofa.o: ../Core/Inc/main.h
-draftofomniwheel\vofa.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\string.h
-draftofomniwheel\vofa.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stdio.h
-draftofomniwheel\vofa.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\math.h
+draftofomniwheel\vofa.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\string.h
+draftofomniwheel\vofa.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdio.h
+draftofomniwheel\vofa.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\math.h
 draftofomniwheel\vofa.o: ..\APPs\APPs.h\struct_typedef.h
 draftofomniwheel\vofa.o: ../Algorithm/Algorithm.h/arm_math.h
 draftofomniwheel\vofa.o: ../Drivers/CMSIS/Include/core_cm4.h

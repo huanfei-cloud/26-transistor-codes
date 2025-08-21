@@ -86,7 +86,6 @@ typedef struct
 } M3508s_t;
 
 extern M3508s_t M3508_Array[7];
-extern M3508s_t M3508_Helm[8];
 
 typedef struct
 {

@@ -22,7 +22,6 @@ M3508s_t M3508_Array[TotalNum] = {
     [Dial_Motor] 	  = {0},
 };
 
-M3508s_t M3508_Helm[8];
 
 void M3508_getInfo(Can_Export_Data_t RxMessage);
 void M3508_Friction_getInfo(Can_Export_Data_t RxMessage);
@@ -82,25 +81,25 @@ void M3508_getInfo(Can_Export_Data_t RxMessage)
     StdId = (int32_t)(RxMessage.CAN_RxHeader.StdId - M3508M_READID_START);
 	  
     //解包数据，数据格式详见C620电调说明书P33
-	  M3508_Helm[StdId].realAngle = (uint16_t)(RxMessage.CANx_Export_RxMessage[0] << 8 | RxMessage.CANx_Export_RxMessage[1]);
-    M3508_Helm[StdId].realSpeed = (int16_t)(RxMessage.CANx_Export_RxMessage[2] << 8 | RxMessage.CANx_Export_RxMessage[3]);
-    M3508_Helm[StdId].realCurrent = (int16_t)(RxMessage.CANx_Export_RxMessage[4] << 8 | RxMessage.CANx_Export_RxMessage[5]);
-    M3508_Helm[StdId].temperture = RxMessage.CANx_Export_RxMessage[6];
+	  M3508_Array[StdId].realAngle = (uint16_t)(RxMessage.CANx_Export_RxMessage[0] << 8 | RxMessage.CANx_Export_RxMessage[1]);
+    M3508_Array[StdId].realSpeed = (int16_t)(RxMessage.CANx_Export_RxMessage[2] << 8 | RxMessage.CANx_Export_RxMessage[3]);
+    M3508_Array[StdId].realCurrent = (int16_t)(RxMessage.CANx_Export_RxMessage[4] << 8 | RxMessage.CANx_Export_RxMessage[5]);
+    M3508_Array[StdId].temperture = RxMessage.CANx_Export_RxMessage[6];
 
-    if (M3508_Helm[StdId].realAngle - M3508_Helm[StdId].lastAngle < -6000)
+    if (M3508_Array[StdId].realAngle - M3508_Array[StdId].lastAngle < -6000)
     {
-        M3508_Helm[StdId].turnCount++;
+        M3508_Array[StdId].turnCount++;
     }
-    else if (M3508_Helm[StdId].lastAngle - M3508_Helm[StdId].realAngle < -6000)
+    else if (M3508_Array[StdId].lastAngle - M3508_Array[StdId].realAngle < -6000)
     {
-        M3508_Helm[StdId].turnCount--;
+        M3508_Array[StdId].turnCount--;
     }
-    M3508_Helm[StdId].totalAngle = M3508_Helm[StdId].realAngle + (8192 * M3508_Helm[StdId].turnCount);
-    M3508_Helm[StdId].lastAngle = M3508_Helm[StdId].realAngle;
+    M3508_Array[StdId].totalAngle = M3508_Array[StdId].realAngle + (8192 * M3508_Array[StdId].turnCount);
+    M3508_Array[StdId].lastAngle = M3508_Array[StdId].realAngle;
 
     //帧率统计，数据更新标志位
-    M3508_Helm[StdId].InfoUpdateFrame++;
-    M3508_Helm[StdId].InfoUpdateFlag = 1;
+    M3508_Array[StdId].InfoUpdateFrame++;
+    M3508_Array[StdId].InfoUpdateFlag = 1;
 
 }
 

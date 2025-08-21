@@ -8,7 +8,7 @@ draftofomniwheel\can.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
 draftofomniwheel\can.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 draftofomniwheel\can.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
 draftofomniwheel\can.o: ../Drivers/CMSIS/Include/core_cm4.h
-draftofomniwheel\can.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stdint.h
+draftofomniwheel\can.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdint.h
 draftofomniwheel\can.o: ../Drivers/CMSIS/Include/cmsis_version.h
 draftofomniwheel\can.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 draftofomniwheel\can.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -16,7 +16,7 @@ draftofomniwheel\can.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 draftofomniwheel\can.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 draftofomniwheel\can.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 draftofomniwheel\can.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-draftofomniwheel\can.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stddef.h
+draftofomniwheel\can.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stddef.h
 draftofomniwheel\can.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 draftofomniwheel\can.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 draftofomniwheel\can.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -39,9 +39,9 @@ draftofomniwheel\can.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 draftofomniwheel\can.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h
 draftofomniwheel\can.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 draftofomniwheel\can.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
-draftofomniwheel\can.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\string.h
-draftofomniwheel\can.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stdio.h
-draftofomniwheel\can.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\math.h
+draftofomniwheel\can.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\string.h
+draftofomniwheel\can.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdio.h
+draftofomniwheel\can.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\math.h
 draftofomniwheel\can.o: ..\APPs\APPs.h\struct_typedef.h
 draftofomniwheel\can.o: ../Algorithm/Algorithm.h/arm_math.h
 draftofomniwheel\can.o: ../Drivers/CMSIS/Include/core_cm4.h
