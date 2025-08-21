@@ -56,7 +56,7 @@ typedef struct
 
 /********ȫ�ֱ�������********/
 extern Steer_Omni_Data_t Steer_Omni_Data;
-extern follow_flag;
+extern int follow_flag;
 /********��������********/
 fp64 Angle_Limit(fp64 angle,fp64 max);
 void Chassis_Init(void);
