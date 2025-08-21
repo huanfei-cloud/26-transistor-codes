@@ -151,7 +151,7 @@ void Dial_Processing_2(void)
 }
 
 /**
- * @brief  ���²��̵���ĽǶ�ֵ
+ * @brief  更新拨盘电机的角度值
  * @param  void
  * @retval void
  * @attention
@@ -161,7 +161,7 @@ void Dial_Update_Angel(bool Fric_ReadyOrNot)
 }
 
 /**
- * @brief  更新拨盘电机的角度值
+ * @brief  PID重置
  * @param  void
  * @retval void
  * @attention

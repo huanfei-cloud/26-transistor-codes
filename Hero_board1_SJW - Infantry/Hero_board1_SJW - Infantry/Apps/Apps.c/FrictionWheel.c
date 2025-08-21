@@ -51,7 +51,7 @@ void Fric_Processing()
 void Fric_Judge_ReadyOrNot()
 {
   //	static q15_t abs_differ[2] = {0};
-  //	static q15_t abs_factor[2];           //��Ŀ���ٶȵ�0.1Ϊ��
+  //	static q15_t abs_factor[2];          
   //	static q15_t temp[2];
   //
   //	temp[0] = Fric_Data.Required_Speed + M3508_Array[FricL_Wheel].realSpeed;

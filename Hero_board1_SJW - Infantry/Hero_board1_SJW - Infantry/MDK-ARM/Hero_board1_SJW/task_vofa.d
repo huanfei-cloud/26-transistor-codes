@@ -64,7 +64,6 @@
 .\hero_board1_sjw\task_vofa.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 .\hero_board1_sjw\task_vofa.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdio.h
 .\hero_board1_sjw\task_vofa.o: D:\mdk\ARM\ARMCC\Bin\..\include\string.h
-.\hero_board1_sjw\task_vofa.o: ../Apps/Apps.h/PowerControl.h
 .\hero_board1_sjw\task_vofa.o: ../Devices/Devices.h/M3508_Motor.h
 .\hero_board1_sjw\task_vofa.o: ../Alg/Alg.h/PID.h
 .\hero_board1_sjw\task_vofa.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdlib.h
@@ -73,7 +72,6 @@
 .\hero_board1_sjw\task_vofa.o: ../Alg/Alg.h/arm_math.h
 .\hero_board1_sjw\task_vofa.o: ../Drivers/CMSIS/Include/core_cm4.h
 .\hero_board1_sjw\task_vofa.o: ../Alg/Alg.h/FuzzyPID.h
-.\hero_board1_sjw\task_vofa.o: ../Devices/Devices.h/M6020_Motor.h
 .\hero_board1_sjw\task_vofa.o: ../Apps/Apps.h/Cloud_Control.h
 .\hero_board1_sjw\task_vofa.o: ../Apps/Apps.h/shoot.h
 .\hero_board1_sjw\task_vofa.o: ../Devices/Devices.h/M2006_Motor.h

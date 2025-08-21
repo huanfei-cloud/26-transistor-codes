@@ -1,12 +1,7 @@
 #include "BSP_Usart.h"
 
 /***************用户数据声明****************/
-void Send_Motor_Data(M2006s_t *M2006_Array);
-void Send_IMU_Data(void);
-void Usart_DMA_Receive_Init(void);
 /******************接口声明*****************/
-Usart_Fun_t Usart_Fun = Usart_FunGroundInit;
-#undef Usart_FunGroundInit
 Usart_Data_t Usart_Data = Usart_DataGroundInit;
 #undef Usart_DataGroundInit
 

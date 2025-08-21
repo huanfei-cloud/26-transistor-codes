@@ -16,7 +16,6 @@
 #include "DT7.h"
 #include "J4310_Motor.h"
 #include "BSP_Can.h"
-#include "BSP_Test.h"
 #include "stm32f4xx_hal.h"
 
 void Off_Line_Check(void const *argument);

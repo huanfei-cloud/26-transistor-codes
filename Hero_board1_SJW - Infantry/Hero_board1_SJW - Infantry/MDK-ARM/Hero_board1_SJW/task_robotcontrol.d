@@ -74,7 +74,6 @@
 .\hero_board1_sjw\task_robotcontrol.o: ../Apps/Apps.h/Dial.h
 .\hero_board1_sjw\task_robotcontrol.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 .\hero_board1_sjw\task_robotcontrol.o: ../Alg/Alg.h/FeedForward.h
-.\hero_board1_sjw\task_robotcontrol.o: ../Devices/Devices.h/M6020_Motor.h
 .\hero_board1_sjw\task_robotcontrol.o: ../Apps/Apps.h/Cloud_Control.h
 .\hero_board1_sjw\task_robotcontrol.o: ../Devices/Devices.h/DT7.h
 .\hero_board1_sjw\task_robotcontrol.o: ../Core/Inc/usart.h
@@ -95,11 +94,9 @@
 .\hero_board1_sjw\task_robotcontrol.o: ../Devices/Devices.h/J4310_Motor.h
 .\hero_board1_sjw\task_robotcontrol.o: ../Tasks/Tasks.h/Task_CanReceive.h
 .\hero_board1_sjw\task_robotcontrol.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
-.\hero_board1_sjw\task_robotcontrol.o: ../Apps/Apps.h/PowerControl.h
 .\hero_board1_sjw\task_robotcontrol.o: ../BSP/BSP.h/BSP_Usart.h
 .\hero_board1_sjw\task_robotcontrol.o: ../Devices/Devices.h/SBUS.h
 .\hero_board1_sjw\task_robotcontrol.o: ../Devices/Devices.h/J4310_Motor.h
 .\hero_board1_sjw\task_robotcontrol.o: ../Alg/Alg.h/FeedForward.h
 .\hero_board1_sjw\task_robotcontrol.o: ../Devices/Devices.h/Saber_C3.h
 .\hero_board1_sjw\task_robotcontrol.o: ../Apps/Apps.h/struct_typedef.h
-.\hero_board1_sjw\task_robotcontrol.o: ../BSP/BSP.h/BSP_Test.h

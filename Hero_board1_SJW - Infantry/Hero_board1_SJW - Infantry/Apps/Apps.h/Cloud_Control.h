@@ -21,31 +21,29 @@
 #include <stdio.h>
 #include <string.h>
 #include "FeedForward.h"
-#include "M6020_Motor.h"
 #include "M3508_Motor.h"
 #include "BSP_Can.h"
 #include "Extern_Handles.h"
 #include "Saber_C3.h"
 #include "FuzzyPID.h"
 
-#define Cloud_Pitch_level 0
+#define Cloud_Pitch_level 1.046223f
 
-/* ��̨����ǶȽṹ�� */
 typedef struct
 {
-  float Yaw_Raw;       // yaw��ԭʼ����
-  float Pitch_Raw;     // pitch��ԭʼ����
-  float Target_Yaw;    // ��̨Ŀ��yaw��
-  float Target_Pitch;  // ��̨Ŀ��pitch��
-  float AutoAim_Pitch; // ����õ���pithc��Ƕ�
+  float Yaw_Raw;       //
+  float Pitch_Raw;     //
+  float Target_Yaw;    //
+  float Target_Pitch;  //
+  float AutoAim_Pitch; //
 } Cloud_t;
 
 typedef struct
 {
-  void (*Cloud_Init)(void);            // ��̨��ʼ������ָ��
-  void (*Cloud_Sport_Out)(void);       // ��̨�˶��������ָ��
-  void (*Cloud_Pitch_Angle_Set)(void); // Pitch��Ƕȵ�������ָ��
-  void (*Remote_Change)(void);         // ң�����źű仯��������ָ��
+  void (*Cloud_Init)(void);            //
+  void (*Cloud_Sport_Out)(void);       //
+  void (*Cloud_Pitch_Angle_Set)(void); //
+  void (*Remote_Change)(void);         //
 
 } Cloud_FUN_t;
 

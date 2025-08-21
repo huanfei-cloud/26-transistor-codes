@@ -74,7 +74,6 @@
 .\hero_board1_sjw\task_offlinecheck.o: ../Apps/Apps.h/Dial.h
 .\hero_board1_sjw\task_offlinecheck.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 .\hero_board1_sjw\task_offlinecheck.o: ../Alg/Alg.h/FeedForward.h
-.\hero_board1_sjw\task_offlinecheck.o: ../Devices/Devices.h/M6020_Motor.h
 .\hero_board1_sjw\task_offlinecheck.o: ../Apps/Apps.h/Cloud_Control.h
 .\hero_board1_sjw\task_offlinecheck.o: ../Devices/Devices.h/DT7.h
 .\hero_board1_sjw\task_offlinecheck.o: ../Core/Inc/usart.h
@@ -102,4 +101,3 @@
 .\hero_board1_sjw\task_offlinecheck.o: ../Alg/Alg.h/FeedForward.h
 .\hero_board1_sjw\task_offlinecheck.o: ../Devices/Devices.h/Saber_C3.h
 .\hero_board1_sjw\task_offlinecheck.o: ../Apps/Apps.h/struct_typedef.h
-.\hero_board1_sjw\task_offlinecheck.o: ../BSP/BSP.h/BSP_Test.h

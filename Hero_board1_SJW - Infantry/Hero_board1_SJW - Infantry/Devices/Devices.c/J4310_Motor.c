@@ -88,7 +88,6 @@ void J4310_setParameter(float uq1, float uq2, float uq3, float uq4, float uq5, u
 void J4310_Enable()
 {
   Can_Send_Data_t Can_Send_Data;
-  uint32_t TxMailbox;
 
   Can_Send_Data.CAN_TxHeader.StdId = 0x001;
   Can_Send_Data.CAN_TxHeader.IDE = CAN_ID_STD;             // ID类型
@@ -106,7 +105,6 @@ void J4310_Enable()
   Can_Send_Data.CANx_Send_RxMessage[7] = 0xFC;
 
   Can_Fun.CAN_SendData(CAN_SendHandle, &hcan2, CAN_ID_STD, 0x001, Can_Send_Data.CANx_Send_RxMessage);
-  // HAL_CAN_AddTxMessage(&hcan2,  &Can_Send_Data.CAN_TxHeader, Can_Send_Data.CANx_Send_RxMessage, &TxMailbox);
 }
 /**
  * @brief  重新设置J4310电机零点
@@ -131,11 +129,11 @@ void J4310_Save_Pos_Zero(void)
   Can_Send_Data.CANx_Send_RxMessage[6] = 0xFF;
   Can_Send_Data.CANx_Send_RxMessage[7] = 0xFE;
 
-  //  HAL_CAN_AddMessageToTxFifoQ(&hcan2, &Can_Send_Data.CAN_TxHeader, Can_Send_Data.CANx_Send_RxMessage);
+  Can_Fun.CAN_SendData(CAN_SendHandle, &hcan2, CAN_ID_STD, 0x001, Can_Send_Data.CANx_Send_RxMessage);
 }
 
 /**
- * @brief  从FDCAN报文中获取J4310电机信息
+ * @brief  从CAN报文中获取J4310电机信息
  * @param  RxMessage 	FDCAN报文接收结构体
  * @retval None
  */
@@ -157,7 +155,7 @@ void J4310_getInfo(Can_Export_Data_t RxMessage)
   J4310_Array[StdId]->speedInit = (uint16_t)((RxMessage.CANx_Export_RxMessage[3] << 4) | (RxMessage.CANx_Export_RxMessage[4] >> 4));
   J4310_Array[StdId]->torqueInit = (uint16_t)((RxMessage.CANx_Export_RxMessage[4] & 0xF << 8) | RxMessage.CANx_Export_RxMessage[5]);
   J4310_Array[StdId]->realAngle = uint_to_float(J4310_Array[StdId]->angleInit, -P_MAX, P_MAX, 16);
-  J4310_Array[StdId]->realAngle = J4310_Array[StdId]->realAngle / 2 * 3.1415927 * 36.f;
+  J4310_Array[StdId]->realAngle = J4310_Array[StdId]->realAngle / 2 * 3.1415927f * 36.f;
   J4310_Array[StdId]->realSpeed = uint_to_float(J4310_Array[StdId]->speedInit, -V_MAX, V_MAX, 12);
   J4310_Array[StdId]->torque = uint_to_float(J4310_Array[StdId]->torqueInit, -T_MAX, T_MAX, 12);
   J4310_Array[StdId]->temperatureMOS = (float)(RxMessage.CANx_Export_RxMessage[6]);

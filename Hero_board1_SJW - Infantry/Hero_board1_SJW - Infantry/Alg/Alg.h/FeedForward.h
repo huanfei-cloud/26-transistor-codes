@@ -14,7 +14,6 @@
 
 #include "main.h"
 #include "M3508_Motor.h"
-#include "M6020_Motor.h"
 #include "Cloud_Control.h"
 
 #define Pitch_Margin 5
@@ -25,21 +24,11 @@
 #define Yaw_R 0.6f	// Ω
 #define Yaw_L 0.02f // H
 
-#define FeedForward_FunGroundInit                   \
-	{                                               \
-		&FeedForward_Fric,                          \
-		&FeedForward_Chassis, /*&FeedForward_Pitch, \
-							  &FeedForward_Yaw,  */ \
-		&Compensator_Yaw,                           \
-	}
+#define FeedForward_FunGroundInit  { &FeedForward_Fric}
 
 typedef struct
 {
 	void (*FeedForward_Fric)(void);
-	void (*FeedForward_Chassis)(void);
-	//	void (*FeedForward_Pitch)(void);
-	//	void (*FeedForward_Yaw)(void);
-	void (*Compensator_Yaw)(void);
 } FeedForward_FUN_t;
 
 extern FeedForward_FUN_t FeedForward_FUN;
