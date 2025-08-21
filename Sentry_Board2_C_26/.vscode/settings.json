@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "m3508_motor.h": "c",
+        "steer_omni_chassis.h": "c",
+        "dt7.h": "c"
+    }
+}

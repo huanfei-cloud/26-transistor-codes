@@ -114,10 +114,10 @@ void direction_motor_angle_set(void)
 	  fp64 finall_angle[4];
     if(!((chassis_control.Speed_ToCloud).vx == 0 && (chassis_control.Speed_ToCloud).vy == 0 && (chassis_control.Speed_ToCloud).wz == 0))
     {
-        atan_angle[0] = atan2(((chassis_control.Speed_ToChassis).vx - (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f),((chassis_control.Speed_ToChassis).vy + (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f)) * 180.0f / pi + 180.0f;
-        atan_angle[1] = atan2(((chassis_control.Speed_ToChassis).vx - (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f),((chassis_control.Speed_ToChassis).vy - (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f)) * 180.0f / pi + 180.0f;
-        atan_angle[2] = atan2(((chassis_control.Speed_ToChassis).vx + (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f),((chassis_control.Speed_ToChassis).vy + (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f)) * 180.0f / pi + 180.0f;
-        atan_angle[3] = atan2(((chassis_control.Speed_ToChassis).vx + (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f),((chassis_control.Speed_ToChassis).vy - (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f)) * 180.0f / pi + 180.0f;
+        atan_angle[0] = atan2(((chassis_control.Speed_ToChassis).vx - (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f),((chassis_control.Speed_ToChassis).vy + (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f)) * 180.0f / pi ;
+        atan_angle[1] = atan2(((chassis_control.Speed_ToChassis).vx - (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f),((chassis_control.Speed_ToChassis).vy - (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f)) * 180.0f / pi ;
+        atan_angle[2] = atan2(((chassis_control.Speed_ToChassis).vx + (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f),((chassis_control.Speed_ToChassis).vy + (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f)) * 180.0f / pi ;
+        atan_angle[3] = atan2(((chassis_control.Speed_ToChassis).vx + (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f),((chassis_control.Speed_ToChassis).vy - (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f)) * 180.0f / pi ;
     }
 		else
 		{
@@ -130,7 +130,38 @@ void direction_motor_angle_set(void)
 		   finall_angle[1] = atan_angle[1] + DIRMOTOR_LB_ANGLE;
 		   finall_angle[2] = atan_angle[2] + DIRMOTOR_RF_ANGLE;
 		   finall_angle[3] = atan_angle[3] + DIRMOTOR_RB_ANGLE;
-		
+		if(finall_angle[0]>360)
+		{
+			finall_angle[0] -= 360;
+		}
+		else if(finall_angle[0]<0.0f)
+		{
+			finall_angle[0] += 360;
+		}
+		if(finall_angle[1]>8192.0f)
+		{
+			finall_angle[1] -= 360;
+		}
+		else if(finall_angle[1]<0.0f)
+		{
+			finall_angle[1] += 360;
+		}
+		if(finall_angle[2]>8192.0f)
+		{
+			finall_angle[2] -= 360;
+		}
+		else if(finall_angle[2]<0.0f)
+		{
+			finall_angle[2] += 360;
+		}			
+		if(finall_angle[3]>8192.0f)
+		{
+			finall_angle[3] -= 360;
+		}
+		else if(finall_angle[3]<0.0f)
+		{
+			finall_angle[3] += 360;
+		}		
         error_angle[0] =Angle_Limit((finall_angle[0] - MA600s[0].Angle),180.0f);
 		    error_angle[1] =Angle_Limit((finall_angle[1] - MA600s[1].Angle),180.0f);
 		    error_angle[2] =Angle_Limit((finall_angle[2] - MA600s[2].Angle),180.0f);
@@ -236,6 +267,36 @@ void chassis_target_calc(void)
     M3508_Helm[5].targetLocation = chassis_control.motor_location[1];
     M3508_Helm[6].targetLocation = chassis_control.motor_location[2];
     M3508_Helm[7].targetLocation = chassis_control.motor_location[3];
+	if( M3508_Helm[7].targetLocation<0)
+	{
+		 M3508_Helm[7].targetLocation+=1.0f;
+	}
+	else if( M3508_Helm[7].targetLocation>1.0f)
+	{
+		 M3508_Helm[7].targetLocation-=1.0f;
+	}
+	if( M3508_Helm[6].targetLocation<0)
+	{
+		 M3508_Helm[6].targetLocation+=1.0f;
+	}
+	else if( M3508_Helm[6].targetLocation>1.0f)
+	{
+		 M3508_Helm[6].targetLocation-=1.0f;
+	}if( M3508_Helm[5].targetLocation<0)
+	{
+		 M3508_Helm[5].targetLocation+=1.0f;
+	}
+	else if( M3508_Helm[5].targetLocation>1.0f)
+	{
+		 M3508_Helm[5].targetLocation-=1.0f;
+	}if( M3508_Helm[4].targetLocation<0)
+	{
+		 M3508_Helm[4].targetLocation+=1.0f;
+	}
+	else if( M3508_Helm[4].targetLocation>1.0f)
+	{
+		 M3508_Helm[7].targetLocation-=1.0f;
+	}
     //驱动电机目标速度设置
     M3508_Helm[0].targetSpeed = chassis_control.motor_omega[0];
     M3508_Helm[1].targetSpeed = chassis_control.motor_omega[1];

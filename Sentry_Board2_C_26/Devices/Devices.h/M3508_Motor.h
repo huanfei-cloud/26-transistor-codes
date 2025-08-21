@@ -13,7 +13,7 @@
 
 #include "PID.h"
 #include "can.h"
-#include "steer_chassis.h"
+#include "Steer_Omni_Chassis.h"
 #include "typedef.h"
 #include <stdbool.h>
 #include <stdint.h>
@@ -86,7 +86,6 @@ typedef struct
 } M3508s_t;
 
 extern M3508s_t M3508_Array[7];
-extern M3508s_t M3508_Helm[8];
 
 typedef struct
 {
