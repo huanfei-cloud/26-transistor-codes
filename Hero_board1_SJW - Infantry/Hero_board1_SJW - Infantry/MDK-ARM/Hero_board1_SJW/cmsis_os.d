@@ -1,9 +1,9 @@
 .\hero_board1_sjw\cmsis_os.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c
-.\hero_board1_sjw\cmsis_os.o: D:\mdk\ARM\ARMCC\Bin\..\include\string.h
+.\hero_board1_sjw\cmsis_os.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\string.h
 .\hero_board1_sjw\cmsis_os.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 .\hero_board1_sjw\cmsis_os.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-.\hero_board1_sjw\cmsis_os.o: D:\mdk\ARM\ARMCC\Bin\..\include\stddef.h
-.\hero_board1_sjw\cmsis_os.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdint.h
+.\hero_board1_sjw\cmsis_os.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stddef.h
+.\hero_board1_sjw\cmsis_os.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdint.h
 .\hero_board1_sjw\cmsis_os.o: ../Core/Inc/FreeRTOSConfig.h
 .\hero_board1_sjw\cmsis_os.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 .\hero_board1_sjw\cmsis_os.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

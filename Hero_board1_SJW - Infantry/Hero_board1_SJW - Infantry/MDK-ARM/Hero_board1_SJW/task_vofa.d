@@ -5,7 +5,7 @@
 .\hero_board1_sjw\task_vofa.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 .\hero_board1_sjw\task_vofa.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
 .\hero_board1_sjw\task_vofa.o: ../Drivers/CMSIS/Include/core_cm4.h
-.\hero_board1_sjw\task_vofa.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdint.h
+.\hero_board1_sjw\task_vofa.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdint.h
 .\hero_board1_sjw\task_vofa.o: ../Drivers/CMSIS/Include/cmsis_version.h
 .\hero_board1_sjw\task_vofa.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 .\hero_board1_sjw\task_vofa.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -17,7 +17,7 @@
 .\hero_board1_sjw\task_vofa.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
 .\hero_board1_sjw\task_vofa.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 .\hero_board1_sjw\task_vofa.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-.\hero_board1_sjw\task_vofa.o: D:\mdk\ARM\ARMCC\Bin\..\include\stddef.h
+.\hero_board1_sjw\task_vofa.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stddef.h
 .\hero_board1_sjw\task_vofa.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 .\hero_board1_sjw\task_vofa.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 .\hero_board1_sjw\task_vofa.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -39,7 +39,7 @@
 .\hero_board1_sjw\task_vofa.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
 .\hero_board1_sjw\task_vofa.o: ../Core/Inc/usart.h
 .\hero_board1_sjw\task_vofa.o: ../Core/Inc/main.h
-.\hero_board1_sjw\task_vofa.o: D:\mdk\ARM\ARMCC\Bin\..\include\math.h
+.\hero_board1_sjw\task_vofa.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\math.h
 .\hero_board1_sjw\task_vofa.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 .\hero_board1_sjw\task_vofa.o: ../Core/Inc/FreeRTOSConfig.h
 .\hero_board1_sjw\task_vofa.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
@@ -62,13 +62,13 @@
 .\hero_board1_sjw\task_vofa.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 .\hero_board1_sjw\task_vofa.o: ../BSP/BSP.h/BSP_CAN.h
 .\hero_board1_sjw\task_vofa.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
-.\hero_board1_sjw\task_vofa.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdio.h
-.\hero_board1_sjw\task_vofa.o: D:\mdk\ARM\ARMCC\Bin\..\include\string.h
+.\hero_board1_sjw\task_vofa.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdio.h
+.\hero_board1_sjw\task_vofa.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\string.h
 .\hero_board1_sjw\task_vofa.o: ../Devices/Devices.h/M3508_Motor.h
 .\hero_board1_sjw\task_vofa.o: ../Alg/Alg.h/PID.h
-.\hero_board1_sjw\task_vofa.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdlib.h
+.\hero_board1_sjw\task_vofa.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdlib.h
 .\hero_board1_sjw\task_vofa.o: ../Alg/Alg.h/kalman_filter.h
-.\hero_board1_sjw\task_vofa.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdbool.h
+.\hero_board1_sjw\task_vofa.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdbool.h
 .\hero_board1_sjw\task_vofa.o: ../Alg/Alg.h/arm_math.h
 .\hero_board1_sjw\task_vofa.o: ../Drivers/CMSIS/Include/core_cm4.h
 .\hero_board1_sjw\task_vofa.o: ../Alg/Alg.h/FuzzyPID.h

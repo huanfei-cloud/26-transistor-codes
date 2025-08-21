@@ -110,7 +110,7 @@ void DT7_Handle(void)
 		RC_CtrlData.rc.ch3 -= 1024;
 
 		/* prevent remote control zero deviation */
-		if (RC_CtrlData.rc.ch0 <= 45 && RC_CtrlData.rc.ch0 >= -45)
+		if (RC_CtrlData.rc.ch0 <= 100 && RC_CtrlData.rc.ch0 >= -100)
 		{
 			RC_CtrlData.rc.ch0 = 0;
 		}

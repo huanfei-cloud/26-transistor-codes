@@ -1,8 +1,8 @@
 .\hero_board1_sjw\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/timers.c
-.\hero_board1_sjw\timers.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdlib.h
+.\hero_board1_sjw\timers.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdlib.h
 .\hero_board1_sjw\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-.\hero_board1_sjw\timers.o: D:\mdk\ARM\ARMCC\Bin\..\include\stddef.h
-.\hero_board1_sjw\timers.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdint.h
+.\hero_board1_sjw\timers.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stddef.h
+.\hero_board1_sjw\timers.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdint.h
 .\hero_board1_sjw\timers.o: ../Core/Inc/FreeRTOSConfig.h
 .\hero_board1_sjw\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 .\hero_board1_sjw\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

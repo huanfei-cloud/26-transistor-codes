@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Hero_board1_SJW\Hero_board1_SJW.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Hero_board1_SJW\Hero_board1_SJW.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Tue Aug 19 15:27:43 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Thu Aug 21 21:02:22 2025
 <BR><P>
 <H3>Maximum Stack Usage =        488 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -895,7 +895,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> dial.o(.data)
 </UL>
-<P><STRONG><a name="[23]"></a>Dial_Processing_2</STRONG> (Thumb, 236 bytes, Stack size 32 bytes, dial.o(i.Dial_Processing_2))
+<P><STRONG><a name="[23]"></a>Dial_Processing_2</STRONG> (Thumb, 310 bytes, Stack size 32 bytes, dial.o(i.Dial_Processing_2))
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = Dial_Processing_2 &rArr; PID_Model4_Update &rArr; FuzzyComputation &rArr; Membership_Calc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
@@ -931,7 +931,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> frictionwheel.o(.data)
 </UL>
-<P><STRONG><a name="[e1]"></a>Fric_Set_targetSpeed</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, frictionwheel.o(i.Fric_Set_targetSpeed))
+<P><STRONG><a name="[e1]"></a>Fric_Set_targetSpeed</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, frictionwheel.o(i.Fric_Set_targetSpeed))
 <BR><BR>[Called By]<UL><LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Fric_Processing
 </UL>
 
@@ -2389,9 +2389,9 @@ Global Symbols
 <P><STRONG><a name="[19c]"></a>USBD_StdItfReq</STRONG> (Thumb, 114 bytes, Stack size 16 bytes, usbd_ctlreq.o(i.USBD_StdItfReq))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = USBD_StdItfReq &rArr; USBD_CtlSendStatus &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; USB_EPStartXfer &rArr; USB_WritePacket
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CoreFindIF
-<LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlError
+<BR>[Calls]<UL><LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlError
 <LI><a href="#[18d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlSendStatus
+<LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CoreFindIF
 </UL>
 <BR>[Called By]<UL><LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_LL_SetupStage
 </UL>

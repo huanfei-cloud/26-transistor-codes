@@ -1,9 +1,9 @@
 .\hero_board1_sjw\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/queue.c
-.\hero_board1_sjw\queue.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdlib.h
-.\hero_board1_sjw\queue.o: D:\mdk\ARM\ARMCC\Bin\..\include\string.h
+.\hero_board1_sjw\queue.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdlib.h
+.\hero_board1_sjw\queue.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\string.h
 .\hero_board1_sjw\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-.\hero_board1_sjw\queue.o: D:\mdk\ARM\ARMCC\Bin\..\include\stddef.h
-.\hero_board1_sjw\queue.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdint.h
+.\hero_board1_sjw\queue.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stddef.h
+.\hero_board1_sjw\queue.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdint.h
 .\hero_board1_sjw\queue.o: ../Core/Inc/FreeRTOSConfig.h
 .\hero_board1_sjw\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 .\hero_board1_sjw\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

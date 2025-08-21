@@ -1,7 +1,7 @@
 .\hero_board1_sjw\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/port.c
 .\hero_board1_sjw\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-.\hero_board1_sjw\port.o: D:\mdk\ARM\ARMCC\Bin\..\include\stddef.h
-.\hero_board1_sjw\port.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdint.h
+.\hero_board1_sjw\port.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stddef.h
+.\hero_board1_sjw\port.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdint.h
 .\hero_board1_sjw\port.o: ../Core/Inc/FreeRTOSConfig.h
 .\hero_board1_sjw\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 .\hero_board1_sjw\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

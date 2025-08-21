@@ -21,6 +21,7 @@ float PID_Model4_Update(incrementalpid_t *pid, FUZZYPID_Data_t *PID, float _set_
 #define CHECK_INTERVAL 1000             // 检测间隔
 #define REVERSE_DURATION 500            // 反转时间
 #define ANGLE_CHANGE_THRESHOLD 20       // 反转角度判断
+#define HEAT_LIMITATION 10000           // 拨弹盘热量限制编码值
 
 /**************数据定义****************/
 static uint32_t last_check_time = 0;    // 上一次检测时间
@@ -114,13 +115,12 @@ void Dial_Processing_2(void)
       return; // 退出函数
     }
   }
-
+  /***********************************连发模式******************************************/
   if (Dial_Data.Shoot_Mode == Continuous_Shoot && Dial_Data.Dial_Switch == Dial_On)
   {
     M3508_Array[Dial_Wheel].targetSpeed = -1000; // Dial_Data.Speed_Dial;
-
     M3508_Array[Dial_Wheel].outCurrent = PID_Model4_Update(&M3508_DialI_Pid, &fuzzy_pid_bullet_v, M3508_Array[Dial_Wheel].targetSpeed, M3508_Array[Dial_Wheel].realSpeed);
-
+    
     /********************拨弹盘卡弹处理*****************/
     // 定时检测角度变化(每CHECK_INTERVAL ms检测一次)
     if (current_time - last_check_time >= CHECK_INTERVAL)
@@ -128,8 +128,8 @@ void Dial_Processing_2(void)
       // 计算角度变化量(取绝对值)
       int32_t angle_change = abs(M3508_Array[Dial_Wheel].totalAngle - last_angle);
 
-      // 如果角度变化小于阈值，判断为卡弹
-      if (angle_change < ANGLE_CHANGE_THRESHOLD)
+      // 如果没有过热，且角度变化小于阈值，判断为卡弹
+      if (angle_change < ANGLE_CHANGE_THRESHOLD && !is_reversing)
       {
         is_reversing = 1;
         reverse_start_time = current_time;
@@ -142,15 +142,20 @@ void Dial_Processing_2(void)
       last_check_time = current_time;
       last_angle = M3508_Array[Dial_Wheel].totalAngle;
     }
+
   }
 
-  /**********************************************************************************/
+  /*************************************单发模式***********************************************/
   static bool dial_rotation_finish = false;    // 转动是否完成
+  static bool is_rotation_started = false; // 转动启动标志
   static float target_rotate_angle = 0.0f; // 目标转动角度（当前角度+60度）
-  static uint16_t Single_Switch = 0;       //单发开关
+  static uint16_t Single_Switch = 0;       // 单发开关
   //单发开关判断逻辑
-  if (Dial_Data.Shoot_Mode == No_Shoot) dial_rotation_finish = false;//s2拨回到MID时，刷新转动完成标志到false
-
+  if (Dial_Data.Shoot_Mode == No_Shoot) 
+  {
+    dial_rotation_finish = false;//s2拨回到MID时，刷新转动完成标志到false
+    is_rotation_started = false;//s2拨回到MID时，刷新转动开始标志到false
+  }
   if (dial_rotation_finish == false && Dial_Data.Shoot_Mode == Single_Shoot) Single_Switch = 1;
   else Single_Switch = 0;
 
@@ -158,21 +163,68 @@ void Dial_Processing_2(void)
   // 启动条件：处于单发模式，且未完成一次转动
   if (Single_Switch == 1)
   {
-    // 初始化转动参数：目标角度为当前角度+60度，执行转动控制
-    target_rotate_angle = M3508_Array[Dial_Wheel].totalAngle + 60.0f;
+    if (is_rotation_started == false)
+    {
+      // 初始化转动参数：目标角度为当前角度+60度
+      target_rotate_angle = M3508_Array[Dial_Wheel].totalAngle + 60.0f;
+    }
+    //打开转动开始开关
+    is_rotation_started = true;
+
+    if (fabs(M3508_Array[Dial_Wheel].totalAngle - target_rotate_angle) >= 2.0f)
+    {
     // 角度闭环控制：计算目标速度（PID调节）
     M3508_Array[Dial_Wheel].targetSpeed = Position_PID(&M3508_DialV_Pid, target_rotate_angle, M3508_Array[Dial_Wheel].totalAngle);
     // 电流闭环控制（根据目标速度调节输出）
     M3508_Array[Dial_Wheel].outCurrent = PID_Model4_Update(&M3508_DialI_Pid, &fuzzy_pid_bullet_v, M3508_Array[Dial_Wheel].targetSpeed, M3508_Array[Dial_Wheel].realSpeed);
-    // 检查是否到达目标角度（允许±2度误差，避免抖动） //若形成±2°以上的超调，则会在检测时停止电机、关闭拨盘开关、重置状态，并由惯性继续转动，因此PID调参需注意注意避免超调。
-    if (fabs(M3508_Array[Dial_Wheel].totalAngle - target_rotate_angle) <= 2.0f)
+    }
+    // 检查是否到达目标角度（允许±2度误差，避免抖动） //若形成±2°以上的超调，则会在检测时停止电机、关闭拨盘开关、重置状态，并由惯性继续转动，因此PID调参需注意注意避免超调。或许还需要控制位置环？
+    else
     {
       // 转动完成：停止电机、关闭拨盘开关、重置状态
-      M3508_Array[Dial_Wheel].outCurrent = 0; // 停止输出
+      M3508_Array[Dial_Wheel].outCurrent = PID_Model4_Update(&M3508_DialI_Pid, &fuzzy_pid_bullet_v, 0, M3508_Array[Dial_Wheel].realSpeed); // 停止旋转
       dial_rotation_finish = true;            // 转动完成标志
       target_rotate_angle = 0.0f;             // 清空目标角度
     }
   }
+
+    else if (Dial_Data.Shoot_Mode == Single_Shoot && Dial_Data.Dial_Switch == Dial_On)
+    {
+        static bool dial_rotation_finish = false;
+        static bool is_rotation_started = false;
+        static float target_rotate_angle = 0.0f;
+        
+        // 模式切换时的状态重置
+        if (Dial_Data.Shoot_Mode == Single_Shoot && !is_rotation_started)
+        {
+            target_rotate_angle = current_angle + 60.0f; // 目标位置为当前位置+60度
+            is_rotation_started = true;
+            dial_rotation_finish = false;
+        }
+        
+        // 转动未完成时的控制
+        if (is_rotation_started && !dial_rotation_finish)
+        {
+            // 检查是否到达目标位置
+            if (fabs(current_angle - target_rotate_angle) >= 2.0f)
+            {
+                // 位置环控制
+                M3508_Array[Dial_Wheel].targetSpeed = Position_PID(&M3508_DialV_Pid, target_rotate_angle, current_angle);
+                // 电流环控制
+                M3508_Array[Dial_Wheel].outCurrent = PID_Model4_Update(&M3508_DialI_Pid, &fuzzy_pid_bullet_v, 
+                                                                   M3508_Array[Dial_Wheel].targetSpeed, 
+                                                                   M3508_Array[Dial_Wheel].realSpeed);
+            }
+            else
+            {
+                // 转动完成：停止电机并更新状态
+                M3508_Array[Dial_Wheel].outCurrent = PID_Model4_Update(&M3508_DialI_Pid, &fuzzy_pid_bullet_v, 
+                                                                   0, M3508_Array[Dial_Wheel].realSpeed);
+                dial_rotation_finish = true;
+            }
+        }
+    }
+
   else
   {
     M3508_Array[Dial_Wheel].outCurrent = PID_Model4_Update(&M3508_DialI_Pid, &fuzzy_pid_bullet_v, 0, M3508_Array[Dial_Wheel].realSpeed);

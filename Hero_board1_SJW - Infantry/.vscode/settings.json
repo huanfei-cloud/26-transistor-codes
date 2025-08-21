@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "frictionwheel.h": "c",
+        "bsp_boardcommunication.h": "c"
+    }
+}

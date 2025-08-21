@@ -2,7 +2,7 @@
 .\hero_board1_sjw\system_stm32f4xx.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 .\hero_board1_sjw\system_stm32f4xx.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
 .\hero_board1_sjw\system_stm32f4xx.o: ../Drivers/CMSIS/Include/core_cm4.h
-.\hero_board1_sjw\system_stm32f4xx.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdint.h
+.\hero_board1_sjw\system_stm32f4xx.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdint.h
 .\hero_board1_sjw\system_stm32f4xx.o: ../Drivers/CMSIS/Include/cmsis_version.h
 .\hero_board1_sjw\system_stm32f4xx.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 .\hero_board1_sjw\system_stm32f4xx.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -14,7 +14,7 @@
 .\hero_board1_sjw\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
 .\hero_board1_sjw\system_stm32f4xx.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 .\hero_board1_sjw\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-.\hero_board1_sjw\system_stm32f4xx.o: D:\mdk\ARM\ARMCC\Bin\..\include\stddef.h
+.\hero_board1_sjw\system_stm32f4xx.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stddef.h
 .\hero_board1_sjw\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 .\hero_board1_sjw\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 .\hero_board1_sjw\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h

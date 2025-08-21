@@ -1,7 +1,7 @@
 .\hero_board1_sjw\bsp_usart.o: ..\BSP\BSP.c\BSP_Usart.c
 .\hero_board1_sjw\bsp_usart.o: ../BSP/BSP.h/BSP_Usart.h
-.\hero_board1_sjw\bsp_usart.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdio.h
-.\hero_board1_sjw\bsp_usart.o: D:\mdk\ARM\ARMCC\Bin\..\include\string.h
+.\hero_board1_sjw\bsp_usart.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdio.h
+.\hero_board1_sjw\bsp_usart.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\string.h
 .\hero_board1_sjw\bsp_usart.o: ../Core/Inc/usart.h
 .\hero_board1_sjw\bsp_usart.o: ../Core/Inc/main.h
 .\hero_board1_sjw\bsp_usart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
@@ -11,7 +11,7 @@
 .\hero_board1_sjw\bsp_usart.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 .\hero_board1_sjw\bsp_usart.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
 .\hero_board1_sjw\bsp_usart.o: ../Drivers/CMSIS/Include/core_cm4.h
-.\hero_board1_sjw\bsp_usart.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdint.h
+.\hero_board1_sjw\bsp_usart.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdint.h
 .\hero_board1_sjw\bsp_usart.o: ../Drivers/CMSIS/Include/cmsis_version.h
 .\hero_board1_sjw\bsp_usart.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 .\hero_board1_sjw\bsp_usart.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -19,7 +19,7 @@
 .\hero_board1_sjw\bsp_usart.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 .\hero_board1_sjw\bsp_usart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 .\hero_board1_sjw\bsp_usart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-.\hero_board1_sjw\bsp_usart.o: D:\mdk\ARM\ARMCC\Bin\..\include\stddef.h
+.\hero_board1_sjw\bsp_usart.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stddef.h
 .\hero_board1_sjw\bsp_usart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 .\hero_board1_sjw\bsp_usart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 .\hero_board1_sjw\bsp_usart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -62,12 +62,12 @@
 .\hero_board1_sjw\bsp_usart.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 .\hero_board1_sjw\bsp_usart.o: ../Devices/Devices.h/M2006_Motor.h
 .\hero_board1_sjw\bsp_usart.o: ../Alg/Alg.h/PID.h
-.\hero_board1_sjw\bsp_usart.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdlib.h
+.\hero_board1_sjw\bsp_usart.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdlib.h
 .\hero_board1_sjw\bsp_usart.o: ../Alg/Alg.h/kalman_filter.h
-.\hero_board1_sjw\bsp_usart.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdbool.h
+.\hero_board1_sjw\bsp_usart.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdbool.h
 .\hero_board1_sjw\bsp_usart.o: ../Alg/Alg.h/arm_math.h
 .\hero_board1_sjw\bsp_usart.o: ../Drivers/CMSIS/Include/core_cm4.h
-.\hero_board1_sjw\bsp_usart.o: D:\mdk\ARM\ARMCC\Bin\..\include\math.h
+.\hero_board1_sjw\bsp_usart.o: F:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\math.h
 .\hero_board1_sjw\bsp_usart.o: ../Alg/Alg.h/FuzzyPID.h
 .\hero_board1_sjw\bsp_usart.o: ../Devices/Devices.h/DT7.h
 .\hero_board1_sjw\bsp_usart.o: ../Apps/Apps.h/Cloud_Control.h

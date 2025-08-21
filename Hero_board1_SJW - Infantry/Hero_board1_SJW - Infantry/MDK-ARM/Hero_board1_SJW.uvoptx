@@ -168,32 +168,27 @@
         <Ww>
           <count>2</count>
           <WinNumber>1</WinNumber>
-          <ItemText>J4310s_Pitch,0x0A</ItemText>
+          <ItemText>Auto_Aim_Yaw</ItemText>
         </Ww>
         <Ww>
           <count>3</count>
           <WinNumber>1</WinNumber>
-          <ItemText>pitch_Frame,0x0A</ItemText>
+          <ItemText>Auto_Aim_Pitch</ItemText>
         </Ww>
         <Ww>
           <count>4</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Auto_Aim_Yaw</ItemText>
+          <ItemText>a</ItemText>
         </Ww>
         <Ww>
           <count>5</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Auto_Aim_Pitch</ItemText>
+          <ItemText>b</ItemText>
         </Ww>
         <Ww>
           <count>6</count>
           <WinNumber>1</WinNumber>
-          <ItemText>a</ItemText>
-        </Ww>
-        <Ww>
-          <count>7</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>b</ItemText>
+          <ItemText>M2006_Array,0x0A</ItemText>
         </Ww>
       </WatchWindow1>
       <MemoryWindow1>
