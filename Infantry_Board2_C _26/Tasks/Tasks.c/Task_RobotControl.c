@@ -35,26 +35,52 @@ void Robot_Control(void const *argument)
 			{
 				M6020s_YawIPID.Kp = yaw_I_p - 150.0f;
 				M6020s_YawIPID.Kd = yaw_I_d - 150.0f;
+				
+				if( M6020s_Yaw.realAngle > 700 && M6020s_Yaw.realAngle < 900 )
+				{
+			      AutoAim_M6020s_YawIPID.Kp = yaw_I_Aim_p - 300.0f;
+				    AutoAim_M6020s_YawIPID.Kd = yaw_I_Aim_d - 300.0f;
+				}
+				else
+				{
+					  AutoAim_M6020s_YawIPID.Kp = yaw_I_Aim_p - 200.0f;
+				    AutoAim_M6020s_YawIPID.Kd = yaw_I_Aim_d - 200.0f;
+				}
 			}
 			else if( M6020s_Yaw.realAngle > 3700 && M6020s_Yaw.realAngle < 5700)
 			{
 				M6020s_YawIPID.Kp = yaw_I_p - 150.0f;
 				M6020s_YawIPID.Kd = yaw_I_d - 150.0f;
+				
+				if( M6020s_Yaw.realAngle > 4500 && M6020s_Yaw.realAngle < 4700)
+				{
+				   AutoAim_M6020s_YawIPID.Kp = yaw_I_Aim_p - 300.0f;
+				   AutoAim_M6020s_YawIPID.Kd = yaw_I_Aim_d - 300.0f;
+				}
+				else
+				{
+					AutoAim_M6020s_YawIPID.Kp = yaw_I_Aim_p - 200.0f;
+				  AutoAim_M6020s_YawIPID.Kd = yaw_I_Aim_d - 200.0f;
+				}
 			}
 			else if( M6020s_Yaw.realAngle > 7900)
 			{
 				M6020s_YawIPID.Kp = yaw_I_p - 150.0f;
 				M6020s_YawIPID.Kd = yaw_I_d - 150.0f;
+				AutoAim_M6020s_YawIPID.Kp = yaw_I_Aim_p - 200.0f;
+				AutoAim_M6020s_YawIPID.Kd = yaw_I_Aim_d - 200.0f;
 			}
 			else
 			{
 				M6020s_YawIPID.Kp = yaw_I_p;
 				M6020s_YawIPID.Kd = yaw_I_d;
+				AutoAim_M6020s_YawIPID.Kp = yaw_I_Aim_p;
+				AutoAim_M6020s_YawIPID.Kd = yaw_I_Aim_d;
 			}
 			/******************End******************/
-			
-				Board2_FUN.Board2_To_1();
+			  
         DT7_Handle();
+			  Board2_FUN.Board2_To_1();
 				PowerControl_Fun.PowerControl_MsgSend();
 				steer_chassis_out();
 			

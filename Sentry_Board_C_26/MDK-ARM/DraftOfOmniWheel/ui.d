@@ -44,7 +44,7 @@ draftofomniwheel\ui.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.
 draftofomniwheel\ui.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\string.h
 draftofomniwheel\ui.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdio.h
 draftofomniwheel\ui.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\math.h
-draftofomniwheel\ui.o: ../APPs/APPs.h/struct_typedef.h
+draftofomniwheel\ui.o: ..\APPs\APPs.h\struct_typedef.h
 draftofomniwheel\ui.o: ../Algorithm/Algorithm.h/arm_math.h
 draftofomniwheel\ui.o: ../Drivers/CMSIS/Include/core_cm4.h
 draftofomniwheel\ui.o: ../BSP/BSP.h/typedef.h

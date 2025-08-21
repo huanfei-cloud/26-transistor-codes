@@ -26,12 +26,12 @@ void DebugData_Motor_Speed(M2006s_t *M2006_Array)
                           strlen((const char *)message));
  }
  
-void DebugData_Chassis_Angle(Omni_Data_t Omni_Data)
+void DebugData_Chassis_Angle(Steer_Omni_Data_t Steer_Omni_Data)
 	{
 	//	fp32 angle;
 	uint8_t message[30];
     sprintf((char *)message, "%.3f\r\n",
-            Omni_Data.Angle_ChassisToCloud);
+            Steer_Omni_Data.Angle_ChassisToCloud);
 	//	angle=Omni_Data.Angle_ChassisToCloud;
 		 HAL_UART_Transmit_DMA(&huart1, (uint8_t *)message,
                           strlen((const char *)message));

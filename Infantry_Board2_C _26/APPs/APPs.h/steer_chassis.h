@@ -65,10 +65,12 @@ typedef struct
 /*对外数据接口*/
 extern Struct_CHASSIS_Manage_Object chassis_control;
 extern fp64 Angle_Limit(fp64 angle,fp64 max);
-extern void chassis_init(void);
-extern void move_motor_speed_set(void);
-extern void direction_motor_angle_set(void);
-extern void v_cloud_convertto_chassis(fp32 angle);
-extern void chassis_target_calc(void);
-extern void steer_chassis_out(void);
+/*函数声明*/
+void chassis_init(void);
+void move_motor_speed_set(void);
+void direction_motor_angle_set(void);
+void v_cloud_convertto_chassis(fp32 angle);
+void chassis_target_calc(void);
+void steer_chassis_out(void);
+void steer_getangle(fp32 angle);
 #endif

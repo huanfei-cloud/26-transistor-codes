@@ -36,7 +36,6 @@
 "draftofomniwheel\m2006_motor.o"
 "draftofomniwheel\j4310_motor.o"
 "draftofomniwheel\cloud_control.o"
-"draftofomniwheel\omni_chassis.o"
 "draftofomniwheel\time_stamp.o"
 "draftofomniwheel\powercontrol.o"
 "draftofomniwheel\steer_chassis.o"

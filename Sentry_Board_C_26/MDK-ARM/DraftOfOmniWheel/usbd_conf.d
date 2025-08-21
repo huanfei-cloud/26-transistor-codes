@@ -44,7 +44,7 @@ draftofomniwheel\usbd_conf.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\s
 draftofomniwheel\usbd_conf.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\string.h
 draftofomniwheel\usbd_conf.o: ../Core/Inc/main.h
 draftofomniwheel\usbd_conf.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\math.h
-draftofomniwheel\usbd_conf.o: ../APPs/APPs.h/struct_typedef.h
+draftofomniwheel\usbd_conf.o: ..\APPs\APPs.h\struct_typedef.h
 draftofomniwheel\usbd_conf.o: ../Algorithm/Algorithm.h/arm_math.h
 draftofomniwheel\usbd_conf.o: ../Drivers/CMSIS/Include/core_cm4.h
 draftofomniwheel\usbd_conf.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h

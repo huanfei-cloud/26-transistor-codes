@@ -341,7 +341,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx,ARM_MATH_CM4,__TARGET_FPU_VFP,__CC_ARM,ARM_MATH_CM4,__FPU_PRESENT=1U</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../Algorithm/Algorithm.h;../APPs/APPs.h;../BSP/BSP.h;..\Devices\Devices.h;../Protocol/Protocol.h;..\Tasks\Tasks.h;../Debug/TraceRecorder/include;../Debug/TraceRecorder/config;../USB_DEVICE/App;../USB_DEVICE/Target;../Middlewares/ST/STM32_USB_Device_Library/Core/Inc;../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc;..\Debug Assist</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../Algorithm/Algorithm.h;..\APPs\APPs.h;../BSP/BSP.h;..\Devices\Devices.h;../Protocol/Protocol.h;..\Tasks\Tasks.h;../Debug/TraceRecorder/include;../Debug/TraceRecorder/config;../USB_DEVICE/App;../USB_DEVICE/Target;../Middlewares/ST/STM32_USB_Device_Library/Core/Inc;../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc;..\Debug Assist</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -641,6 +641,21 @@
               <FileType>1</FileType>
               <FilePath>..\Devices\Devices.c\J4310_Motor.c</FilePath>
             </File>
+            <File>
+              <FileName>Saber_C3.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Devices\Devices.h\Saber_C3.h</FilePath>
+            </File>
+            <File>
+              <FileName>N100.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Devices\Devices.h\N100.h</FilePath>
+            </File>
+            <File>
+              <FileName>DT7.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Devices\Devices.h\DT7.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -652,11 +667,6 @@
               <FilePath>..\APPs\APPs.c\Cloud_Control.c</FilePath>
             </File>
             <File>
-              <FileName>Omni_Chassis.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\APPs\APPs.c\Omni_Chassis.c</FilePath>
-            </File>
-            <File>
               <FileName>Time_Stamp.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\APPs\APPs.c\Time_Stamp.c</FilePath>
@@ -665,6 +675,11 @@
               <FileName>PowerControl.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\APPs\APPs.c\PowerControl.c</FilePath>
+            </File>
+            <File>
+              <FileName>Steer_Omni_Chassis.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\APPs\APPs.c\Steer_Omni_Chassis.c</FilePath>
             </File>
           </Files>
         </Group>

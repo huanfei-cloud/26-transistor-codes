@@ -16,11 +16,10 @@
   * @param  void
   * @retval void
   */
- void Vofa_Assist(void const *argument)
- {
+void Vofa_Assist(void const *argument)
+{
 	 for( ; ; )
 	 {
 //		 JustFloat_Send((float)M3508_Helm[5].realAngle,1,USART_TypeDef *Usart_choose);
 	 }
- }
- 
+}

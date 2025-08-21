@@ -73,9 +73,7 @@ draftofomniwheel\bsp_test.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\st
 draftofomniwheel\bsp_test.o: ../Algorithm/Algorithm.h/FuzzyPID.h
 draftofomniwheel\bsp_test.o: ../Devices/Devices.h/M6020_Motor.h
 draftofomniwheel\bsp_test.o: ../Core/Inc/usart.h
-draftofomniwheel\bsp_test.o: ../APPs/APPs.h/Omni_Chassis.h
-draftofomniwheel\bsp_test.o: ../Devices/Devices.h/M3508_Motor.h
-draftofomniwheel\bsp_test.o: ../APPs/APPs.h/steer_chassis.h
+draftofomniwheel\bsp_test.o: ../APPs/APPs.h/Steer_Chassis.h
 draftofomniwheel\bsp_test.o: ../BSP/BSP.h/BSP_Can.h
 draftofomniwheel\bsp_test.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 draftofomniwheel\bsp_test.o: ../Devices/Devices.h/Saber_C3.h
@@ -87,7 +85,6 @@ draftofomniwheel\bsp_test.o: ../Devices/Devices.h/DT7.h
 draftofomniwheel\bsp_test.o: ../APPs/APPs.h/steer_chassis.h
 draftofomniwheel\bsp_test.o: ../Protocol/Protocol.h/BSP_BoardCommunication.h
 draftofomniwheel\bsp_test.o: ../Protocol/Protocol.h/Protocol_Judgement.h
-draftofomniwheel\bsp_test.o: ../APPs/APPs.h/Omni_Chassis.h
 draftofomniwheel\bsp_test.o: ../APPs/APPs.h/Cloud_Control.h
 draftofomniwheel\bsp_test.o: ../Algorithm/Algorithm.h/FeedForward.h
 draftofomniwheel\bsp_test.o: ../Protocol/Protocol.h/BSP_BoardCommunication.h

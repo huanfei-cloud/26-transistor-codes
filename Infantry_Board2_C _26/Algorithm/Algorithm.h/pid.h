@@ -23,22 +23,24 @@
 //#include <AddMath.h>
 
 /********pid的参数值********/
-//正常位置环
-//#define yaw_O_p 0.083f
-//#define yaw_O_i 0.00001f
-//#define yaw_O_d 0.0f
-//正常速度环
-//#define yaw_I_p 1050.0f
-//#define yaw_I_i 0.12f
-//#define yaw_I_d 1000.0f
-//正常位置环
-#define yaw_O_p 0.001f
+//正常yaw轴位置环
+#define yaw_O_p 0.083f
 #define yaw_O_i 0.00001f
 #define yaw_O_d 0.0f
-//正常速度环
-#define yaw_I_p 2.0f
-#define yaw_I_i 0.02f
-#define yaw_I_d 1.0f
+//正常yaw轴速度环
+#define yaw_I_p 1050.0f
+#define yaw_I_i 0.12f
+#define yaw_I_d 1000.0f
+//自瞄yaw轴位置环
+#define yaw_O_Aim_p 2.082f
+#define yaw_O_Aim_i 0.00001f
+#define yaw_O_Aim_d 1.0f
+#define yaw_O_Aim_f 0.0f
+//正常yaw轴速度环
+#define yaw_I_Aim_p 1100.0f
+#define yaw_I_Aim_i 60.0f
+#define yaw_I_Aim_d 950.0f
+#define yaw_I_Aim_f 100.0f
 
 /**********PID对外数据接口************/
 

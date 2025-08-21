@@ -67,3 +67,7 @@ draftofomniwheel\task_vofa.o: ../Devices/Devices.h/M6020_Motor.h
 draftofomniwheel\task_vofa.o: ../Core/Inc/can.h
 draftofomniwheel\task_vofa.o: ../BSP/BSP.h/typedef.h
 draftofomniwheel\task_vofa.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdbool.h
+draftofomniwheel\task_vofa.o: ../Algorithm/Algorithm.h/pid.h
+draftofomniwheel\task_vofa.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdlib.h
+draftofomniwheel\task_vofa.o: ../Algorithm/Algorithm.h/kalman_filter.h
+draftofomniwheel\task_vofa.o: ../Algorithm/Algorithm.h/FuzzyPID.h

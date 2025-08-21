@@ -1,5 +1,5 @@
 draftofomniwheel\powercontrol.o: ..\APPs\APPs.c\PowerControl.c
-draftofomniwheel\powercontrol.o: ../APPs/APPs.h/PowerControl.h
+draftofomniwheel\powercontrol.o: ..\APPs\APPs.h\PowerControl.h
 draftofomniwheel\powercontrol.o: ../Protocol/Protocol.h/Protocol_Judgement.h
 draftofomniwheel\powercontrol.o: ../Core/Inc/usart.h
 draftofomniwheel\powercontrol.o: ../Core/Inc/main.h
@@ -44,7 +44,7 @@ draftofomniwheel\powercontrol.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_h
 draftofomniwheel\powercontrol.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\string.h
 draftofomniwheel\powercontrol.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdio.h
 draftofomniwheel\powercontrol.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\math.h
-draftofomniwheel\powercontrol.o: ../APPs/APPs.h/struct_typedef.h
+draftofomniwheel\powercontrol.o: ..\APPs\APPs.h\struct_typedef.h
 draftofomniwheel\powercontrol.o: ../Algorithm/Algorithm.h/arm_math.h
 draftofomniwheel\powercontrol.o: ../Drivers/CMSIS/Include/core_cm4.h
 draftofomniwheel\powercontrol.o: ../BSP/BSP.h/BSP_can.h

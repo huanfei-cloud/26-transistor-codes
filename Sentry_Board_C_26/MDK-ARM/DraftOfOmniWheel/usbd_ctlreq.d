@@ -45,7 +45,7 @@ draftofomniwheel\usbd_ctlreq.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ha
 draftofomniwheel\usbd_ctlreq.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 draftofomniwheel\usbd_ctlreq.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
 draftofomniwheel\usbd_ctlreq.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\math.h
-draftofomniwheel\usbd_ctlreq.o: ../APPs/APPs.h/struct_typedef.h
+draftofomniwheel\usbd_ctlreq.o: ..\APPs\APPs.h\struct_typedef.h
 draftofomniwheel\usbd_ctlreq.o: ../Algorithm/Algorithm.h/arm_math.h
 draftofomniwheel\usbd_ctlreq.o: ../Drivers/CMSIS/Include/core_cm4.h
 draftofomniwheel\usbd_ctlreq.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h

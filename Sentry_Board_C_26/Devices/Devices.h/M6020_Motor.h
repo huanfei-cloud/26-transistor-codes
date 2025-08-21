@@ -16,9 +16,11 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
+#include "PID.h"
+#include "BSP_Can.h"
 
 #define M6020_READID_START 0x205 //当ID为1时的报文ID
-#define M6020_READID_END 0x206
+#define M6020_READID_END 0x207
 #define M6020_YAW_ID 0x205
 #define M6020_SENDID 0x1FF //1~4的电机，0x2FF为5~7
 
@@ -40,6 +42,7 @@
 
 typedef struct
 {
+	  uint16_t motor_id;
     uint16_t realAngle;  //读回来的机械角度
     int32_t realSpeed;   //读回来的速度
     int16_t realCurrent; //读回来的实际转矩电流
@@ -57,6 +60,10 @@ typedef struct
     uint8_t InfoUpdateFlag;   //信息读取更新标志
     uint16_t InfoUpdateFrame; //帧率
     uint8_t OffLineFlag;      //设备离线标志
+	
+	  positionpid_t l_pid_object;
+	  positionpid_t v_pid_object;
+		
 } M6020s_t;
 
 typedef enum
@@ -64,7 +71,10 @@ typedef enum
     //需要注意与报文接受函数处对应。即
     //M6020_PITCH_Right = 0,
     M6020_YAW = 0 ,
-} M6020Name_e;
+	  M6020_Chassis1,
+	  M6020_Chassis2,
+	  Totalnum
+}M6020Name_e;
 
 typedef struct
 {
@@ -75,7 +85,18 @@ typedef struct
 	
 } M6020_Fun_t;
 
+/********全局变量声明********/
 extern M6020s_t M6020s_Yaw;   //ID为1
+extern M6020s_t M6020_Chassis[2];
 extern M6020_Fun_t M6020_Fun;
+
+/********函数声明********/
+void M6020_Init(M6020s_t *motor, uint16_t _motor_id);
+void M6020_setVoltage(int16_t uq1, int16_t uq2, int16_t uq3, int16_t uq4, uint8_t *data);
+void M6020_getInfo(Can_Export_Data_t RxMessage);
+void M6020_setTargetAngle(M6020s_t *M6020, int32_t angle);
+void M6020_Reset(M6020s_t *m6020);
+void M6020_velocity_change(M6020s_t *motor,pid_control model,CAN_HandleTypeDef *hcan,float target);
+void M6020_location_change(M6020s_t *motor,pid_control model,int16_t target,int16_t real);
 
 #endif /* __M3508_MOTOR_H */

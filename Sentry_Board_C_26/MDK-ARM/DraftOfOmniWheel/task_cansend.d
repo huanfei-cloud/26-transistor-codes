@@ -44,7 +44,7 @@ draftofomniwheel\task_cansend.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_h
 draftofomniwheel\task_cansend.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\string.h
 draftofomniwheel\task_cansend.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdio.h
 draftofomniwheel\task_cansend.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\math.h
-draftofomniwheel\task_cansend.o: ../APPs/APPs.h/struct_typedef.h
+draftofomniwheel\task_cansend.o: ..\APPs\APPs.h\struct_typedef.h
 draftofomniwheel\task_cansend.o: ../Algorithm/Algorithm.h/arm_math.h
 draftofomniwheel\task_cansend.o: ../Drivers/CMSIS/Include/core_cm4.h
 draftofomniwheel\task_cansend.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

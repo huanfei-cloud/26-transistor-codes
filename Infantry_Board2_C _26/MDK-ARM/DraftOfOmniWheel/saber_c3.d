@@ -50,3 +50,7 @@ draftofomniwheel\saber_c3.o: ../Devices/Devices.h/M6020_Motor.h
 draftofomniwheel\saber_c3.o: ../Core/Inc/can.h
 draftofomniwheel\saber_c3.o: ../BSP/BSP.h/typedef.h
 draftofomniwheel\saber_c3.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdbool.h
+draftofomniwheel\saber_c3.o: ../Algorithm/Algorithm.h/pid.h
+draftofomniwheel\saber_c3.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdlib.h
+draftofomniwheel\saber_c3.o: ../Algorithm/Algorithm.h/kalman_filter.h
+draftofomniwheel\saber_c3.o: ../Algorithm/Algorithm.h/FuzzyPID.h

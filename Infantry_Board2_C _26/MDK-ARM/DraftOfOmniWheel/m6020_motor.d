@@ -48,3 +48,7 @@ draftofomniwheel\m6020_motor.o: ../Algorithm/Algorithm.h/arm_math.h
 draftofomniwheel\m6020_motor.o: ../Drivers/CMSIS/Include/core_cm4.h
 draftofomniwheel\m6020_motor.o: ../BSP/BSP.h/typedef.h
 draftofomniwheel\m6020_motor.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdbool.h
+draftofomniwheel\m6020_motor.o: ../Algorithm/Algorithm.h/pid.h
+draftofomniwheel\m6020_motor.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdlib.h
+draftofomniwheel\m6020_motor.o: ../Algorithm/Algorithm.h/kalman_filter.h
+draftofomniwheel\m6020_motor.o: ../Algorithm/Algorithm.h/FuzzyPID.h

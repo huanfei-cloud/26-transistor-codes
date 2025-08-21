@@ -10,17 +10,9 @@
  */
 #include "BSP_BoardCommunication.h"
 
-/********变量声明********/
+/********变量定义********/
+Board2_FUN_t Board2_FUN;
 ControlMessge ControlMes;
-float yaw_velocity = 0;
-
-/********全局变量声明********/
-extern Saber_Angle_t Saber_Angle;
-/********函数声明********/
-void Board2_To_1(void);
-void Board2_getChassisInfo(Can_Export_Data_t RxMessage);
-void Board2_getGimbalInfo(Can_Export_Data_t RxMessage);
-
 
 Board2_FUN_t Board2_FUN = Board2_FunGroundInit;
 
@@ -46,7 +38,7 @@ void Board2_To_1(void)
 	data[4] = bullet_speed >> 8;
 	data[5] = bullet_speed;
   data[6] |= (uint8_t)(ControlMes.tnndcolor & 0x01) <<0;
-	data[6] |= (uint8_t)(ControlMes.game_start & 0x01) <<1;
+	data[7] |= (uint8_t)(ControlMes.game_start & 0x01) <<1;
 	
 	//图传键鼠映射，分别是鼠标x轴、y轴、z轴（z轴是滚轮）、左键、右键，此时只传了鼠标的信息
 	//云台只需要鼠标操控，因此在上板接收时需要扩展IT_keycommand[8]至IT_keycommand[12]（后四位直接赋0），
@@ -61,7 +53,7 @@ void Board2_To_1(void)
 	//	IT_keycommand[7] = ext_robot_keycommand.data.right_button_down;
 	
   //数据发送
-  Can_Fun.CAN_SendData(CAN_SendHandle, &hcan2, CAN_ID_STD, CAN_ID_GIMBAL, data);
+  Can_Fun.CAN_SendData(CAN_SendHandle, &hcan2, CAN_ID_STD, CAN_ID_CHASSIS, data);
   //Can_Fun.CAN_SendData(CAN_SendHandle, &hcan2, CAN_ID_STD, CAN_ID_KEYCOMMAND, IT_keycommand);
 }
 
@@ -75,15 +67,15 @@ void Board2_getChassisInfo(Can_Export_Data_t RxMessage)
     float vx = (int16_t)(RxMessage.CANx_Export_RxMessage[0] << 8 | RxMessage.CANx_Export_RxMessage[1]);
     float vy = (int16_t)(RxMessage.CANx_Export_RxMessage[2] << 8 | RxMessage.CANx_Export_RxMessage[3]);
     float vw = (int16_t)(RxMessage.CANx_Export_RxMessage[4] << 8 | RxMessage.CANx_Export_RxMessage[5]);
-    yaw_velocity = (int16_t)(RxMessage.CANx_Export_RxMessage[6] << 8 | RxMessage.CANx_Export_RxMessage[7]);
+    ControlMes.yaw_velocity = (int16_t)(RxMessage.CANx_Export_RxMessage[6] << 8 | RxMessage.CANx_Export_RxMessage[7]);
     //注意cloud角度还未更新，后续需要加上
 
-    Omni_Data.Speed_ToCloud.vx = vx; //左手上下
-    Omni_Data.Speed_ToCloud.vy = vy; //左手左右
-    Omni_Data.Speed_ToCloud.vw = -1 * vw / 200; //滑轮
+    chassis_control.Speed_ToCloud.vx = vx; //左手上下
+    chassis_control.Speed_ToCloud.vy = vy; //左手左右
+    chassis_control.Speed_ToCloud.wz = -1 * vw / 200; //滑轮
 		if(!ControlMes.AutoAimFlag )
   	{
-			Cloud.Target_Yaw += -1 * yaw_velocity * 0.06f; // 右手左右
+			Cloud.Target_Yaw += -1 * ControlMes.yaw_velocity * 0.06f; // 右手左右
 		}
 }
 
@@ -101,14 +93,16 @@ void Board2_getGimbalInfo(Can_Export_Data_t RxMessage)
 
 		if(ControlMes.AutoAimFlag == 1 )
 		{
-			if(yaw_position == 0.0f) yaw_position = Cloud.Target_Yaw;
-
-			AutoAim_Offset += -1 * yaw_velocity * 0.05f; // 右手左右
+			if(yaw_position == 0.0f) 
+			{
+				yaw_position = Cloud.Target_Yaw;
+			}
+			AutoAim_Offset = -1 * ControlMes.yaw_velocity * 0.03f; // 右手左右
 			Cloud.Target_Yaw = yaw_position + AutoAim_Offset; // 此处的值应与上位机传来的数据相同
 		}
 		else
 		{
-			AutoAim_Offset =0;
+			AutoAim_Offset = 0;
 		}
 		
 

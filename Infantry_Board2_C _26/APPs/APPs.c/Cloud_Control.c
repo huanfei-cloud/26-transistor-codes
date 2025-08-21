@@ -98,31 +98,39 @@ void Cloud_Yaw_Angle_Set(void)
 	{
 		Cloud.Target_Yaw -= 8192;
 	}
-	else if (Cloud.Target_Yaw < 0)
+	else if (Cloud.Target_Yaw < -8192)
 	{
 		Cloud.Target_Yaw += 8192;
 	}
 
 	/**************************Yaw轴电机控制，遥控器数据映射到位置角度*****************/
-	float Angle_Yaw_Real = Saber_Angle.Yaw /360.0f *  8192.0f ;/* 8192/360*/  //真实角度
-	float Angle_Err_Yaw = M6020s_Yaw.realAngle + Angle_Yaw_Real;	          //角度差值
-	/*Err值为-4096 ~ 8192+4096，Target为 0 ~ 8191，第一次调整Err为 -4096 ~ 4096 */
+	float Angle_Yaw_Chassis = Saber_Angle.Yaw /360.0f *  8192.0f ;/* 8192/360*/  //世界坐标系下的底盘yaw轴角度（转化为0-8191）
+	float Angle_Yaw_Cloud = M6020s_Yaw.realAngle + Angle_Yaw_Chassis;	          //世界坐标系下的云台yaw轴角度（底盘角度+yaw轴电机角度）
+	/*Angle_Yaw_Cloud值为-4096 ~ 8192+4096，Target为 0 ~ 8191，第一次调整Angle_Yaw_Cloud为 -4096 ~ 4096 */
 	/*解决跨圈问题*/
-	if (Angle_Err_Yaw > 4096 )
+	if (Angle_Yaw_Cloud > 4096 )
 	{
-		Angle_Err_Yaw -= 8192 ;
+		Angle_Yaw_Cloud -= 8192 ;
 	}
-	ControlMes.yaw_realAngle = Angle_Err_Yaw;
+	else if (Angle_Yaw_Cloud < -4096)
+	{
+		Angle_Yaw_Cloud += 8192 ;
+	}
+	ControlMes.yaw_realAngle = Angle_Yaw_Cloud;
 	
 	//Gimbal_Chassis_Pitch_Translate();    //云台相对底盘pitch轴角度赋值函数
 	
-	float Delta_Yaw = Angle_Err_Yaw - Cloud.Target_Yaw + Linear*Saber_Angle.Z_Vel  ;
+	float Delta_Yaw = Angle_Yaw_Cloud - Cloud.Target_Yaw + Linear*Saber_Angle.Z_Vel /*补偿saber传输yaw轴姿态角的滞后性*/  ;
 	
 	
-	/*Derta的值 -4096-8191 ~ 4096*/
+	/*Derta的值 -4096-8191 ~ 4096 + 8191*/
 	if ( Delta_Yaw <=  -4096)
 	{
 		Delta_Yaw += 8192 ;
+	}
+	else if ( Delta_Yaw >= 4096 )
+	{
+		Delta_Yaw -= 8192 ;
 	}
 
 
@@ -146,8 +154,13 @@ void Cloud_Yaw_Angle_Set(void)
 			M6020s_Yaw.outCurrent = One_Kalman_Filter(&Cloud_YawCurrent_Kalman_manul, M6020s_Yaw.outCurrent);
 			time ++;
 	}
-	else if(ControlMes.AutoAimFlag==1)
+	else if(ControlMes.AutoAimFlag == 1)
 	{
+			/*死区*/
+		if(Delta_Yaw < 10 && Delta_Yaw > -10)
+		{
+			Delta_Yaw = 0;
+		}
 		M6020s_Yaw.targetSpeed = Position_PID(&AutoAim_M6020s_YawOPID,  0 ,Delta_Yaw);	
     M6020s_Yaw.outCurrent = Position_PID_Yaw(&AutoAim_M6020s_YawIPID, &FuzzyPID_AimYaw, M6020s_Yaw.targetSpeed, M6020s_Yaw.realSpeed);
 		M6020s_Yaw.outCurrent = One_Kalman_Filter(&Cloud_YawCurrent_Kalman, M6020s_Yaw.outCurrent);
@@ -178,16 +191,20 @@ void Cloud_Sport_Out(void)
 			return;
 		}
 
-	uint8_t data[8] = { 0 };
+	uint8_t data[8] = {0};
 	
-	/**********传递Yaw编码器数值**********/
-	float Angle_Cloud = M6020s_Yaw.realAngle;
+	 /**********传递Yaw编码器数值**********/
+	  float Angle_Cloud = M6020s_Yaw.realAngle;
 		Angle_Cloud = M6020s_Yaw.realAngle +Setup_Angleoffset;
 		if(Angle_Cloud > 4096)
 		{
 			Angle_Cloud -= 8192;
 		}
-	Omni_Fun.Omni_GetAngle(-1*Angle_Cloud/8192.0f*360);
+		else if (Angle_Cloud < -4096)
+		{
+			Angle_Cloud += 8192;
+		}
+	 steer_getangle(-1*Angle_Cloud/8192.0f*360);
 
 	/***************************将电流参数发送给电机*******************************/
 	M6020_Fun.M6020_setVoltage(M6020s_Yaw.outCurrent, 0, 0, 0, data);

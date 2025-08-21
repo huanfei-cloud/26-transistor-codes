@@ -45,7 +45,7 @@ draftofomniwheel\usb_device.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\
 draftofomniwheel\usb_device.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\string.h
 draftofomniwheel\usb_device.o: ../Core/Inc/main.h
 draftofomniwheel\usb_device.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\math.h
-draftofomniwheel\usb_device.o: ../APPs/APPs.h/struct_typedef.h
+draftofomniwheel\usb_device.o: ..\APPs\APPs.h\struct_typedef.h
 draftofomniwheel\usb_device.o: ../Algorithm/Algorithm.h/arm_math.h
 draftofomniwheel\usb_device.o: ../Drivers/CMSIS/Include/core_cm4.h
 draftofomniwheel\usb_device.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h

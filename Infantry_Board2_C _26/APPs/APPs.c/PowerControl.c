@@ -54,4 +54,4 @@ void PowerControl_MsgRec(Can_Export_Data_t RxMessage)
 //    data[3] = PowerControl_Data.DischargeLimit;
 //    data[4] = PowerControl_Data.ChargeLimit >> 8;
 //    data[5] = PowerControl_Data.ChargeLimit;
-//    data
+

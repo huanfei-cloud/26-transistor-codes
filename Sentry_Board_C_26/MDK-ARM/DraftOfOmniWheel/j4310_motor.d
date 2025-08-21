@@ -43,7 +43,7 @@ draftofomniwheel\j4310_motor.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ha
 draftofomniwheel\j4310_motor.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\string.h
 draftofomniwheel\j4310_motor.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdio.h
 draftofomniwheel\j4310_motor.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\math.h
-draftofomniwheel\j4310_motor.o: ../APPs/APPs.h/struct_typedef.h
+draftofomniwheel\j4310_motor.o: ..\APPs\APPs.h\struct_typedef.h
 draftofomniwheel\j4310_motor.o: ../Algorithm/Algorithm.h/arm_math.h
 draftofomniwheel\j4310_motor.o: ../Drivers/CMSIS/Include/core_cm4.h
 draftofomniwheel\j4310_motor.o: ../BSP/BSP.h/typedef.h

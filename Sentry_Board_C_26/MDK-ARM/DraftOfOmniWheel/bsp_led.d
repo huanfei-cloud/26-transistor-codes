@@ -1,6 +1,6 @@
 draftofomniwheel\bsp_led.o: ..\BSP\BSP.c\bsp_led.c
 draftofomniwheel\bsp_led.o: ../BSP/BSP.h/bsp_led.h
-draftofomniwheel\bsp_led.o: ../APPs/APPs.h/struct_typedef.h
+draftofomniwheel\bsp_led.o: ..\APPs\APPs.h\struct_typedef.h
 draftofomniwheel\bsp_led.o: ../Core/Inc/main.h
 draftofomniwheel\bsp_led.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 draftofomniwheel\bsp_led.o: ../Core/Inc/stm32f4xx_hal_conf.h
