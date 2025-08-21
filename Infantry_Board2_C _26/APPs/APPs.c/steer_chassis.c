@@ -130,106 +130,105 @@ void direction_motor_angle_set(void)
 		   finall_angle[1] = atan_angle[1] + DIRMOTOR_LB_ANGLE;
 		   finall_angle[2] = atan_angle[2] + DIRMOTOR_RF_ANGLE;
 		   finall_angle[3] = atan_angle[3] + DIRMOTOR_RB_ANGLE;
-		if(finall_angle[0]>360)
+		if(finall_angle[0]>360.0f)
 		{
-			finall_angle[0] -= 360;
+			finall_angle[0] -= 360.0f;
 		}
 		else if(finall_angle[0]<0.0f)
 		{
-			finall_angle[0] += 360;
+			finall_angle[0] += 360.0f;
 		}
-		if(finall_angle[1]>8192.0f)
+		if(finall_angle[1]>360.0f)
 		{
-			finall_angle[1] -= 360;
+			finall_angle[1] -= 360.0f;
 		}
 		else if(finall_angle[1]<0.0f)
 		{
-			finall_angle[1] += 360;
-		}
-		if(finall_angle[2]>8192.0f)
+			finall_angle[1] += 360.0f;
+		}if(finall_angle[2]>360.0f)
 		{
-			finall_angle[2] -= 360;
+			finall_angle[2] -= 360.0f;
 		}
 		else if(finall_angle[2]<0.0f)
 		{
-			finall_angle[2] += 360;
-		}			
-		if(finall_angle[3]>8192.0f)
+			finall_angle[2] += 360.0f;
+		}if(finall_angle[3]>360.0f)
 		{
-			finall_angle[3] -= 360;
+			finall_angle[3] -= 360.0f;
 		}
 		else if(finall_angle[3]<0.0f)
 		{
-			finall_angle[3] += 360;
-		}		
-        error_angle[0] =Angle_Limit((finall_angle[0] - MA600s[0].Angle),180.0f);
-		    error_angle[1] =Angle_Limit((finall_angle[1] - MA600s[1].Angle),180.0f);
-		    error_angle[2] =Angle_Limit((finall_angle[2] - MA600s[2].Angle),180.0f);
-		    error_angle[3] =Angle_Limit((finall_angle[3] - MA600s[3].Angle),180.0f);
-		 	
-		if(error_angle[0]>90.0f || error_angle[0]<-90.0f)
-    {
-        dirt[0] = -1;
-			  if(error_angle[0] > 90.0f)
-				{
-            finall_angle[0] = finall_angle[0] - 180.0f;
-				}
-				else if(error_angle[0] < -90.0f)
-				{
-					  finall_angle[0] = finall_angle[0] + 180.0f;
-				}
+			finall_angle[3] += 360.0f;
 		}
+        error_angle[0] =(finall_angle[0] - MA600s[0].Angle);
+		error_angle[1] =(finall_angle[1] - MA600s[1].Angle);
+		error_angle[2] =(finall_angle[2] - MA600s[2].Angle);
+		error_angle[3] =(finall_angle[3] - MA600s[3].Angle);
+	 if(error_angle[0]>180.0f)
+    {
+        error_angle[0]-=360.0f;
+    }
+    else if(error_angle[0]<-180.0f)
+    {
+        error_angle[0]+=360.0f;
+    }
+	if(error_angle[1]>180.0f)
+    {
+        error_angle[1]-=360.0f;
+    }
+    else if(error_angle[1]<-180.0f)
+    {
+        error_angle[1]+=360.0f;
+    }if(error_angle[2]>180.0f)
+    {
+        error_angle[2]-=360.0f;
+    }
+    else if(error_angle[2]<-180.0f)
+    {
+        error_angle[2]+=360.0f;
+    }if(error_angle[3]>180.0f)
+    {
+        error_angle[3]-=360.0f;
+    }
+    else if(error_angle[3]<-180.0f)
+    {
+        error_angle[3]+=360.0f;
+    }
+	if(abs(error_angle[0])>90.0f)
+    {
+        dirt[0]=-1;
+        finall_angle[0]-=180.0f;
+    }
     else
     {
-        dirt[0] = 1;
+        dirt[0]=1;
     }
-    if(error_angle[1]>90.0f || error_angle[1]<-90.0f)
+	if(abs(error_angle[1])>90.0f)
     {
-        dirt[1] = 1;
-        if(error_angle[1] > 90.0f)
-				{
-            finall_angle[1] = finall_angle[1] - 180.0f;
-				}
-				else if(error_angle[1] < -90.0f)
-				{
-					  finall_angle[1] = finall_angle[1] + 180.0f;
-				}
+        dirt[1]=1;
+        finall_angle[1]-=180.0f;
     }
     else
     {
-        dirt[1] = -1;
+        dirt[1]=-1;
     }
-    if(error_angle[2]>90.0f || error_angle[2]<-90.0f)
+	if(abs(error_angle[2])>90.0f)
     {
-        dirt[2] = -1;
-			if(error_angle[2] > 90.0f)
-				{
-            finall_angle[2] = finall_angle[2] - 180.0f;
-				}
-				else if(error_angle[0] < -90.0f)
-				{
-					  finall_angle[2] = finall_angle[2] + 180.0f;
-				}
+        dirt[2]=-1;
+        finall_angle[2]-=180.0f;
     }
     else
     {
-        dirt[2] = 1;
+        dirt[2]=1;
     }
-    if(error_angle[3]>90.0f || error_angle[3]<-90.0f)
+	if(abs(error_angle[3])>90.0f)
     {
-        dirt[3] = 1;
-			if(error_angle[3] > 90.0f)
-				{
-            finall_angle[3] = finall_angle[3] - 180.0f;
-				}
-				else if(error_angle[3] < -90.0f)
-				{
-					  finall_angle[3] = finall_angle[3] + 180.0f;
-				}
-     }
+        dirt[3]=1;
+        finall_angle[3]-=180.0f;
+    }
     else
     {
-        dirt[3] = -1;
+        dirt[3]=-1;
     }
     chassis_control.motor_location[0] = finall_angle[0] / 360.0f;
 		chassis_control.motor_location[1] = finall_angle[1] / 360.0f;

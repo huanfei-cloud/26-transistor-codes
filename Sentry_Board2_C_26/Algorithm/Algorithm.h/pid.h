@@ -1,100 +1,200 @@
 /**
  * @file PID.h
- * @author Miraggio (w1159904119@gmail)
- * @brief 
+ * @author Miraggio (w1159904119@gmail.com)
+ * @brief PID¿ØÖÆÆ÷Ä£¿éÍ·ÎÄ¼þ
  * @version 0.1
  * @date 2021-03-30
- * 
  * @copyright Copyright (c) 2021
- * 
  */
 
 #ifndef ___PID_H
 #define ___PID_H
+
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include "kalman_filter.h"
-//#include "typedef.h"
-//#include <AddMath.h>
 #include "math.h"
 #include "FuzzyPID.h"
 
-/**********PIDï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý½Ó¿ï¿½************/
+/**********PID¿ØÖÆÆ÷Êý¾Ý½á¹¹½Ó¿Ú************/
 
-// pidï¿½ï¿½ï¿½Æ·ï¿½Ê½Ñ¡ï¿½ï¿½
+/**
+ * @brief PID¿ØÖÆ·½Ê½Ã¶¾Ù
+ */
 typedef enum
 {
-	pid_control_increase,
-	pid_control_normal,
-	pid_control_frontfeed,
-	pid_control_frontfuzzy
-}pid_control;
+    pid_control_increase,   ///< ÔöÁ¿Ê½PID¿ØÖÆ
+    pid_control_normal,      ///< ±ê×¼Î»ÖÃÊ½PID¿ØÖÆ
+    pid_control_frontfeed,   ///< ´øÇ°À¡µÄÎ»ÖÃÊ½PID¿ØÖÆ
+    pid_control_frontfuzzy  ///< ´øÄ£ºý¿ØÖÆµÄÎ»ÖÃÊ½PID¿ØÖÆ
+} pid_control;
 
-
+/**
+ * @brief ÔöÁ¿Ê½PID¿ØÖÆÆ÷½á¹¹Ìå
+ */
 typedef struct incrementalpid_t
 {
-    float Target;         //ï¿½è¶¨Ä¿ï¿½ï¿½Öµ
-    float Measured;       //ï¿½ï¿½ï¿½ï¿½Öµ
-    float err;            //ï¿½ï¿½ï¿½ï¿½Æ«ï¿½ï¿½Öµ
-    float err_last;       //ï¿½ï¿½Ò»ï¿½ï¿½Æ«ï¿½ï¿½
-    float err_beforeLast; //ï¿½ï¿½ï¿½Ï´ï¿½Æ«ï¿½ï¿½
-    float Kp;
-    float Ki;
-    float Kd; //Kp, Ki, Kdï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½
-    float p_out;
-    float i_out;
-    float d_out;            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
-    float pwm;              //pwmï¿½ï¿½ï¿½
-    uint32_t MaxOutput;     //ï¿½ï¿½ï¿½ï¿½Þ·ï¿½
-    uint32_t IntegralLimit; //ï¿½ï¿½ï¿½ï¿½ï¿½Þ·ï¿½
-    float (*Incremental_PID)(struct incrementalpid_t *pid_t, float target, float measured);
+    float Target;           ///< Éè¶¨Ä¿±êÖµ
+    float Measured;         ///< ²âÁ¿Öµ
+    float err;              ///< µ±Ç°Æ«²îÖµ
+    float err_last;         ///< ÉÏÒ»´ÎÆ«²î
+    float err_beforeLast;   ///< ÉÏÉÏ´ÎÆ«²î
+    float Kp;               ///< ±ÈÀýÏµÊý
+    float Ki;               ///< »ý·ÖÏµÊý
+    float Kd;               ///< Î¢·ÖÏµÊý
+    float p_out;            ///< ±ÈÀýÏîÊä³ö
+    float i_out;            ///< »ý·ÖÏîÊä³ö
+    float d_out;            ///< Î¢·ÖÏîÊä³ö
+    float pwm;              ///< PWMÊä³öÖµ
+    uint32_t MaxOutput;     ///< Êä³öÏÞ·ùÖµ
+    uint32_t IntegralLimit; ///< »ý·ÖÏîÏÞ·ùÖµ
+    float (*Incremental_PID)(struct incrementalpid_t *pid_t, float target, float measured); ///< ÔöÁ¿Ê½PID¼ÆËãº¯ÊýÖ¸Õë
 } incrementalpid_t;
 
+/**
+ * @brief Î»ÖÃÊ½PID¿ØÖÆÆ÷½á¹¹Ìå
+ */
 typedef struct positionpid_t
 {
-    float Target;     //ï¿½è¶¨Ä¿ï¿½ï¿½Öµ
-    float Measured;   //ï¿½ï¿½ï¿½ï¿½Öµ
-    float err;        //ï¿½ï¿½ï¿½ï¿½Æ«ï¿½ï¿½Öµ
-    float err_last;   //ï¿½ï¿½Ò»ï¿½ï¿½Æ«ï¿½ï¿½
-    float err_change; //ï¿½ï¿½ï¿½ä»¯ï¿½ï¿½
-	  float error_target;   // Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-		float last_set_point; //ï¿½ï¿½Ò»ï¿½ï¿½Ä¿ï¿½ï¿½Öµ
-    float Kp;
-    float Ki;
-    float Kd; 
-	  float Kf;         //Kp, Ki, Kd, Kfï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½
-    float p_out;
-    float i_out;
-    float d_out;               
-	  float f_out;               //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
-    float pwm;                 //pwmï¿½ï¿½ï¿½
-    float MaxOutput;           //ï¿½ï¿½ï¿½ï¿½Þ·ï¿½
-    float Integral_Separation; //ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
-    float IntegralLimit;       //ï¿½ï¿½ï¿½ï¿½ï¿½Þ·ï¿½
-    float (*Position_PID)(struct positionpid_t *pid_t, float target, float measured);
+    float Target;           ///< Éè¶¨Ä¿±êÖµ
+    float Measured;         ///< ²âÁ¿Öµ
+    float err;              ///< µ±Ç°Æ«²îÖµ
+    float err_last;         ///< ÉÏÒ»´ÎÆ«²î
+    float err_change;       ///< Æ«²î±ä»¯Á¿
+    float error_target;     ///< Ä¿±êÖµ±ä»¯Á¿£¨ÓÃÓÚÇ°À¡£©
+    float last_set_point;   ///< ÉÏÒ»´ÎÄ¿±êÖµ
+    float Kp;               ///< ±ÈÀýÏµÊý
+    float Ki;               ///< »ý·ÖÏµÊý
+    float Kd;               ///< Î¢·ÖÏµÊý
+    float Kf;               ///< Ç°À¡ÏµÊý
+    float p_out;            ///< ±ÈÀýÏîÊä³ö
+    float i_out;            ///< »ý·ÖÏîÊä³ö
+    float d_out;            ///< Î¢·ÖÏîÊä³ö
+    float f_out;            ///< Ç°À¡ÏîÊä³ö
+    float pwm;              ///< PWMÊä³öÖµ
+    float MaxOutput;        ///< Êä³öÏÞ·ùÖµ
+    float Integral_Separation; ///< »ý·Ö·ÖÀëãÐÖµ
+    float IntegralLimit;    ///< »ý·ÖÏîÏÞ·ùÖµ
+    float (*Position_PID)(struct positionpid_t *pid_t, float target, float measured); ///< Î»ÖÃÊ½PID¼ÆËãº¯ÊýÖ¸Õë
 } positionpid_t;
 
-extern positionpid_t M6020s_YawIPID;		//Yaw	
-extern positionpid_t M6020s_Yaw_SpeedPID;	//Yawï¿½Ù¶ï¿½PID
-extern positionpid_t M6020s_YawOPID;		//Yaw
-extern positionpid_t AutoAim_M6020s_YawIPID;
-extern positionpid_t AutoAim_M6020s_YawOPID;   //Yawï¿½ï¿½ï¿½ï¿½PID
+/**********Íâ²¿±äÁ¿ÉùÃ÷************/
 
+/// YawÖáÎ»ÖÃ»·PID¿ØÖÆÆ÷
+extern positionpid_t M6020s_YawIPID;
+
+/// YawÖáËÙ¶È»·PID¿ØÖÆÆ÷
+extern positionpid_t M6020s_Yaw_SpeedPID;
+
+/// YawÖáÊä³ö»·PID¿ØÖÆÆ÷
+extern positionpid_t M6020s_YawOPID;
+
+/// ×Ô¶¯Ãé×¼YawÖáÎ»ÖÃ»·PID¿ØÖÆÆ÷
+extern positionpid_t AutoAim_M6020s_YawIPID;
+
+/// ×Ô¶¯Ãé×¼YawÖáÊä³ö»·PID¿ØÖÆÆ÷
+extern positionpid_t AutoAim_M6020s_YawOPID;
+
+/**********º¯ÊýÉùÃ÷************/
+
+/**
+ * @brief ÔöÁ¿Ê½PID¿ØÖÆÆ÷
+ * @param pid_t PID¿ØÖÆÆ÷½á¹¹ÌåÖ¸Õë
+ * @param target Ä¿±êÖµ
+ * @param measured ²âÁ¿Öµ
+ * @return PID¿ØÖÆÊä³öÖµ
+ */
 extern float Incremental_PID(incrementalpid_t *pid_t, float target, float measured);
+
+/**
+ * @brief Î»ÖÃÊ½PID¿ØÖÆÆ÷
+ * @param pid_t PID¿ØÖÆÆ÷½á¹¹ÌåÖ¸Õë
+ * @param target Ä¿±êÖµ
+ * @param measured ²âÁ¿Öµ
+ * @return PID¿ØÖÆÊä³öÖµ
+ */
 extern float Position_PID(positionpid_t *pid_t, float target, float measured);
+
+/**
+ * @brief ÔÆÌ¨Ðý×ªPID¿ØÖÆÆ÷
+ * @param pid_t PID¿ØÖÆÆ÷½á¹¹ÌåÖ¸Õë
+ * @param target Ä¿±êÖµ
+ * @param measured ²âÁ¿Öµ
+ * @return PID¿ØÖÆÊä³öÖµ
+ */
 extern float ClassisTwister_PID(positionpid_t *pid_t, float target, float measured);
+
+/**
+ * @brief ½Ç¶ÈPID¿ØÖÆÆ÷£¨×Ô¶¯´¦Àí½Ç¶È»·ÈÆ£©
+ * @param pid_t PID¿ØÖÆÆ÷½á¹¹ÌåÖ¸Õë
+ * @param target Ä¿±ê½Ç¶ÈÖµ
+ * @param measured ²âÁ¿½Ç¶ÈÖµ
+ * @param ecd_max ±»¿Øµç»ú±àÂëÆ÷×î´óÖµ£¨ÀýÈç8192¶ÔÓ¦360¶È£©
+ * @return PID¿ØÖÆÊä³öÖµ
+ */
+extern float Angle_PID(positionpid_t *pid_t, float target, float measured,float ecd_max);
+
+/**
+ * @brief µ×ÅÌ¸úËæÄ£Ê½¿ØÖÆº¯Êý
+ * @param angle Ä¿±ê½Ç¶È
+ * @param start_flag Æô¶¯±êÖ¾
+ */
 extern void chassis_follow_mode(float angle, uint8_t start_flag);
+
+/**
+ * @brief ³õÊ¼»¯ÔöÁ¿Ê½PID¿ØÖÆÆ÷
+ * @param pid_t PID¿ØÖÆÆ÷½á¹¹ÌåÖ¸Õë
+ * @param Kp ±ÈÀýÏµÊý
+ * @param Kd Î¢·ÖÏµÊý
+ * @param Ki »ý·ÖÏµÊý
+ * @param MaxOutput ×î´óÊä³öÏÞÖÆ
+ * @param IntegralLimit »ý·ÖÏîÏÞ·ùÖµ
+ */
 extern void Incremental_PIDInit(incrementalpid_t *pid_t, float Kp, float Kd, float Ki, uint32_t MaxOutput, uint32_t IntegralLimit);
+
+/**
+ * @brief ³õÊ¼»¯Î»ÖÃÊ½PID¿ØÖÆÆ÷
+ * @param pid_t PID¿ØÖÆÆ÷½á¹¹ÌåÖ¸Õë
+ * @param Kp ±ÈÀýÏµÊý
+ * @param Kd Î¢·ÖÏµÊý
+ * @param Ki »ý·ÖÏµÊý
+ * @param Kf Ç°À¡ÏµÊý
+ * @param MaxOutput ×î´óÊä³öÏÞÖÆ
+ * @param IntegralLimit »ý·ÖÏîÏÞ·ùÖµ
+ * @param Integral_Separation »ý·Ö·ÖÀëãÐÖµ
+ */
 extern void Position_PIDInit(positionpid_t *pid_t, float Kp, float Kd, float Ki, float Kf, float MaxOutput, float IntegralLimit, float Integral_Separation);
 
+/**********¿¨¶ûÂüÂË²¨Æ÷ÊµÀýÉùÃ÷************/
+
+/// YawÖá¿¨¶ûÂüÂË²¨Æ÷ÊµÀý
 extern One_Kalman_t Cloud_YAWODKalman;
+
+/// PitchÖá¿¨¶ûÂüÂË²¨Æ÷ÊµÀý
 extern One_Kalman_t Cloud_PITCHODKalman;
 
+/**
+ * @brief Çå³ýÎ»ÖÃÊ½PID¿ØÖÆÆ÷Êý¾Ý
+ * @param pid_t PID¿ØÖÆÆ÷½á¹¹ÌåÖ¸Õë
+ */
 extern void Clear_PositionPIDData(positionpid_t *pid_t);
+
+/**
+ * @brief Çå³ýÔöÁ¿Ê½PID¿ØÖÆÆ÷Êý¾Ý
+ * @param pid_t PID¿ØÖÆÆ÷½á¹¹ÌåÖ¸Õë
+ */
 extern void Clear_IncrementalPIDData(incrementalpid_t *pid_t);
 
+/**
+ * @brief YawÖáÄ£ºýÎ»ÖÃÊ½PID¿ØÖÆÆ÷
+ * @param pid_t PID¿ØÖÆÆ÷½á¹¹ÌåÖ¸Õë
+ * @param fuzzy_t Ä£ºýPIDÊý¾Ý½á¹¹ÌåÖ¸Õë
+ * @param target Ä¿±êÖµ
+ * @param measured ²âÁ¿Öµ
+ * @return PID¿ØÖÆÊä³öÖµ
+ */
 extern float Position_PID_Yaw(positionpid_t *pid_t, FUZZYPID_Data_t *fuzzy_t, float target, float measured);
 
-#endif
+#endif /* ___PID_H */

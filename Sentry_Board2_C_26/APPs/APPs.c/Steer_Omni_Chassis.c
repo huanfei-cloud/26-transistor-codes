@@ -47,17 +47,17 @@ void Chassis_Init(void)
     M6020_Init(&M6020s_Chassis2,0x207);
 
     //驱动电机速度环初始化
-    Position_PIDInit(&(M3508_Array[0].v_pid_object),8.0f, 0.22f, 0,0,800,30000,6000);
-		Position_PIDInit(&(M3508_Array[1].v_pid_object),8.0f, 0.22f, 0,0,800,30000,6000);
-		Position_PIDInit(&(M3508_Array[2].v_pid_object),8.0f, 0.22f, 0,0,800,30000,6000);
-		Position_PIDInit(&(M3508_Array[3].v_pid_object),8.0f, 0.22f, 0,0,800,30000,6000);
+    Position_PIDInit(&(M3508_Array[0].v_pid_object),10.0f, 0.22f, 0,0,800,30000,6000);
+		Position_PIDInit(&(M3508_Array[1].v_pid_object),10.0f, 0.22f, 0,0,800,30000,6000);
+		Position_PIDInit(&(M3508_Array[2].v_pid_object),10.0f, 0.22f, 0,0,800,30000,6000);
+		Position_PIDInit(&(M3508_Array[3].v_pid_object),10.0f, 0.22f, 0,0,800,30000,6000);
     //转向电机速度环初始化
-  	Position_PIDInit(&(M6020s_Chassis1.v_pid_object),250,0.1,150,0,7000,30000,6000);
-    Position_PIDInit(&(M6020s_Chassis2.v_pid_object),250,0.1,150,0,7000,30000,6000);
+  	Position_PIDInit(&(M6020s_Chassis1.v_pid_object),200,0,20,0,7000,30000,6000);
+    Position_PIDInit(&(M6020s_Chassis2.v_pid_object),200,0,20,0,7000,30000,6000);
     //转向电机位置环初始化
-		Position_PIDInit(&(M6020s_Chassis1.l_pid_object),2.032f, 0.00001f, 0.05, 0, 30000, 10000 ,10000);
-		Position_PIDInit(&(M6020s_Chassis2.l_pid_object),2.032f, 0.00001f, 0.05, 0, 30000, 10000 ,10000);
-    Position_PIDInit(&(chassis_follow), 0.5f, 0.0f, 0.0f, 0.0f, 10000.0f, 10000.0f, 10000.0f);
+		Position_PIDInit(&(M6020s_Chassis1.l_pid_object),0.5f, 0.00001f, 0.05, 0, 30000, 10000 ,10000);
+		Position_PIDInit(&(M6020s_Chassis2.l_pid_object),0.5f, 0.00001f, 0.05, 0, 30000, 10000 ,10000);
+    Position_PIDInit(&(chassis_follow), 1550.0f, 0.1f, 1200.0f, 0, 30000, 10000 , 6000);
     M3508_Array[0].targetSpeed = 0.0f;
     M3508_Array[1].targetSpeed = 0.0f;
     M3508_Array[2].targetSpeed = 0.0f;
@@ -141,10 +141,45 @@ void direction_motor_angle_set(void)
         finall_angle[1] += 8192.0f;
     }	
 
-    error_angle[0] =Angle_Limit((finall_angle[0] - (M6020s_Chassis1.realAngle )),4096.0f);
-	  error_angle[1] =Angle_Limit((finall_angle[1] - (M6020s_Chassis2.realAngle )),4096.0f);
-
-    if(error_angle[0]>2048.0f || error_angle[0]<-2048.0f)
+    //error_angle[0] =Angle_Limit((finall_angle[0] - (M6020s_Chassis1.realAngle )),4096.0f);
+	//error_angle[1] =Angle_Limit((finall_angle[1] - (M6020s_Chassis2.realAngle )),4096.0f);
+    error_angle[0] =finall_angle[0] - M6020s_Chassis1.realAngle;
+    error_angle[1] =finall_angle[1] - M6020s_Chassis2.realAngle;
+    if(error_angle[0]>4096.0f)
+    {
+        error_angle[0]-=8192.0f;
+    }
+    else if(error_angle[0]<-4096.0f)
+    {
+        error_angle[0]+=8192.0f;
+    }
+     if(error_angle[1]>4096.0f)
+    {
+        error_angle[1]-=8192.0f;
+    }
+    else if(error_angle[1]<-4096.0f)
+    {
+        error_angle[1]+=8192.0f;
+    }
+    if(abs(error_angle[0])>2048.0f)
+    {
+        dirt[0]=1;
+        finall_angle[0]-=4096;
+    }
+    else
+    {
+        dirt[0]=-1;
+    }
+    if(abs(error_angle[1])>2048.0f)
+    {
+        dirt[1]=-1;
+        finall_angle[1]-=4096;
+    }
+    else
+    {
+        dirt[1]=1;
+    }
+    /*if(error_angle[0]>2048.0f || error_angle[0]<-2048.0f)
     {
         dirt[0] = 1;
         if(error_angle[0] > 2048.0f)
@@ -175,7 +210,7 @@ void direction_motor_angle_set(void)
     else
     {
         dirt[1] = 1;
-    }
+    }*/
 
     Steer_Omni_Data.M6020_Setposition[0] = finall_angle[0] ;
     Steer_Omni_Data.M6020_Setposition[1] = finall_angle[1] ;
@@ -254,8 +289,8 @@ void Steer_Omni_Chassis_Out(void)
 {
     chassis_target_calc();
     
-    M6020_location_change(&M6020s_Chassis1,pid_control_normal,M6020s_Chassis1.targetAngle,M6020s_Chassis1.totalAngle);
-    M6020_location_change(&M6020s_Chassis2,pid_control_normal,M6020s_Chassis2.targetAngle,M6020s_Chassis2.totalAngle);
+    M6020_location_change(&M6020s_Chassis1,pid_control_normal,M6020s_Chassis1.targetAngle,M6020s_Chassis1.realAngle);
+    M6020_location_change(&M6020s_Chassis2,pid_control_normal,M6020s_Chassis2.targetAngle,M6020s_Chassis2.realAngle);
 
     M6020_velocity_change(&M6020s_Chassis1,pid_control_normal,&hcan2,M6020s_Chassis1.targetSpeed);
     M6020_velocity_change(&M6020s_Chassis2,pid_control_normal,&hcan2,M6020s_Chassis2.targetSpeed);

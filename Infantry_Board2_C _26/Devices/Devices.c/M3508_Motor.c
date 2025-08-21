@@ -33,9 +33,9 @@ M3508_FUN_t M3508_FUN = M3508_FunGroundInit;
 
 
 /**
- * @brief motor﹍て
+ * @brief motor?飑lて
  * @param  motor结构体地址  
- * @param  设置的ID
+ * @param  设置的ID?}
  */
 void M3508_Init(M3508s_t *motor, uint16_t _motor_id)
 {
@@ -611,7 +611,7 @@ void motor_location_change(M3508s_t *motor,pid_control model,float target,float 
 //		}
 		if (model == pid_control_normal)
 		{
-			motor->targetSpeed = (int16_t)Position_PID(&motor->l_pid_object,circle_to_encoder(target),circle_to_encoder(real));
+			motor->targetSpeed = (int16_t)Angle_PID(&motor->l_pid_object,circle_to_encoder(target),circle_to_encoder(real),1);
 		}
 //		if (model == pid_control_frontfeed)
 //		{
@@ -630,7 +630,7 @@ void motor_location_change(M3508s_t *motor,pid_control model,float target,float 
 //		}
 		if (model == pid_control_normal)
 		{
-			motor->targetSpeed = (int16_t)Position_PID(&motor->l_pid_object,circle_to_encoder(target),circle_to_encoder(real));
+			motor->targetSpeed = (int16_t)Angle_PID(&motor->l_pid_object,circle_to_encoder(target),circle_to_encoder(real),1);
 		}
 //		if (model == pid_control_frontfeed)
 //		{
