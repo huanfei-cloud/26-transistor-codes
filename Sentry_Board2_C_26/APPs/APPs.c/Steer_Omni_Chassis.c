@@ -52,12 +52,12 @@ void Chassis_Init(void)
 		Position_PIDInit(&(M3508_Array[2].v_pid_object),10.0f, 0.22f, 0,0,800,30000,6000);
 		Position_PIDInit(&(M3508_Array[3].v_pid_object),10.0f, 0.22f, 0,0,800,30000,6000);
     //转向电机速度环初始化
-  	Position_PIDInit(&(M6020s_Chassis1.v_pid_object),40,0,20,0,7000,30000,6000);
-    Position_PIDInit(&(M6020s_Chassis2.v_pid_object),40,0,20,0,7000,30000,6000);
+  	Position_PIDInit(&(M6020s_Chassis1.v_pid_object),200,0,20,0,7000,30000,6000);
+    Position_PIDInit(&(M6020s_Chassis2.v_pid_object),200,0,20,0,7000,30000,6000);
     //转向电机位置环初始化
-		Position_PIDInit(&(M6020s_Chassis1.l_pid_object),1.0f, 0.00001f, 0.05, 0, 30000, 10000 ,10000);
-		Position_PIDInit(&(M6020s_Chassis2.l_pid_object),1.0f, 0.00001f, 0.05, 0, 30000, 10000 ,10000);
-    Position_PIDInit(&(chassis_follow), 0.5f, 0.0f, 0.0f, 0.0f, 10000.0f, 10000.0f, 10000.0f);
+		Position_PIDInit(&(M6020s_Chassis1.l_pid_object),0.5f, 0.00001f, 0.05, 0, 30000, 10000 ,10000);
+		Position_PIDInit(&(M6020s_Chassis2.l_pid_object),0.5f, 0.00001f, 0.05, 0, 30000, 10000 ,10000);
+    Position_PIDInit(&(chassis_follow), 1550.0f, 0.1f, 1200.0f, 0, 30000, 10000 , 6000);
     M3508_Array[0].targetSpeed = 0.0f;
     M3508_Array[1].targetSpeed = 0.0f;
     M3508_Array[2].targetSpeed = 0.0f;

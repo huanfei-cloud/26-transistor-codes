@@ -24,7 +24,7 @@ M6020_Fun_t M6020_Fun = M6020_FunGroundInit;
 
 /**
  * @brief motor��l��
- * @param  motor�ṹ����?  
+ * @param  motor�ṹ����?  
  * @param  ���õ�ID�}
  */
 void M6020_Init(M6020s_t *motor, uint16_t _motor_id)
@@ -46,7 +46,7 @@ void M6020_Init(M6020s_t *motor, uint16_t _motor_id)
 
 /**
   * @brief  ����M6020�����ѹ��id��Ϊ1~4��
-  * @param  uqx (x:1~4) ��Ӧid�ŵ���ĵ�ѹֵ�����? -30000~0~30000
+  * @param  uqx (x:1~4) ��Ӧid�ŵ���ĵ�ѹֵ�����? -30000~0~30000
   * @retval None
   */
  void M6020_setVoltage(int16_t uq1, int16_t uq2, int16_t uq3, int16_t uq4, uint8_t *data)
@@ -66,7 +66,7 @@ void M6020_Init(M6020s_t *motor, uint16_t _motor_id)
  }
 
 /**
-  * @brief  ��CAN�����л�ȡM6020������?
+  * @brief  ��CAN�����л�ȡM6020������?
   * @param  RxMessage 	CAN���Ľ��սṹ��
   * @retval None
   */
@@ -109,7 +109,7 @@ void M6020_getInfo(Can_Export_Data_t RxMessage)
 /**
   * @brief  �趨M6020�����Ŀ��Ƕ�
   * @param  M6020 	������ݽṹ���ַ 
-  * @param  angle		��е�Ƕ�ֵ����Χ 0~8191 ��������0��8191�ᵼ�µ���񵴣��?�����޷�
+  * @param  angle		��е�Ƕ�ֵ����Χ 0~8191 ��������0��8191�ᵼ�µ���񵴣��?�����޷�
   * @retval None
   */
 void M6020_setTargetAngle(M6020s_t *M6020, int32_t angle)
@@ -121,7 +121,7 @@ void M6020_setTargetAngle(M6020s_t *M6020, int32_t angle)
   * @brief  M6020_Reset
   * @param  ������ݽṹ���ַ
   * @retval None
-  * ˵�������˴˺����Խ��totalAngle �����������?
+  * ˵�������˴˺����Խ��totalAngle �����������?
   */
 void M6020_Reset(M6020s_t *m6020)
 {
@@ -134,7 +134,7 @@ void M6020_Reset(M6020s_t *m6020)
 
 /**
  * @brief ����ٶ�Ŀ��ֵ���������ֵ������
- * @param *motor ��Ҫ�ı��ٶȵĵ�����?
+ * @param *motor ��Ҫ�ı��ٶȵĵ�����?
  * @param model ���pid����ģʽ
  * @param target �ٶ�Ŀ��ֵ
  */
@@ -225,8 +225,8 @@ void M6020_velocity_change(M6020s_t *motor,pid_control model,CAN_HandleTypeDef *
 }
 	
 /**
- * @brief ���λ��Ŀ��ֵ����?�ٶ�ֵֵ������
- * @param *motor ��Ҫ�ı�λ�õĵ�����?
+ * @brief ���λ��Ŀ��ֵ����?�ٶ�ֵֵ������
+ * @param *motor ��Ҫ�ı�λ�õĵ�����?
  * @param model ���pid����ģʽ
  * @param target λ��Ŀ��ֵ
  */
@@ -245,7 +245,7 @@ void M6020_location_change(M6020s_t *motor,pid_control model,int16_t target,int1
 //		}
 		if (model == pid_control_normal)
 		{
-			motor->targetSpeed = (int16_t)Angle_PID(&motor->l_pid_object,target,real);
+			motor->targetSpeed = (int16_t)Angle_PID(&motor->l_pid_object,target,real,8191);
 		}
 //		if (model == pid_control_frontfeed)
 //		{
@@ -264,7 +264,7 @@ void M6020_location_change(M6020s_t *motor,pid_control model,int16_t target,int1
 //		}
 		if (model == pid_control_normal)
 		{
-			motor->targetSpeed = (int16_t)Angle_PID(&motor->l_pid_object,target,real);
+			motor->targetSpeed = (int16_t)Angle_PID(&motor->l_pid_object,target,real,8191);
 		}
 //		if (model == pid_control_frontfeed)
 //		{
