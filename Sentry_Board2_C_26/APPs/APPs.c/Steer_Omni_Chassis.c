@@ -90,7 +90,7 @@ void v_cloud_convertto_chassis(fp32 angle)
  * @param kp
  * @retval ????????????????
  */
-void chassis_follow_mode(float angle, uint8_t start_flag)
+/*void chassis_follow_mode(float angle, uint8_t start_flag)
 {
     if(start_flag)
     {
@@ -100,7 +100,7 @@ void chassis_follow_mode(float angle, uint8_t start_flag)
         }
         Steer_Omni_Data.Speed_ToChassis.wz +=Position_PID(&chassis_follow,angle, 0);
     }
-}
+}*/
 /**
  * @brief 转向电机角度设置
  * @param None
@@ -123,40 +123,40 @@ void direction_motor_angle_set(void)
         atan_angle[1] = 0.0f;
     }
 
-    finall_angle[0] = atan_angle[0] + DIRMOTOR_LB_ANGLE / 8192 * 360.0f;
-	  finall_angle[1] = atan_angle[1] + DIRMOTOR_RB_ANGLE / 8192 * 360.0f;
+    finall_angle[0] = atan_angle[0]/360*8192 + DIRMOTOR_LB_ANGLE ;
+	  finall_angle[1] = atan_angle[1]/360*8192 + DIRMOTOR_RB_ANGLE ;
 		
 		
 
-    error_angle[0] =Angle_Limit((finall_angle[0] - (M6020s_Chassis1.realAngle /8192 * 360.0f)),180.0f);
-	  error_angle[1] =Angle_Limit((finall_angle[1] - (M6020s_Chassis2.realAngle /8192 * 360.0f)),180.0f);
+    error_angle[0] =Angle_Limit((finall_angle[0] - (M6020s_Chassis1.realAngle )),4096.0f);
+	  error_angle[1] =Angle_Limit((finall_angle[1] - (M6020s_Chassis2.realAngle )),4096.0f);
 
-    if(error_angle[0]>90.0f || error_angle[0]<-90.0f)
+    if(error_angle[0]>2048.0f || error_angle[0]<-2048.0f)
     {
         dirt[0] = 1;
-        if(error_angle[0] > 90.0f)
+        if(error_angle[0] > 2048.0f)
 				{
-            finall_angle[0] = finall_angle[0] - 180.0f;
+            finall_angle[0] = finall_angle[0] - 4096.0f;
 				}
-				else if(error_angle[0] < -90.0f)
+				else if(error_angle[0] < -2048.0f)
 				{
-					finall_angle[0] = finall_angle[0] + 180.0f;
+					finall_angle[0] = finall_angle[0] + 4096.0f;
 				}
     }
     else
     {
         dirt[0] = -1;
     }
-    if(error_angle[1]>90.0f || error_angle[1]<-90.0f)
+    if(error_angle[1]>2048.0f || error_angle[1]<-2048.0f)
     {
         dirt[1] = -1;
-			if(error_angle[1] > 90.0f)
+			if(error_angle[1] > 2048.0f)
 				{
-            finall_angle[1] = finall_angle[1] - 180.0f;
+            finall_angle[1] = finall_angle[1] - 4096.0f;
 				}
-				else if(error_angle[1] < -90.0f)
+				else if(error_angle[1] < -2048.0f)
 				{
-					finall_angle[1] = finall_angle[1] + 180.0f;
+					finall_angle[1] = finall_angle[1] + 4096.0f;
 				}
     }
     else
@@ -164,8 +164,8 @@ void direction_motor_angle_set(void)
         dirt[1] = 1;
     }
 
-    Steer_Omni_Data.M6020_Setposition[0] = finall_angle[0] * 8192 / 360.0f;
-    Steer_Omni_Data.M6020_Setposition[1] = finall_angle[1] * 8192 / 360.0f;
+    Steer_Omni_Data.M6020_Setposition[0] = finall_angle[0] ;
+    Steer_Omni_Data.M6020_Setposition[1] = finall_angle[1] ;
 
 }
 

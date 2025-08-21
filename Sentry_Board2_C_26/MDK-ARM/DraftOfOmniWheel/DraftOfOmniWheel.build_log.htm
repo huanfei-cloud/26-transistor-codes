@@ -3,57 +3,77 @@
 <pre>
 <h1>礦ision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: μVision V5.42.0.0
-Copyright (C) 2025 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: x 许涵飞, t, LIC=FYKYW-Q8XSY-EVG1R-K6C5C-6XJRA-WFUDC
+IDE-Version: μVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: 钟 明, bua, LIC=RC93N-YW402-WFAI7-EGVBA-UYXSS-7SVYU
  
 Tool Versions:
-Toolchain:       MDK-ARM Plus  Version: 5.42.0.0
-Toolchain Path:  D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin
+Toolchain:       MDK-ARM Plus  Version: 5.38.0.0
+Toolchain Path:  E:\ProgramFile\MDK\core\ARM\ARMCC\Bin
 C Compiler:      Armcc.exe V5.06 update 7 (build 960)
 Assembler:       Armasm.exe V5.06 update 7 (build 960)
 Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
 Library Manager: ArmAr.exe V5.06 update 7 (build 960)
 Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
-CPU DLL:         SARMCM3.DLL V5.42.0.0
+CPU DLL:         SARMCM3.DLL V5.38.0.0
 Dialog DLL:      DCM.DLL V1.17.5.0
-Target DLL:      CMSIS_AGDI.dll V1.33.22.0
-Dialog DLL:      TCM.DLL V1.56.6.0
+Target DLL:      CMSIS_AGDI.dll V1.33.15.0
+Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
-D:\transistor战队\26-transistor-codes\Sentry_Board2_C_26\MDK-ARM\DraftOfOmniWheel.uvprojx
-Project File Date:  08/18/2025
+E:\rm\work_new\26-transistor-codes\Sentry_Board2_C_26\MDK-ARM\DraftOfOmniWheel.uvprojx
+Project File Date:  08/20/2025
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin'
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'E:\ProgramFile\MDK\core\ARM\ARMCC\Bin'
 Build target 'DraftOfOmniWheel'
+compiling Task_OffLineCheck.c...
+compiling DT7.c...
+compiling Task_RobotControl.c...
+compiling Task_CanReceive.c...
+compiling FeedForward.c...
+compiling Task_UsartSend.c...
+compiling Protocol_Judgement.c...
+compiling BSP_Usart.c...
 compiling Steer_Omni_Chassis.c...
+compiling M3508_Motor.c...
+compiling Task_RobotUI.c...
+compiling BSP_Test.c...
+compiling BSP_BoardCommunication.c...
+..\Protocol\Protocol.c\BSP_BoardCommunication.c(27): warning:  #177-D: variable "IT_keycommand"  was declared but never referenced
+  	uint8_t IT_keycommand[8]={0};
+..\Protocol\Protocol.c\BSP_BoardCommunication.c: 1 warning, 0 errors
+compiling freertos.c...
+compiling Gimbal_Chassis_Pitch_Angle.c...
+compiling Cloud_Control.c...
+compiling Task_Vofa.c...
 linking...
-Program Size: Code=58404 RO-data=2804 RW-data=1600 ZI-data=48600  
+Program Size: Code=58516 RO-data=2804 RW-data=1604 ZI-data=48676  
 FromELF: creating hex file...
-"DraftOfOmniWheel\DraftOfOmniWheel.axf" - 0 Error(s), 0 Warning(s).
+"DraftOfOmniWheel\DraftOfOmniWheel.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
 Package Vendor: ARM
-                https://www.keil.com/pack/ARM.CMSIS.6.1.0.pack
-                ARM::CMSIS@6.1.0
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
                 CMSIS (Common Microcontroller Software Interface Standard)
-   * Component: CORE Version: 6.1.0
+   * Component: CORE Version: 5.6.0
 
 Package Vendor: Keil
-                https://www.keil.com/pack/Keil.STM32F4xx_DFP.3.0.0.pack
-                Keil::STM32F4xx_DFP@3.0.0
-                STMicroelectronics STM32F4 Series Device Support
+                https://www.keil.com/pack/Keil.STM32F4xx_DFP.2.17.1.pack
+                Keil.STM32F4xx_DFP.2.17.1
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
 
 <h2>Collection of Component include folders:</h2>
   ./RTE/_DraftOfOmniWheel
-  D:/ProgramFile/MDK/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include
+  E:/ProgramFile/MDK/packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  E:/ProgramFile/MDK/packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include
 
 <h2>Collection of Component Files used:</h2>
 
-   * Component: ARM::CMSIS:CORE@6.1.0
-Build Time Elapsed:  00:00:04
+   * Component: ARM::CMSIS:CORE:5.6.0
+Build Time Elapsed:  00:02:06
 </pre>
 </body>
 </html>
