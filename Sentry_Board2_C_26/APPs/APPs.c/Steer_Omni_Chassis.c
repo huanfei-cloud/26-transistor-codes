@@ -202,7 +202,7 @@ void move_motor_speed_set(void)
 void chassis_target_calc(void)
 {
     v_cloud_convertto_chassis(Steer_Omni_Data.Angle_ChassisToCloud);
-    chassis_follow_mode(Steer_Omni_Data.Angle_ChassisToCloud,flag);
+    //chassis_follow_mode(Steer_Omni_Data.Angle_ChassisToCloud,flag);
     direction_motor_angle_set();
     move_motor_speed_set();
     //转向电机目标位置设置
