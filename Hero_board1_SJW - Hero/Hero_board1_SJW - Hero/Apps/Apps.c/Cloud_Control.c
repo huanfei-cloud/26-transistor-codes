@@ -14,10 +14,10 @@
 // 重新安装电机或移用代码时需要重新测量这些值（toalAngle）后再允许运动。
 
 /****************Pithch限位*****************/
-const float Delta_Pitch_Min = -30;
-const float Delta_Pitch_Max = 50;
-const float Cloud_Pitch_Min = -30;
-const float Cloud_Pitch_Max = 50;
+const float Delta_Pitch_Min = -10;
+const float Delta_Pitch_Max = 65;
+const float Cloud_Pitch_Min = -10;
+const float Cloud_Pitch_Max = 65;
 const float Pitch_Angle_Init = 0;
 const float Cloud_Pitch_Center = 0;
 const float Cloud_Pitch_Derta = Cloud_Pitch_Center - Cloud_Pitch_Min;
@@ -30,7 +30,7 @@ float Cloud_Init_Angle;
 extern Saber_Angle_t Saber_Angle;
 float Pitch_Torque = 3.f; // 云台所需扭矩
 float Pitch_v = 2;
-float Pitch_Kp = 50;
+float Pitch_Kp = 60;
 float Pitch_Kd = 2;
 float Pitch_RC_Sen = 0.001;
 int16_t Cloud_Aim_Pitch_Flag;
@@ -99,7 +99,7 @@ void Cloud_Pitch_Angle_Set(void)
 	if (ControlMes.AutoAimFlag == 1)
 	{
 		Delta_Pitch += (float)ControlMes.pitch_velocity * Pitch_RC_Sen;
-				
+
 		/**********Delta_Pitch限位**********/
 		if (Delta_Pitch > Delta_Pitch_Max)
 		{
@@ -110,7 +110,7 @@ void Cloud_Pitch_Angle_Set(void)
 			Delta_Pitch = Delta_Pitch_Min;
 		}
 		/**********Delta_Pitch限位end**********/
-		
+
 		Cloud.Target_Pitch = Pitch_Angle_Init + Cloud.AutoAim_Pitch + Delta_Pitch;
 		Aim_Flag = 1;
 	}
@@ -118,7 +118,7 @@ void Cloud_Pitch_Angle_Set(void)
 	else
 	{
 		Delta_Pitch += (float)ControlMes.pitch_velocity * Pitch_RC_Sen;
-		
+
 		/**********Delta_Pitch限位**********/
 		if (Delta_Pitch > Delta_Pitch_Max)
 		{
@@ -129,7 +129,7 @@ void Cloud_Pitch_Angle_Set(void)
 			Delta_Pitch = Delta_Pitch_Min;
 		}
 		/**********Delta_Pitch限位end**********/
-		
+
 		if (Aim_Flag == 0)
 		{
 			Cloud.Target_Pitch = Delta_Pitch + Pitch_Angle_Init;

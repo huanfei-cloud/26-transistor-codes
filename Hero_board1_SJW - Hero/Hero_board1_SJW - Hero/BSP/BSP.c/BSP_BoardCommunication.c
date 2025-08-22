@@ -46,8 +46,8 @@ void Board1_To_2(void)
   data2_Fun[3] |= (uint8_t)(ControlMes.AutoAimFlag & 0x01) << 1;
   data2_Fun[3] |= (uint8_t)(ControlMes.change_Flag & 0x01) << 2;
   data2_Fun[3] |= (uint8_t)(ControlMes.modelFlag & 0x01) << 3;
-  data2_Fun[4] = M3508_Array[Dial_Wheel].realCurrent >> 8;
-  data2_Fun[5] = M3508_Array[Dial_Wheel].realCurrent;
+  data2_Fun[4] = M3508_Array[Dial_Wheel].outCurrent >> 8;
+  data2_Fun[5] = M3508_Array[Dial_Wheel].outCurrent;
   // 数据发送
   Can_Fun.CAN_SendData(CAN_SendHandle, &hcan2, CAN_ID_STD, CAN_ID_GIMBAL, data2_Fun);
 }

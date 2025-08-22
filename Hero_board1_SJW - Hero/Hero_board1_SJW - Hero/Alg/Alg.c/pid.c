@@ -230,3 +230,26 @@ void Clear_PositionPIDData(positionpid_t *pid_t)
   pid_t->pwm = 0;
 }
 
+/* 加上模糊增量的专用pid，相比于一般位置pid多了模糊增量 */
+float Position_PID_Dial(positionpid_t *pid_t, FUZZYPID_Data_t *fuzzy_t, float target, float measured)
+{
+  // FuzzyComputation(fuzzy_t, pid_t->err, pid_t->err_last);
+  pid_t->Target = (float)target;
+  pid_t->Measured = (float)measured;
+  pid_t->err = pid_t->Target - pid_t->Measured;
+  pid_t->err_change = pid_t->err - pid_t->err_last;
+
+  pid_t->p_out = (pid_t->Kp + fuzzy_t->delta_kp) * pid_t->err;
+  pid_t->i_out += (pid_t->Ki + fuzzy_t->delta_ki) * pid_t->err;
+  pid_t->d_out = (pid_t->Kd + fuzzy_t->delta_kd) * (pid_t->err - pid_t->err_last);
+  // 积分限幅
+  abs_limit(&pid_t->i_out, pid_t->IntegralLimit); // 取消积分输出的限幅。
+
+  pid_t->pwm = (pid_t->p_out + pid_t->i_out + pid_t->d_out);
+
+  // 输出限幅
+  abs_limit(&pid_t->pwm, pid_t->MaxOutput);
+
+  pid_t->err_last = pid_t->err;
+  return pid_t->pwm;
+}

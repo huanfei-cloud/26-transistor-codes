@@ -39,7 +39,7 @@ typedef enum
 } Fric_On_Off;
 
 /* 根据射速得到的摩擦轮转速 */
-#define Fric_SpeedLevel1 5600 // 23m/s 6200
+#define Fric_SpeedLevel1 5800 // 15.5m/s
 #define Fric_SpeedLevel2 5000 //
 
 /* Dial函数数据以及函数的接口结构体 */
@@ -54,8 +54,6 @@ typedef enum
 	{                           \
 		&Fric_Processing,       \
 		&Fric_Judge_ReadyOrNot, \
-		&PID_Clear_FricL,       \
-		&PID_Clear_FricR,       \
 	}
 
 typedef struct Fric_Data_t
@@ -69,8 +67,6 @@ typedef struct Fric_Fun_t
 {
 	void (*Fric_Processing)();
 	void (*Fric_Judge_ReadyOrNot)();
-	void (*PID_Clear_FricL)(void);
-	void (*PID_Clear_FricR)(void);
 } Fric_Fun_t;
 
 extern Fric_Fun_t Fric_Fun;

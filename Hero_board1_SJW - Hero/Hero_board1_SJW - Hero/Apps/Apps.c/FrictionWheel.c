@@ -21,8 +21,6 @@ static uint8_t fric_already_started = 0;
 void Fric_Processing(void);
 void Fric_Judge_ReadyOrNot(void);
 void Fric_Set_targetSpeed(void);
-void PID_Clear_FricL(void);
-void PID_Clear_FricR(void);
 float PID_Model4_Update(incrementalpid_t *pid, FUZZYPID_Data_t *PID, float _set_point, float _now_point);
 
 /****************接口定义******************/
@@ -75,10 +73,10 @@ void Fric_Processing()
   {
     M3508_Array[Fric_Front_1].targetSpeed = -current_speed * 0.7f;
     M3508_Array[Fric_Front_2].targetSpeed = -current_speed;
-    M3508_Array[Fric_Front_3].targetSpeed = current_speed * 0.8f;
-    M3508_Array[Fric_Back_1].targetSpeed = -current_speed * 0.96f * 0.7f;
-    M3508_Array[Fric_Back_2].targetSpeed = -current_speed * 0.96f;
-    M3508_Array[Fric_Back_3].targetSpeed = current_speed * 0.96f * 0.8f;
+    M3508_Array[Fric_Front_3].targetSpeed = current_speed * 0.74f;
+    M3508_Array[Fric_Back_1].targetSpeed = -current_speed * 0.9f * 0.7f;
+    M3508_Array[Fric_Back_2].targetSpeed = -current_speed * 0.9f;
+    M3508_Array[Fric_Back_3].targetSpeed = current_speed * 0.9f * 0.74f;
   }
   else
   {
@@ -104,45 +102,37 @@ void Fric_Processing()
  * @brief  当摩擦轮的速度达到target附近时认为摩擦轮已经就绪
  * @param  void
  * @retval void
- * @attention  这个函数未启用是因为H板代码arm_abs_q15等arm函数会报错
+ * @attention
  */
-// void Fric_Judge_ReadyOrNot()
-// {
-//   static q15_t abs_differ[2] = {0};
-//   static q15_t abs_factor[2];
-//   static q15_t temp[2];
-
-//   temp[0] = Fric_Data.Required_Speed + M3508_Array[FricL_Wheel].realSpeed;
-//   temp[1] = Fric_Data.Required_Speed - M3508_Array[FricR_Wheel].realSpeed;
-//   arm_abs_q15(temp, abs_differ, 2);
-//   temp[0] = Fric_Data.Required_Speed * 0.1f;
-//   temp[1] = Fric_Data.Required_Speed * 0.1f;
-//   arm_abs_q15(temp, abs_factor, 2);
-
-//   if(abs_differ[0] < abs_factor[0] && abs_differ[1] < abs_factor[1])
-//   	Fric_Data.Fric_Ready = Fric_Ready;
-//   else Fric_Data.Fric_Ready = Fric_NotReady;
-// }
 void Fric_Judge_ReadyOrNot()
 {
-  // 计算所有6个摩擦轮实际速度与目标速度的差值
-  float diff[6];
-  float tolerance = Fric_Data.Required_Speed * 0.1f; // 10%的容差
+  static q15_t abs_differ[2] = {0};
+  static q15_t abs_factor[2]; // 以目标速度的0.05为界
+  static q15_t temp[6];
 
-  diff[0] = M3508_Array[Fric_Front_1].targetSpeed - M3508_Array[Fric_Front_1].realSpeed;
-  diff[1] = M3508_Array[Fric_Front_2].targetSpeed - M3508_Array[Fric_Front_2].realSpeed;
-  diff[2] = M3508_Array[Fric_Front_3].targetSpeed - M3508_Array[Fric_Front_3].realSpeed;
-  diff[3] = M3508_Array[Fric_Back_1].targetSpeed - M3508_Array[Fric_Back_1].realSpeed;
-  diff[4] = M3508_Array[Fric_Back_2].targetSpeed - M3508_Array[Fric_Back_2].realSpeed;
-  diff[5] = M3508_Array[Fric_Back_3].targetSpeed - M3508_Array[Fric_Back_3].realSpeed;
+  temp[0] = M3508_Array[Fric_Front_1].targetSpeed - M3508_Array[Fric_Front_1].realSpeed;
+  temp[1] = M3508_Array[Fric_Front_2].targetSpeed - M3508_Array[Fric_Front_2].realSpeed;
+  temp[2] = M3508_Array[Fric_Front_3].targetSpeed + M3508_Array[Fric_Front_3].realSpeed;
+  temp[3] = M3508_Array[Fric_Back_1].targetSpeed - M3508_Array[Fric_Back_1].realSpeed;
+  temp[4] = M3508_Array[Fric_Back_2].targetSpeed - M3508_Array[Fric_Back_2].realSpeed;
+  temp[5] = M3508_Array[Fric_Back_3].targetSpeed + M3508_Array[Fric_Back_3].realSpeed;
 
-  // 检查所有摩擦轮是否都在容差范围内
-  if ((diff[0] < tolerance && diff[0] > -tolerance) &&
-      (diff[1] < tolerance && diff[1] > -tolerance) &&
-      (diff[2] < tolerance && diff[2] > -tolerance) &&
-      (diff[3] < tolerance && diff[3] > -tolerance) &&
-      (diff[4] < tolerance && diff[4] > -tolerance) &&
-      (diff[5] < tolerance && diff[5] > -tolerance))
+  // arm_abs_q15(temp, abs_differ, 3);
+  abs_differ[0] = (temp[0] > 0) ? temp[0] : -temp[0];
+  abs_differ[1] = (temp[1] > 0) ? temp[1] : -temp[1];
+
+  temp[0] = M3508_Array[Fric_Front_1].targetSpeed * 0.05f;
+  temp[1] = M3508_Array[Fric_Front_2].targetSpeed * 0.05f;
+  temp[2] = M3508_Array[Fric_Front_3].targetSpeed * 0.05f;
+  temp[3] = M3508_Array[Fric_Back_1].targetSpeed * 0.05f;
+  temp[4] = M3508_Array[Fric_Back_2].targetSpeed * 0.05f;
+  temp[5] = M3508_Array[Fric_Back_3].targetSpeed * 0.05f;
+
+  // arm_abs_q15(temp, abs_factor, 3);
+  abs_factor[0] = (temp[0] > 0) ? temp[0] : -temp[0];
+  abs_factor[1] = (temp[1] > 0) ? temp[1] : -temp[1];
+
+  if (abs_differ[0] < abs_factor[0] && abs_differ[1] < abs_factor[1])
     Fric_Data.Fric_Ready = Fric_Ready;
   else
     Fric_Data.Fric_Ready = Fric_NotReady;
@@ -182,26 +172,4 @@ void Fric_Set_targetSpeed(void)
     fric_target_speed = 0;
     fric_already_started = 0; // 重置启动标记，以便下次重新启动时再次使用加速
   }
-}
-
-/**
- * @brief  左摩擦轮的PID重置
- * @param  void
- * @retval void
- * @attention//75 0.03 05 //3.0 0.03 0
- */
-void PID_Clear_FricL(void)
-{
-  // Incremental_PIDInit(&M3508_FricL_Pid, 3.3f, 0.035f, 0, 8000, 700);
-}
-
-/**
- * @brief  右摩擦轮的PID重置
- * @param  void
- * @retval void
- * @attention
- */
-void PID_Clear_FricR(void)
-{
-  // Incremental_PIDInit(&M3508_FricR_Pid, 3.3f, 0.035f, 0, 8000, 700);
 }
