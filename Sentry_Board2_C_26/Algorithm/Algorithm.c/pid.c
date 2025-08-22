@@ -303,3 +303,47 @@ float Angle_PID(positionpid_t *pid_t, float target, float measured,float ecd_max
     
     return pid_t->pwm;
 }
+/**
+ * @brief 特定位置降kp kd的PID控制器
+ * @param pid_t PID控制器结构体指针
+ * @param speed_target 目标速度值
+ * @param speed_measured 测量速度值
+ * @param angle_measured 角度测量值
+ * @return PID控制输出值
+ * @note 专门处理6020电机特定角度值抖动的速度环pid函数
+ */
+float speed_angle_limit_pid(positionpid_t *pid_t, float speed_target, float speed_measured,float angle_measured)
+{
+// 更新状态变量
+    pid_t->Target = (float)speed_target;
+    pid_t->Measured = (float)speed_measured;
+    pid_t->err = pid_t->Target - pid_t->Measured;
+    pid_t->err_change = pid_t->Measured - pid_t->err_last;
+    pid_t->error_target = pid_t->Target - pid_t->last_set_point;
+    
+    // 计算各项输出
+    pid_t->p_out = pid_t->Kp * pid_t->err;
+    pid_t->i_out += pid_t->Ki * pid_t->err;
+    pid_t->d_out = pid_t->Kd * (pid_t->err - pid_t->err_last);
+    pid_t->f_out = pid_t->Kf * pid_t->error_target;
+    if((angle_measured>5700&&angle_measured<8000)||(angle_measured>1000&&angle_measured<3300))
+    {
+        pid_t->p_out = 40 * pid_t->err;
+        pid_t->d_out = 20 * (pid_t->err - pid_t->err_last);
+    }
+    // 积分限幅
+    abs_limit(&pid_t->i_out, pid_t->IntegralLimit);
+
+    // 计算总输出
+    pid_t->pwm = (pid_t->p_out + pid_t->i_out + pid_t->d_out + pid_t->f_out);
+
+    // 输出限幅
+    abs_limit(&pid_t->pwm, pid_t->MaxOutput);
+
+    // 更新历史状态
+    pid_t->err_last = pid_t->err;
+    pid_t->last_set_point = pid_t->Target;
+    
+    return pid_t->pwm;
+
+}

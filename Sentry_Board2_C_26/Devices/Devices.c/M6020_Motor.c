@@ -153,7 +153,7 @@ void M6020_velocity_change(M6020s_t *motor,pid_control model,CAN_HandleTypeDef *
 //		}
 		if (model == pid_control_normal)
 		{
-			motor->outCurrent = (int16_t)Position_PID(&motor->v_pid_object,target, (float)motor->realSpeed);
+			motor->outCurrent = (int16_t)speed_angle_limit_pid(&motor->v_pid_object,target, (float)motor->realSpeed,motor->realAngle);
 		}
 //		if (model == pid_control_frontfeed)
 //		{
@@ -172,7 +172,7 @@ void M6020_velocity_change(M6020s_t *motor,pid_control model,CAN_HandleTypeDef *
 //		}
 		if (model == pid_control_normal)
 		{
-			motor->outCurrent = (int16_t)Position_PID(&motor->v_pid_object,target, (float)motor->realSpeed);
+			motor->outCurrent = (int16_t)speed_angle_limit_pid(&motor->v_pid_object,target, (float)motor->realSpeed,motor->realAngle);
 		}
 //		if (model == pid_control_frontfeed)
 //		{
