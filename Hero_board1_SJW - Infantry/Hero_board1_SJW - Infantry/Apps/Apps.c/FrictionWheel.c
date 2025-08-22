@@ -24,9 +24,6 @@ Fric_Fun_t Fric_Fun = Fric_FunGroundInit;
 Fric_Data_t Fric_Data = Fric_DataGroundInit;
 #undef Fric_DataGroundInit
 
-/******************外部变量声明**************/
-extern int overheat;
-
 
 
 /**
@@ -80,12 +77,12 @@ void Fric_Judge_ReadyOrNot()
 void Fric_Set_targetSpeed(void)
 {
 
-  if (ControlMes.fric_Flag == 0 || overheat)
+  if (ControlMes.fric_Flag == 0 || Heat_Data.overheat)
   {
     Fric_Data.Required_Speed = 0;
     return;
   }
-  else if (ControlMes.fric_Flag == 1 && !overheat)
+  else if (ControlMes.fric_Flag == 1 && !Heat_Data.overheat)
   {
     Fric_Data.Required_Speed = Fric_SpeedLevel1;
   }
