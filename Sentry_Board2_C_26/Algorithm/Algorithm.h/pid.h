@@ -166,6 +166,7 @@ extern void Incremental_PIDInit(incrementalpid_t *pid_t, float Kp, float Kd, flo
  * @param Integral_Separation 积分分离阈值
  */
 extern void Position_PIDInit(positionpid_t *pid_t, float Kp, float Kd, float Ki, float Kf, float MaxOutput, float IntegralLimit, float Integral_Separation);
+extern float speed_angle_limit_pid(positionpid_t *pid_t, float speed_target, float speed_measured,float angle_measured);
 
 /**********卡尔曼滤波器实例声明************/
 
