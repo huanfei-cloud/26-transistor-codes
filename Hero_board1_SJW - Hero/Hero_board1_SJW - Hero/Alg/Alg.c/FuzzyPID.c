@@ -57,7 +57,7 @@ static const float ruleKd[7][7] = {
     PB, NS, PS, PS, PS, PS, PB,
     PB, PM, PM, PM, PS, PS, PB};
 
-FUZZYPID_Data_t FuzzyPID_Pitch = FUZZYPID_Pitch_GroupInit;
+FUZZYPID_Data_t FuzzyPID_Dial = FUZZYPID_Dial_GroupInit;
 #undef FUZZYPID_Pitch_GroupInit
 
 void fuzzy_init(FUZZYPID_Data_t *PID, float _maximum, float _minimum, float _qkp, float _qki, float _qkd)

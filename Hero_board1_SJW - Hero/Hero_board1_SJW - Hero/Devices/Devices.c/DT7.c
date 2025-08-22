@@ -145,7 +145,9 @@ void DT7_Handle(void)
 			RC_CtrlData.wheel = 0;
 		}
 
+		static uint8_t deployment_count = 0; // 用于部署模式计数
 		/**************************** control code ****************************/
+		ControlMes.shoot_state = RC_CtrlData.rc.s2;
 		/*通道1*/
 		/*中正常遥控；下自瞄；上键鼠*/
 		if (RC_CtrlData.rc.s1 == RC_SW_MID && RC_CtrlData.rc.s2 != 0)
@@ -155,33 +157,49 @@ void DT7_Handle(void)
 			ControlMes.x_velocity = -RC_CtrlData.rc.ch3; // 左手上下
 			ControlMes.y_velocity = -RC_CtrlData.rc.ch2; // 左手左右
 
-			static int countFric = 0;
-			// 发射状态设置（UP 发射 ； MID 禁止发射；DOWN 检录） //检录模式是停止小陀螺，让Yaw轴与底盘相对静止（检录校准测速用）
-			if (RC_CtrlData.rc.s2 == RC_SW_DOWN)
+			// 发射状态设置（右拨杆）（UP 单发模式（顺时针右滚动滚轮拨弹，逆时针左退弹）；MID 禁止发射 ；DOWN 部署模式）
+
+			if (ControlMes.shoot_state == RC_SW_UP)
 			{
-				ControlMes.modelFlag = model_Record;
-				ControlMes.fric_Flag = 0;
-				countFric = 0;
-				ControlMes.shoot_state = RC_SW_MID;
-			}
-			else if (RC_CtrlData.rc.s2 == RC_SW_MID)
-			{
-				ControlMes.modelFlag = model_Normal;
-				ControlMes.fric_Flag = 0;
-				ControlMes.shoot_state = RC_CtrlData.rc.s2;
-				countFric = 0;
-			}
-			else if (RC_CtrlData.rc.s2 == RC_SW_UP)
-			{
-				ControlMes.modelFlag = model_Normal;
+				// ControlMes.Check_In_Flag = 1;
+				Fric_Data.Fric_Switch = Fric_On;
 				ControlMes.fric_Flag = 1;
-				if (countFric < 50)
+				if (RC_CtrlData.wheel != 0)
 				{
-					countFric++;
+					Dial_Data.Dial_Switch = Dial_On;
 				}
-				else
+				else if (RC_CtrlData.wheel == 0)
 				{
-					ControlMes.shoot_state = RC_CtrlData.rc.s2;
+					Dial_Data.Dial_Switch = Dial_Off;
+				}
+				// else if (RC_CtrlData.wheel < -500)
+				// {
+				// 	Dial_Data.Dial_Switch = Dial_Back;
+				// }
+			}
+
+			else if (ControlMes.shoot_state == RC_SW_MID) // 正常模式
+			{
+				Dial_Data.Dial_Switch = Dial_Off;
+				Dial_Data.Speed_Dial = 0;
+				Dial_Data.Number_ToBeFired = 0;
+				Fric_Data.Fric_Switch = Fric_Off;
+				ControlMes.fric_Flag = 0;
+				ControlMes.Check_In_Flag = 0;
+				if (ControlMes.shoot_state != RC_SW_UP)
+					ControlMes.z_rotation_velocity = 0.3 * RC_CtrlData.wheel; // 滑轮左右
+			}
+
+			else if (ControlMes.shoot_state == RC_SW_DOWN) // 部署模式
+			{
+				deployment_count++;
+				if (deployment_count % 2 == 1)
+				{
+					ControlMes.Deployment_Flag = 1;
+				}
+				else if (deployment_count % 2 == 0)
+				{
+					ControlMes.Deployment_Flag = 0;
 				}
 			}
 
@@ -202,30 +220,58 @@ void DT7_Handle(void)
 			ControlMes.y_velocity = -RC_CtrlData.rc.ch2; // 左手左右
 
 			// 发射状态设置（UP 连发模式 ； MID 禁止发射；DOWN 单发模式）
-			ControlMes.shoot_state = RC_CtrlData.rc.s2;
 
 			// 自瞄云台运动控制（这里添加额外的遥控器控制是为了补偿自瞄精度，自己用遥控器微调一下辅助瞄准）
 			ControlMes.pitch_velocity = RC_CtrlData.rc.ch1 * 0.2; // 右手上下
 			ControlMes.yaw_velocity = RC_CtrlData.rc.ch0;		  // 右手左右
+			ControlMes.z_rotation_velocity = RC_CtrlData.wheel;	  // 滑轮左右
 			ControlMes.AutoAimFlag = 1;
 			// 上位机视觉得到的正负与电机的正负是一样的，通信两边的正负号要对好
 			ControlMes.yaw_position = Auto_Aim_Yaw;
 			Cloud.AutoAim_Pitch = Auto_Aim_Pitch;
-			if (ControlMes.shoot_state == RC_SW_DOWN)
+
+			/*************************发射状态设置（右拨杆）*********************/
+			// （UP 单发模式 ； MID 禁止发射；DOWN 退弹模式）
+			if (ControlMes.shoot_state == RC_SW_UP)
 			{
-				Dial_Data.Speed_Dial = (RC_CtrlData.wheel) * 5;
-				ControlMes.modelFlag = model_Normal;
+				// ControlMes.Check_In_Flag = 1;
+				Fric_Data.Fric_Switch = Fric_On;
 				ControlMes.fric_Flag = 1;
-			}
-			else if (ControlMes.shoot_state == RC_SW_UP)
-			{
-				ControlMes.modelFlag = model_Normal;
-				ControlMes.fric_Flag = 1;
-				Dial_Data.Speed_Dial = -(RC_CtrlData.wheel) * 5;
+				if (RC_CtrlData.wheel > 400)
+				{
+					Dial_Data.Dial_Switch = Dial_On;
+				}
+				else if (RC_CtrlData.wheel < 400 && RC_CtrlData.wheel > -400)
+				{
+					Dial_Data.Dial_Switch = Dial_Off;
+				}
+				else if (RC_CtrlData.wheel < -400)
+				{
+					Dial_Data.Dial_Switch = Dial_Back;
+				}
 			}
 			else if (ControlMes.shoot_state == RC_SW_MID)
 			{
+				Dial_Data.Dial_Switch = Dial_Off;
+				Dial_Data.Speed_Dial = 0;
+				Dial_Data.Number_ToBeFired = 0;
+				Fric_Data.Fric_Switch = Fric_Off;
 				ControlMes.fric_Flag = 0;
+				ControlMes.Check_In_Flag = 0;
+				if (ControlMes.shoot_state != RC_SW_UP)
+					ControlMes.z_rotation_velocity = RC_CtrlData.wheel; // 滑轮左右
+			}
+			else if (ControlMes.shoot_state == RC_SW_DOWN)
+			{
+				deployment_count++;
+				if (deployment_count % 2 == 1)
+				{
+					ControlMes.Deployment_Flag = 1;
+				}
+				else if (deployment_count % 2 == 0)
+				{
+					ControlMes.Deployment_Flag = 0;
+				}
 			}
 		}
 		else if (RC_CtrlData.rc.s1 == RC_SW_UP && RC_CtrlData.rc.s2 == RC_SW_MID)
@@ -248,7 +294,7 @@ void DT7_Handle(void)
 		/*发射信息处理*/
 		if (ControlMes.shoot_state == RC_SW_UP)
 		{
-			Dial_Data.Shoot_Mode = Continuous_Shoot;
+			Dial_Data.Shoot_Mode = Single_Shoot;
 			Shoot_Data.Shoot_Switch = 1;
 		}
 		else if (ControlMes.shoot_state == RC_SW_MID)

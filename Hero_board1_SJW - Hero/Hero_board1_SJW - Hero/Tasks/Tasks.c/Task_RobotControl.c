@@ -28,7 +28,7 @@ void Robot_Control(void const *argument)
         /****************整合电流数据***************/
         uint8_t data1[8], data2[8], data3[8];
         M3508_FUN.M3508_setCurrent(M3508_Array[Fric_Front_1].outCurrent, M3508_Array[Fric_Front_2].outCurrent, M3508_Array[Fric_Front_3].outCurrent, M3508_Array[Dial_Wheel].outCurrent, data1);
-        M3508_FUN.M3508_setCurrent(M3508_Array[Fric_Back_1].outCurrent, M3508_Array[Fric_Back_2].outCurrent, M3508_Array[Fric_Back_3].outCurrent, 0, data2);
+        M3508_FUN.M3508_setCurrent(M3508_Array[Fric_Back_1].outCurrent, M3508_Array[Fric_Back_2].outCurrent, M3508_Array[Fric_Back_3].outCurrent,0, data2);
         J4340_Fun.J4340_setParameter(J4340s_Pitch.outPosition, J4340s_Pitch.outSpeed, J4340s_Pitch.outKp, J4340s_Pitch.outKd, J4340s_Pitch.outTorque, data3);
 
         /****************发送电流数据***************/

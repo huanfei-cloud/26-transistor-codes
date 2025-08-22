@@ -258,8 +258,8 @@ void ALL_Init(void const *argument)
     Incremental_PIDInit(&M3508_FricB2_Pid, 40.f, 0, 30, 20000, 5000);
     Incremental_PIDInit(&M3508_FricB3_Pid, 40.f, 0, 30, 20000, 5000);
 
-    Position_PIDInit(&M3508_DialV_Pid, 20.0f, 0.01f, 0.5, 0.5, 20000, 8000, 700);
-    Incremental_PIDInit(&M3508_DialI_Pid, 12.5f, 0.5f, 3, 10000, 1000);
+    Position_PIDInit(&M3508_DialV_Pid, 0.4f, 0.015f, 0.3, 0.5, 2000, 1000, 500);
+    Incremental_PIDInit(&M3508_DialI_Pid, 15.0f, 2.5f, 8, 25000, 10000);
 
     Cloud_Init();
 #if (RemoteControlMethod == TDF)

@@ -104,8 +104,6 @@ typedef struct Struct_PID_Manage_Object_Fuzzy
 } Struct_PID_Manage_Object_Fuzzy;
 
 extern Struct_PID_Manage_Object_Fuzzy M3508s_DialPID;
-// extern Struct_PID_Manage_Object_Fuzzy M2006s_FricLPID;
-// extern Struct_PID_Manage_Object_Fuzzy M2006s_FricRPID;
 
 extern float Incremental_PID(incrementalpid_t *pid_t, float target, float measured);
 extern float Position_PID(positionpid_t *pid_t, float target, float measured);
@@ -113,6 +111,7 @@ extern float ClassisTwister_PID(positionpid_t *pid_t, float target, float measur
 extern void Incremental_PIDInit(incrementalpid_t *pid_t, float Kp, float Kd, float Ki, uint32_t MaxOutput, uint32_t IntegralLimit);
 extern void Position_PIDInit(positionpid_t *pid_t, float Kp, float Kd, float Ki, float Kf, float MaxOutput, float IntegralLimit, float Integral_Separation);
 extern float Position_PID_Pitch(positionpid_t *pid_t, FUZZYPID_Data_t *fuzzy_t, float target, float measured);
+extern float Position_PID_Dial(positionpid_t *pid_t, FUZZYPID_Data_t *fuzzy_t, float target, float measured);
 
 extern One_Kalman_t Cloud_YAWODKalman;
 extern One_Kalman_t Cloud_PITCHODKalman;

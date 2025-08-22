@@ -12,16 +12,16 @@
 // ��ʼ���ṹ�����
 #include "stm32f4xx_hal.h"
 
-#define FUZZYPID_Pitch_GroupInit \
-	{                            \
-		0,                       \
-		0,                       \
-		0,                       \
-		1000,                    \
-		-1000,                   \
-		0.f,                     \
-		0.0f,                    \
-		0,                       \
+#define FUZZYPID_Dial_GroupInit \
+	{                           \
+		0,                      \
+		0,                      \
+		0,                      \
+		36865,                  \
+		-36865,                 \
+		0.8f,                   \
+		0.0005f,                \
+		0.03,                   \
 	}
 
 // ����ģ��PID�ṹ��
@@ -52,7 +52,7 @@ extern void Membership_Calc(float *ms, float qv, int8_t *index);
 extern void FuzzyComputation(FUZZYPID_Data_t *PID, float thisError, float lastError);
 extern void fuzzy_init(FUZZYPID_Data_t *PID, float _maximum, float _minimum, float _qkp, float _qki, float _qkd);
 
-extern FUZZYPID_Data_t FuzzyPID_Pitch;
+extern FUZZYPID_Data_t FuzzyPID_Dial;
 
 extern FUZZYPID_Data_t fuzzy_pid_shoot_F1;
 extern FUZZYPID_Data_t fuzzy_pid_shoot_F2;
