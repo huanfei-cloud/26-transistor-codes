@@ -14,6 +14,7 @@
 #include "PID.h"
 #include "kalman_filter.h"
 #include "M6020_Motor.h"
+#include "DM_Motor.h"
 #include "typedef.h"
 #include <math.h>
 #include <stdint.h>
@@ -70,5 +71,11 @@ void Gimbal_Pitch_Translate(void);
 			&PID_Clear_Yaw,					\
     }
 
-
+/********º¯ÊýÉùÃ÷********/
+void Cloud_Init(void);
+void Cloud_Yaw_Angle_Set(void);
+void Cloud_Sport_Out(void);
+void Cloud_Self_Yaw(void);
+void PID_Clear_Yaw(void);
+	
 #endif /* __CLOUD_CONTROL_H */

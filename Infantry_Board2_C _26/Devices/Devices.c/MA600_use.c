@@ -93,10 +93,22 @@ void MA600s_Read_DaisyChain(void)
  */
 void MA600s_Read_Chassis(void)
 {
+	  //0-65535的角度值
 		MA600_Get_Angle(&MA600s[0]);
+	  osDelay(1);
 		MA600_Get_Angle(&MA600s[1]);
+	  osDelay(1);
 		MA600_Get_Angle(&MA600s[2]);
+	  osDelay(1);
 		MA600_Get_Angle(&MA600s[3]);
+	  osDelay(1);
+	
+	  //将角度值转化为圈数值
+	  MA600s[0].Circles = MA600s[0].Angle / 65535.0f;
+	  MA600s[1].Circles = MA600s[1].Angle / 65535.0f;
+  	MA600s[2].Circles = MA600s[2].Angle / 65535.0f;
+  	MA600s[3].Circles = MA600s[3].Angle / 65535.0f;
+	  
 }
 
 

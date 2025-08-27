@@ -50,7 +50,8 @@ typedef enum
 	pid_control_increase,
 	pid_control_normal,
 	pid_control_frontfeed,
-	pid_control_frontfuzzy
+	pid_control_frontfuzzy,
+	pid_control_angle  // 舵轮舵向电机专用PID(解决就近转位问题)
 }pid_control;
 
 

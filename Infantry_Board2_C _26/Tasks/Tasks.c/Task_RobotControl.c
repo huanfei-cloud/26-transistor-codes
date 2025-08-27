@@ -79,7 +79,6 @@ void Robot_Control(void const *argument)
 			}
 			/******************End******************/
 			  
-        DT7_Handle();
 			  Board2_FUN.Board2_To_1();
 				PowerControl_Fun.PowerControl_MsgSend();
 				steer_chassis_out();

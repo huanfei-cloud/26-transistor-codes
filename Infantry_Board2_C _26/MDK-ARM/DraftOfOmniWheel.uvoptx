@@ -173,89 +173,79 @@
         <Ww>
           <count>0</count>
           <WinNumber>1</WinNumber>
-          <ItemText>M6020s_Yaw,0x0A</ItemText>
+          <ItemText>MA600s[1],0x0A</ItemText>
         </Ww>
         <Ww>
           <count>1</count>
           <WinNumber>1</WinNumber>
-          <ItemText>M6020s_YawIPID</ItemText>
+          <ItemText>MA600s[3],0x0A</ItemText>
         </Ww>
         <Ww>
           <count>2</count>
           <WinNumber>1</WinNumber>
-          <ItemText>M6020s_YawOPID</ItemText>
+          <ItemText>MA600s[0],0x0A</ItemText>
         </Ww>
         <Ww>
           <count>3</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Cloud.Target_Yaw</ItemText>
+          <ItemText>MA600s[2],0x0A</ItemText>
         </Ww>
         <Ww>
           <count>4</count>
           <WinNumber>1</WinNumber>
-          <ItemText>AutoAim_M6020s_YawIPID</ItemText>
+          <ItemText>M3508_Helm[6],0x0A</ItemText>
         </Ww>
         <Ww>
           <count>5</count>
           <WinNumber>1</WinNumber>
-          <ItemText>AutoAim_M6020s_YawOPID</ItemText>
+          <ItemText>AutoAim_M6020s_YawIPID</ItemText>
         </Ww>
         <Ww>
           <count>6</count>
           <WinNumber>1</WinNumber>
-          <ItemText>yaw_velocity</ItemText>
-        </Ww>
-        <Ww>
-          <count>7</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>ControlMes,0x0A</ItemText>
+          <ItemText>AutoAim_M6020s_YawOPID</ItemText>
         </Ww>
       </WatchWindow1>
       <WatchWindow2>
         <Ww>
           <count>0</count>
           <WinNumber>2</WinNumber>
-          <ItemText>MA600_flag[0],0x0A</ItemText>
+          <ItemText>MA600s[0],0x0A</ItemText>
         </Ww>
         <Ww>
           <count>1</count>
           <WinNumber>2</WinNumber>
-          <ItemText>MA600_flag[1],0x0A</ItemText>
+          <ItemText>MA600s[2],0x0A</ItemText>
         </Ww>
         <Ww>
           <count>2</count>
           <WinNumber>2</WinNumber>
-          <ItemText>MA600s[0],0x0A</ItemText>
+          <ItemText>MA600s[1],0x0A</ItemText>
         </Ww>
         <Ww>
           <count>3</count>
           <WinNumber>2</WinNumber>
-          <ItemText>RegData,0x0A</ItemText>
+          <ItemText>MA600s[3],0x0A</ItemText>
         </Ww>
         <Ww>
           <count>4</count>
           <WinNumber>2</WinNumber>
-          <ItemText>AutoAim_M6020s_YawIPID</ItemText>
+          <ItemText>M3508_Helm[6],0x0A</ItemText>
         </Ww>
         <Ww>
           <count>5</count>
           <WinNumber>2</WinNumber>
-          <ItemText>MA600s[1],0x0A</ItemText>
+          <ItemText>M3508_Helm[7],0x0A</ItemText>
         </Ww>
         <Ww>
           <count>6</count>
           <WinNumber>2</WinNumber>
-          <ItemText>MA600s[2],0x0A</ItemText>
+          <ItemText>chassis_control</ItemText>
         </Ww>
         <Ww>
           <count>7</count>
           <WinNumber>2</WinNumber>
-          <ItemText>MA600s[3],0x0A</ItemText>
-        </Ww>
-        <Ww>
-          <count>8</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>chassis_control</ItemText>
+          <ItemText>RC_CtrlData,0x0A</ItemText>
         </Ww>
       </WatchWindow2>
       <MemoryWindow4>

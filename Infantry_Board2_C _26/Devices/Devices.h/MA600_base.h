@@ -158,11 +158,13 @@ typedef struct
     
     // 记录的一些信息
     uint16_t             Angle;
+	  float                Circles; //把角度值转化为圈数 
 	  uint16_t             Circle;
     uint16_t             Angle_Masked;
     uint16_t             Angle_Masked_last;
     int32_t              MultiTurn;	
     float                Speed;
+	  
     
     // 和精度有关的
     uint16_t             Mask;    // 1有效，0无效 例如0xFF00则代表高八位有效，低八位无效

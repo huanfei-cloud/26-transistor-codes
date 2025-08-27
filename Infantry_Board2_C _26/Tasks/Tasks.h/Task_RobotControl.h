@@ -12,7 +12,6 @@
 #include "FreeRTOS.h"
 #include "cmsis_os.h"
 #include "PowerControl.h"
-#include "Omni_Chassis.h"
 #include "steer_chassis.h"
 #include "Cloud_Control.h"
 #include "Saber_C3.h"
