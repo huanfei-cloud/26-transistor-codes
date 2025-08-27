@@ -15,7 +15,7 @@ void Robot_Control(void const *argument)
 {
     portTickType xLastWakeTime;
     xLastWakeTime = xTaskGetTickCount();
-    const TickType_t TimeIncrement = pdMS_TO_TICKS(2); //Ã¿2ºÁÃëÇ¿ÖÆ½øÈëÊý¾Ý·¢ËÍ
+    const TickType_t TimeIncrement = pdMS_TO_TICKS(2); //Ã¿2ï¿½ï¿½ï¿½ï¿½Ç¿ï¿½Æ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý·ï¿½ï¿½ï¿½
 	
 //	while(!M6020s_Yaw.InfoUpdateFlag)
 //	{
@@ -29,7 +29,7 @@ void Robot_Control(void const *argument)
         Saber_Read();
         Cloud_FUN.Cloud_Sport_Out();
 				Board2_FUN.Board2_To_1();
-        DT7_Handle();
+        //DT7_Handle();
 				PowerControl_Fun.PowerControl_MsgSend();
 				Steer_Omni_Chassis_Out();
         vTaskDelayUntil(&xLastWakeTime, TimeIncrement);
