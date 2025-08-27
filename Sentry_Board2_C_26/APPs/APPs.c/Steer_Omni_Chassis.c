@@ -47,13 +47,13 @@ void Chassis_Init(void)
     M6020_Init(&M6020s_Chassis2,0x207);
 
     //驱动电机速度环初始化
-    Position_PIDInit(&(M3508_Array[0].v_pid_object),10.0f, 0.22f, 0,0,800,30000,6000);
-		Position_PIDInit(&(M3508_Array[1].v_pid_object),10.0f, 0.22f, 0,0,800,30000,6000);
-		Position_PIDInit(&(M3508_Array[2].v_pid_object),10.0f, 0.22f, 0,0,800,30000,6000);
-		Position_PIDInit(&(M3508_Array[3].v_pid_object),10.0f, 0.22f, 0,0,800,30000,6000);
+    Position_PIDInit(&(M3508_Array[0].v_pid_object),10.0f, 0.22f, 0,0,16384,30000,6000);
+		Position_PIDInit(&(M3508_Array[1].v_pid_object),10.0f, 0.22f, 0,0,16384,30000,6000);
+		Position_PIDInit(&(M3508_Array[2].v_pid_object),10.0f, 0.22f, 0,0,16384,30000,6000);
+		Position_PIDInit(&(M3508_Array[3].v_pid_object),10.0f, 0.22f, 0,0,16384,30000,6000);
     //转向电机速度环初始化
-  	Position_PIDInit(&(M6020s_Chassis1.v_pid_object),210,0,40,0,7000,30000,6000);
-    Position_PIDInit(&(M6020s_Chassis2.v_pid_object),210,0,40,0,7000,30000,6000);
+  	Position_PIDInit(&(M6020s_Chassis1.v_pid_object),140,0,40,0,16384,30000,6000);
+    Position_PIDInit(&(M6020s_Chassis2.v_pid_object),140,0,40,0,16384,30000,6000);
     //转向电机位置环初始化
 		Position_PIDInit(&(M6020s_Chassis1.l_pid_object),0.5f, 0.00001f, 0.05, 0, 30000, 10000 ,10000);
 		Position_PIDInit(&(M6020s_Chassis2.l_pid_object),0.5f, 0.00001f, 0.05, 0, 30000, 10000 ,10000);
@@ -93,7 +93,7 @@ void chassis_follow_mode(float angle, uint8_t start_flag)
 {
     if(start_flag)
     {
-        if(abs(angle)<10)
+        if(fabs(angle)<10)
         {
             return ;
         }
@@ -161,7 +161,7 @@ void direction_motor_angle_set(void)
     {
         error_angle[1]+=8192.0f;
     }
-    if(abs(error_angle[0])>2048.0f)
+    if(fabs(error_angle[0])>2048.0f)
     {
         dirt[0]=1;
         finall_angle[0]-=4096;
@@ -170,7 +170,7 @@ void direction_motor_angle_set(void)
     {
         dirt[0]=-1;
     }
-    if(abs(error_angle[1])>2048.0f)
+    if(fabs(error_angle[1])>2048.0f)
     {
         dirt[1]=-1;
         finall_angle[1]-=4096;
@@ -237,7 +237,7 @@ void move_motor_speed_set(void)
     Steer_Omni_Data.M3508_Setspeed[2] = dirt[1] * sqrt( pow(((Steer_Omni_Data.Speed_ToChassis).vy - (Steer_Omni_Data.Speed_ToChassis).wz * Radius * 0.707107f),2) + 
                     pow(((Steer_Omni_Data.Speed_ToChassis).vx + (Steer_Omni_Data.Speed_ToChassis).wz * Radius * 0.707107f),2)) * wheel_rpm_ratio ;
     // 右前轮速度计算：
-    Steer_Omni_Data.M3508_Setspeed[3] =((Steer_Omni_Data.Speed_ToChassis.vx-Steer_Omni_Data.Speed_ToChassis.wz*Length_wheel_y)*cos(rf_omni_angle/180*pi)+
+    Steer_Omni_Data.M3508_Setspeed[3] =((Steer_Omni_Data.Speed_ToChassis.vx+Steer_Omni_Data.Speed_ToChassis.wz*Length_wheel_y)*cos(rf_omni_angle/180*pi)+
                     (Steer_Omni_Data.Speed_ToChassis.vy+Steer_Omni_Data.Speed_ToChassis.wz*Length_wheel_x)*sin(rf_omni_angle/180*pi)) * wheel_rpm_ratio; 
 
 }

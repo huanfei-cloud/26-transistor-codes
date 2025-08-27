@@ -271,7 +271,7 @@ float Angle_PID(positionpid_t *pid_t, float target, float measured,float ecd_max
     pid_t->err = pid_t->Target - pid_t->Measured;
     
     // 处理角度环绕问题（8192对应360度）
-    if(abs(pid_t->err) > ecd_max/2) {
+    if(fabs(pid_t->err) > ecd_max/2) {
         if(pid_t->err > 0) {
             pid_t->err = pid_t->err - (ecd_max+1);
         } else {
@@ -326,11 +326,11 @@ float speed_angle_limit_pid(positionpid_t *pid_t, float speed_target, float spee
     pid_t->i_out += pid_t->Ki * pid_t->err;
     pid_t->d_out = pid_t->Kd * (pid_t->err - pid_t->err_last);
     pid_t->f_out = pid_t->Kf * pid_t->error_target;
-    if((angle_measured>5700&&angle_measured<8000)||(angle_measured>1000&&angle_measured<3300))
-    {
-        pid_t->p_out = 40 * pid_t->err;
-        pid_t->d_out = 20 * (pid_t->err - pid_t->err_last);
-    }
+//    if((angle_measured>5700&&angle_measured<8000)||(angle_measured>1000&&angle_measured<3300))
+//    {
+//        pid_t->p_out = 142 * pid_t->err;
+//        pid_t->d_out = 20 * (pid_t->err - pid_t->err_last);
+//    }
     // 积分限幅
     abs_limit(&pid_t->i_out, pid_t->IntegralLimit);
 
