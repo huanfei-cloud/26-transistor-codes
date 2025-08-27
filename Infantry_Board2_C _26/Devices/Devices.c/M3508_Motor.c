@@ -611,12 +611,16 @@ void motor_location_change(M3508s_t *motor,pid_control model,float target,float 
 //		}
 		if (model == pid_control_normal)
 		{
-			motor->targetSpeed = (int16_t)Angle_PID(&motor->l_pid_object,circle_to_encoder(target),circle_to_encoder(real),1);
+			motor->targetSpeed = (int16_t)Position_PID(&motor->l_pid_object,circle_to_encoder(target),circle_to_encoder(real));
 		}
 //		if (model == pid_control_frontfeed)
 //		{
 //			motor->targetSpeed = (int16_t)PID_Model3_Update(&motor->l_pid_object, motor->total_encoder, quanshu_to_encoder(target));
 //		}
+		if (model == pid_control_angle)
+		{
+			motor->targetSpeed = (int16_t)Angle_PID(&motor->l_pid_object,circle_to_encoder(target),circle_to_encoder(real),8191);
+    }
 	}
 	break;
 	  case (0x205):
@@ -630,7 +634,7 @@ void motor_location_change(M3508s_t *motor,pid_control model,float target,float 
 //		}
 		if (model == pid_control_normal)
 		{
-			motor->targetSpeed = (int16_t)Angle_PID(&motor->l_pid_object,circle_to_encoder(target),circle_to_encoder(real),1);
+			motor->targetSpeed = (int16_t)Position_PID(&motor->l_pid_object,circle_to_encoder(target),circle_to_encoder(real));
 		}
 //		if (model == pid_control_frontfeed)
 //		{
@@ -640,8 +644,12 @@ void motor_location_change(M3508s_t *motor,pid_control model,float target,float 
 //		{
 //			motor->targetSpeed = (int16_t)PID_Model4_Update(&motor->l_pid_object, &fuzzy_pid_yaw_l, motor->total_encoder, quanshu_to_encoder(target));
 //		}
+		if (model == pid_control_angle)
+		{
+			motor->targetSpeed = (int16_t)Angle_PID(&motor->l_pid_object,circle_to_encoder(target),circle_to_encoder(real),8191);
     }
     break;
 	}
+}
 }
 

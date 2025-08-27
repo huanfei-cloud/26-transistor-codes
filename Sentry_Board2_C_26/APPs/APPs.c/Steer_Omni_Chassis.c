@@ -93,7 +93,7 @@ void chassis_follow_mode(float angle, uint8_t start_flag)
 {
     if(start_flag)
     {
-        if(abs(angle)<10)
+        if(fabs(angle)<10)
         {
             return ;
         }

@@ -34,7 +34,7 @@
 "draftofomniwheel\m3508_motor.o"
 "draftofomniwheel\m6020_motor.o"
 "draftofomniwheel\m2006_motor.o"
-"draftofomniwheel\j4310_motor.o"
+"draftofomniwheel\dm_motor.o"
 "draftofomniwheel\cloud_control.o"
 "draftofomniwheel\time_stamp.o"
 "draftofomniwheel\powercontrol.o"

@@ -34,12 +34,12 @@ uint8_t kk =8;
 float Linear=2.75f;
 float Setup_Angleoffset = -3000;
 
-void Cloud_Init(void);
-void Cloud_Yaw_Angle_Set(void);
-void Cloud_Sport_Out(void);
-void Cloud_Self_Yaw(void);
-void PID_Clear_Yaw(void);
-
+/********数据声明********/
+//MIT模式数据设置
+float J6006_Yaw_T = 3.0f; // 云台yaw轴所需扭矩
+float J6006_Yaw_V = 2.0f;
+float J6006_Yaw_Kp = 50.0f;
+float J6006_Yaw_Kd = 2.0f;
 /***************输出接口定义***************/
 Cloud_FUN_t Cloud_FUN = Cloud_FUNGroundInit;
 #undef Cloud_FUNGroundInit
@@ -52,9 +52,13 @@ Cloud_FUN_t Cloud_FUN = Cloud_FUNGroundInit;
  */
 void Cloud_Init(void)
 {
+	//yaw轴DM6006电机使能
+	DM_Enable(0x02,&hcan2);
+	//MIT模式控制数据初始化
+	DM_MIT_Init(&J6006s_Yaw,J6006_Yaw_T,J6006_Yaw_V,J6006_Yaw_Kp,J6006_Yaw_Kd);
 
 	//保存启动时刻的机械角度
-	Cloud.Target_Yaw = M6020s_Yaw.realAngle + Saber_Angle.Yaw /360.0f *  8192.0f; 
+	Cloud.Target_Yaw = J6006s_Yaw.realAngle + Saber_Angle.Yaw /360.0f *  8192.0f; 
 
 	One_Kalman_Create(&Cloud_YawMotorAngle_Error_Kalman, 1, 10);
 	One_Kalman_Create(&Cloud_YAWODKalman, 1, 10);

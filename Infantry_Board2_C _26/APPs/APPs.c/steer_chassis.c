@@ -13,14 +13,14 @@
 #define DIR_GEAR_RATIO 7.47f
 #define Radius 60
 #define WHEEL_PERIMETER 376.98f
-//四个驱动电机朝向前方时转向电机初始编码值
-#define DIRMOTOR_LF_ANGLE 339.8731f
-#define DIRMOTOR_LB_ANGLE 339.8731f
-#define DIRMOTOR_RB_ANGLE 339.8731f
-#define DIRMOTOR_RF_ANGLE 339.8731f
+//四个驱动电机朝向前方时转向电机初始编码值(0-65535)
+#define DIRMOTOR_LF_MA600ANGLE 7900.0f
+#define DIRMOTOR_LB_MA600ANGLE 57300.0f
+#define DIRMOTOR_RB_MA600ANGLE 23230.0f
+#define DIRMOTOR_RF_MA600ANGLE 10360.0f
 /*数据定义*/
 Struct_CHASSIS_Manage_Object chassis_control;
-int8_t dirt[4] = {1,-1,1,-1};
+int8_t dirt[4] = {1,1,1,1};
 
 /**
  * @brief 角度范围的限制
@@ -63,24 +63,25 @@ void chassis_init(void)
 	  Position_PIDInit(&(M3508_Helm[2].v_pid_object),10.0f, 0.22f, 0,0, 16384,30000,6000);
 	  Position_PIDInit(&(M3508_Helm[3].v_pid_object),10.0f, 0.22f, 0,0, 16384,30000,6000);
 		//转向电机速度环初始化
-	  Position_PIDInit(&(M3508_Helm[4].v_pid_object),1,0.1,1,0,700,30000,6000);
-	  Position_PIDInit(&(M3508_Helm[5].v_pid_object),1,0.1,1,0,700,30000,6000);
-	  Position_PIDInit(&(M3508_Helm[6].v_pid_object),1,0.1,1,0,700,30000,6000);
-	  Position_PIDInit(&(M3508_Helm[7].v_pid_object),1,0.1,1,0,700,30000,6000);
+	  Position_PIDInit(&(M3508_Helm[4].v_pid_object),4.0f,0.12f,2.0f,0,16384,30000,6000);
+	  Position_PIDInit(&(M3508_Helm[5].v_pid_object),4.0f,0.12f,2.0f,0,16384,30000,6000);
+	  Position_PIDInit(&(M3508_Helm[6].v_pid_object),4.0f,0.12f,2.0f,0,16384,30000,6000);
+	  Position_PIDInit(&(M3508_Helm[7].v_pid_object),4.0f,0.12f,2.0f,0,16384,30000,6000);
 		//转向电机位置环初始化
-		Position_PIDInit(&(M3508_Helm[4].l_pid_object),0.032f, 0.00001f, 0.05, 0, 30000, 10000 ,10000);
-		Position_PIDInit(&(M3508_Helm[5].l_pid_object),0.032f, 0.00001f, 0.05, 0, 30000, 10000 ,10000);
-		Position_PIDInit(&(M3508_Helm[6].l_pid_object),0.032f, 0.00001f, 0.05, 0, 30000, 10000 ,10000);
-		Position_PIDInit(&(M3508_Helm[7].l_pid_object),0.032f, 0.00001f, 0.05, 0, 30000, 10000 ,10000);
+		Position_PIDInit(&(M3508_Helm[4].l_pid_object),0.232f, 0.0001f, 0.05f, 0, 30000, 10000 ,10000);
+		Position_PIDInit(&(M3508_Helm[5].l_pid_object),0.232f, 0.0001f, 0.05f, 0, 30000, 10000 ,10000);
+		Position_PIDInit(&(M3508_Helm[6].l_pid_object),0.232f, 0.0001f, 0.05f, 0, 30000, 10000 ,10000);
+		Position_PIDInit(&(M3508_Helm[7].l_pid_object),0.232f, 0.0001f, 0.05f, 0, 30000, 10000 ,10000);
     
     M3508_Helm[0].targetSpeed = 0.0f;
 		M3508_Helm[1].targetSpeed = 0.0f;
 		M3508_Helm[2].targetSpeed = 0.0f;
 		M3508_Helm[3].targetSpeed = 0.0f;
-		M3508_Helm[4].targetSpeed = 0.0f;
-		M3508_Helm[5].targetSpeed = 0.0f;
-		M3508_Helm[6].targetSpeed = 0.0f;
-		M3508_Helm[7].targetSpeed = 0.0f;
+		
+		M3508_Helm[4].targetLocation = DIRMOTOR_LF_MA600ANGLE / 65535.0f;
+		M3508_Helm[5].targetLocation = DIRMOTOR_LB_MA600ANGLE / 65535.0f;
+		M3508_Helm[6].targetLocation = DIRMOTOR_RB_MA600ANGLE / 65535.0f;
+		M3508_Helm[7].targetLocation = DIRMOTOR_RF_MA600ANGLE / 65535.0f;
 
 }   
 
@@ -116,120 +117,132 @@ void direction_motor_angle_set(void)
     {
         atan_angle[0] = atan2(((chassis_control.Speed_ToChassis).vx - (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f),((chassis_control.Speed_ToChassis).vy + (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f)) * 180.0f / pi ;
         atan_angle[1] = atan2(((chassis_control.Speed_ToChassis).vx - (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f),((chassis_control.Speed_ToChassis).vy - (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f)) * 180.0f / pi ;
-        atan_angle[2] = atan2(((chassis_control.Speed_ToChassis).vx + (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f),((chassis_control.Speed_ToChassis).vy + (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f)) * 180.0f / pi ;
-        atan_angle[3] = atan2(((chassis_control.Speed_ToChassis).vx + (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f),((chassis_control.Speed_ToChassis).vy - (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f)) * 180.0f / pi ;
-    }
+        atan_angle[2] = atan2(((chassis_control.Speed_ToChassis).vx + (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f),((chassis_control.Speed_ToChassis).vy - (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f)) * 180.0f / pi ;
+        atan_angle[3] = atan2(((chassis_control.Speed_ToChassis).vx + (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f),((chassis_control.Speed_ToChassis).vy + (chassis_control.Speed_ToChassis).wz * Radius * 0.707107f)) * 180.0f / pi ;
+    
+			  finall_angle[0] = atan_angle[0] + DIRMOTOR_LF_MA600ANGLE * 360.0f / 65535 ;
+		    finall_angle[1] = atan_angle[1] + DIRMOTOR_LB_MA600ANGLE * 360.0f / 65535 ;
+		    finall_angle[2] = atan_angle[2] + DIRMOTOR_RB_MA600ANGLE * 360.0f / 65535 ;
+		    finall_angle[3] = atan_angle[3] + DIRMOTOR_RF_MA600ANGLE * 360.0f / 65535 ;
+			
+			if(finall_angle[0]>360.0f)
+			{
+				finall_angle[0] -= 360.0f;
+			}
+			else if(finall_angle[0]<0.0f)
+			{
+				finall_angle[0] += 360.0f;
+			}
+			if(finall_angle[1]>360.0f)
+			{
+				finall_angle[1] -= 360.0f;
+			}
+			else if(finall_angle[1]<0.0f)
+			{
+				finall_angle[1] += 360.0f;
+			}if(finall_angle[2]>360.0f)
+			{
+				finall_angle[2] -= 360.0f;
+			}
+			else if(finall_angle[2]<0.0f)
+			{
+				finall_angle[2] += 360.0f;
+			}if(finall_angle[3]>360.0f)
+			{
+				finall_angle[3] -= 360.0f;
+			}
+			else if(finall_angle[3]<0.0f)
+			{
+				finall_angle[3] += 360.0f;
+			}
+			
+			error_angle[0] =(finall_angle[0] - MA600s[0].Angle * 360.0f / 65535);
+			error_angle[1] =(finall_angle[1] - MA600s[1].Angle * 360.0f / 65535);
+			error_angle[2] =(finall_angle[2] - MA600s[2].Angle * 360.0f / 65535);
+			error_angle[3] =(finall_angle[3] - MA600s[3].Angle * 360.0f / 65535);
+			
+			if(error_angle[0]>180.0f)
+			{
+					error_angle[0]-=360.0f;
+			}
+			else if(error_angle[0]<-180.0f)
+			{
+					error_angle[0]+=360.0f;
+			}
+			if(error_angle[1]>180.0f)
+			{
+					error_angle[1]-=360.0f;
+			}
+			else if(error_angle[1]<-180.0f)
+			{
+					error_angle[1]+=360.0f;
+			}
+			if(error_angle[2]>180.0f)
+			{
+					error_angle[2]-=360.0f;
+			}
+			else if(error_angle[2]<-180.0f)
+			{
+					error_angle[2]+=360.0f;
+			}
+			if(error_angle[3]>180.0f)
+			{
+					error_angle[3]-=360.0f;
+			}
+			else if(error_angle[3]<-180.0f)
+			{
+					error_angle[3]+=360.0f;
+			}
+		 if(fabs(error_angle[0])>90.0f)
+			{
+					dirt[0]=-1;
+					finall_angle[0]-=180.0f;
+			}
+			else
+			{
+					dirt[0]=1;
+			}
+		if(fabs(error_angle[1])>90.0f)
+			{
+					dirt[1]=-1;
+					finall_angle[1]-=180.0f;
+			}
+			else
+			{
+					dirt[1]=1;
+			}
+		if(fabs(error_angle[2])>90.0f)
+			{
+					dirt[2]=-1;
+					finall_angle[2]-=180.0f;
+			}
+			else
+			{
+					dirt[2]=1;
+			}
+		if(fabs(error_angle[3])>90.0f)
+			{
+					dirt[3]=-1;
+					finall_angle[3]-=180.0f;
+			}
+			else
+			{
+					dirt[3]=1;
+			}
+		}
 		else
 		{
 			 atan_angle[0] = 0.0f;
 			 atan_angle[1] = 0.0f;
 			 atan_angle[2] = 0.0f;
 			 atan_angle[3] = 0.0f;
+			
+			 finall_angle[0] = atan_angle[0] + DIRMOTOR_LF_MA600ANGLE * 360.0f / 65535 ;
+		   finall_angle[1] = atan_angle[1] + DIRMOTOR_LB_MA600ANGLE * 360.0f / 65535 ;
+		   finall_angle[2] = atan_angle[2] + DIRMOTOR_RB_MA600ANGLE * 360.0f / 65535 ;
+		   finall_angle[3] = atan_angle[3] + DIRMOTOR_RF_MA600ANGLE * 360.0f / 65535 ;
 		} 
-       finall_angle[0] = atan_angle[0] + DIRMOTOR_LF_ANGLE;
-		   finall_angle[1] = atan_angle[1] + DIRMOTOR_LB_ANGLE;
-		   finall_angle[2] = atan_angle[2] + DIRMOTOR_RF_ANGLE;
-		   finall_angle[3] = atan_angle[3] + DIRMOTOR_RB_ANGLE;
-		if(finall_angle[0]>360.0f)
-		{
-			finall_angle[0] -= 360.0f;
-		}
-		else if(finall_angle[0]<0.0f)
-		{
-			finall_angle[0] += 360.0f;
-		}
-		if(finall_angle[1]>360.0f)
-		{
-			finall_angle[1] -= 360.0f;
-		}
-		else if(finall_angle[1]<0.0f)
-		{
-			finall_angle[1] += 360.0f;
-		}if(finall_angle[2]>360.0f)
-		{
-			finall_angle[2] -= 360.0f;
-		}
-		else if(finall_angle[2]<0.0f)
-		{
-			finall_angle[2] += 360.0f;
-		}if(finall_angle[3]>360.0f)
-		{
-			finall_angle[3] -= 360.0f;
-		}
-		else if(finall_angle[3]<0.0f)
-		{
-			finall_angle[3] += 360.0f;
-		}
-        error_angle[0] =(finall_angle[0] - MA600s[0].Angle);
-		error_angle[1] =(finall_angle[1] - MA600s[1].Angle);
-		error_angle[2] =(finall_angle[2] - MA600s[2].Angle);
-		error_angle[3] =(finall_angle[3] - MA600s[3].Angle);
-	 if(error_angle[0]>180.0f)
-    {
-        error_angle[0]-=360.0f;
-    }
-    else if(error_angle[0]<-180.0f)
-    {
-        error_angle[0]+=360.0f;
-    }
-	if(error_angle[1]>180.0f)
-    {
-        error_angle[1]-=360.0f;
-    }
-    else if(error_angle[1]<-180.0f)
-    {
-        error_angle[1]+=360.0f;
-    }if(error_angle[2]>180.0f)
-    {
-        error_angle[2]-=360.0f;
-    }
-    else if(error_angle[2]<-180.0f)
-    {
-        error_angle[2]+=360.0f;
-    }if(error_angle[3]>180.0f)
-    {
-        error_angle[3]-=360.0f;
-    }
-    else if(error_angle[3]<-180.0f)
-    {
-        error_angle[3]+=360.0f;
-    }
-	if(abs(error_angle[0])>90.0f)
-    {
-        dirt[0]=-1;
-        finall_angle[0]-=180.0f;
-    }
-    else
-    {
-        dirt[0]=1;
-    }
-	if(abs(error_angle[1])>90.0f)
-    {
-        dirt[1]=1;
-        finall_angle[1]-=180.0f;
-    }
-    else
-    {
-        dirt[1]=-1;
-    }
-	if(abs(error_angle[2])>90.0f)
-    {
-        dirt[2]=-1;
-        finall_angle[2]-=180.0f;
-    }
-    else
-    {
-        dirt[2]=1;
-    }
-	if(abs(error_angle[3])>90.0f)
-    {
-        dirt[3]=1;
-        finall_angle[3]-=180.0f;
-    }
-    else
-    {
-        dirt[3]=-1;
-    }
+       
     chassis_control.motor_location[0] = finall_angle[0] / 360.0f;
 		chassis_control.motor_location[1] = finall_angle[1] / 360.0f;
 		chassis_control.motor_location[2] = finall_angle[2] / 360.0f;
@@ -281,14 +294,16 @@ void chassis_target_calc(void)
 	else if( M3508_Helm[6].targetLocation>1.0f)
 	{
 		 M3508_Helm[6].targetLocation-=1.0f;
-	}if( M3508_Helm[5].targetLocation<0)
+	}
+	if( M3508_Helm[5].targetLocation<0)
 	{
 		 M3508_Helm[5].targetLocation+=1.0f;
 	}
 	else if( M3508_Helm[5].targetLocation>1.0f)
 	{
 		 M3508_Helm[5].targetLocation-=1.0f;
-	}if( M3508_Helm[4].targetLocation<0)
+	}
+	if( M3508_Helm[4].targetLocation<0)
 	{
 		 M3508_Helm[4].targetLocation+=1.0f;
 	}
@@ -313,10 +328,10 @@ void steer_chassis_out(void)
 {
     chassis_target_calc();
 	
-	  motor_location_change(&M3508_Helm[4],pid_control_normal,M3508_Helm[4].targetLocation,MA600s[0].Circle);
-	  motor_location_change(&M3508_Helm[5],pid_control_normal,M3508_Helm[5].targetLocation,MA600s[1].Circle);
-	  motor_location_change(&M3508_Helm[6],pid_control_normal,M3508_Helm[6].targetLocation,MA600s[2].Circle);
-	  motor_location_change(&M3508_Helm[7],pid_control_normal,M3508_Helm[7].targetLocation,MA600s[3].Circle);
+	  motor_location_change(&M3508_Helm[4],pid_control_angle,M3508_Helm[4].targetLocation,MA600s[0].Circles);
+	  motor_location_change(&M3508_Helm[5],pid_control_angle,M3508_Helm[5].targetLocation,MA600s[1].Circles);
+	  motor_location_change(&M3508_Helm[6],pid_control_angle,M3508_Helm[6].targetLocation,MA600s[2].Circles);
+	  motor_location_change(&M3508_Helm[7],pid_control_angle,M3508_Helm[7].targetLocation,MA600s[3].Circles);
 
     motor_velocity_change(&M3508_Helm[0],pid_control_normal,&hcan1,M3508_Helm[0].targetSpeed);
 	  motor_velocity_change(&M3508_Helm[1],pid_control_normal,&hcan1,M3508_Helm[1].targetSpeed);

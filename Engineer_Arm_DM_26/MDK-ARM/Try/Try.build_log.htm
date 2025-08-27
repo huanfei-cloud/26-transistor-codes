@@ -1,0 +1,345 @@
+<html>
+<body>
+<pre>
+<h1>�Vision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ��Vision V5.42.0.0
+Copyright (C) 2025 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: x ������, t, LIC=FYKYW-Q8XSY-EVG1R-K6C5C-6XJRA-WFUDC
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.42.0.0
+Toolchain Path:  D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 7 (build 960)
+Assembler:       Armasm.exe V5.06 update 7 (build 960)
+Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
+Library Manager: ArmAr.exe V5.06 update 7 (build 960)
+Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
+CPU DLL:         SARMCM3.DLL V5.42.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      CMSIS_AGDI.dll V1.33.22.0
+Dialog DLL:      TCM.DLL V1.56.6.0
+ 
+<h2>Project:</h2>
+D:\transistorս��\26-transistor-codes\Engineer_Arm_DM_26\MDK-ARM\Try.uvprojx
+Project File Date:  08/22/2025
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin'
+Rebuild target 'Try'
+assembling startup_stm32h743xx.s...
+compiling main.c...
+..\Devices\Device.h\Motor.h(65): warning:  #231-D: declaration is not visible outside of function
+  void motor_init(struct Struct_MOTOR_Manage_Object *motor, uint16_t _motor_id);
+..\Devices\Device.h\Motor.h(66): warning:  #231-D: declaration is not visible outside of function
+  void motor_encoder_state_change(struct Struct_MOTOR_Manage_Object *motor);
+..\Devices\Device.h\Motor.h(67): warning:  #231-D: declaration is not visible outside of function
+  void motor_velocity_change(struct Struct_MOTOR_Manage_Object *motor, enum pid_control model, float target);
+..\Devices\Device.h\Motor.h(68): warning:  #231-D: declaration is not visible outside of function
+  void motor_location_change(struct Struct_MOTOR_Manage_Object *motor, enum pid_control model, float target);
+..\Devices\Device.h\Motor.h(71): warning:  #231-D: declaration is not visible outside of function
+  void get_motor_data(struct Struct_MOTOR_Manage_Object *motor,uint8_t *data);
+../Core/Src/main.c: 5 warnings, 0 errors
+compiling gpio.c...
+compiling stm32h7xx_hal_msp.c...
+compiling stm32h7xx_it.c...
+..\Devices\Device.h\Motor.h(65): warning:  #231-D: declaration is not visible outside of function
+  void motor_init(struct Struct_MOTOR_Manage_Object *motor, uint16_t _motor_id);
+..\Devices\Device.h\Motor.h(66): warning:  #231-D: declaration is not visible outside of function
+  void motor_encoder_state_change(struct Struct_MOTOR_Manage_Object *motor);
+..\Devices\Device.h\Motor.h(67): warning:  #231-D: declaration is not visible outside of function
+  void motor_velocity_change(struct Struct_MOTOR_Manage_Object *motor, enum pid_control model, float target);
+..\Devices\Device.h\Motor.h(68): warning:  #231-D: declaration is not visible outside of function
+  void motor_location_change(struct Struct_MOTOR_Manage_Object *motor, enum pid_control model, float target);
+..\Devices\Device.h\Motor.h(71): warning:  #231-D: declaration is not visible outside of function
+  void get_motor_data(struct Struct_MOTOR_Manage_Object *motor,uint8_t *data);
+../Core/Src/stm32h7xx_it.c: 5 warnings, 0 errors
+compiling memorymap.c...
+compiling dma.c...
+compiling usart.c...
+compiling stm32h7xx_hal_timebase_tim.c...
+compiling stm32h7xx_hal_cortex.c...
+compiling fdcan.c...
+compiling freertos.c...
+..\Devices\Device.h\Motor.h(65): warning:  #231-D: declaration is not visible outside of function
+  void motor_init(struct Struct_MOTOR_Manage_Object *motor, uint16_t _motor_id);
+..\Devices\Device.h\Motor.h(66): warning:  #231-D: declaration is not visible outside of function
+  void motor_encoder_state_change(struct Struct_MOTOR_Manage_Object *motor);
+..\Devices\Device.h\Motor.h(67): warning:  #231-D: declaration is not visible outside of function
+  void motor_velocity_change(struct Struct_MOTOR_Manage_Object *motor, enum pid_control model, float target);
+..\Devices\Device.h\Motor.h(68): warning:  #231-D: declaration is not visible outside of function
+  void motor_location_change(struct Struct_MOTOR_Manage_Object *motor, enum pid_control model, float target);
+..\Devices\Device.h\Motor.h(71): warning:  #231-D: declaration is not visible outside of function
+  void get_motor_data(struct Struct_MOTOR_Manage_Object *motor,uint8_t *data);
+../Core/Src/freertos.c: 5 warnings, 0 errors
+compiling stm32h7xx_hal_rcc.c...
+compiling stm32h7xx_hal_tim_ex.c...
+compiling stm32h7xx_hal_fdcan.c...
+compiling stm32h7xx_hal_rcc_ex.c...
+compiling stm32h7xx_hal_tim.c...
+compiling stm32h7xx_hal_flash.c...
+compiling stm32h7xx_hal_flash_ex.c...
+compiling stm32h7xx_hal_gpio.c...
+compiling stm32h7xx_hal_hsem.c...
+compiling croutine.c...
+compiling stm32h7xx_hal_dma_ex.c...
+compiling event_groups.c...
+compiling stm32h7xx_hal_pwr.c...
+compiling list.c...
+compiling stm32h7xx_hal_mdma.c...
+compiling stm32h7xx_hal_dma.c...
+compiling stm32h7xx_hal_pwr_ex.c...
+compiling queue.c...
+compiling stream_buffer.c...
+compiling stm32h7xx_hal_i2c_ex.c...
+compiling stm32h7xx_hal.c...
+compiling system_stm32h7xx.c...
+compiling stm32h7xx_hal_exti.c...
+compiling stm32h7xx_hal_uart_ex.c...
+compiling stm32h7xx_hal_uart.c...
+compiling stm32h7xx_hal_i2c.c...
+compiling tasks.c...
+compiling timers.c...
+compiling heap_4.c...
+compiling Arm_Control.c...
+..\Devices\Device.h\Motor.h(65): warning:  #231-D: declaration is not visible outside of function
+  void motor_init(struct Struct_MOTOR_Manage_Object *motor, uint16_t _motor_id);
+..\Devices\Device.h\Motor.h(66): warning:  #231-D: declaration is not visible outside of function
+  void motor_encoder_state_change(struct Struct_MOTOR_Manage_Object *motor);
+..\Devices\Device.h\Motor.h(67): warning:  #231-D: declaration is not visible outside of function
+  void motor_velocity_change(struct Struct_MOTOR_Manage_Object *motor, enum pid_control model, float target);
+..\Devices\Device.h\Motor.h(68): warning:  #231-D: declaration is not visible outside of function
+  void motor_location_change(struct Struct_MOTOR_Manage_Object *motor, enum pid_control model, float target);
+..\Devices\Device.h\Motor.h(71): warning:  #231-D: declaration is not visible outside of function
+  void get_motor_data(struct Struct_MOTOR_Manage_Object *motor,uint8_t *data);
+..\Apps\Apps.c\Arm_Control.c(49): warning:  #167-D: argument of type "struct Struct_MOTOR_Manage_Object *" is incompatible with parameter of type "struct Struct_MOTOR_Manage_Object *"
+      motor_init(&joint_motor4, 0x208);
+..\Apps\Apps.c\Arm_Control.c(50): warning:  #167-D: argument of type "struct Struct_MOTOR_Manage_Object *" is incompatible with parameter of type "struct Struct_MOTOR_Manage_Object *"
+      motor_init(&joint_motor5, 0x202);
+..\Apps\Apps.c\Arm_Control.c(51): warning:  #167-D: argument of type "struct Struct_MOTOR_Manage_Object *" is incompatible with parameter of type "struct Struct_MOTOR_Manage_Object *"
+      motor_init(&joint_motor6, 0x203);
+..\Apps\Apps.c\Arm_Control.c(53): error:  #70: incomplete type is not allowed
+      PID_Init(&(joint_motor4.v_pid_object), 5, 0.03, 0.3, 0, 10000, 16000, 200);
+..\Apps\Apps.c\Arm_Control.c(54): error:  #70: incomplete type is not allowed
+      PID_Init(&(joint_motor5.v_pid_object), 5, 0, 5, 0, 10000, 30000, 20);
+..\Apps\Apps.c\Arm_Control.c(55): error:  #70: incomplete type is not allowed
+      PID_Init(&(joint_motor6.v_pid_object), 5, 0,5, 0, 10000, 30000, 20);
+..\Apps\Apps.c\Arm_Control.c(57): error:  #70: incomplete type is not allowed
+      PID_Init(&(joint_motor4.l_pid_object), 5, 0.03, 0.3, 0, 10000, 16000, 20);
+..\Apps\Apps.c\Arm_Control.c(58): error:  #70: incomplete type is not allowed
+      PID_Init(&(joint_motor5.l_pid_object), 0.5, 0, 0, 0, 1000, 16000, 20);
+..\Apps\Apps.c\Arm_Control.c(59): error:  #70: incomplete type is not allowed
+      PID_Init(&(joint_motor6.l_pid_object), 0.5, 0, 0, 0, 1000, 16000, 20);
+..\Apps\Apps.c\Arm_Control.c(68): error:  #70: incomplete type is not allowed
+      joint_motor4.target_location = 0.0f;
+..\Apps\Apps.c\Arm_Control.c(69): error:  #70: incomplete type is not allowed
+      joint_motor5.target_location = 0.0f;
+..\Apps\Apps.c\Arm_Control.c(70): error:  #70: incomplete type is not allowed
+      joint_motor6.target_location = 0.0f;
+..\Apps\Apps.c\Arm_Control.c(109): error:  #70: incomplete type is not allowed
+  	joint_motor4.target_location = arm_angle[3] / 360.0f; // 相对于上电零点的圈数
+..\Apps\Apps.c\Arm_Control.c(110): error:  #70: incomplete type is not allowed
+          joint_motor5.target_location = -36*(arm_angle[4]/360.0f );
+..\Apps\Apps.c\Arm_Control.c(111): error:  #70: incomplete type is not allowed
+          joint_motor6.target_location = -36*(arm_angle[5]/360.0f );
+..\Apps\Apps.c\Arm_Control.c(115): error:  #70: incomplete type is not allowed
+          motor_location_change(&joint_motor4, pid_control2, joint_motor4.target_location);
+..\Apps\Apps.c\Arm_Control.c(115): warning:  #167-D: argument of type "struct Struct_MOTOR_Manage_Object *" is incompatible with parameter of type "struct Struct_MOTOR_Manage_Object *"
+          motor_location_change(&joint_motor4, pid_control2, joint_motor4.target_location);
+..\Apps\Apps.c\Arm_Control.c(116): error:  #70: incomplete type is not allowed
+          motor_location_change(&joint_motor5, pid_control2, joint_motor5.target_location);
+..\Apps\Apps.c\Arm_Control.c(116): warning:  #167-D: argument of type "struct Struct_MOTOR_Manage_Object *" is incompatible with parameter of type "struct Struct_MOTOR_Manage_Object *"
+          motor_location_change(&joint_motor5, pid_control2, joint_motor5.target_location);
+..\Apps\Apps.c\Arm_Control.c(117): error:  #70: incomplete type is not allowed
+          motor_location_change(&joint_motor6, pid_control2, joint_motor6.target_location);
+..\Apps\Apps.c\Arm_Control.c(117): warning:  #167-D: argument of type "struct Struct_MOTOR_Manage_Object *" is incompatible with parameter of type "struct Struct_MOTOR_Manage_Object *"
+          motor_location_change(&joint_motor6, pid_control2, joint_motor6.target_location);
+..\Apps\Apps.c\Arm_Control.c(118): error:  #70: incomplete type is not allowed
+          motor_velocity_change(&joint_motor4, pid_control2, joint_motor4.target_v);
+..\Apps\Apps.c\Arm_Control.c(118): warning:  #167-D: argument of type "struct Struct_MOTOR_Manage_Object *" is incompatible with parameter of type "struct Struct_MOTOR_Manage_Object *"
+          motor_velocity_change(&joint_motor4, pid_control2, joint_motor4.target_v);
+..\Apps\Apps.c\Arm_Control.c(119): error:  #70: incomplete type is not allowed
+          motor_velocity_change(&joint_motor5, pid_control2, joint_motor5.target_v);
+..\Apps\Apps.c\Arm_Control.c(119): warning:  #167-D: argument of type "struct Struct_MOTOR_Manage_Object *" is incompatible with parameter of type "struct Struct_MOTOR_Manage_Object *"
+          motor_velocity_change(&joint_motor5, pid_control2, joint_motor5.target_v);
+..\Apps\Apps.c\Arm_Control.c(120): error:  #70: incomplete type is not allowed
+          motor_velocity_change(&joint_motor6, pid_control2, joint_motor6.target_v);
+..\Apps\Apps.c\Arm_Control.c(120): warning:  #167-D: argument of type "struct Struct_MOTOR_Manage_Object *" is incompatible with parameter of type "struct Struct_MOTOR_Manage_Object *"
+          motor_velocity_change(&joint_motor6, pid_control2, joint_motor6.target_v);
+..\Apps\Apps.h\Arm_Control.h(23): error:  #235: variable "joint_motor4" was declared with a never-completed type
+  extern struct Struct_MOTOR_Manage_Object joint_motor4; // 6020
+..\Apps\Apps.h\Arm_Control.h(24): error:  #235: variable "joint_motor5" was declared with a never-completed type
+  extern struct Struct_MOTOR_Manage_Object joint_motor5; // 2006
+..\Apps\Apps.h\Arm_Control.h(25): error:  #235: variable "joint_motor6" was declared with a never-completed type
+  extern struct Struct_MOTOR_Manage_Object joint_motor6; // 2006
+..\Apps\Apps.c\Arm_Control.c: 14 warnings, 21 errors
+compiling MA600_base.c...
+..\Devices\Device.h\MA600_base.h(17): error:  #5: cannot open source input file "spi.h": No such file or directory
+  #include "spi.h"
+..\Devices\Device.c\MA600_base.c: 0 warnings, 1 error
+compiling MA600_use.c...
+..\Devices\Device.h\MA600_base.h(17): error:  #5: cannot open source input file "spi.h": No such file or directory
+  #include "spi.h"
+..\Devices\Device.c\MA600_use.c: 0 warnings, 1 error
+compiling motor.c...
+..\Devices\Device.h\motor.h(65): warning:  #231-D: declaration is not visible outside of function
+  void motor_init(struct Struct_MOTOR_Manage_Object *motor, uint16_t _motor_id);
+..\Devices\Device.h\motor.h(66): warning:  #231-D: declaration is not visible outside of function
+  void motor_encoder_state_change(struct Struct_MOTOR_Manage_Object *motor);
+..\Devices\Device.h\motor.h(67): warning:  #231-D: declaration is not visible outside of function
+  void motor_velocity_change(struct Struct_MOTOR_Manage_Object *motor, enum pid_control model, float target);
+..\Devices\Device.h\motor.h(68): warning:  #231-D: declaration is not visible outside of function
+  void motor_location_change(struct Struct_MOTOR_Manage_Object *motor, enum pid_control model, float target);
+..\Devices\Device.h\motor.h(71): warning:  #231-D: declaration is not visible outside of function
+  void get_motor_data(struct Struct_MOTOR_Manage_Object *motor,uint8_t *data);
+..\Devices\Device.c\motor.c(17): warning:  #231-D: declaration is not visible outside of function
+  void motor_init(struct Struct_MOTOR_Manage_Object
+..\Devices\Device.c\motor.c(17): error:  #147-D: declaration is incompatible with "void motor_init(struct Struct_MOTOR_Manage_Object *, uint16_t)"  (declared at line 65 of "..\Devices\Device.h\motor.h")
+  void motor_init(struct Struct_MOTOR_Manage_Object
+..\Devices\Device.c\motor.c(21): error:  #393: pointer to incomplete class type is not allowed
+  	motor->can_id = _motor_id;
+..\Devices\Device.c\motor.c(22): error:  #393: pointer to incomplete class type is not allowed
+  	motor->omega = 0;
+..\Devices\Device.c\motor.c(23): error:  #393: pointer to incomplete class type is not allowed
+  	motor->temperaure = 0;
+..\Devices\Device.c\motor.c(24): error:  #393: pointer to incomplete class type is not allowed
+  	motor->encoder = 0;
+..\Devices\Device.c\motor.c(25): error:  #393: pointer to incomplete class type is not allowed
+  	motor->torque = 0;
+..\Devices\Device.c\motor.c(27): error:  #393: pointer to incomplete class type is not allowed
+  	motor->i_send = 0;
+..\Devices\Device.c\motor.c(28): error:  #393: pointer to incomplete class type is not allowed
+  	motor->pre_encoder = 0;
+..\Devices\Device.c\motor.c(29): error:  #393: pointer to incomplete class type is not allowed
+  	motor->now_encoder = 0;
+..\Devices\Device.c\motor.c(30): error:  #393: pointer to incomplete class type is not allowed
+  	motor->delta_encoder = 0;
+..\Devices\Device.c\motor.c(31): error:  #393: pointer to incomplete class type is not allowed
+  	motor->total_encoder = 0;
+..\Devices\Device.c\motor.c(32): error:  #393: pointer to incomplete class type is not allowed
+  	motor->total_round = 0;
+..\Devices\Device.c\motor.c(33): error:  #393: pointer to incomplete class type is not allowed
+  	motor->zero_flag=0;
+..\Devices\Device.c\motor.c(34): error:  #393: pointer to incomplete class type is not allowed
+  	motor->UpdateFlag=0;
+..\Devices\Device.c\motor.c(54): warning:  #231-D: declaration is not visible outside of function
+  void motor_encoder_state_change(struct Struct_MOTOR_Manage_Object *motor)
+..\Devices\Device.c\motor.c(54): error:  #147-D: declaration is incompatible with "void motor_encoder_state_change(struct Struct_MOTOR_Manage_Object *)"  (declared at line 66 of "..\Devices\Device.h\motor.h")
+  void motor_encoder_state_change(struct Struct_MOTOR_Manage_Object *motor)
+..\Devices\Device.c\motor.c(56): error:  #393: pointer to incomplete class type is not allowed
+  	motor->now_encoder = motor->encoder;
+..\Devices\Device.c\motor.c(56): error:  #393: pointer to incomplete class type is not allowed
+  	motor->now_encoder = motor->encoder;
+..\Devices\Device.c\motor.c(57): error:  #393: pointer to incomplete class type is not allowed
+  	motor->delta_encoder = (int32_t)(motor->now_encoder - motor->pre_encoder);
+..\Devices\Device.c\motor.c(57): error:  #393: pointer to incomplete class type is not allowed
+  	motor->delta_encoder = (int32_t)(motor->now_encoder - motor->pre_encoder);
+..\Devices\Device.c\motor.c(57): error:  #393: pointer to incomplete class type is not allowed
+  	motor->delta_encoder = (int32_t)(motor->now_encoder - motor->pre_encoder);
+..\Devices\Device.c\motor.c(58): error:  #393: pointer to incomplete class type is not allowed
+  	if(motor->zero_flag==1)//必须保证pre_encoder不为0才能判断圈数
+..\Devices\Device.c\motor.c(60): error:  #393: pointer to incomplete class type is not allowed
+  		if (motor->delta_encoder < -4096)
+..\Devices\Device.c\motor.c(63): error:  #393: pointer to incomplete class type is not allowed
+  			motor->total_round++;
+..\Devices\Device.c\motor.c(65): error:  #393: pointer to incomplete class type is not allowed
+  		if (motor->delta_encoder > 4096)
+..\Devices\Device.c\motor.c(68): error:  #393: pointer to incomplete class type is not allowed
+  			motor->total_round--;
+..\Devices\Device.c\motor.c(72): error:  #393: pointer to incomplete class type is not allowed
+  		if(motor->zero_flag==0)
+..\Devices\Device.c\motor.c(74): error:  #393: pointer to incomplete class type is not allowed
+  			motor->zero_encoder=motor->encoder;
+..\Devices\Device.c\motor.c(74): error:  #393: pointer to incomplete class type is not allowed
+  			motor->zero_encoder=motor->encoder;
+..\Devices\Device.c\motor.c(75): error:  #393: pointer to incomplete class type is not allowed
+  			motor->zero_flag=1;
+..\Devices\Device.c\motor.c(77): error:  #393: pointer to incomplete class type is not allowed
+  		motor->total_encoder = (motor->total_round) * 8192 + (int32_t)motor->now_encoder - motor->zero_encoder;
+..\Devices\Device.c\motor.c: 7 warnings, 30 errors
+compiling DT7.c...
+..\Devices\Device.h\DT7.h(16): error:  #5: cannot open source input file "BSP_BoardCommunication.h": No such file or directory
+  #include "BSP_BoardCommunication.h"
+..\Devices\Device.c\DT7.c: 0 warnings, 1 error
+compiling cmsis_os.c...
+compiling port.c...
+compiling pid.c...
+compiling bsp_fdcan.c...
+..\Devices\Device.h\motor.h(65): warning:  #231-D: declaration is not visible outside of function
+  void motor_init(struct Struct_MOTOR_Manage_Object *motor, uint16_t _motor_id);
+..\Devices\Device.h\motor.h(66): warning:  #231-D: declaration is not visible outside of function
+  void motor_encoder_state_change(struct Struct_MOTOR_Manage_Object *motor);
+..\Devices\Device.h\motor.h(67): warning:  #231-D: declaration is not visible outside of function
+  void motor_velocity_change(struct Struct_MOTOR_Manage_Object *motor, enum pid_control model, float target);
+..\Devices\Device.h\motor.h(68): warning:  #231-D: declaration is not visible outside of function
+  void motor_location_change(struct Struct_MOTOR_Manage_Object *motor, enum pid_control model, float target);
+..\Devices\Device.h\motor.h(71): warning:  #231-D: declaration is not visible outside of function
+  void get_motor_data(struct Struct_MOTOR_Manage_Object *motor,uint8_t *data);
+..\BSP\BSP.c\bsp_fdcan.c(195): warning:  #167-D: argument of type "struct Struct_MOTOR_Manage_Object *" is incompatible with parameter of type "struct Struct_MOTOR_Manage_Object *"
+          get_motor_data(&joint_motor4, rx_data);
+..\BSP\BSP.c\bsp_fdcan.c(196): warning:  #167-D: argument of type "struct Struct_MOTOR_Manage_Object *" is incompatible with parameter of type "struct Struct_MOTOR_Manage_Object *"
+          motor_encoder_state_change(&joint_motor4);
+..\BSP\BSP.c\bsp_fdcan.c(202): warning:  #167-D: argument of type "struct Struct_MOTOR_Manage_Object *" is incompatible with parameter of type "struct Struct_MOTOR_Manage_Object *"
+          get_motor_data(&joint_motor5, rx_data);
+..\BSP\BSP.c\bsp_fdcan.c(203): warning:  #167-D: argument of type "struct Struct_MOTOR_Manage_Object *" is incompatible with parameter of type "struct Struct_MOTOR_Manage_Object *"
+          motor_encoder_state_change(&joint_motor5);
+..\BSP\BSP.c\bsp_fdcan.c(209): warning:  #167-D: argument of type "struct Struct_MOTOR_Manage_Object *" is incompatible with parameter of type "struct Struct_MOTOR_Manage_Object *"
+          get_motor_data(&joint_motor6, rx_data);
+..\BSP\BSP.c\bsp_fdcan.c(210): warning:  #167-D: argument of type "struct Struct_MOTOR_Manage_Object *" is incompatible with parameter of type "struct Struct_MOTOR_Manage_Object *"
+          motor_encoder_state_change(&joint_motor6);
+..\BSP\BSP.c\bsp_fdcan.c: 11 warnings, 0 errors
+compiling bsp_usart.c...
+..\Devices\Device.h\Motor.h(65): warning:  #231-D: declaration is not visible outside of function
+  void motor_init(struct Struct_MOTOR_Manage_Object *motor, uint16_t _motor_id);
+..\Devices\Device.h\Motor.h(66): warning:  #231-D: declaration is not visible outside of function
+  void motor_encoder_state_change(struct Struct_MOTOR_Manage_Object *motor);
+..\Devices\Device.h\Motor.h(67): warning:  #231-D: declaration is not visible outside of function
+  void motor_velocity_change(struct Struct_MOTOR_Manage_Object *motor, enum pid_control model, float target);
+..\Devices\Device.h\Motor.h(68): warning:  #231-D: declaration is not visible outside of function
+  void motor_location_change(struct Struct_MOTOR_Manage_Object *motor, enum pid_control model, float target);
+..\Devices\Device.h\Motor.h(71): warning:  #231-D: declaration is not visible outside of function
+  void get_motor_data(struct Struct_MOTOR_Manage_Object *motor,uint8_t *data);
+..\BSP\BSP.c\bsp_usart.c: 5 warnings, 0 errors
+compiling BoardCommunication.c...
+compiling DM_Motor_Drv.c...
+compiling DM_Motor_Ctrl.c...
+compiling Task_Arm.c...
+..\Devices\Device.h\Motor.h(65): warning:  #231-D: declaration is not visible outside of function
+  void motor_init(struct Struct_MOTOR_Manage_Object *motor, uint16_t _motor_id);
+..\Devices\Device.h\Motor.h(66): warning:  #231-D: declaration is not visible outside of function
+  void motor_encoder_state_change(struct Struct_MOTOR_Manage_Object *motor);
+..\Devices\Device.h\Motor.h(67): warning:  #231-D: declaration is not visible outside of function
+  void motor_velocity_change(struct Struct_MOTOR_Manage_Object *motor, enum pid_control model, float target);
+..\Devices\Device.h\Motor.h(68): warning:  #231-D: declaration is not visible outside of function
+  void motor_location_change(struct Struct_MOTOR_Manage_Object *motor, enum pid_control model, float target);
+..\Devices\Device.h\Motor.h(71): warning:  #231-D: declaration is not visible outside of function
+  void get_motor_data(struct Struct_MOTOR_Manage_Object *motor,uint8_t *data);
+..\Tasks\Tasks.c\Task_Arm.c: 5 warnings, 0 errors
+"Try\Try.axf" - 54 Error(s), 57 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS.6.1.0.pack
+                ARM::CMSIS@6.1.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 6.1.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32H7xx_DFP.4.0.0.pack
+                Keil::STM32H7xx_DFP@4.0.0
+                STMicroelectronics STM32H7 Series Device Support
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Try
+  D:/ProgramFile/MDK/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@6.1.0
+      Include file:  CMSIS/Core/Include/tz_context.h
+Target not created.
+Build Time Elapsed:  00:00:09
+</pre>
+</body>
+</html>

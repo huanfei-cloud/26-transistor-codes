@@ -232,10 +232,8 @@ void ALL_Init(void const * argument)
 	    /* CAN�жϳ�ʼ�� */
         Can_Fun.CAN_IT_Init(&hcan1, Can1_Type);
         Can_Fun.CAN_IT_Init(&hcan2, Can2_Type);
-		  /*编码器初始化*/
-		  MA600sInit();
-//		  /*编码器设置菊花链模式*/
-//		  setChrysanthemumChains();
+		   /*编码器初始化*/
+		   MA600sInit();
 		  /*���̳�ʼ��*/
 		   chassis_init();
 		  /*ң������ʼ��*/

@@ -17,7 +17,7 @@
         <TargetCommonOption>
           <Device>STM32F407IGHx</Device>
           <Vendor>STMicroelectronics</Vendor>
-          <PackID>Keil.STM32F4xx_DFP.2.17.1</PackID>
+          <PackID>Keil.STM32F4xx_DFP.3.0.0</PackID>
           <PackURL>https://www.keil.com/pack/</PackURL>
           <Cpu>IRAM(0x20000000-0x2001BFFF) IRAM2(0x2001C000-0x2001FFFF) IROM(0x8000000-0x80FFFFF) CLOCK(25000000) FPU2 CPUTYPE("Cortex-M4")</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -637,9 +637,9 @@
               <FilePath>..\Devices\Devices.c\M2006_Motor.c</FilePath>
             </File>
             <File>
-              <FileName>J4310_Motor.c</FileName>
+              <FileName>DM_Motor.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Devices\Devices.c\J4310_Motor.c</FilePath>
+              <FilePath>..\Devices\Devices.c\DM_Motor.c</FilePath>
             </File>
             <File>
               <FileName>Saber_C3.h</FileName>
@@ -655,6 +655,36 @@
               <FileName>DT7.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\Devices\Devices.h\DT7.h</FilePath>
+            </File>
+            <File>
+              <FileName>MA600_use.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Devices\Devices.h\MA600_use.h</FilePath>
+            </File>
+            <File>
+              <FileName>MA600_base.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Devices\Devices.h\MA600_base.h</FilePath>
+            </File>
+            <File>
+              <FileName>M3508_Motor.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Devices\Devices.h\M3508_Motor.h</FilePath>
+            </File>
+            <File>
+              <FileName>M6020_Motor.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Devices\Devices.h\M6020_Motor.h</FilePath>
+            </File>
+            <File>
+              <FileName>M2006_Motor.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Devices\Devices.h\M2006_Motor.h</FilePath>
+            </File>
+            <File>
+              <FileName>DM_Motor.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Devices\Devices.h\DM_Motor.h</FilePath>
             </File>
           </Files>
         </Group>
