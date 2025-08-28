@@ -16,7 +16,7 @@ void Robot_Control(void const *argument)
 {
     portTickType xLastWakeTime;
     xLastWakeTime = xTaskGetTickCount();
-    const TickType_t TimeIncrement = pdMS_TO_TICKS(2); //Ã¿2ºÁÃëÇ¿ÖÆ½øÈëÊý¾Ý·¢ËÍ
+    const TickType_t TimeIncrement = pdMS_TO_TICKS(2); //Ã¿2ï¿½ï¿½ï¿½ï¿½Ç¿ï¿½Æ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý·ï¿½ï¿½ï¿½
 	
 //	while(!M6020s_Yaw.InfoUpdateFlag)
 //	{
@@ -30,52 +30,67 @@ void Robot_Control(void const *argument)
         Saber_Read();
         Cloud_FUN.Cloud_Sport_Out();
 			
-			/********½â¾öyawÖáÁ½¸öÇøÓò¶¶¶¯ÎÊÌâ********/
+			/********ï¿½ï¿½ï¿½yawï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ò¶¶¶ï¿½ï¿½ï¿½ï¿½ï¿½********/
 		  if( M6020s_Yaw.realAngle < 1900)
 			{
 				M6020s_YawIPID.Kp = yaw_I_p - 150.0f;
 				M6020s_YawIPID.Kd = yaw_I_d - 150.0f;
 				
-				if( M6020s_Yaw.realAngle > 700 && M6020s_Yaw.realAngle < 900 )
-				{
-			      AutoAim_M6020s_YawIPID.Kp = yaw_I_Aim_p - 300.0f;
-				    AutoAim_M6020s_YawIPID.Kd = yaw_I_Aim_d - 300.0f;
-				}
-				else
-				{
-					  AutoAim_M6020s_YawIPID.Kp = yaw_I_Aim_p - 200.0f;
-				    AutoAim_M6020s_YawIPID.Kd = yaw_I_Aim_d - 200.0f;
-				}
 			}
 			else if( M6020s_Yaw.realAngle > 3700 && M6020s_Yaw.realAngle < 5700)
 			{
 				M6020s_YawIPID.Kp = yaw_I_p - 150.0f;
 				M6020s_YawIPID.Kd = yaw_I_d - 150.0f;
 				
-				if( M6020s_Yaw.realAngle > 4500 && M6020s_Yaw.realAngle < 4700)
-				{
-				   AutoAim_M6020s_YawIPID.Kp = yaw_I_Aim_p - 300.0f;
-				   AutoAim_M6020s_YawIPID.Kd = yaw_I_Aim_d - 300.0f;
-				}
-				else
-				{
-					AutoAim_M6020s_YawIPID.Kp = yaw_I_Aim_p - 200.0f;
-				  AutoAim_M6020s_YawIPID.Kd = yaw_I_Aim_d - 200.0f;
-				}
 			}
 			else if( M6020s_Yaw.realAngle > 7900)
 			{
 				M6020s_YawIPID.Kp = yaw_I_p - 150.0f;
 				M6020s_YawIPID.Kd = yaw_I_d - 150.0f;
-				AutoAim_M6020s_YawIPID.Kp = yaw_I_Aim_p - 200.0f;
-				AutoAim_M6020s_YawIPID.Kd = yaw_I_Aim_d - 200.0f;
 			}
 			else
 			{
 				M6020s_YawIPID.Kp = yaw_I_p;
 				M6020s_YawIPID.Kd = yaw_I_d;
-				AutoAim_M6020s_YawIPID.Kp = yaw_I_Aim_p;
-				AutoAim_M6020s_YawIPID.Kd = yaw_I_Aim_d;
+			}
+			AutoAim_M6020s_YawIPID.Kp = 1100.0f;
+			AutoAim_M6020s_YawIPID.Ki =  0.5f;
+			AutoAim_M6020s_YawIPID.Kd = 950.0f;
+			AutoAim_M6020s_YawIPID.Kf = 6.0f;
+			AutoAim_M6020s_YawOPID.Kp = 0.16;
+			AutoAim_M6020s_YawOPID.Ki = 0.00001;
+			AutoAim_M6020s_YawOPID.Kd = 0.01;
+			AutoAim_M6020s_YawOPID.Kf = yaw_O_Aim_f;
+			
+			if( M6020s_Yaw.realAngle > 5250 && M6020s_Yaw.realAngle < 5600)
+			{
+			AutoAim_M6020s_YawOPID.Kp = 0.08f;
+			AutoAim_M6020s_YawOPID.Kd = 0.03f;
+			}
+			else if( M6020s_Yaw.realAngle > 4300 && M6020s_Yaw.realAngle < 4500)
+			{
+			AutoAim_M6020s_YawOPID.Kp = 0.08f;
+			AutoAim_M6020s_YawOPID.Kd = 0.03f;
+			}
+			else if( M6020s_Yaw.realAngle > 1600 && M6020s_Yaw.realAngle < 1800)
+			{
+			AutoAim_M6020s_YawOPID.Kp = 0.08f;
+			AutoAim_M6020s_YawOPID.Kd = 0.03f;
+			}
+			else if( M6020s_Yaw.realAngle > 300 && M6020s_Yaw.realAngle < 500)
+			{
+			AutoAim_M6020s_YawOPID.Kp = 0.08f;
+			AutoAim_M6020s_YawOPID.Kd = 0.03f;
+			}
+			else if( M6020s_Yaw.realAngle > 8100 || M6020s_Yaw.realAngle < 100)
+			{
+			AutoAim_M6020s_YawOPID.Kp = 0.08f;
+			AutoAim_M6020s_YawOPID.Kd = 0.03f;
+			}
+			else
+			{
+				AutoAim_M6020s_YawOPID.Kp = 0.10f;
+			AutoAim_M6020s_YawOPID.Kd = 0.01f;
 			}
 			/******************End******************/
 			  

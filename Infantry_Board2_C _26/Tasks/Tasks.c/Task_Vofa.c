@@ -24,7 +24,6 @@
 	 {
 		 float data = M6020s_Yaw.realAngle;
      JustFloat_Send(&data,1,USART6);
-		 
 		 vTaskDelayUntil(&xLastWakeTime, TimeIncrement);
 	 }
  }

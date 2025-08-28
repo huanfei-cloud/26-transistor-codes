@@ -1,9 +1,9 @@
 draftofomniwheel\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/queue.c
-draftofomniwheel\queue.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdlib.h
-draftofomniwheel\queue.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\string.h
+draftofomniwheel\queue.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stdlib.h
+draftofomniwheel\queue.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\string.h
 draftofomniwheel\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-draftofomniwheel\queue.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stddef.h
-draftofomniwheel\queue.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdint.h
+draftofomniwheel\queue.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stddef.h
+draftofomniwheel\queue.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stdint.h
 draftofomniwheel\queue.o: ../Core/Inc/FreeRTOSConfig.h
 draftofomniwheel\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 draftofomniwheel\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

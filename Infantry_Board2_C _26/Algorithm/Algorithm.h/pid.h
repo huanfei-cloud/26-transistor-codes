@@ -32,16 +32,25 @@
 #define yaw_I_i 0.12f
 #define yaw_I_d 1000.0f
 //����yaw��λ�û�
-#define yaw_O_Aim_p 2.082f
+//#define yaw_O_Aim_p 2.082f
+//#define yaw_O_Aim_i 0.00001f
+//#define yaw_O_Aim_d 1.0f
+//#define yaw_O_Aim_f 0.0f
+//����yaw���ٶȻ�
+//#define yaw_I_Aim_p 1100.0f
+//#define yaw_I_Aim_i 60.0f
+//#define yaw_I_Aim_d 950.0f
+//#define yaw_I_Aim_f 100.0f
+//����yaw��λ�û�
+#define yaw_O_Aim_p 0.16f
 #define yaw_O_Aim_i 0.00001f
-#define yaw_O_Aim_d 1.0f
+#define yaw_O_Aim_d 0.01f
 #define yaw_O_Aim_f 0.0f
 //����yaw���ٶȻ�
 #define yaw_I_Aim_p 1100.0f
-#define yaw_I_Aim_i 60.0f
+#define yaw_I_Aim_i 0.5f
 #define yaw_I_Aim_d 950.0f
-#define yaw_I_Aim_f 100.0f
-
+#define yaw_I_Aim_f 6.0f
 /**********PID�������ݽӿ�************/
 
 // pid���Ʒ�ʽѡ��

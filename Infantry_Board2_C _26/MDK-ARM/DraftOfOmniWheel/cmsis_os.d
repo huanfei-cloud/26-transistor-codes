@@ -1,9 +1,9 @@
 draftofomniwheel\cmsis_os.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c
-draftofomniwheel\cmsis_os.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\string.h
+draftofomniwheel\cmsis_os.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\string.h
 draftofomniwheel\cmsis_os.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 draftofomniwheel\cmsis_os.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-draftofomniwheel\cmsis_os.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stddef.h
-draftofomniwheel\cmsis_os.o: D:\ProgramFile\MDK\Core\ARM\ARMCC\Bin\..\include\stdint.h
+draftofomniwheel\cmsis_os.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stddef.h
+draftofomniwheel\cmsis_os.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stdint.h
 draftofomniwheel\cmsis_os.o: ../Core/Inc/FreeRTOSConfig.h
 draftofomniwheel\cmsis_os.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 draftofomniwheel\cmsis_os.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
