@@ -1,0 +1,32 @@
+{
+    "files.associations": {
+        "speedramp.h": "c",
+        "fuzzypid.h": "c",
+        "arm_math.h": "c",
+        "user_lib.h": "c",
+        "feedforward.h": "c",
+        "crc.h": "c",
+        "protocol_uppercomputer.h": "c",
+        "bsp_can.h": "c",
+        "bsp_usart.h": "c",
+        "bsp_delay.h": "c",
+        "bsp_boardcommunication.h": "c",
+        "j4310_motor.h": "c",
+        "m3508_motor.h": "c",
+        "sbus.h": "c",
+        "dt7.h": "c",
+        "cloud_control.h": "c",
+        "dial.h": "c",
+        "frictionwheel.h": "c",
+        "shoot.h": "c",
+        "task_communicatewithpc.h": "c",
+        "task_offlinecheck.h": "c",
+        "task_robotcontrol.h": "c",
+        "task_canreceive.h": "c",
+        "task_cansend.h": "c",
+        "task_vofa.h": "c",
+        "main.h": "c",
+        "kalman_filter.h": "c",
+        "task_j4310_onlinecheck.h": "c"
+    }
+}
