@@ -1,0 +1,21 @@
+{
+    "files.associations": {
+        "frictionwheel.h": "c",
+        "bsp_boardcommunication.h": "c",
+        "sbus.h": "c",
+        "task_j4310_onlinecheck.h": "c",
+        "task_canreceive.h": "c",
+        "stdbool.h": "c",
+        "stdio.h": "c",
+        "task_robotcontrol.h": "c",
+        "saber_c3.h": "c",
+        "main.h": "c",
+        "pid.h": "c",
+        "cloud_control.h": "c",
+        "shoot.h": "c",
+        "kalman_filter.h": "c",
+        "m6020_motor.h": "c",
+        "j4310_motor.h": "c",
+        "fuzzypid.h": "c"
+    }
+}
