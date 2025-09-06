@@ -1,6 +1,5 @@
 #include "bsp_delay.h"
 
-
 static uint8_t fac_us = 0;
 static uint32_t fac_ms = 0;
 
@@ -8,7 +7,6 @@ void delay_init(void)
 {
     fac_us = SystemCoreClock / 1000000;
     fac_ms = SystemCoreClock / 1000;
-
 }
 
 void delay_us(uint16_t nus)

@@ -61,16 +61,15 @@ QueueHandle_t CAN_SendHandle;                  // can发送队列
 QueueHandle_t Communicate_ReceivefromPCHandle; // 从PC接收到的数据队列
 
 /***********Tasks************/
-osThreadId Task_Can1MsgRecHandle; // can1消息接收任务句柄
-osThreadId Task_Can2MsgRecHandle; // can2消息接收任务句柄
-osThreadId Task_CanSendHandle;    // can发送任务句柄
-osThreadId Move_DataHandle;
+osThreadId Task_Can1MsgRecHandle; 				// can1消息接收任务句柄
+osThreadId Task_Can2MsgRecHandle; 				// can2消息接收任务句柄
+osThreadId Task_CanSendHandle;    				// can发送任务句柄
 osThreadId Robot_Control_Handle;          // 机器人控制任务句柄
 osThreadId Task_CommunicateFromPC_Handle; // 从PC通信任务句柄
 osThreadId Task_CommunicateToPC_Handle;   // 向PC通信任务句柄
 osThreadId Task_DT7_Handle;               // 遥控器任务句柄;
-osThreadId Task_VOFA_Handle;							
-osThreadId Task_J4310_onlineCheck_Handle;
+osThreadId Task_VOFA_Handle;							// VOFA任务句柄
+osThreadId Task_J4310_onlineCheck_Handle;	// J4310电机在线检测
 
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;
@@ -89,14 +88,14 @@ extern void VOFA_Handle(void const *argument);
 extern void J4310_onlineCheck(void const *argument);
 /* USER CODE END FunctionPrototypes */
 
-void StartDefaultTask(void const * argument);
-void ALL_Init(void const * argument);
+void StartDefaultTask(void const *argument);
+void ALL_Init(void const *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
 /* GetIdleTaskMemory prototype (linked to static allocation support) */
-void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize );
+void vApplicationGetIdleTaskMemory(StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize);
 
 /* USER CODE BEGIN GET_IDLE_TASK_MEMORY */
 static StaticTask_t xIdleTaskTCBBuffer;
@@ -112,11 +111,12 @@ void vApplicationGetIdleTaskMemory(StaticTask_t **ppxIdleTaskTCBBuffer, StackTyp
 /* USER CODE END GET_IDLE_TASK_MEMORY */
 
 /**
-  * @brief  FreeRTOS initialization
-  * @param  None
-  * @retval None
-  */
-void MX_FREERTOS_Init(void) {
+ * @brief  FreeRTOS initialization
+ * @param  None
+ * @retval None
+ */
+void MX_FREERTOS_Init(void)
+{
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
@@ -136,10 +136,10 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
   /* definition and creation of CAN1_Receive */
-  CAN1_ReceiveHandle = xQueueCreate(16, sizeof(Can_Export_Data_t));
+  CAN1_ReceiveHandle = xQueueCreate(32, sizeof(Can_Export_Data_t));
 
   /* definition and creation of CAN2_Receive */
-  CAN2_ReceiveHandle = xQueueCreate(16, sizeof(Can_Export_Data_t));
+  CAN2_ReceiveHandle = xQueueCreate(32, sizeof(Can_Export_Data_t));
 
   /* definition and creation of CAN_Send */
   CAN_SendHandle = xQueueCreate(16, sizeof(Can_Send_Data_t));
@@ -154,7 +154,7 @@ void MX_FREERTOS_Init(void) {
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* definition and creation of StartTask */
-  osThreadDef(StartTask, ALL_Init, osPriorityRealtime, 0, 128);
+  osThreadDef(StartTask, ALL_Init, osPriorityHigh, 0, 256);
   StartTaskHandle = osThreadCreate(osThread(StartTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
@@ -172,30 +172,29 @@ void MX_FREERTOS_Init(void) {
   Task_CanSendHandle = osThreadCreate(osThread(Can_SendTask), NULL);
 
   /* definition and creation of Robot_Control_Task */
-  osThreadDef(Robot_Control_Task, Robot_Control, osPriorityHigh, 0, 256);
+  osThreadDef(Robot_Control_Task, Robot_Control, osPriorityRealtime, 0, 512);
   Robot_Control_Handle = osThreadCreate(osThread(Robot_Control_Task), NULL);
 
   /* definition and creation of Task_CommunicateToPC_Handle */
-  osThreadDef(Task_CommunicateToPC_Handle, USBCommunicateTask_Send, osPriorityAboveNormal, 0, 128);
+  osThreadDef(Task_CommunicateToPC_Handle, USBCommunicateTask_Send, osPriorityAboveNormal, 0, 256);
   Task_CommunicateToPC_Handle = osThreadCreate(osThread(Task_CommunicateToPC_Handle), NULL);
 
   /* definition and creation of Task_CommunicateFromPC_Handle */
-  osThreadDef(Task_CommunicateFromPC_Handle, USBCommunicateTask_Receive, osPriorityAboveNormal, 0, 128);
+  osThreadDef(Task_CommunicateFromPC_Handle, USBCommunicateTask_Receive, osPriorityAboveNormal, 0, 256);
   Task_CommunicateFromPC_Handle = osThreadCreate(osThread(Task_CommunicateFromPC_Handle), NULL);
 
   /* definition and creation of Task_DT7_Handle */
   osThreadDef(Task_DT7_Handle, DT7_Control, osPriorityHigh, 0, 256);
   Task_DT7_Handle = osThreadCreate(osThread(Task_DT7_Handle), NULL);
-	
-	/* definition and creation of Task_VOFA_Handle */
-	osThreadDef(Task_VOFA_Handle, VOFA_Handle, osPriorityAboveNormal, 0, 128);
+
+  /* definition and creation of Task_VOFA_Handle */
+  osThreadDef(Task_VOFA_Handle, VOFA_Handle, osPriorityNormal, 0, 128);
   Task_VOFA_Handle = osThreadCreate(osThread(Task_VOFA_Handle), NULL);
-	
-	/* definition and creation of Task_J4310_onlineCheck_Handle */
-	osThreadDef(Task_J4310_onlineCheck_Handle, J4310_onlineCheck, osPriorityAboveNormal, 0, 128);
+
+  /* definition and creation of Task_J4310_onlineCheck_Handle */
+  osThreadDef(Task_J4310_onlineCheck_Handle, J4310_onlineCheck, osPriorityAboveNormal, 0, 128);
   Task_J4310_onlineCheck_Handle = osThreadCreate(osThread(Task_J4310_onlineCheck_Handle), NULL);
   /* USER CODE END RTOS_THREADS */
-
 }
 
 /* USER CODE BEGIN Header_StartDefaultTask */
@@ -205,7 +204,7 @@ void MX_FREERTOS_Init(void) {
  * @retval None
  */
 /* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void const * argument)
+void StartDefaultTask(void const *argument)
 {
   /* init code for USB_DEVICE */
   MX_USB_DEVICE_Init();
@@ -225,7 +224,7 @@ void StartDefaultTask(void const * argument)
  * @retval None
  */
 /* USER CODE END Header_ALL_Init */
-void ALL_Init(void const * argument)
+void ALL_Init(void const *argument)
 {
   /* USER CODE BEGIN ALL_Init */
   /* Infinite loop */
@@ -248,7 +247,10 @@ void ALL_Init(void const * argument)
 
     /**********云台初始化*********/
     Cloud_Init();
-    DT7_Init(); // 大疆DT7遥控器
+
+    /**********大疆DT7遥控器初始化*********/
+    DT7_Init();
+
     vTaskDelete(StartTaskHandle); // 删除启动任务
     taskEXIT_CRITICAL();          // 退出临界区
     osDelay(1);

@@ -10,9 +10,6 @@
  */
 #include "PID.h"
 
-One_Kalman_t Cloud_YAWODKalman;
-One_Kalman_t Cloud_PITCHODKalman;
-
 // 限制PID参数范围
 void limit_pid_params(float Kp, float Ki, float Kd)
 {
@@ -79,9 +76,7 @@ float PID_Model4_Update(incrementalpid_t *pid, FUZZYPID_Data_t *PID, float _set_
   float fuzzy_kd;
   float fuzzy_kf;
 
-  float network_kp;
-  float network_ki;
-  float network_kd;
+
   float delta_error;
   pid->Target = _set_point;
   pid->Measured = _now_point;

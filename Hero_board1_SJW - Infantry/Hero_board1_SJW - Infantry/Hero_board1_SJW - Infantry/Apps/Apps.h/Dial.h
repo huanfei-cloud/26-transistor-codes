@@ -43,14 +43,14 @@ typedef enum
 
 /* 拨出一个弹丸，电机需要转动的角度，映射为360°-8192 */
 #define Angle_DialOneBullet_17mm 36864.0f // 1024*36  //8192*36/8
-#define Burst_First_Level1_Max_Heat 200
-#define Burst_First_Level1_Cooling_Rate 10
+#define Burst_First_Level1_Max_Heat 220
+#define Burst_First_Level1_Cooling_Rate 40
 #define Cooling_First_Level1_Max_Heat 50
 #define Cooling_First_Level1_Cooling_Rate 40
 #define CONTINUOUS_ROTATION_SPEED 50.0f //
-#define CHECK_INTERVAL 500				// 检测间隔
-#define REVERSE_DURATION 200			// 反转时间
-#define ANGLE_CHANGE_THRESHOLD 20		// 角度变化阈值
+#define CHECK_INTERVAL 300				// 检测间隔
+#define REVERSE_DURATION 100			// 反转时间
+#define ANGLE_CHANGE_THRESHOLD 50		// 角度变化阈值
 
 /* Heat数据的接口结构体*/
 #define Heat_Data_Init_Burst_First_Level1 \

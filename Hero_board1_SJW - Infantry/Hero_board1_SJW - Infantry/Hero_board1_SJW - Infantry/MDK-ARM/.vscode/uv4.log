@@ -1,4 +1,8 @@
-Load "d:\\RM\\myself\\Hero_board1_SJW - Infantry(3)\\Hero_board1_SJW - Infantry\\Hero_board1_SJW - Infantry\\MDK-ARM\\Hero_board1_SJW\\Hero_board1_SJW.axf" 
-Internal DLL Error
-Error: Flash Download failed  -  Target DLL has been cancelled
-Flash Load finished at 13:55:37
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\mdk\ARM\ARMCC\Bin'
+Build target 'Hero_board1_SJW'
+compiling freertos.c...
+linking...
+Program Size: Code=34256 RO-data=2352 RW-data=768 ZI-data=26888  
+FromELF: creating hex file...
+".\Hero_board1_SJW\Hero_board1_SJW.axf" - 0 Error(s), 0 Warning(s).
+Build Time Elapsed:  00:00:09

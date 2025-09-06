@@ -8,40 +8,40 @@
 #include "stm32f4xx.h"
 #include "arm_math.h"
 
-/*************Ò»½×¿¨¶ûÂü**************/
+/*************ä¸€é˜¶å¡å°”æ›¼**************/
 typedef struct
 {
-  float X_Last; // ÉÏÒ»Ê±¿ÌµÄ×îÓÅ½á¹û  X(k-1|k-1)
-  float X_Mid;  // µ±Ç°Ê±¿ÌµÄÔ¤²â½á¹û  X(k|k-1)
-  float X_Now;  // µ±Ç°Ê±¿ÌµÄ×îÓÅ½á¹û  X(k|k)
-  float P_Last; // ÉÏÒ»Ê±¿Ì×îÓÅ½á¹ûµÄĞ­·½²î  P(k-1|k-1)
-  float P_Mid;  // µ±Ç°Ê±¿ÌÔ¤²â½á¹ûµÄĞ­·½²î  P(k|k-1)
-  float P_Now;  // µ±Ç°Ê±¿Ì×îÓÅ½á¹ûµÄĞ­·½²î  P(k|k)
-  float Kt;     // kalmanÔöÒæ
-  float A;      // ×´Ì¬×ªÒÆ¾ØÕó
-  float B;      // ¿ØÖÆ¾ØÕó
-  float Q;      // ¹ı³ÌÔëÉùĞ­·½²î
-  float R;      // ¹Û²âÔëÉùĞ­·½²î
+  float X_Last; // ä¸Šä¸€æ—¶åˆ»çš„æœ€ä¼˜ç»“æœ  X(k-1|k-1)
+  float X_Mid;  // å½“å‰æ—¶åˆ»çš„é¢„æµ‹ç»“æœ  X(k|k-1)
+  float X_Now;  // å½“å‰æ—¶åˆ»çš„æœ€ä¼˜ç»“æœ  X(k|k)
+  float P_Last; // ä¸Šä¸€æ—¶åˆ»æœ€ä¼˜ç»“æœçš„åæ–¹å·®  P(k-1|k-1)
+  float P_Mid;  // å½“å‰æ—¶åˆ»é¢„æµ‹ç»“æœçš„åæ–¹å·®  P(k|k-1)
+  float P_Now;  // å½“å‰æ—¶åˆ»æœ€ä¼˜ç»“æœçš„åæ–¹å·®  P(k|k)
+  float Kt;     // kalmanå¢ç›Š
+  float A;      // çŠ¶æ€è½¬ç§»çŸ©é˜µ
+  float B;      // æ§åˆ¶çŸ©é˜µ
+  float Q;      // è¿‡ç¨‹å™ªå£°åæ–¹å·®
+  float R;      // è§‚æµ‹å™ªå£°åæ–¹å·®
   float H;
 } One_Kalman_t;
 
 void One_Kalman_Create(One_Kalman_t *Kal, float T_Q, float T_R);
 float One_Kalman_Filter(One_Kalman_t *Kal, float Data);
-/*************Ò»½×¿¨¶ûÂü END**************/
+/*************ä¸€é˜¶å¡å°”æ›¼ END**************/
 
-/*************¶ş½×¿¨¶ûÂü**************/
+/*************äºŒé˜¶å¡å°”æ›¼**************/
 #define mat arm_matrix_instance_f32    // float
 #define mat_64 arm_matrix_instance_f64 // double
-#define mat_init arm_mat_init_f32      // ¾ØÕó³õÊ¼»¯
+#define mat_init arm_mat_init_f32      // çŸ©é˜µåˆå§‹åŒ–
 #define mat_add arm_mat_add_f32
 #define mat_sub arm_mat_sub_f32
 #define mat_mult arm_mat_mult_f32
-#define mat_trans arm_mat_trans_f32 // ¸¡µã¾ØÕó×ªÖÃ
+#define mat_trans arm_mat_trans_f32 // æµ®ç‚¹çŸ©é˜µè½¬ç½®
 #define mat_inv arm_mat_inverse_f32
 #define mat_inv_f64 arm_mat_inverse_f64
 
-#define Angle_limit 200        // ½Ç¶ÈĞ¡ÓÚ50¿ªÆôÔ¤²â
-#define PredictAngle_limit 250 // Ô¤²âÖµÏŞ·ù
+#define Angle_limit 200        // è§’åº¦å°äº50å¼€å¯é¢„æµ‹
+#define PredictAngle_limit 250 // é¢„æµ‹å€¼é™å¹…
 
 #define Kf_Angle 0
 #define Kf_Speed 1
@@ -68,22 +68,22 @@ typedef struct
 
 typedef struct
 {
-  float Vision_Angle; // ÊÓ¾õ--½Ç¶È
-  float Vision_Speed; // ÊÓ¾õ--ËÙ¶È
-  float *Kf_result;   // ¿¨¶ûÂüÊä³öÖµ
-  uint16_t Kf_Delay;  // ¿¨¶ûÂüÑÓÊ±¼ÆÊ±
+  float Vision_Angle; // è§†è§‰--è§’åº¦
+  float Vision_Speed; // è§†è§‰--é€Ÿåº¦
+  float *Kf_result;   // å¡å°”æ›¼è¾“å‡ºå€¼
+  uint16_t Kf_Delay;  // å¡å°”æ›¼å»¶æ—¶è®¡æ—¶
 
   struct
   {
-    float Predicted_Factor;   // Ô¤²â±ÈÀıÒò×Ó
-    float Predicted_SpeedMin; // Ô¤²âÖµ×îĞ¡ËÙ¶È
-    float Predicted_SpeedMax; // Ô¤²âÖµ×î´óËÙ¶È
-    float kf_delay_open;      // ¿¨¶ûÂüÑÓÊ±¿ªÆôÊ±¼ä
+    float Predicted_Factor;   // é¢„æµ‹æ¯”ä¾‹å› å­
+    float Predicted_SpeedMin; // é¢„æµ‹å€¼æœ€å°é€Ÿåº¦
+    float Predicted_SpeedMax; // é¢„æµ‹å€¼æœ€å¤§é€Ÿåº¦
+    float kf_delay_open;      // å¡å°”æ›¼å»¶æ—¶å¼€å¯æ—¶é—´
   } Parameter;
 } Kalman_Data_t;
 
 void Two_Kalman_Filter_Init(Two_Kalman_Filter_t *F, Two_Kalman_Filter_Init_t *I);
 float *Two_Kalman_Filter_Calc(Two_Kalman_Filter_t *F, float signal1, float signal2);
-/*************¶ş½×¿¨¶ûÂü END**************/
+/*************äºŒé˜¶å¡å°”æ›¼ END**************/
 
 #endif

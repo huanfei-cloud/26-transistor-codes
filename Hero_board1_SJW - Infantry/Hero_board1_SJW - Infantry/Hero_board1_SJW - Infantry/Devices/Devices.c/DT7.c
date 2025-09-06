@@ -152,7 +152,7 @@ void DT7_Handle(void)
 		{
 			/******************************遥控器数值传递******************************/
 			// 底盘运动控制
-			ControlMes.x_velocity = -RC_CtrlData.rc.ch3; // 左手上下
+			ControlMes.x_velocity = RC_CtrlData.rc.ch3; // 左手上下
 			ControlMes.y_velocity = -RC_CtrlData.rc.ch2; // 左手左右
 
 			static int countFric = 0;
@@ -189,7 +189,7 @@ void DT7_Handle(void)
 			ControlMes.AutoAimFlag = 0;
 			ControlMes.pitch_velocity = RC_CtrlData.rc.ch1;			// 右手上下
 			ControlMes.yaw_velocity = RC_CtrlData.rc.ch0;			// 右手左右
-			ControlMes.z_rotation_velocity = RC_CtrlData.wheel * 2; // 滑轮左右
+			ControlMes.z_rotation_velocity = RC_CtrlData.wheel ; // 滑轮左右
 			ControlMes.yaw_position = Auto_Aim_Yaw;
 		}
 
@@ -198,7 +198,7 @@ void DT7_Handle(void)
 		{
 			/******************************遥控器数值传递******************************/
 			// 底盘运动控制
-			ControlMes.x_velocity = -RC_CtrlData.rc.ch3; // 左手上下
+			ControlMes.x_velocity = RC_CtrlData.rc.ch3; // 左手上下
 			ControlMes.y_velocity = -RC_CtrlData.rc.ch2; // 左手左右
 
 			// 发射状态设置（UP 连发模式 ； MID 禁止发射；DOWN 单发模式）

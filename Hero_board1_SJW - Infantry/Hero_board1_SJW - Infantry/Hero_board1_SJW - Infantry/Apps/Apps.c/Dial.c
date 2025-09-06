@@ -17,13 +17,16 @@ void Normal_Dial(void);
 void Bullet_Stuck_Processing(void);
 void Overheat_Detect(void);
 void Status_Refresh(void);
-float PID_Model4_Update(incrementalpid_t *pid, FUZZYPID_Data_t *PID, float _set_point, float _now_point);
 
 /**************数据定义****************/
 static uint32_t last_check_time = 0;    // 上一次检测时间
 static int32_t last_angle = 0;          // 上一次角度
 static uint8_t is_reversing = 0;        // 反转标志
 static uint32_t reverse_start_time = 0; // 反转开始时间
+float current_heat_copy = 0;            // 用于冷却计算的热量副本
+uint32_t cooling_ticks_copy = 0;        // 用于冷却计算的冷却tick数副本
+uint32_t delta_time = 0;
+float delta_ticks = 0;
 
 /****************函数结构体声明******************/
 Dial_Fun_t Dial_Fun = Dial_FunGroundInit;
@@ -75,11 +78,12 @@ void Dial_Processing_1(void)
  */
 void Dial_Processing_2(void)
 {
+
   if (Dial_Data.Shoot_Mode == Continuous_Shoot && Dial_Data.Dial_Switch == Dial_On) // 拨杆拨到连发挡位时，执行拨弹处理
   {
     Normal_Dial();             // 正常拨弹执行，冷却时间计时，正常拨弹角度计数
     Bullet_Stuck_Processing(); // 卡弹检测，冷却时间计时，卡弹反转执行
-                               // Overheat_Detect();         // 过热检测
+    Overheat_Detect();         // 过热检测
   }
   else // 拨杆拨到其他挡位时，执行状态刷新
   {
@@ -107,13 +111,24 @@ void Normal_Dial(void)
     Heat_Data.last_cooling_time = HAL_GetTick();
   }
 
-  // 计算冷却时间（仅当current_heat≥0时累计）
-  uint32_t delta_time = Heat_Data.current_time - Heat_Data.last_cooling_time;
+  // 计算冷却时间（仅当current_heat≥0时累计,且使current_heat的值不减为负）
+  delta_time = Heat_Data.current_time - Heat_Data.last_cooling_time;
   Heat_Data.last_cooling_time = Heat_Data.current_time;
+
   if (Heat_Data.current_heat >= 0)
   {
-    Heat_Data.cooling_ticks += delta_time;
+    // current_heat_copy = Heat_Data.current_heat;
+    cooling_ticks_copy = Heat_Data.cooling_ticks + delta_time;
+    current_heat_copy = (Heat_Data.total_normal_angle * 10.0f / Angle_DialOneBullet_17mm) - (cooling_ticks_copy * Heat_Data.cooling_rate / configTICK_RATE_HZ);
+    if (current_heat_copy < 0)
+    {
+      delta_ticks = Heat_Data.current_heat * configTICK_RATE_HZ / Heat_Data.cooling_rate;
+    }
+    else
+      delta_ticks = delta_time;
+    Heat_Data.cooling_ticks += delta_ticks;
   }
+
   /***********************执行拨弹**************************************** */
   if (!Heat_Data.overheat && !is_reversing) // 没有过热,没有反转时正常拨弹
   {
@@ -209,8 +224,5 @@ void Status_Refresh(void)
 {
   M2006_Array[Dial_Motor].outCurrent = PID_Model4_Update(&M2006_DialI_Pid, &fuzzy_pid_bullet_v, 0, M2006_Array[Dial_Motor].realSpeed);
   Heat_Data.overheat = 0; // 过热标志刷新
-  // 重置累计值
-  // Heat_Data.total_normal_angle = 0;
-  // Heat_Data.cooling_ticks = 0;
   Heat_Data.last_normal_angle = M2006_Array[Dial_Motor].totalAngle;
 }

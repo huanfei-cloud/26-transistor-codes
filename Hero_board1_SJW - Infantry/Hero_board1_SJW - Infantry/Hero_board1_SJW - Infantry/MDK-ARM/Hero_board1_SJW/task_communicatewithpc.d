@@ -52,10 +52,10 @@
 .\hero_board1_sjw\task_communicatewithpc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h
 .\hero_board1_sjw\task_communicatewithpc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 .\hero_board1_sjw\task_communicatewithpc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
-.\hero_board1_sjw\task_communicatewithpc.o: ../Core/Inc/usart.h
-.\hero_board1_sjw\task_communicatewithpc.o: ../Alg/Alg.h/PID.h
 .\hero_board1_sjw\task_communicatewithpc.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdio.h
 .\hero_board1_sjw\task_communicatewithpc.o: D:\mdk\ARM\ARMCC\Bin\..\include\string.h
+.\hero_board1_sjw\task_communicatewithpc.o: ../Core/Inc/usart.h
+.\hero_board1_sjw\task_communicatewithpc.o: ../Alg/Alg.h/PID.h
 .\hero_board1_sjw\task_communicatewithpc.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdlib.h
 .\hero_board1_sjw\task_communicatewithpc.o: ../Alg/Alg.h/kalman_filter.h
 .\hero_board1_sjw\task_communicatewithpc.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdbool.h

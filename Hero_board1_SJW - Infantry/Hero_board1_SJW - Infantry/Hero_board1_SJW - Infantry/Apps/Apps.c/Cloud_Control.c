@@ -27,9 +27,7 @@ const float Cloud_Pitch_Derta = Cloud_Pitch_Center - Cloud_Pitch_Min;
 
 // 10.5 2
 
-float Cloud_Target_Aim_Flag;
 float Cloud_Init_Angle;
-extern Saber_Angle_t Saber_Angle;
 float Pitch_Torque = 3.f; // 云台所需扭矩
 float Pitch_v = 15;
 float Pitch_Kp = 25;
@@ -40,8 +38,7 @@ int16_t Cloud_Manual_Pitch_Flag;
 int Aim_Flag = 0;
 
 /******************卡尔曼滤波结构体创建*********/
-One_Kalman_t Cloud_PitchMotorAngle_Error_Kalman; // Pitch轴电机角度误差的Kalman滤波器
-One_Kalman_t Cloud_PitchCurrent_Kalman;			 // Pitch轴电流的Kalman滤波器
+One_Kalman_t Cloud_PitchCurrent_Kalman; // Pitch轴电流的Kalman滤波器
 /******************卡尔曼滤波结构体创建 end*********/
 
 void Cloud_Init(void);
@@ -59,14 +56,11 @@ Cloud_FUN_t Cloud_FUN = Cloud_FUNGroundInit;
  */
 void Cloud_Init(void)
 {
-	// 保存启动时刻的机械角度
 	Cloud.Target_Pitch = J4310s_Pitch.outPosition;
 	Cloud.Pitch_Raw = J4310s_Pitch.outPosition;
 	Cloud_Init_Angle = Pitch_Angle_Init;
 	Cloud.AutoAim_Pitch = 0;
 
-	One_Kalman_Create(&Cloud_PitchMotorAngle_Error_Kalman, 1.5, 40);
-	One_Kalman_Create(&Cloud_PITCHODKalman, 1, 10);
 	One_Kalman_Create(&Cloud_PitchCurrent_Kalman, 6, 10);
 	ControlMes.change_Flag = 0;
 	ControlMes.shoot_Speed = 2;
@@ -96,6 +90,8 @@ void Cloud_Pitch_Angle_Set(void)
 	/****************************云台pitchJ4310电机******************************/
 	/******************************遥控器数值传递******************************/
 	static float Delta_Pitch = 0;
+
+	/********************自瞄******************/
 	if (ControlMes.AutoAimFlag == 1)
 	{
 		Delta_Pitch += (float)ControlMes.pitch_velocity * Pitch_RC_Sen;
@@ -115,6 +111,7 @@ void Cloud_Pitch_Angle_Set(void)
 		Aim_Flag = 1;
 	}
 
+	/********************手瞄******************/
 	else
 	{
 		Delta_Pitch += (float)ControlMes.pitch_velocity * Pitch_RC_Sen;
