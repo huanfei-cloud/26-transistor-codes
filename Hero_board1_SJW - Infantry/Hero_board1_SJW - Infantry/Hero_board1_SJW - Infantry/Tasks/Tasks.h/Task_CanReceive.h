@@ -24,7 +24,7 @@
 
 enum
 {
-    M2006, /* 2006µç»ú */
+    M2006, 
 };
 
 void Can1Receives(void const *argument);

@@ -52,8 +52,6 @@ extern void Membership_Calc(float *ms, float qv, int8_t *index);
 extern void FuzzyComputation(FUZZYPID_Data_t *PID, float thisError, float lastError);
 extern void fuzzy_init(FUZZYPID_Data_t *PID, float _maximum, float _minimum, float _qkp, float _qki, float _qkd);
 
-extern FUZZYPID_Data_t FuzzyPID_Pitch;
-
 extern FUZZYPID_Data_t fuzzy_pid_shoot_l;
 extern FUZZYPID_Data_t fuzzy_pid_shoot_r;
 extern FUZZYPID_Data_t fuzzy_pid_bullet_v;
