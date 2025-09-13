@@ -213,7 +213,6 @@ void DT7_Handle(void)
 			Cloud.AutoAim_Pitch = Auto_Aim_Pitch;
 			if (ControlMes.shoot_state == RC_SW_DOWN)
 			{
-				Dial_Data.Speed_Dial = (RC_CtrlData.wheel) * 5;
 				ControlMes.modelFlag = model_Normal;
 				ControlMes.fric_Flag = 1;
 			}
@@ -221,7 +220,6 @@ void DT7_Handle(void)
 			{
 				ControlMes.modelFlag = model_Normal;
 				ControlMes.fric_Flag = 1;
-				Dial_Data.Speed_Dial = -(RC_CtrlData.wheel) * 5;
 			}
 			else if (ControlMes.shoot_state == RC_SW_MID)
 			{

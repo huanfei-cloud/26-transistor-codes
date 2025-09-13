@@ -50,25 +50,27 @@ void Shoot_Update_Status()
 {
 	if (Dial_Data.Shoot_Mode == Continuous_Shoot) // 不用单发时把目标设置成实际值
 		M2006_Array[Dial_Motor].targetAngle = M2006_Array[Dial_Motor].totalAngle;
-	if (Shoot_Data.Shoot_Switch == Shoot_On)
+
+	if (RC_CtrlData.rc.s1 == RC_SW_MID && RC_CtrlData.rc.s2 != 0)
 	{
-		Dial_Data.Dial_Switch = Dial_On;
-	}
-	else if (Shoot_Data.Shoot_Switch == Shoot_Off)
-	{
-		Dial_Data.Dial_Switch = Dial_Off;
+		if (Shoot_Data.Shoot_Switch == Shoot_On)
+		{
+			Dial_Data.Dial_Switch = Dial_On;
+		}
+		else if (Shoot_Data.Shoot_Switch == Shoot_Off)
+		{
+			Dial_Data.Dial_Switch = Dial_Off;
+		}
 	}
 
-	/* 不用拨弹 */
-	if (ControlMes.shoot_state == RC_SW_MID)
+	else if (RC_CtrlData.rc.s1 == RC_SW_DOWN && RC_CtrlData.rc.s2 != 0)
 	{
-		if (ControlMes.redial == 1)
+		if (Shoot_Data.Shoot_Switch == Shoot_On && Fire_Flag)
 		{
-			M2006_Array[Dial_Motor].targetSpeed = 2000;
+			Dial_Data.Dial_Switch = Dial_On;
 		}
-		else
-		{
-			M2006_Array[Dial_Motor].targetSpeed = 0;
-		}
+		else 
+			Dial_Data.Dial_Switch = Dial_Off;
 	}
+
 }

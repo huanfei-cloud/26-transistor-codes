@@ -28,5 +28,5 @@ void UpperCom_Send_To_Up(uint8_t COM);
 extern positionpid_t Auto_Aim_PID;
 extern float Auto_Aim_Yaw;
 extern float Auto_Aim_Pitch;
-
+extern bool Fire_Flag;
 #endif
