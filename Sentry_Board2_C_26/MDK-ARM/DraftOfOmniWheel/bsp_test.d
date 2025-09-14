@@ -81,6 +81,7 @@ draftofomniwheel\bsp_test.o: ../Protocol/Protocol.h/Protocol_Judgement.h
 draftofomniwheel\bsp_test.o: ..\Devices\Devices.h\M3508_Motor.h
 draftofomniwheel\bsp_test.o: ..\APPs\APPs.h\Steer_Omni_Chassis.h
 draftofomniwheel\bsp_test.o: ..\APPs\APPs.h\Cloud_Control.h
+draftofomniwheel\bsp_test.o: ..\Devices\Devices.h\DM_Motor.h
 draftofomniwheel\bsp_test.o: ../Algorithm/Algorithm.h/FeedForward.h
 draftofomniwheel\bsp_test.o: ../Protocol/Protocol.h/BSP_BoardCommunication.h
 draftofomniwheel\bsp_test.o: ..\APPs\APPs.h\Cloud_Control.h

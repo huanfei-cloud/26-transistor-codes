@@ -78,10 +78,11 @@ draftofomniwheel\dt7.o: ..\APPs\APPs.h\Steer_Omni_Chassis.h
 draftofomniwheel\dt7.o: ..\Devices\Devices.h\M6020_Motor.h
 draftofomniwheel\dt7.o: ../Protocol/Protocol.h/BSP_BoardCommunication.h
 draftofomniwheel\dt7.o: ..\APPs\APPs.h\Cloud_Control.h
+draftofomniwheel\dt7.o: ..\Devices\Devices.h\DM_Motor.h
+draftofomniwheel\dt7.o: ..\Tasks\Tasks.h\Task_CanReceive.h
+draftofomniwheel\dt7.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 draftofomniwheel\dt7.o: ../Algorithm/Algorithm.h/FeedForward.h
 draftofomniwheel\dt7.o: ../Protocol/Protocol.h/BSP_BoardCommunication.h
 draftofomniwheel\dt7.o: ..\Devices\Devices.h\Saber_C3.h
 draftofomniwheel\dt7.o: ../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h
 draftofomniwheel\dt7.o: ..\Devices\Devices.h\M2006_Motor.h
-draftofomniwheel\dt7.o: ..\Tasks\Tasks.h\Task_CanReceive.h
-draftofomniwheel\dt7.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

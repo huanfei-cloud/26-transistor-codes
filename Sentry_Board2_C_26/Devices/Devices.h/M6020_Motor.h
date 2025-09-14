@@ -19,9 +19,8 @@
 #include "PID.h"
 #include "BSP_Can.h"
 
-#define M6020_READID_START 0x205 //当ID为1时的报文ID
+#define M6020_READID_START 0x206 //当ID为1时的报文ID
 #define M6020_READID_END 0x207
-#define M6020_YAW_ID 0x205
 #define M6020_SENDID 0x1FF //1~4的电机，0x2FF为5~7
 
 #define M6020_CurrentRatio 0f //待测定
@@ -34,8 +33,8 @@
 
 #define M6020_FunGroundInit        \
     {                              \
-		&M6020_setVoltage,		   \
-			&M6020_getInfo,		   \
+		        &M6020_setVoltage,		   \
+		      	&M6020_getInfo,		   \
             &M6020_setTargetAngle, \
             &M6020_Reset,          \
     }
@@ -70,8 +69,7 @@ typedef enum
 {
     //需要注意与报文接受函数处对应。即
     //M6020_PITCH_Right = 0,
-    M6020_YAW = 0 ,
-	  M6020_Chassis1,
+	  M6020_Chassis1 = 0,
 	  M6020_Chassis2,
 	  Totalnum
 }M6020Name_e;
@@ -86,7 +84,6 @@ typedef struct
 } M6020_Fun_t;
 
 /********全局变量声明********/
-extern M6020s_t M6020s_Yaw;   //ID为1
 extern M6020s_t M6020s_Chassis1;
 extern M6020s_t M6020s_Chassis2;
 extern M6020_Fun_t M6020_Fun;

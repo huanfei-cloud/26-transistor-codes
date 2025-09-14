@@ -80,10 +80,11 @@ draftofomniwheel\task_robotui.o: ../Algorithm/Algorithm.h/FuzzyPID.h
 draftofomniwheel\task_robotui.o: ..\APPs\APPs.h\Steer_Omni_Chassis.h
 draftofomniwheel\task_robotui.o: ..\Devices\Devices.h\M6020_Motor.h
 draftofomniwheel\task_robotui.o: ..\APPs\APPs.h\Cloud_Control.h
+draftofomniwheel\task_robotui.o: ..\Devices\Devices.h\DM_Motor.h
+draftofomniwheel\task_robotui.o: ..\Tasks\Tasks.h\Task_CanReceive.h
+draftofomniwheel\task_robotui.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 draftofomniwheel\task_robotui.o: ../Algorithm/Algorithm.h/FeedForward.h
 draftofomniwheel\task_robotui.o: ../Protocol/Protocol.h/BSP_BoardCommunication.h
 draftofomniwheel\task_robotui.o: ..\Devices\Devices.h\Saber_C3.h
 draftofomniwheel\task_robotui.o: ../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h
 draftofomniwheel\task_robotui.o: ..\Devices\Devices.h\M2006_Motor.h
-draftofomniwheel\task_robotui.o: ..\Tasks\Tasks.h\Task_CanReceive.h
-draftofomniwheel\task_robotui.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

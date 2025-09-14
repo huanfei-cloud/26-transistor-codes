@@ -17,6 +17,13 @@
 #include "Task_CanReceive.h"
 #include "PID.h"
 
+//Yaw轴电机常值数据
+#define J6006_READID_YAW 0x05
+#define J6006_SENDID_Yaw 0x05
+#define J6006_MaxV 20.0f         //发送给电机的最大转速,单位rpm
+#define J6006_MaxT 10.0f           //发送给电机的最大扭矩，单位nm
+#define J6006_MaxP 10.0f
+#define J6006_ReductionRatio 6 //电机减速比
 #define J4310_READID_PITCH 0x01
 #define J4310_SENDID_Pitch 0x001 //控制Pitch轴电机
 #define J4310_MaxV 200 //发送给电机的最大转速,单位rpm
@@ -72,6 +79,9 @@ typedef struct
     uint8_t InfoUpdateFlag;   //信息读取更新标志
     uint16_t InfoUpdateFrame; //帧率
     uint8_t OffLineFlag;      //设备离线标志
+		
+//		positionpid_t v_pid_object;  //速度环PID
+//	  positionpid_t l_pid_object;  //位置环PID
 } DM_Motors_t;
 
 typedef enum
@@ -86,11 +96,11 @@ typedef enum
 
 typedef struct
 {
-  void (*DM_setParameter)(float uq1, float uq2, float uq3, float uq4, float uq5, uint8_t *data);
+  void (*DM_setParameter)(float uq1, float uq2, float uq3, float uq4, float uq5,float p_max,float v_max,float t_max, uint8_t *data);
   void (*DM_Enable)(uint32_t id,CAN_HandleTypeDef *hcan);
-	void (*DM_MIT_Init)(DM_Motors_t *DMmotor,float uq1, float uq2, float uq3, float uq4);
+	void (*DM_MIT_Init)(DM_Motors_t *DMmotor,float uq1,float uq2, float uq3, float uq4, float uq5);
   void (*DM_Save_Pos_Zero)(uint32_t id,CAN_HandleTypeDef *hcan);
-  void (*DM_getInfo)(Can_Export_Data_t RxMessage);
+  void (*DM_getInfo)(Can_Export_Data_t RxMessage,int model,float p_max,float v_max,float t_max);
   void (*DM_setTargetAngle)(DM_Motors_t *DMmotor, int32_t angle);
   void (*DM_Reset)(DM_Motors_t *DMmotor);
   void (*Check_DM)(void);
@@ -102,13 +112,12 @@ extern DM_Motors_t J6006s_Yaw;
 extern DM_Motors_Fun_t DM_Motors_Fun;
 
 /********函数声明********/
-void DM_setParameter(float uq1, float uq2, float uq3, float uq4, float uq5, uint8_t *data);
+void DM_setParameter(float uq1, float uq2, float uq3, float uq4, float uq5,float p_max,float v_max,float t_max, uint8_t *data);
 void DM_Enable(uint32_t id,CAN_HandleTypeDef *hcan);
-void DM_MIT_Init(DM_Motors_t *DMmotor,float uq1, float uq2, float uq3, float uq4);
+void DM_MIT_Init(DM_Motors_t *DMmotor,float uq1,float uq2, float uq3, float uq4, float uq5);
 void DM_Save_Pos_Zero(uint32_t id,CAN_HandleTypeDef *hcan);
-void DM_getInfo(Can_Export_Data_t RxMessage);
+void DM_getInfo(Can_Export_Data_t RxMessage,int model,float p_max,float v_max,float t_max);
 void DM_setTargetAngle(DM_Motors_t *DMmotor, int32_t angle);
 void DM_Reset(DM_Motors_t *DMmotor);
 void Check_DM(void);
-
 #endif /* __J4310_MOTOR_H */

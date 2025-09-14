@@ -140,14 +140,16 @@ void direction_motor_angle_set(void)
 			else if(finall_angle[1]<0.0f)
 			{
 				finall_angle[1] += 360.0f;
-			}if(finall_angle[2]>360.0f)
+			}
+			if(finall_angle[2]>360.0f)
 			{
 				finall_angle[2] -= 360.0f;
 			}
 			else if(finall_angle[2]<0.0f)
 			{
 				finall_angle[2] += 360.0f;
-			}if(finall_angle[3]>360.0f)
+			}
+			if(finall_angle[3]>360.0f)
 			{
 				finall_angle[3] -= 360.0f;
 			}

@@ -140,7 +140,7 @@ void Robot_UI(void const *argument)
 			}
 
 			//·½Ïò
-			UI_FUN.Line_Draw(&UI_Graph7.imageData[6], "107", UI_Graph_Change, 1, UI_Color_Green, 5, 1600, 800, 1600+cos(2*PI*M6020s_Yaw.realAngle/8192 - PI/4)*100, 800+sin(2*PI*M6020s_Yaw.realAngle/8192 - PI/4)*100);
+			UI_FUN.Line_Draw(&UI_Graph7.imageData[6], "107", UI_Graph_Change, 1, UI_Color_Green, 5, 1600, 800, 1600+cos(2*PI*J6006s_Yaw.realAngle/8192 - PI/4)*100, 800+sin(2*PI*J6006s_Yaw.realAngle/8192 - PI/4)*100);
 			UI_FUN.UI_PushUp_Graphs(7, &UI_Graph7);
 			
 			}

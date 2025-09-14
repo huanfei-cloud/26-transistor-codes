@@ -85,6 +85,7 @@ draftofomniwheel\bsp_usart.o: ..\Devices\Devices.h\N100.h
 draftofomniwheel\bsp_usart.o: ..\Devices\Devices.h\DT7.h
 draftofomniwheel\bsp_usart.o: ../Protocol/Protocol.h/BSP_BoardCommunication.h
 draftofomniwheel\bsp_usart.o: ..\APPs\APPs.h\Cloud_Control.h
+draftofomniwheel\bsp_usart.o: ..\Devices\Devices.h\DM_Motor.h
 draftofomniwheel\bsp_usart.o: ../Algorithm/Algorithm.h/FeedForward.h
 draftofomniwheel\bsp_usart.o: ../Protocol/Protocol.h/BSP_BoardCommunication.h
 draftofomniwheel\bsp_usart.o: ../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h

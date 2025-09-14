@@ -78,9 +78,10 @@ draftofomniwheel\gimbal_chassis_pitch_angle.o: ..\APPs\APPs.h\PowerControl.h
 draftofomniwheel\gimbal_chassis_pitch_angle.o: ..\Devices\Devices.h\M3508_Motor.h
 draftofomniwheel\gimbal_chassis_pitch_angle.o: ..\APPs\APPs.h\Steer_Omni_Chassis.h
 draftofomniwheel\gimbal_chassis_pitch_angle.o: ..\APPs\APPs.h\Cloud_Control.h
+draftofomniwheel\gimbal_chassis_pitch_angle.o: ..\Devices\Devices.h\DM_Motor.h
+draftofomniwheel\gimbal_chassis_pitch_angle.o: ..\Tasks\Tasks.h\Task_CanReceive.h
+draftofomniwheel\gimbal_chassis_pitch_angle.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 draftofomniwheel\gimbal_chassis_pitch_angle.o: ../Algorithm/Algorithm.h/FeedForward.h
 draftofomniwheel\gimbal_chassis_pitch_angle.o: ../Protocol/Protocol.h/BSP_BoardCommunication.h
 draftofomniwheel\gimbal_chassis_pitch_angle.o: ../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h
 draftofomniwheel\gimbal_chassis_pitch_angle.o: ..\Devices\Devices.h\M2006_Motor.h
-draftofomniwheel\gimbal_chassis_pitch_angle.o: ..\Tasks\Tasks.h\Task_CanReceive.h
-draftofomniwheel\gimbal_chassis_pitch_angle.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

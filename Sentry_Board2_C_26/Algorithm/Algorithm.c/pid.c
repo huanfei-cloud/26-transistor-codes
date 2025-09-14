@@ -50,7 +50,7 @@ float Position_PID_Yaw(positionpid_t *pid_t, FUZZYPID_Data_t *fuzzy_t, float tar
     // 计算各项输出（使用模糊调整后的参数）
     pid_t->p_out = (pid_t->Kp + fuzzy_t->deta_kp) * pid_t->err;
     pid_t->i_out += (pid_t->Ki + fuzzy_t->date_ki) * pid_t->err;
-    pid_t->d_out = (pid_t->Kd + fuzzy_t->date_kd) * (pid_t->Measured - pid_t->err_last);
+    pid_t->d_out = (pid_t->Kd + fuzzy_t->date_kd) * (pid_t->err - pid_t->err_last);
     pid_t->f_out = pid_t->Kf * pid_t->error_target;
     
     // 积分分离策略
@@ -174,7 +174,6 @@ float Position_PID(positionpid_t *pid_t, float target, float measured)
     pid_t->Target = (float)target;
     pid_t->Measured = (float)measured;
     pid_t->err = pid_t->Target - pid_t->Measured;
-    pid_t->err_change = pid_t->Measured - pid_t->err_last;
     pid_t->error_target = pid_t->Target - pid_t->last_set_point;
     
     // 计算各项输出
@@ -271,7 +270,7 @@ float Angle_PID(positionpid_t *pid_t, float target, float measured,float ecd_max
     pid_t->err = pid_t->Target - pid_t->Measured;
     
     // 处理角度环绕问题（8192对应360度）
-    if(abs(pid_t->err) > ecd_max/2) {
+    if(fabs(pid_t->err) > ecd_max/2) {
         if(pid_t->err > 0) {
             pid_t->err = pid_t->err - (ecd_max+1);
         } else {

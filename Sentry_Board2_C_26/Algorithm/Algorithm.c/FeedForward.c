@@ -119,7 +119,7 @@ void FeedForward_Chassis()
 void FeedForward_Yaw()
 {
 	/* Yaw轴的前馈 */
-	M6020s_Yaw.targetSpeed -= Saber_Angle.Z_Vel / 6.0f;  // 从角度每秒转化到转每分钟
+	J6006s_Yaw.targetSpeed -= Saber_Angle.Z_Vel / 6.0f;  // 从角度每秒转化到转每分钟
 }
 
 /**
@@ -150,5 +150,5 @@ void Compensator_Yaw()
 	speed_last = exp4;
 	error_last = error;
 	
-	M6020s_Yaw.outCurrent += 1000 * (exp1 + exp2 + exp3);
+//	J6006s_Yaw.outTorque += 1000 * (exp1 + exp2 + exp3);
 }

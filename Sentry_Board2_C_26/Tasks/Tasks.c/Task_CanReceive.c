@@ -41,9 +41,9 @@ void Can1Receives(void const *argument)
             M3508_FUN.M3508_getInfo(Can_Export_Data);
         }
         //接收云台 yaw轴电机  反馈数据
-        else if (ID == M6020_YAW_ID)
+        else if (ID == J6006_READID_YAW)
         {
-            M6020_Fun.M6020_getInfo(Can_Export_Data);
+					  DM_getInfo(Can_Export_Data , 6006,J6006_MaxP,J6006_MaxV,J6006_MaxT);
         }
 				else if (ID == 0x51)
 				{

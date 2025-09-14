@@ -7,8 +7,6 @@
  *
  */
 #include "Task_Vofa.h"
-#include "vofa.h"
-#include "M3508_Motor.h"
 
 /**
   * @Data   2025-05-06
@@ -25,7 +23,7 @@ void Vofa_Assist(void const *argument)
     const TickType_t TimeIncrement = pdMS_TO_TICKS(10); //每100毫秒强制进入
 	 for( ; ; )
 	 {
-		 float data = M6020s_Yaw.realAngle;
+		 float data = J6006s_Yaw.realAngle;
      JustFloat_Send(&data,1,USART6);
 		 
 		 vTaskDelayUntil(&xLastWakeTime, TimeIncrement);

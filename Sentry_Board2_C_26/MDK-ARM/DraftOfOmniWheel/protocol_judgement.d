@@ -81,6 +81,7 @@ draftofomniwheel\protocol_judgement.o: ..\APPs\APPs.h\PowerControl.h
 draftofomniwheel\protocol_judgement.o: ..\Devices\Devices.h\M3508_Motor.h
 draftofomniwheel\protocol_judgement.o: ..\APPs\APPs.h\Steer_Omni_Chassis.h
 draftofomniwheel\protocol_judgement.o: ..\APPs\APPs.h\Cloud_Control.h
+draftofomniwheel\protocol_judgement.o: ..\Devices\Devices.h\DM_Motor.h
 draftofomniwheel\protocol_judgement.o: ../Algorithm/Algorithm.h/FeedForward.h
 draftofomniwheel\protocol_judgement.o: ../Protocol/Protocol.h/BSP_BoardCommunication.h
 draftofomniwheel\protocol_judgement.o: ..\Devices\Devices.h\Saber_C3.h

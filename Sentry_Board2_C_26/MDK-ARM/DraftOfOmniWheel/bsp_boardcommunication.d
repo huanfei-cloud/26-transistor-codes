@@ -77,10 +77,11 @@ draftofomniwheel\bsp_boardcommunication.o: ../Algorithm/Algorithm.h/FuzzyPID.h
 draftofomniwheel\bsp_boardcommunication.o: ..\APPs\APPs.h\Steer_Omni_Chassis.h
 draftofomniwheel\bsp_boardcommunication.o: ..\Devices\Devices.h\M6020_Motor.h
 draftofomniwheel\bsp_boardcommunication.o: ..\APPs\APPs.h\Cloud_Control.h
+draftofomniwheel\bsp_boardcommunication.o: ..\Devices\Devices.h\DM_Motor.h
+draftofomniwheel\bsp_boardcommunication.o: ..\Tasks\Tasks.h\Task_CanReceive.h
+draftofomniwheel\bsp_boardcommunication.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 draftofomniwheel\bsp_boardcommunication.o: ../Algorithm/Algorithm.h/FeedForward.h
 draftofomniwheel\bsp_boardcommunication.o: ../Protocol/Protocol.h/BSP_BoardCommunication.h
 draftofomniwheel\bsp_boardcommunication.o: ..\Devices\Devices.h\Saber_C3.h
 draftofomniwheel\bsp_boardcommunication.o: ../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h
 draftofomniwheel\bsp_boardcommunication.o: ..\Devices\Devices.h\M2006_Motor.h
-draftofomniwheel\bsp_boardcommunication.o: ..\Tasks\Tasks.h\Task_CanReceive.h
-draftofomniwheel\bsp_boardcommunication.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

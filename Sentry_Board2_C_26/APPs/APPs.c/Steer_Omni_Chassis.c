@@ -113,104 +113,60 @@ void direction_motor_angle_set(void)
 
     if(!((Steer_Omni_Data.Speed_ToCloud).vx == 0 && (Steer_Omni_Data.Speed_ToCloud).vy == 0 && (Steer_Omni_Data.Speed_ToCloud).wz == 0))
     {
-        atan_angle[0] = atan2(((Steer_Omni_Data.Speed_ToChassis).vx - (Steer_Omni_Data.Speed_ToChassis).wz * Radius * 0.707107f),((Steer_Omni_Data.Speed_ToChassis).vy - (Steer_Omni_Data.Speed_ToChassis).wz * Radius * 0.707107f)) * 180.0f / pi ;
-        atan_angle[1] = atan2(((Steer_Omni_Data.Speed_ToChassis).vx + (Steer_Omni_Data.Speed_ToChassis).wz * Radius * 0.707107f),((Steer_Omni_Data.Speed_ToChassis).vy + (Steer_Omni_Data.Speed_ToChassis).wz * Radius * 0.707107f)) * 180.0f / pi ;        
-    }
+        atan_angle[0] = atan2(((Steer_Omni_Data.Speed_ToChassis).vy - (Steer_Omni_Data.Speed_ToChassis).wz * Radius * 0.707107f),((Steer_Omni_Data.Speed_ToChassis).vx - (Steer_Omni_Data.Speed_ToChassis).wz * Radius * 0.707107f)) * 180.0f / pi ;
+        atan_angle[1] = atan2(((Steer_Omni_Data.Speed_ToChassis).vy + (Steer_Omni_Data.Speed_ToChassis).wz * Radius * 0.707107f),((Steer_Omni_Data.Speed_ToChassis).vx + (Steer_Omni_Data.Speed_ToChassis).wz * Radius * 0.707107f)) * 180.0f / pi ;        
+    
+			  finall_angle[0] = atan_angle[0]/360*8192 + DIRMOTOR_LB_ANGLE ;
+				finall_angle[1] = atan_angle[1]/360*8192 + DIRMOTOR_RB_ANGLE ;
+			
+				error_angle[0] =finall_angle[0] - M6020s_Chassis1.realAngle;
+				error_angle[1] =finall_angle[1] - M6020s_Chassis2.realAngle;
+				
+				if(error_angle[0]>4096.0f)
+				{
+						error_angle[0]-=8192.0f;
+				}
+				else if(error_angle[0]<-4096.0f)
+				{
+						error_angle[0]+=8192.0f;
+				}
+				if(error_angle[1]>4096.0f)
+				{
+						error_angle[1]-=8192.0f;
+				}
+				else if(error_angle[1]<-4096.0f)
+				{
+						error_angle[1]+=8192.0f;
+				}
+				
+				if(fabs(error_angle[0])>2048.0f)
+				{
+						dirt[0]=1;
+						finall_angle[0]-=4096.0f;
+				}
+				else
+				{
+						dirt[0]=-1;
+				}
+				if(fabs(error_angle[1])>2048.0f)
+				{
+						dirt[1]=-1;
+						finall_angle[1]-=4096.0f;
+				}
+				else
+				{
+						dirt[1]=1;
+				}
+		}
     else
     {
         atan_angle[0] = 0.0f;
         atan_angle[1] = 0.0f;
+			
+			  finall_angle[0] = atan_angle[0]/360*8192 + DIRMOTOR_LB_ANGLE ;
+	      finall_angle[1] = atan_angle[1]/360*8192 + DIRMOTOR_RB_ANGLE ;
     }
 
-    finall_angle[0] = atan_angle[0]/360*8192 + DIRMOTOR_LB_ANGLE ;
-	  finall_angle[1] = atan_angle[1]/360*8192 + DIRMOTOR_RB_ANGLE ;
-	if(finall_angle[0]>8192.0f)
-    {
-        finall_angle[0] -= 8192.0f;
-    }
-    else if(finall_angle[0]<0.0f)
-    {
-        finall_angle[0] += 8192.0f;
-    }
-	if(finall_angle[1]>8192.0f)
-    {
-        finall_angle[1] -= 8192.0f;
-    }
-    else if(finall_angle[1]<0.0f)
-    {
-        finall_angle[1] += 8192.0f;
-    }	
-
-    //error_angle[0] =Angle_Limit((finall_angle[0] - (M6020s_Chassis1.realAngle )),4096.0f);
-	//error_angle[1] =Angle_Limit((finall_angle[1] - (M6020s_Chassis2.realAngle )),4096.0f);
-    error_angle[0] =finall_angle[0] - M6020s_Chassis1.realAngle;
-    error_angle[1] =finall_angle[1] - M6020s_Chassis2.realAngle;
-    if(error_angle[0]>4096.0f)
-    {
-        error_angle[0]-=8192.0f;
-    }
-    else if(error_angle[0]<-4096.0f)
-    {
-        error_angle[0]+=8192.0f;
-    }
-     if(error_angle[1]>4096.0f)
-    {
-        error_angle[1]-=8192.0f;
-    }
-    else if(error_angle[1]<-4096.0f)
-    {
-        error_angle[1]+=8192.0f;
-    }
-    if(abs(error_angle[0])>2048.0f)
-    {
-        dirt[0]=1;
-        finall_angle[0]-=4096;
-    }
-    else
-    {
-        dirt[0]=-1;
-    }
-    if(abs(error_angle[1])>2048.0f)
-    {
-        dirt[1]=-1;
-        finall_angle[1]-=4096;
-    }
-    else
-    {
-        dirt[1]=1;
-    }
-    /*if(error_angle[0]>2048.0f || error_angle[0]<-2048.0f)
-    {
-        dirt[0] = 1;
-        if(error_angle[0] > 2048.0f)
-				{
-            finall_angle[0] = finall_angle[0] - 4096.0f;
-				}
-				else if(error_angle[0] < -2048.0f)
-				{
-					finall_angle[0] = finall_angle[0] + 4096.0f;
-				}
-    }
-    else
-    {
-        dirt[0] = -1;
-    }
-    if(error_angle[1]>2048.0f || error_angle[1]<-2048.0f)
-    {
-        dirt[1] = -1;
-			if(error_angle[1] > 2048.0f)
-				{
-            finall_angle[1] = finall_angle[1] - 4096.0f;
-				}
-				else if(error_angle[1] < -2048.0f)
-				{
-					finall_angle[1] = finall_angle[1] + 4096.0f;
-				}
-    }
-    else
-    {
-        dirt[1] = 1;
-    }*/
 
     Steer_Omni_Data.M6020_Setposition[0] = finall_angle[0] ;
     Steer_Omni_Data.M6020_Setposition[1] = finall_angle[1] ;

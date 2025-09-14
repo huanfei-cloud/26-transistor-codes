@@ -83,19 +83,16 @@ typedef struct positionpid_t
 /**********外部变量声明************/
 
 /// Yaw轴位置环PID控制器
-extern positionpid_t M6020s_YawIPID;
+extern positionpid_t J6006s_YawOPID;
 
 /// Yaw轴速度环PID控制器
-extern positionpid_t M6020s_Yaw_SpeedPID;
-
-/// Yaw轴输出环PID控制器
-extern positionpid_t M6020s_YawOPID;
+extern positionpid_t J6006s_YawIPID;
 
 /// 自动瞄准Yaw轴位置环PID控制器
-extern positionpid_t AutoAim_M6020s_YawIPID;
+extern positionpid_t AutoAim_J6006s_YawOPID;
 
-/// 自动瞄准Yaw轴输出环PID控制器
-extern positionpid_t AutoAim_M6020s_YawOPID;
+/// 自动瞄准Yaw轴速度环PID控制器
+extern positionpid_t AutoAim_J6006s_YawIPID;
 
 /**********函数声明************/
 
