@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "fuzzy_pid.h": "c",
+        "shoot.h": "c",
+        "motor.h": "c",
+        "speedramp.h": "c"
+    }
+}

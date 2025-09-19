@@ -1,0 +1,14 @@
+draftofomniwheel\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c
+draftofomniwheel\stream_buffer.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stdint.h
+draftofomniwheel\stream_buffer.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\string.h
+draftofomniwheel\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+draftofomniwheel\stream_buffer.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stddef.h
+draftofomniwheel\stream_buffer.o: ../Core/Inc/FreeRTOSConfig.h
+draftofomniwheel\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+draftofomniwheel\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+draftofomniwheel\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+draftofomniwheel\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+draftofomniwheel\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+draftofomniwheel\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+draftofomniwheel\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+draftofomniwheel\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/stream_buffer.h

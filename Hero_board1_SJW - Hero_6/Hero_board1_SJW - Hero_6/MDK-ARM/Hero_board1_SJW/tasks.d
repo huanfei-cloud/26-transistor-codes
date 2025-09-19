@@ -1,0 +1,16 @@
+.\hero_board1_sjw\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/tasks.c
+.\hero_board1_sjw\tasks.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdlib.h
+.\hero_board1_sjw\tasks.o: D:\mdk\ARM\ARMCC\Bin\..\include\string.h
+.\hero_board1_sjw\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+.\hero_board1_sjw\tasks.o: D:\mdk\ARM\ARMCC\Bin\..\include\stddef.h
+.\hero_board1_sjw\tasks.o: D:\mdk\ARM\ARMCC\Bin\..\include\stdint.h
+.\hero_board1_sjw\tasks.o: ../Core/Inc/FreeRTOSConfig.h
+.\hero_board1_sjw\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+.\hero_board1_sjw\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+.\hero_board1_sjw\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+.\hero_board1_sjw\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+.\hero_board1_sjw\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+.\hero_board1_sjw\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+.\hero_board1_sjw\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+.\hero_board1_sjw\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+.\hero_board1_sjw\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/stack_macros.h

@@ -1,0 +1,23 @@
+#include "Task_UsartSend.h"
+
+extern M2006s_t M2006_Array[4];
+
+/**
+  * @brief  串口发送显示数据
+  * @param  void
+  * @retval void
+  */
+void Show_Data(void const *argument)
+{
+    portTickType xLastWakeTime;
+    xLastWakeTime = xTaskGetTickCount();
+    const TickType_t TimeIncrement = pdMS_TO_TICKS(5); //每100毫秒强制进入数据发送
+
+    for(;;)
+    {
+			vTaskDelayUntil(&xLastWakeTime, TimeIncrement);
+       Usart_Fun.Send_Motor_Data(M2006_Array);
+        
+    }
+}
+

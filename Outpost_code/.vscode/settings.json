@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "compare": "c",
+        "fdcan.h": "c",
+        "main.h": "c",
+        "typedef.h": "c",
+        "pid.h": "c",
+        "bsp_fdcan.h": "c",
+        "j4310_motor.h": "c"
+    }
+}
