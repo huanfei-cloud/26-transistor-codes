@@ -76,11 +76,12 @@ draftofomniwheel\feedforward.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS
 draftofomniwheel\feedforward.o: ..\Devices\Devices.h\M3508_Motor.h
 draftofomniwheel\feedforward.o: ..\Devices\Devices.h\M6020_Motor.h
 draftofomniwheel\feedforward.o: ..\APPs\APPs.h\Cloud_Control.h
+draftofomniwheel\feedforward.o: ..\Devices\Devices.h\DM_Motor.h
+draftofomniwheel\feedforward.o: ..\Tasks\Tasks.h\Task_CanReceive.h
+draftofomniwheel\feedforward.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 draftofomniwheel\feedforward.o: ../Algorithm/Algorithm.h/FeedForward.h
 draftofomniwheel\feedforward.o: ../Protocol/Protocol.h/BSP_BoardCommunication.h
 draftofomniwheel\feedforward.o: ..\APPs\APPs.h\Cloud_Control.h
 draftofomniwheel\feedforward.o: ..\Devices\Devices.h\Saber_C3.h
 draftofomniwheel\feedforward.o: ..\Devices\Devices.h\M2006_Motor.h
-draftofomniwheel\feedforward.o: ..\Tasks\Tasks.h\Task_CanReceive.h
-draftofomniwheel\feedforward.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 draftofomniwheel\feedforward.o: ../Algorithm/Algorithm.h/Gimbal_Chassis_Pitch_Angle.h

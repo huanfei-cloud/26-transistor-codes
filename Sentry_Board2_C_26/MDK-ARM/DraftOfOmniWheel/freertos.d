@@ -76,6 +76,7 @@ draftofomniwheel\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RT
 draftofomniwheel\freertos.o: ..\Devices\Devices.h\M6020_Motor.h
 draftofomniwheel\freertos.o: ../Core/Inc/usart.h
 draftofomniwheel\freertos.o: ..\APPs\APPs.h\Cloud_Control.h
+draftofomniwheel\freertos.o: ..\Devices\Devices.h\DM_Motor.h
 draftofomniwheel\freertos.o: ../Algorithm/Algorithm.h/FeedForward.h
 draftofomniwheel\freertos.o: ..\APPs\APPs.h\Steer_Omni_Chassis.h
 draftofomniwheel\freertos.o: ..\APPs\APPs.h\PowerControl.h

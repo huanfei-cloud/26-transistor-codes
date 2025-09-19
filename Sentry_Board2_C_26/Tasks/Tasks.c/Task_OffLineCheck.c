@@ -23,12 +23,16 @@ void Off_Line_Check(void const *argument)
     for (;;)
     {
 			//yawµôÏß¼ì²â
-				if(yaw_Frame == M6020s_Yaw.InfoUpdateFrame)
+				if(yaw_Frame == J6006s_Yaw.InfoUpdateFrame)
 				{
-					M6020s_Yaw.InfoUpdateFlag = 0;
-					M6020s_Yaw.InfoUpdateFrame = 0;
+					DM_Enable(0x05,&hcan1);
+					
+					J6006s_Yaw.InfoUpdateFlag = 0;
+					J6006s_Yaw.InfoUpdateFrame = 0;
 				}
-				yaw_Frame = M6020s_Yaw.InfoUpdateFrame ;
+				yaw_Frame = J6006s_Yaw.InfoUpdateFrame ;
+				
+				
 								
 		
         vTaskDelayUntil(&xLastWakeTime, TimeIncrement);

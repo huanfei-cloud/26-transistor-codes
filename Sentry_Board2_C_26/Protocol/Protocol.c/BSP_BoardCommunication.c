@@ -70,7 +70,7 @@ void Board2_getChassisInfo(Can_Export_Data_t RxMessage)
 
     Steer_Omni_Data.Speed_ToCloud.vx = vx; //左手上下
     Steer_Omni_Data.Speed_ToCloud.vy = vy; //左手左右
-    Steer_Omni_Data.Speed_ToCloud.wz = -1 * vw / 200; //滑轮
+    Steer_Omni_Data.Speed_ToCloud.wz = vw / 100; //滑轮
 		if(!ControlMes.AutoAimFlag )
   	{
 			Cloud.Target_Yaw += -1 * yaw_velocity * 0.06f; // 右手左右

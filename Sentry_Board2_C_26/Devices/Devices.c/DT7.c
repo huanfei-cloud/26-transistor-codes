@@ -78,7 +78,7 @@ void DT7_Handle(void)
 			Steer_Omni_Data.Speed_ToCloud.vx = RC_CtrlData.rc.ch3; //��������
 			Steer_Omni_Data.Speed_ToCloud.vy = RC_CtrlData.rc.ch2; //��������
 			Steer_Omni_Data.Speed_ToCloud.wz = -1*RC_CtrlData.wheel/100; //����
-			Cloud.Target_Yaw+=RC_CtrlData.wheel * 0.0005 * 25;
+			Cloud.Target_Yaw+=RC_CtrlData.rc.ch0 * 0.0005 * 25;
 			if(RC_CtrlData.rc.s2 == RC_SW_DOWN)
 			{
 				follow_flag = 1; 

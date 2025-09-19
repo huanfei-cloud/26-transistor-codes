@@ -13,7 +13,8 @@
 #include "stm32f4xx_hal_can.h"
 
 //直接声明对应的电机的结构体而不用数组，直观便于后期调试观察数据使用
-DM_Motors_t J4310s_Pitch;                      // 8
+DM_Motors_t J4310s_Pitch;         //ID为201
+DM_Motors_t J6006s_Yaw;           //ID为205
 DM_Motors_t *DM_Array[totalnum] = {&J4310s_Pitch,&J6006s_Yaw}; //对应电机的ID必须为：索引+1
 
 /********数据声明********/
@@ -51,15 +52,15 @@ static int float_to_uint(float X_float, float X_min, float X_max, int bits)
   * @param  uq1：角度  uq2：转速  uq3：Kp  uq4：Kd  uq5：转矩
   * @retval None
   */
-void DM_setParameter(float uq1, float uq2, float uq3, float uq4, float uq5, uint8_t *data)
+void DM_setParameter(float uq1, float uq2, float uq3, float uq4, float uq5,float p_max,float v_max,float t_max,uint8_t *data)
 {
   float Postion = uq1 / 8192 * 2 * Pi;
   uint16_t Postion_Tmp, Velocity_Tmp, Torque_Tmp, KP_Tmp, KD_Tmp;
 
   float P_MAX, V_MAX, T_MAX;
-  P_MAX = 3.141593f;
-  V_MAX = 200.f;
-  T_MAX = 7.f;
+  P_MAX = p_max;
+  V_MAX = v_max;
+  T_MAX = t_max;
 
   Postion_Tmp = float_to_uint(Postion, -P_MAX, P_MAX, 16);
   Velocity_Tmp = float_to_uint(uq2, -V_MAX, V_MAX, 12);
@@ -85,19 +86,12 @@ void DM_setParameter(float uq1, float uq2, float uq3, float uq4, float uq5, uint
 void DM_Enable(uint32_t id,CAN_HandleTypeDef *hcan)
 {
   Can_Send_Data_t Can_Send_Data;
-	uint32_t TxMailbox;
-	
-	
+		
   Can_Send_Data.CAN_TxHeader.StdId = id;
   Can_Send_Data.CAN_TxHeader.IDE = CAN_ID_STD;             // ID类型
   Can_Send_Data.CAN_TxHeader.RTR = CAN_RTR_DATA;           // 发送的是数据
   Can_Send_Data.CAN_TxHeader.DLC = 0x08;                   // 8字节
   Can_Send_Data.CAN_TxHeader.TransmitGlobalTime = DISABLE; 
-//	Fdcan_Send_Data.FDCAN_TxHeader.ErrorStateIndicator =  FDCAN_ESI_ACTIVE;  //发送节点处于主动错误状态
-//	Fdcan_Send_Data.FDCAN_TxHeader.BitRateSwitch = FDCAN_BRS_OFF;        //不转换波特率
-//	Fdcan_Send_Data.FDCAN_TxHeader.FDFormat =  FDCAN_CLASSIC_CAN;        //经典CAN模式
-//	Fdcan_Send_Data.FDCAN_TxHeader.TxEventFifoControl =  FDCAN_NO_TX_EVENTS;
-//	Fdcan_Send_Data.FDCAN_TxHeader.MessageMarker = 0;
 
   Can_Send_Data.CANx_Send_RxMessage[0] = 0xFF;
   Can_Send_Data.CANx_Send_RxMessage[1] = 0xFF;
@@ -108,23 +102,22 @@ void DM_Enable(uint32_t id,CAN_HandleTypeDef *hcan)
   Can_Send_Data.CANx_Send_RxMessage[6] = 0xFF;
   Can_Send_Data.CANx_Send_RxMessage[7] = 0xFC;
 	
-	
-	HAL_CAN_AddTxMessage(hcan, &Can_Send_Data.CAN_TxHeader, Can_Send_Data.CANx_Send_RxMessage, &TxMailbox);
-
-  //HAL_CAN_AddMessageToTxFifoQ(&hcan2, &Can_Send_Data.CAN_TxHeader, Can_Send_Data.CANx_Send_RxMessage);
+	Can_Fun.CAN_SendData(CAN_SendHandle, hcan, CAN_ID_STD, id, Can_Send_Data.CANx_Send_RxMessage);
 }
+
 
 /**
  * @brief  MIT模式下电机参数初始化
- * @param  uq1：扭矩  uq2：转速  uq3：Kp  uq4：Kd
+ * @param  uq1：扭矩  uq2;角度 uq3：转速  uq4：Kp  uq5：Kd
  * @retval None
  */
-void DM_MIT_Init(DM_Motors_t *DMmotor,float uq1, float uq2, float uq3, float uq4)
+void DM_MIT_Init(DM_Motors_t *DMmotor,float uq1,float uq2, float uq3, float uq4, float uq5)
 {
 	DMmotor->outTorque = uq1;
-	DMmotor->outSpeed = uq2;
-	DMmotor->outKp = uq3;
-	DMmotor->outKd = uq4;
+	DMmotor->outPosition = uq2;
+	DMmotor->outSpeed = uq3;
+	DMmotor->outKp = uq4;
+	DMmotor->outKd = uq5;
 }
 
 /**
@@ -164,19 +157,27 @@ void DM_Save_Pos_Zero(uint32_t id,CAN_HandleTypeDef *hcan)
 /**
   * @brief  从CAN报文中获取达妙电机信息
   * @param  RxMessage 	CAN报文接收结构体
+  * @param  model       因为ID冲突原因，DM电机ID不连续，加上此变量使能用一个数组表示
   * @retval None
   */
 
-void DM_getInfo(Can_Export_Data_t RxMessage)
+void DM_getInfo(Can_Export_Data_t RxMessage,int model,float p_max,float v_max,float t_max)
 {
   int32_t StdId;
   StdId = (RxMessage.CANx_Export_RxMessage[0]) & 0x0F;
-  StdId = (int32_t)RxMessage.CAN_RxHeader.StdId - J4310_READID_PITCH; //由零开始
+	if ( model == 4310)
+	{
+    StdId = (int32_t)RxMessage.CAN_RxHeader.StdId - J4310_READID_PITCH; //由零开始
+	}
+	else if ( model == 6006)
+	{
+		StdId = (int32_t)RxMessage.CAN_RxHeader.StdId - J6006_READID_YAW + 1; //由1开始
+	}
   float P_MAX, V_MAX, T_MAX;
 
-  P_MAX = 12.5f;
-  V_MAX = 200.f;
-  T_MAX = 7.f; // 达妙电机数据
+  P_MAX = p_max;
+  V_MAX = v_max;
+  T_MAX = t_max; // 达妙电机数据
 
   DM_Array[StdId]->lastAngle = DM_Array[StdId]->realAngle;
   DM_Array[StdId]->state = RxMessage.CANx_Export_RxMessage[0] >> 4;
@@ -184,7 +185,7 @@ void DM_getInfo(Can_Export_Data_t RxMessage)
   DM_Array[StdId]->speedInit = (uint16_t)((RxMessage.CANx_Export_RxMessage[3] << 4) | (RxMessage.CANx_Export_RxMessage[4] >> 4));
   DM_Array[StdId]->torqueInit = (uint16_t)((RxMessage.CANx_Export_RxMessage[4] & 0xF << 8) | RxMessage.CANx_Export_RxMessage[5]);
   DM_Array[StdId]->realAngle = uint_to_float(DM_Array[StdId]->angleInit, -P_MAX, P_MAX, 16);
-  DM_Array[StdId]->realAngle = DM_Array[StdId]->realAngle / 2 * 3.1415927 * 36.0f;
+  DM_Array[StdId]->realAngle = DM_Array[StdId]->realAngle *409.6f + 4096.0f;
   DM_Array[StdId]->realSpeed = uint_to_float(DM_Array[StdId]->speedInit, -V_MAX, V_MAX, 12);
   DM_Array[StdId]->torque = uint_to_float(DM_Array[StdId]->torqueInit, -T_MAX, T_MAX, 12);
   DM_Array[StdId]->temperatureMOS = (float)(RxMessage.CANx_Export_RxMessage[6]);

@@ -9,6 +9,9 @@
 #ifndef TASK_VOFA_H
 #define TASK_VOFA_H
 
+#include "vofa.h"
+#include "DM_Motor.h"
+
 
 void Vofa_Assist(void const *argument);
 

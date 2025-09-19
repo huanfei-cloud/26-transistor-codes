@@ -232,11 +232,11 @@ void ALL_Init(void const * argument)
 		   DT7_Init();
 	    /* PID��ʼ�� */
 		    /**Yaw轴电机PID初始化**/
-        Position_PIDInit(&M6020s_YawIPID, 1550.0f, 0.1f, 1200.0, 0, 30000, 10000 , 6000);
-        Position_PIDInit(&M6020s_YawOPID, 0.083f, 0.00001f, 0.0, 0, 30000, 10000 , 10000);
+        Position_PIDInit(&J6006s_YawIPID, 0.03f, 0.001f, 0.8f, 0, 10, 4 , 2);
+        Position_PIDInit(&J6006s_YawOPID, 0.02f, 0.000001f, 0.001f, 0, 20, 7 , 7);
 		    /**AimYaw电机PID初始化*/
-        Position_PIDInit(&AutoAim_M6020s_YawIPID, 1700.0f, 60.f, 800.f, 500, 30000, 10000 , 10000);
-        Position_PIDInit(&AutoAim_M6020s_YawOPID, 0.032f, 0.00001f, 0.05, 0, 30000, 10000 , 10000);
+        Position_PIDInit(&AutoAim_J6006s_YawIPID, 0.13f, 0.04f, 0.53f, 0.03f, 10, 4 ,2);
+        Position_PIDInit(&AutoAim_J6006s_YawOPID, 0.01f, 0.000001f, 0.001f, 0, 20, 7 , 7);
 		/*�豸��ʼ��*/
         Cloud_Init();						  //云台初始化
 		

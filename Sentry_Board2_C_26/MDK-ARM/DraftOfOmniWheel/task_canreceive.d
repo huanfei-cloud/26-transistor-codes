@@ -78,6 +78,7 @@ draftofomniwheel\task_canreceive.o: ..\APPs\APPs.h\Steer_Omni_Chassis.h
 draftofomniwheel\task_canreceive.o: ..\Devices\Devices.h\M3508_Motor.h
 draftofomniwheel\task_canreceive.o: ..\Devices\Devices.h\M6020_Motor.h
 draftofomniwheel\task_canreceive.o: ..\APPs\APPs.h\Cloud_Control.h
+draftofomniwheel\task_canreceive.o: ..\Devices\Devices.h\DM_Motor.h
 draftofomniwheel\task_canreceive.o: ../Algorithm/Algorithm.h/FeedForward.h
 draftofomniwheel\task_canreceive.o: ../Protocol/Protocol.h/BSP_BoardCommunication.h
 draftofomniwheel\task_canreceive.o: ..\APPs\APPs.h\Cloud_Control.h

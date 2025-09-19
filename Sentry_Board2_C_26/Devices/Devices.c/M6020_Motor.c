@@ -14,7 +14,7 @@
 M6020s_t M6020s_Yaw;                                    //IDΪ1
 M6020s_t M6020s_Chassis1;
 M6020s_t M6020s_Chassis2;
-M6020s_t *M6020_Array[Totalnum] = {&M6020s_Yaw,&M6020s_Chassis1,&M6020s_Chassis2}; //��Ӧ�����ID����Ϊ������+1
+M6020s_t *M6020_Array[Totalnum] = {&M6020s_Chassis1,&M6020s_Chassis2}; //��Ӧ�����ID����Ϊ������+1
 
 #define M6020_Amount 1
 
