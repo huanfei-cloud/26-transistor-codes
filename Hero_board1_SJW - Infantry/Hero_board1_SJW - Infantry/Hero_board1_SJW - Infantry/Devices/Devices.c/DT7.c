@@ -29,6 +29,7 @@ uint8_t DT7_RX_Finish;
 
 void RemoteControl_PC_Update(void);
 void IT_RemoteControl_PC_Update(void);
+void KeyMouseFlag_Update(void);
 
 DR16_Export_Data_t DR16_Export_Data = DR16_ExportDataGroundInit;
 Image_Transmission_Export_Data_t Image_Transmission_Export_Data = Image_Transmission_ExportDataGroundInit;
@@ -148,6 +149,19 @@ void DT7_Handle(void)
 		/**************************** control code ****************************/
 		/*通道1*/
 		/*中正常遥控；下自瞄；上键鼠*/
+		
+		/*发射信息处理*/
+		ControlMes.shoot_state = RC_CtrlData.rc.s2;
+		if (ControlMes.shoot_state == RC_SW_UP)
+		{
+			Dial_Data.Shoot_Mode = Continuous_Shoot;
+			Shoot_Data.Shoot_Switch = 1;
+		}
+		else if (ControlMes.shoot_state == RC_SW_MID)
+		{
+			Shoot_Data.Shoot_Switch = 0;
+		}
+		
 		if (RC_CtrlData.rc.s1 == RC_SW_MID && RC_CtrlData.rc.s2 != 0)
 		{
 			/******************************遥控器数值传递******************************/
@@ -155,42 +169,33 @@ void DT7_Handle(void)
 			ControlMes.x_velocity = RC_CtrlData.rc.ch3; // 左手上下
 			ControlMes.y_velocity = -RC_CtrlData.rc.ch2; // 左手左右
 
-			static int countFric = 0;
-			// 发射状态设置（UP 发射 ； MID 禁止发射；DOWN 检录） //检录模式是停止小陀螺，让Yaw轴与底盘相对静止（检录校准测速用）
-			if (RC_CtrlData.rc.s2 == RC_SW_DOWN)
-			{
-				ControlMes.modelFlag = model_Record;
-				ControlMes.fric_Flag = 0;
-				countFric = 0;
-				ControlMes.shoot_state = RC_SW_MID;
-			}
-			else if (RC_CtrlData.rc.s2 == RC_SW_MID)
-			{
-				ControlMes.modelFlag = model_Normal;
-				ControlMes.fric_Flag = 0;
-				ControlMes.shoot_state = RC_CtrlData.rc.s2;
-				countFric = 0;
-			}
-			else if (RC_CtrlData.rc.s2 == RC_SW_UP)
-			{
-				ControlMes.modelFlag = model_Normal;
-				ControlMes.fric_Flag = 1;
-				if (countFric < 50)
-				{
-					countFric++;
-				}
-				else
-				{
-					ControlMes.shoot_state = RC_CtrlData.rc.s2;
-				}
-			}
-
 			// 云台运动控制
 			ControlMes.AutoAimFlag = 0;
 			ControlMes.pitch_velocity = RC_CtrlData.rc.ch1;			// 右手上下
 			ControlMes.yaw_velocity = RC_CtrlData.rc.ch0;			// 右手左右
 			ControlMes.z_rotation_velocity = RC_CtrlData.wheel ; // 滑轮左右
 			ControlMes.yaw_position = Auto_Aim_Yaw;
+			
+			static int countFric = 0;
+			// 发射状态设置（UP 发射 ； MID 禁止发射；DOWN 检录） //检录模式是停止小陀螺，让Yaw轴与底盘相对静止（检录校准测速用）
+			if (RC_CtrlData.rc.s2 == RC_SW_DOWN)
+			{
+				ControlMes.modelFlag = model_Follow;
+				ControlMes.fric_Flag = 0;
+				countFric = 0;
+			}
+			else if (RC_CtrlData.rc.s2 == RC_SW_MID)
+			{
+				ControlMes.modelFlag = model_Normal;
+				ControlMes.fric_Flag = 0;
+				countFric = 0;
+			}
+			else if (RC_CtrlData.rc.s2 == RC_SW_UP)
+			{
+				ControlMes.modelFlag = model_Normal;
+				ControlMes.fric_Flag = 1;
+			}
+
 		}
 
 		// 自瞄模式
@@ -200,9 +205,6 @@ void DT7_Handle(void)
 			// 底盘运动控制
 			ControlMes.x_velocity = RC_CtrlData.rc.ch3; // 左手上下
 			ControlMes.y_velocity = -RC_CtrlData.rc.ch2; // 左手左右
-
-			// 发射状态设置（UP 连发模式 ； MID 禁止发射；DOWN 单发模式）
-			ControlMes.shoot_state = RC_CtrlData.rc.s2;
 
 			// 自瞄云台运动控制（这里添加额外的遥控器控制是为了补偿自瞄精度，自己用遥控器微调一下辅助瞄准）
 			ControlMes.pitch_velocity = RC_CtrlData.rc.ch1 * 0.2; // 右手上下
@@ -241,17 +243,6 @@ void DT7_Handle(void)
 			ControlMes.yaw_velocity = 0;
 			ControlMes.pitch_velocity = 0;
 			ControlMes.shoot_state = RC_SW_MID;
-		}
-
-		/*发射信息处理*/
-		if (ControlMes.shoot_state == RC_SW_UP)
-		{
-			Dial_Data.Shoot_Mode = Continuous_Shoot;
-			Shoot_Data.Shoot_Switch = 1;
-		}
-		else if (ControlMes.shoot_state == RC_SW_MID)
-		{
-			Shoot_Data.Shoot_Switch = 0;
 		}
 	}
 	// 用board1 CAN2发送给board2。

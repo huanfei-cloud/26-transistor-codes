@@ -242,4 +242,6 @@ extern uint8_t DT7_Rx_Data[RC_FRAME_LENGTH];
 
 void DT7_Init(void);
 void DT7_Handle(void);
+void KeyMouseFlag_Update(void);
+
 #endif

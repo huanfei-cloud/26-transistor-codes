@@ -28,7 +28,7 @@ typedef enum
 {
 	Dial_Off = 0,
 	Dial_On,
-	Dial_ing,
+	Dial_Back,
 } Dial_On_Off;
 
 /**
@@ -39,6 +39,7 @@ typedef enum
 {
 	Single_Shoot = 0,
 	Continuous_Shoot,
+	No_Shoot,
 } Shoot_Modes;
 
 /* 拨出一个弹丸，电机需要转动的角度，映射为360°-8192 */
@@ -48,8 +49,8 @@ typedef enum
 #define Cooling_First_Level1_Max_Heat 50
 #define Cooling_First_Level1_Cooling_Rate 40
 #define CONTINUOUS_ROTATION_SPEED 50.0f //
-#define CHECK_INTERVAL 300				// 检测间隔
-#define REVERSE_DURATION 100			// 反转时间
+#define CHECK_INTERVAL 400				// 检测间隔
+#define REVERSE_DURATION 150			// 反转时间
 #define ANGLE_CHANGE_THRESHOLD 50		// 角度变化阈值
 
 /* Heat数据的接口结构体*/
@@ -69,6 +70,7 @@ typedef enum
 /* Dial数据以及函数的接口结构体 */
 #define Dial_DataGroundInit \
 	{                       \
+		0,									\
 		330,                \
 		0,                  \
 		0,                  \
@@ -100,7 +102,7 @@ typedef struct Heat_Data_t
 
 typedef struct Dial_Data_t
 {
-	// uint8_t  Number_ToBeFired;   //需要打击的弹丸数量
+	uint8_t  Number_ToBeFired;   //需要打击的弹丸数量
 	uint16_t Shoot_Interval; // 攻击间隔
 	// uint16_t Shoot_Period;       //连发的时间
 	uint32_t Time_NextShoot; // 下次射击的时间，即系统时间超过这个值才能射击

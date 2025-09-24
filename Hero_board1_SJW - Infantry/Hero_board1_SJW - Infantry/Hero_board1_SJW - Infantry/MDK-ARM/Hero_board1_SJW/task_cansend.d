@@ -34,6 +34,8 @@
 .\hero_board1_sjw\task_cansend.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 .\hero_board1_sjw\task_cansend.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h
 .\hero_board1_sjw\task_cansend.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h
+.\hero_board1_sjw\task_cansend.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
+.\hero_board1_sjw\task_cansend.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 .\hero_board1_sjw\task_cansend.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 .\hero_board1_sjw\task_cansend.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h
 .\hero_board1_sjw\task_cansend.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
@@ -99,3 +101,4 @@
 .\hero_board1_sjw\task_cansend.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
 .\hero_board1_sjw\task_cansend.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h
 .\hero_board1_sjw\task_cansend.o: ../Alg/Alg.h/SpeedRamp.h
+.\hero_board1_sjw\task_cansend.o: ../Devices/Devices.h/TDF.h

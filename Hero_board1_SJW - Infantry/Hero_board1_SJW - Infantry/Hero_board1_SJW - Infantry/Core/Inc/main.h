@@ -36,6 +36,9 @@ extern "C" {
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
+#define DT7 1
+#define TDF 2
+#define RemoteControlMethod DT7
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/

@@ -88,14 +88,14 @@ extern void VOFA_Handle(void const *argument);
 extern void J4310_onlineCheck(void const *argument);
 /* USER CODE END FunctionPrototypes */
 
-void StartDefaultTask(void const *argument);
-void ALL_Init(void const *argument);
+void StartDefaultTask(void const * argument);
+void ALL_Init(void const * argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
 /* GetIdleTaskMemory prototype (linked to static allocation support) */
-void vApplicationGetIdleTaskMemory(StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize);
+void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize );
 
 /* USER CODE BEGIN GET_IDLE_TASK_MEMORY */
 static StaticTask_t xIdleTaskTCBBuffer;
@@ -111,12 +111,11 @@ void vApplicationGetIdleTaskMemory(StaticTask_t **ppxIdleTaskTCBBuffer, StackTyp
 /* USER CODE END GET_IDLE_TASK_MEMORY */
 
 /**
- * @brief  FreeRTOS initialization
- * @param  None
- * @retval None
- */
-void MX_FREERTOS_Init(void)
-{
+  * @brief  FreeRTOS initialization
+  * @param  None
+  * @retval None
+  */
+void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
@@ -154,7 +153,7 @@ void MX_FREERTOS_Init(void)
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* definition and creation of StartTask */
-  osThreadDef(StartTask, ALL_Init, osPriorityHigh, 0, 256);
+  osThreadDef(StartTask, ALL_Init, osPriorityRealtime, 0, 128);
   StartTaskHandle = osThreadCreate(osThread(StartTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
@@ -195,6 +194,7 @@ void MX_FREERTOS_Init(void)
   osThreadDef(Task_J4310_onlineCheck_Handle, J4310_onlineCheck, osPriorityAboveNormal, 0, 128);
   Task_J4310_onlineCheck_Handle = osThreadCreate(osThread(Task_J4310_onlineCheck_Handle), NULL);
   /* USER CODE END RTOS_THREADS */
+
 }
 
 /* USER CODE BEGIN Header_StartDefaultTask */
@@ -204,7 +204,7 @@ void MX_FREERTOS_Init(void)
  * @retval None
  */
 /* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void const *argument)
+void StartDefaultTask(void const * argument)
 {
   /* init code for USB_DEVICE */
   MX_USB_DEVICE_Init();
@@ -224,7 +224,7 @@ void StartDefaultTask(void const *argument)
  * @retval None
  */
 /* USER CODE END Header_ALL_Init */
-void ALL_Init(void const *argument)
+void ALL_Init(void const * argument)
 {
   /* USER CODE BEGIN ALL_Init */
   /* Infinite loop */
@@ -242,8 +242,8 @@ void ALL_Init(void const *argument)
 
     Incremental_PIDInit(&M3508_FricL_Pid, 40.f, 0, 30, 20000, 5000);
     Incremental_PIDInit(&M3508_FricR_Pid, 40.f, 0, 30, 20000, 5000);
-    Position_PIDInit(&M2006_DialV_Pid, 20.0f, 0.01f, 0.5, 0.5, 20000, 8000, 700);
-    Incremental_PIDInit(&M2006_DialI_Pid, 12.5f, 0.5f, 3, 10000, 1000);
+    Position_PIDInit(&M2006_DialV_Pid, 50.0f, 0.01f, 0.5, 0.5, 20000, 8000, 700);
+    Incremental_PIDInit(&M2006_DialI_Pid, 15.0f, 0.5f, 3, 10000, 1000);
 
     /**********云台初始化*********/
     Cloud_Init();

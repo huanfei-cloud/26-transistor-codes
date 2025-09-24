@@ -33,6 +33,8 @@
 .\hero_board1_sjw\task_vofa.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 .\hero_board1_sjw\task_vofa.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h
 .\hero_board1_sjw\task_vofa.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h
+.\hero_board1_sjw\task_vofa.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
+.\hero_board1_sjw\task_vofa.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 .\hero_board1_sjw\task_vofa.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 .\hero_board1_sjw\task_vofa.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h
 .\hero_board1_sjw\task_vofa.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
@@ -98,3 +100,4 @@
 .\hero_board1_sjw\task_vofa.o: ../Devices/Devices.h/Saber_C3.h
 .\hero_board1_sjw\task_vofa.o: ../Apps/Apps.h/struct_typedef.h
 .\hero_board1_sjw\task_vofa.o: ../BSP/BSP.h/BSP_Usart.h
+.\hero_board1_sjw\task_vofa.o: ../Devices/Devices.h/TDF.h

@@ -26,6 +26,7 @@
 
 #define model_Normal 0
 #define model_Record 1
+#define model_Follow 2
 
 #define Board1_FunGroundInit   \
 	{                          \
@@ -47,7 +48,7 @@ typedef struct
 	int16_t yaw_realAngle; // 下板传上来的yaw轴角度信息
 	float Speed_Bullet;	   // 裁判系统传来的弹速
 	int16_t heat_remain;   // 裁判系统传来的剩余热量
-	uint8_t modelFlag;	   // 比赛、检录模式
+	uint8_t modelFlag;	   // 比赛、检录，地盘跟随标模式
 	uint8_t shoot_Speed;   // 射速
 	uint8_t change_Flag;   // 变速
 	uint8_t fric_Flag;	   // 摩擦轮
