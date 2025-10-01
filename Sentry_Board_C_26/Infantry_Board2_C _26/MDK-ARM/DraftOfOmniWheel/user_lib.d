@@ -1,0 +1,11 @@
+draftofomniwheel\user_lib.o: ..\Algorithm\Algorithm.c\user_lib.c
+draftofomniwheel\user_lib.o: ../Algorithm/Algorithm.h/user_lib.h
+draftofomniwheel\user_lib.o: ../APPs/APPs.h/struct_typedef.h
+draftofomniwheel\user_lib.o: ../Algorithm/Algorithm.h/arm_math.h
+draftofomniwheel\user_lib.o: ../Drivers/CMSIS/Include/core_cm4.h
+draftofomniwheel\user_lib.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\stdint.h
+draftofomniwheel\user_lib.o: ../Drivers/CMSIS/Include/cmsis_version.h
+draftofomniwheel\user_lib.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+draftofomniwheel\user_lib.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+draftofomniwheel\user_lib.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\string.h
+draftofomniwheel\user_lib.o: E:\ProgramFile\MDK\core\ARM\ARMCC\Bin\..\include\math.h

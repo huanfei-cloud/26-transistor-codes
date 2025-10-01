@@ -181,17 +181,17 @@
           <ItemText>J6006s_YawOPID</ItemText>
         </Ww>
         <Ww>
-          <count>5</count>
+          <count>2</count>
           <WinNumber>1</WinNumber>
           <ItemText>M6020s_Chassis2,0x0A</ItemText>
         </Ww>
         <Ww>
-          <count>6</count>
+          <count>3</count>
           <WinNumber>1</WinNumber>
           <ItemText>M6020s_Chassis1,0x0A</ItemText>
         </Ww>
         <Ww>
-          <count>7</count>
+          <count>4</count>
           <WinNumber>1</WinNumber>
           <ItemText>M6020s_Chassis1</ItemText>
         </Ww>
