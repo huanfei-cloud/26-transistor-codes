@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "pid.h": "c",
+        "steer_chassis.h": "c",
+        "cloud_control.h": "c",
+        "m6020_motor.h": "c"
+    }
+}
