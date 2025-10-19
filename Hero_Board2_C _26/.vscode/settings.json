@@ -3,6 +3,8 @@
         "pid.h": "c",
         "steer_chassis.h": "c",
         "cloud_control.h": "c",
-        "m6020_motor.h": "c"
+        "m6020_motor.h": "c",
+        "stdio.h": "c",
+        "kalman_filter.h": "c"
     }
 }

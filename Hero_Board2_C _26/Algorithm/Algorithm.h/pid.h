@@ -24,13 +24,13 @@
 
 /********pid�Ĳ���ֵ********/
 //����yaw��λ�û�
-#define yaw_O_p 0.083f
+#define yaw_O_p 0.08f
 #define yaw_O_i 0.00001f
 #define yaw_O_d 0.0f
 //����yaw���ٶȻ�
-#define yaw_I_p 1050.0f
-#define yaw_I_i 0.12f
-#define yaw_I_d 1000.0f
+#define yaw_I_p 200.0f
+#define yaw_I_i 0.00004f
+#define yaw_I_d 10.0f
 //����yaw��λ�û�
 //#define yaw_O_Aim_p 2.082f
 //#define yaw_O_Aim_i 0.00001f
